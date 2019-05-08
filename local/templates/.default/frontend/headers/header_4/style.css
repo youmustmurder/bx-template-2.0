@@ -1,0 +1,205 @@
+.header {
+    background-color: #fff;
+}
+.header__top {
+    border-bottom: 1px solid #ececec;
+    padding: 30px 0;
+}
+.header__top .container {
+    position: relative;
+}
+.header__logo a {
+    max-width: 180px;
+    flex: 0 1 190px;
+    height: 51px;
+    display: block;
+}
+.header__menu {
+    width: 74px;
+    height: 38px;
+}
+.header__hamburger {
+    background-color: transparent;
+    border: none;
+    width: 44px;
+    height: 38px;
+    padding: 10px;
+    cursor: pointer;
+}
+.header__hamburger span {
+    display: block;
+    position: relative;
+    width: 24px;
+    height: 2px;
+    background-color: black;
+    border-radius: 1px;
+}
+.header__hamburger span:before, .header__hamburger span:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background-color: black;
+    transition: 300ms;
+}
+.header__hamburger span:before {
+    top: 9px;
+}
+.header__hamburger span:after {
+    bottom: 9px;
+}
+.header__hamburger.fixed {
+    z-index: 1001;
+    position: fixed;
+}
+.header__hamburger.fixed span {
+    pointer-events: all;
+    background-color: transparent;
+}
+.header__hamburger.fixed span:after {
+    background-color: black;
+    opacity: 1;
+    top: calc(50% - 1px);
+    transform: rotate(135deg);
+}
+.header__hamburger.fixed span:before {
+    background-color: black;
+    opacity: 1;
+    top: auto;
+    bottom: calc(50% - 1px);
+    transform: rotate(45deg);
+}
+.header__block {
+    display: inline-flex;
+    align-items: flex-start;
+    max-width: fit-content;
+    flex: 1 1 auto;
+}
+.header__pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+.header__pic svg {
+    height: 20px;
+    margin-top: 2px;
+}
+.header__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.header__text span {
+    line-height: 1.5em;
+    display: block;
+}
+.header__desc {
+    max-width: 185px;
+    flex: 0 1 185px;
+    line-height: 1.5em;
+    margin-left: 40px;
+}
+.header__desc p {
+    margin: 0;
+}
+.header__phone {
+    display: inline-flex;
+    margin-right: 30px;
+    justify-content: flex-end;
+}
+.header__phone a {
+    color: #333;
+    text-decoration: none;
+    -webkit-transition: 250ms;
+    transition: 250ms;
+    line-height: 1.5em;
+    text-align: left;
+}
+.header__number {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.header__modal {
+    font-size: 14px;
+    font-weight: bold;
+}
+.header__search {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    display: block;
+}
+.header__search button {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: 0;
+    padding: 0;
+    cursor: pointer;
+    transition: 0.3s;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.header__search .header__loupe {
+    width: 42px;
+    height: 42px;
+}
+.header__search .header__loupe-crest {
+    opacity: 0;
+}
+.header__search.fixed {
+    z-index: 1001;
+}
+.header__search.fixed .header-4__loupe-pic {
+    opacity: 0;
+}
+.header__search.fixed .header-4__loupe-crest {
+    opacity: 1;
+}
+.header__search-panel {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: calc(100% - 45px);
+    height: 100%;
+    background-color: #fff;
+    z-index: 1000;
+    transition: 0.3s;
+    opacity: 0;
+}
+.header__search-panel form {
+    width: 100%;
+}
+.header__search-panel input {
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #eaeaea;
+    color: #8b8b8b;
+    border: none;
+    border-radius: 5px;
+}
+.header__search-panel button {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+}
+.header__search-panel.open {
+    top: 0;
+    opacity: 1;
+}
+@media screen and (min-width: 320px) and (max-width: 1200px) {
+    .header__menu {
+        padding: 0;
+    }
+    .header__desc {
+        margin-left: 5px;
+    }
+}

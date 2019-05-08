@@ -1,0 +1,217 @@
+.form-field {
+  position: relative;
+}
+
+.form-error-text {
+  position: absolute;
+  font-size: 12px;
+  line-height: 18px;
+  left: 17px;
+  top: 54px;
+  color: #969696;
+}
+
+.form-stroke__input {
+  position: relative;
+  background-color: #fff;
+  border-radius: 22.5px;
+  border: 1px solid #EEEEEE;
+  padding: 14px 32px 14px 16px;
+  margin-bottom: 45px;
+  transition: 0.3s;
+}
+.form-stroke__input::-webkit-input-placeholder {
+  color: #585757;
+  opacity: 0.4;
+}
+.form-stroke__input::-moz-placeholder {
+  color: #585757;
+  opacity: 0.4;
+}
+.form-stroke__input:-ms-input-placeholder {
+  color: #585757;
+  opacity: 0.4;
+}
+.form-stroke__input:-moz-placeholder {
+  color: #585757;
+  opacity: 0.4;
+}
+.form-stroke__input[disabled] {
+  background-color: #F9F9F9;
+  border: none;
+}
+.form-underline__input[disabled]::-webkit-input-placeholder {
+  color: #585757;
+  opacity: 1;
+}
+.form-underline__input[disabled]::-moz-placeholder {
+  color: #585757;
+  opacity: 1;
+}
+.form-underline__input[disabled]:-ms-input-placeholder {
+  color: #585757;
+  opacity: 1;
+}
+.form-underline__input[disabled]:-moz-placeholder {
+  color: #585757;
+  opacity: 1;
+}
+.form-stroke__input:focus {
+  border: 1px solid #2880B9;
+}
+.form-stroke__input--icon {
+  background-image: url(/local/templates/individual/public/images/icons/icon.png);
+  background-repeat: no-repeat;
+  background-position-y: 50%;
+  background-position-x: calc(100% - 10px);
+}
+.form-field.success {
+  .form-stroke__input {
+    border: 1px solid #26AE60;
+  }
+}
+.form-field.error {
+  .form-stroke__input {
+    border: 1px solid #FF1E36;
+  }
+  .form-error-text {
+    color: #FF1E36;
+  }
+}
+.form-stroke__textarea {
+  border-radius: 10px;
+  border: 1px solid #EEEEEE;
+  padding: 8px 16px;
+}
+.form-stroke__textarea::-webkit-resizer {
+  width: 11px;
+  height: 12px;
+  background-image: url();
+}
+
+.form-stroke__counter {
+  padding: 8px 10px;
+  background-color: #fff;
+  border-radius: 50px;
+  border: 1px solid #EEEEEE;
+  width: fit-content;
+  .form-stroke__fieldCount {
+    border: none;
+    width: 20px;
+    text-align: center;
+  }
+  button {
+    background-color: transparent;
+    border: none;
+    color: #95A5A6;
+    cursor: pointer;
+  }
+}
+
+.form-underline__input {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #EEEEEE;
+  padding: 8px 0;
+  margin-bottom: 45px;
+  transition: 0.3s;
+}
+.form-underline__input::-webkit-input-placeholder {
+  color: #585757;
+  opacity: 0.4;
+}
+.form-underline__input::-moz-placeholder {
+  color: #585757;
+  opacity: 0.4;
+}
+.form-underline__input:-ms-input-placeholder {
+  color: #585757;
+  opacity: 0.4;
+}
+.form-underline__input:-moz-placeholder {
+  color: #585757;
+  opacity: 0.4;
+}
+.form-underline__input[disabled]::-webkit-input-placeholder {
+  color: #585757;
+  opacity: 0.5;
+}
+.form-underline__input[disabled]::-moz-placeholder {
+  color: #585757;
+  opacity: 0.5;
+}
+.form-underline__input[disabled]:-ms-input-placeholder {
+  color: #585757;
+  opacity: 0.5;
+}
+.form-underline__input[disabled]:-moz-placeholder {
+  color: #585757;
+  opacity: 0.5;
+}
+.form-underline__input:focus {
+  border-bottom: 1px solid #2880B9;
+}
+.form-underline__input--icon {
+  background-image: url(/local/templates/individual/public/images/icons/icon.png);
+  background-repeat: no-repeat;
+  background-position-y: 50%;
+  background-position-x: 100%;
+}
+.form-field.success {
+  .form-underline__input {
+    border-bottom: 1px solid #26AE60;
+  }
+}
+.form-field.error {
+  .form-underline__input {
+    border-bottom: 1px solid #FF1E36;
+  }
+  .form-error-text {
+    color: #FF1E36;
+  }
+}
+.form-underline__textarea {
+  border: none;
+  border-bottom: 1px solid #EEEEEE;
+  padding: 8px 16px;
+}
+.form-underline__textarea::-webkit-resizer {
+  width: 11px;
+  height: 12px;
+  background-image: url();
+}
+
+.form-underline__counter {
+  padding: 8px 40px 8px 0;
+  border-bottom: 1px solid #EEEEEE;
+  width: fit-content;
+  position: relative;
+  .form-underline__fieldCount {
+    border: none;
+    width: 20px;
+    text-align: center;
+  }
+  button {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #EEEEEE;
+    border: none;
+    color: #95A5A6;
+    cursor: pointer;
+    font-weight: 600;
+    line-height: 10px;
+  }
+  .inc {
+    top: 3px;
+    right: 0;
+  }
+  .dec {
+    bottom: 3px;
+    right: 0;
+  }
+}

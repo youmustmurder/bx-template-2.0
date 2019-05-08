@@ -1,0 +1,1 @@
+"use strict";var func=function(b){console.log("test:"+b)};func(1);

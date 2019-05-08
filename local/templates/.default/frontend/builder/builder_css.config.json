@@ -1,0 +1,14 @@
+{
+    "js": {
+        "separate_folder": "./test",
+        "entry_general_folder": "./main",
+        "entry_general_file": "./main/js/index.js",
+        "output_general_file": "./dist/js/index.js"
+    },
+    "css": {
+        "separate_folder": "./test",
+        "entry_general_folder": "./main",
+        "entry_general_file": "./main/scss/styles.scss",
+        "output_general_file": "./dist/css/styles.css"
+    }
+}

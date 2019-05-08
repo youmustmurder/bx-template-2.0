@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="dist\css\styles.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            
+            <h2>Кнопки</h2>
+            
+            <div>
+                <a href="#" class="btn btn__default btn__circle btn__min">Кнопка</a>
+                <a href="#" class="btn btn__default btn__circle btn__mid">Кнопка</a>
+                <a href="#" class="btn btn__default btn__circle btn__big">Кнопка</a>
+                
+                <a href="#" class="btn btn__default btn__square btn__min">Кнопка</a>
+                <a href="#" class="btn btn__default btn__square btn__mid">Кнопка</a>
+                <a href="#" class="btn btn__default btn__square btn__big">Кнопка</a>
+                <a class="btn btn__default btn__square btn__big btn__blocked">Кнопка</a>
+                <a href="#" class="btn btn__default btn__arrow btn__arrow--left">лево</a>
+                <a href="#" class="btn btn__default btn__arrow btn__arrow--right">право</a>
+                <a href="#" class="btn btn__default btn__icon">иконка</a>
+            </div>
+            <br><br>
+            <div>
+                <a href="#" class="btn btn__primary btn__circle btn__min">Кнопка</a>
+                <a href="#" class="btn btn__primary btn__circle btn__mid">Кнопка</a>
+                <a href="#" class="btn btn__primary btn__circle btn__big">Кнопка</a>
+                
+                <a href="#" class="btn btn__primary btn__square btn__min">Кнопка</a>
+                <a href="#" class="btn btn__primary btn__square btn__mid">Кнопка</a>
+                <a href="#" class="btn btn__primary btn__square btn__big">Кнопка</a>
+                <a class="btn btn__primary btn__square btn__big btn__blocked">Кнопка</a>
+            </div>
+            
+            <h2>Ссылки</h2>
+            
+            <a href="#" class="btn__link">Ссылка</a>
+            <a href="#" class="btn__link btn__link--icon-r">Ссылка с иконкой <img src="/local/templates/individual/public/images/icons/icon.png" alt=""></a>
+            
+            <h2>Поля ввода</h2>
+            
+            <form action="#" class="form-stroke" style="width: 255px">
+                
+                <div class="form-field">
+                    <input type="text" placeholder="Текст" class="form-stroke__input">
+                    <div class="form-error-text">Ошибка</div>
+                </div>
+                <div class="form-field">
+                    <input type="text" placeholder="Текст" class="form-stroke__input" disabled>
+                </div>
+                <div class="form-field">
+                    <input type="text" placeholder="Иконка" class="form-stroke__input form-stroke__input--icon">
+                </div>
+                <div class="form-field success">
+                    <input type="text" placeholder="Успех" class="form-stroke__input">
+                </div>
+                <div class="form-field error">
+                    <input type="text" placeholder="Ошибка" class="form-stroke__input">
+                    <div class="form-error-text">Ошибка</div>
+                </div>
+                <textarea name="" id="" cols="30" rows="10" class="form-stroke__textarea"></textarea>
+                
+                <div class="form-stroke__counter">
+                    <button type="button" class="but counterBut dec">-</button>
+                    <input type="text" class="field form-stroke__fieldCount" value="1" data-min="1" data-max="20">
+                    <button type="button" class="but counterBut inc">+</button>
+                </div>
+            
+            </form>
+            
+            <form action="#" class="form-underline" style="width: 255px">
+                
+                <div class="form-field">
+                    <input type="text" placeholder="Текст" class="form-underline__input">
+                </div>
+                <div class="form-field">
+                    <input type="text" placeholder="Текст" class="form-underline__input" disabled>
+                </div>
+                <div class="form-field">
+                    <input type="text" placeholder="Иконка" class="form-underline__input form-underline__input--icon">
+                </div>
+                <div class="form-field success">
+                    <input type="text" placeholder="Успех" class="form-underline__input">
+                </div>
+                <div class="form-field error">
+                    <input type="text" placeholder="Ошибка" class="form-underline__input">
+                </div>
+                <textarea name="" id="" cols="30" rows="10" class="form-underline__textarea"></textarea>
+                <div class="form-underline__counter">
+                    <button type="button" class="but counterBut dec">-</button>
+                    <input type="text" class="field form-underline__fieldCount" value="1" data-min="1" data-max="20">
+                    <button type="button" class="but counterBut inc">+</button>
+                </div>
+            </form>
+            
+            
+            <h2>Чекбоксы</h2>
+            
+            <label class="checkbox__square">One
+                <input type="checkbox" checked="checked">
+                <span class="checkmark"></span>
+            </label>
+            
+            <label class="checkbox__circle">Two
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+            
+            <label class="checkbox__switch">
+                <input type="checkbox" />
+                <div class="checkbox__text">Three</div>
+            </label>
+            
+            <h2>Радиокнопки</h2>
+            
+            <label class="radio__square">One
+                <input type="radio" checked="checked" name="radio">
+                <span class="checkmark"></span>
+            </label>
+            <label class="radio__circle">Two
+                <input type="radio" name="radio">
+                <span class="checkmark"></span>
+            </label>
+            
+            <label class="radio__switch">
+                <input type="radio" name="radio"/>
+                <div class="radio__text">Three</div>
+            </label>
+            
+            <h2>Вкладки</h2>
+            
+            <div class="tabs tabs__circle tabs__circle--min">
+                <div class="tabs__item tabs__item--active">TAB</div>
+                <div class="tabs__item">TAB</div>
+                <div class="tabs__item">TAB</div>
+            </div>
+            
+            <div class="tabs tabs__circle tabs__circle--mid">
+                <div class="tabs__item tabs__item--active">TAB</div>
+                <div class="tabs__item">TAB</div>
+                <div class="tabs__item">TAB</div>
+            </div>
+            
+            <div class="tabs tabs__circle tabs__circle--max">
+                <div class="tabs__item tabs__item--active">TAB</div>
+                <div class="tabs__item">TAB</div>
+                <div class="tabs__item">TAB</div>
+            </div>
+            
+            <div class="tabs tabs__line tabs__line--min">
+                <div class="tabs__item tabs__item--active">TAB</div>
+                <div class="tabs__item">TAB</div>
+                <div class="tabs__item">TAB</div>
+            </div>
+            
+            <div class="tabs tabs__line tabs__line--mid">
+                <div class="tabs__item tabs__item--active">TAB</div>
+                <div class="tabs__item">TAB</div>
+                <div class="tabs__item">TAB</div>
+            </div>
+            
+            <div class="tabs tabs__line tabs__line--max">
+                <div class="tabs__item tabs__item--active">TAB</div>
+                <div class="tabs__item">TAB</div>
+                <div class="tabs__item">TAB</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="dist\js\index.js"></script>
+
+</body>
+</html>
