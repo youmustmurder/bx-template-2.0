@@ -45,6 +45,7 @@ Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("frontend/dist/css/st
     </head>
 <body>
 <?if ($USER->IsAdmin()) {?>
+    <?CJSCore::Init(['jquery2']);?>
     <?$APPLICATION->ShowPanel()?>
 <?}?>
 
@@ -117,7 +118,6 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
         false
     );*/?>
 <?}?>
-<?CJSCore::Init(['jquery2']);?>
 <?
 //include js scripts
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("public/js/app.js"));
