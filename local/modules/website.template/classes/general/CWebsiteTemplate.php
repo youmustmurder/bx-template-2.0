@@ -47,13 +47,10 @@ class CWebsiteTemplate {
     {
         foreach (self::$arCurrentSetting as $code => $value) {
             switch ($code) {
-               // case 'COLOR':
-              //  case 'FONT':
+                case 'COLOR':
+                case 'FONT':
                 case 'FONT_SIZE':
-                    return self::getCss($code, $value);
-                    if ($file) {
-                        Asset::getInstance()->addCss($file);
-                    }
+                    Asset::getInstance()->addCss(self::getCss($code, $value));
                     break;
             }
         }
@@ -61,70 +58,17 @@ class CWebsiteTemplate {
     
     protected static function getCss($codeProperty, $value = 'default')
     {
-        $arParameters = self::$arParametersList;
-        return $arParameters;
         $request = Bitrix\Main\Application::getInstance()->getContext()->getRequest();
-        $cssFilePath = SITE_TEMPLATE_PATH . '/public/css/theme/' . $colorCode . '.css';
+        $filePath = SITE_TEMPLATE_PATH . '/public/css/theme/' . strtolower($codeProperty) . '.css';
         
-        if (!file_exists($_SERVER['DOCUMENT_ROOT'] . $cssFilePath) || $request->get('clear_cache') == 'Y') {
-            $content = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/local/modules/' . WEBSITE_MODULE_ID . '/tools/css/color.tpl');
-            $ID = self::recursive_array_search($colorCode, self::$arParametersList['COLORS']);
+        if (!file_exists($_SERVER['DOCUMENT_ROOT'] . $filePath) || $request->get('clear_cache') == 'Y') {
+            
+            $content = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/local/modules/' . WEBSITE_MODULE_ID . '/tools/css/' . strtolower($codeProperty) . '.tpl');
+            $ID = self::recursiveArraySearch($value, self::$arParametersList[$codeProperty]);
             $content = str_replace('#', '#' . self::$arParametersList['COLORS'][$ID]['COLOR_HEX'], $content);
-            file_put_contents($_SERVER['DOCUMENT_ROOT'] . $cssFilePath, $content);
+            file_put_contents($_SERVER['DOCUMENT_ROOT'] . $filePath, $content);
         }
-        return $cssFilePath;
-    }
-    
-    protected function getCssFonts($font_type, $font_code = 'default')
-    {
-        if (empty($font_type)) {
-            return false;
-        }
-        $key = $this->recursive_array_search($font_code, $this->fonts);
-        if ($key && !empty($this->fonts[$key])) {
-            if ($this->fonts[$key]['FONT_SRC']) {
-                Asset::getInstance()->addCss($this->fonts[$key]['FONT_SRC']);
-            }
-            $css = SITE_TEMPLATE_PATH . '/public/css/fonts/' . $font_type . '_' . $font_code . '.css';
-            if (!file_exists($_SERVER['DOCUMENT_ROOT'] . $css)) {
-                $path = $_SERVER['DOCUMENT_ROOT'] . '/local/tools/fonts/' . $font_type . '.css';
-                $content = file_get_contents($path);
-                $content = str_replace($font_type, $this->fonts[$key]['FONT_NAME'], $content);
-                //return $css;
-                if (file_put_contents($_SERVER['DOCUMENT_ROOT'] . $css, $content)) {
-                    Asset::getInstance()->addCss($css);
-                    return true;
-                } else {
-                    return false;
-                }
-            } else {
-                Asset::getInstance()->addCss($css);
-                return true;
-            }
-        }
-    }
-    
-    public function getCssSizeFonts($size)
-    {
-        if (empty($size)) {
-            return false;
-        }
-        
-        $css = SITE_TEMPLATE_PATH . '/public/css/fonts/size' . $size . '.css';
-        if (!file_exists($_SERVER['DOCUMENT_ROOT'] . $css)) {
-            $path = $_SERVER['DOCUMENT_ROOT'] . '/local/tools/fonts/FONT_SIZE.css';
-            $content = file_get_contents($path);
-            $content = str_replace('SIZE', $size, $content);
-            if (file_put_contents($_SERVER['DOCUMENT_ROOT'] . $css, $content)) {
-                Asset::getInstance()->addCss($css);
-                return true;
-            } else {
-                return false;
-            }
-        } else {
-            Asset::getInstance()->addCss($css);
-            return true;
-        }
+        return $filePath;
     }
     
     public function setTemplateSetting($settings)
@@ -133,7 +77,7 @@ class CWebsiteTemplate {
             return false;
         }
 
-        $arCurSetting = $this->settings;
+        $arCurSetting = self::$arCurrentSetting;
         
         foreach ($settings as $code => $value) {
             if (isset($arCurSetting[$code])) {
@@ -238,11 +182,11 @@ class CWebsiteTemplate {
         return $result;
     }
 
-    protected static function recursive_array_search($needle, $haystack)
+    protected static function recursiveArraySearch($needle, $haystack)
     {
         foreach ($haystack as $key => $value) {
             $currentKey = $key;
-            if ($needle === $value || (is_array($value) && self::recursive_array_search($needle, $value) !== false)) {
+            if ($needle === $value || (is_array($value) && self::recursiveArraySearch($needle, $value) !== false)) {
                 return $currentKey;
             }
         }
