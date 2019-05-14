@@ -1,4 +1,7 @@
 {
+	"plugins": [
+		"stylelint-order"
+	],
 	"rules": {
 		"block-no-empty": false,
 		"color-no-invalid-hex": true,
@@ -13,6 +16,22 @@
 			"except": ["first-nested"],
 			"ignore": ["after-comment"]
 		} ],
-		"unit-whitelist": ["em", "rem", "%", "vh", "px", "s"]
+		"unit-whitelist": ["em", "rem", "%", "vh", "px", "s", "deg"],
+		"order/properties-order": [
+			"position",
+			"z-index",
+			"top",
+			"right",
+			"bottom",
+			"left",
+			"display",
+			"margin",
+			"padding",
+			"boder",
+			"background",
+			"color",
+			"font-size",
+			"line-height"
+		]
 	}
 }

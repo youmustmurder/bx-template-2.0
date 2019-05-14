@@ -30,7 +30,7 @@ const logLinter = (errors, filename) => {
 
 const lintAndFormatCode = (filename) => {
 	fs.readFile(filename, 'utf8', (err, code) => {
-		if (err) throw err;
+		if (err) logger.loggerError(err);
 		var formatedCode = code;
 		if (formatedCode != '' && !prettier.check(formatedCode, prettierConfig)) {
 			formatedCode = prettier.format(formatedCode, prettierConfig);
@@ -45,7 +45,7 @@ const lintAndFormatCode = (filename) => {
 
 const transformFile = (filename, output = path.join(path.dirname(filename), 'bundle.js')) => {
 	babel.transformFile(filename, {}, (err, result) => {
-		if (err) throw err;
+		if (err) logger.loggerError(err);
 		fs.writeFile(output, result.code, () => true);
 		logger.loggerBuild(output);
 	});
@@ -68,10 +68,12 @@ const watchNewFiles = (folderWatch) => {
 	fs.watch(folderWatch, (event, filename) => {
 		var filePath = path.join(folderWatch, filename);
 		fs.lstat(filePath, (err, stat) => {
-			if (err) throw err;
+			if (err) logger.loggerError(err);
 			if (stat.isFile()) {
-				lintAndFormatCode(filePath);
-				transformFile(path.join(path.dirname(__dirname), settings.js.entry_general_file), path.join(path.dirname(__dirname), settings.js.output_general_file));
+				if (path.extname(filename) == '.js') {
+					lintAndFormatCode(filePath);
+					transformFile(path.join(path.dirname(__dirname), settings.js.entry_general_file), path.join(path.dirname(__dirname), settings.js.output_general_file));
+				}
 			} else {
 				watchNewFiles(filePath);
 			}
