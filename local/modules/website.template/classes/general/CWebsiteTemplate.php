@@ -7,6 +7,7 @@ if(!defined('WEBSITE_MODULE_ID')) {
 use Bitrix\Highloadblock as HL,
     Bitrix\Main\Localization\Loc,
     Bitrix\Main\Loader,
+    Bitrix\Main\Application,
     Bitrix\Main\Page\Asset;
 
 Loc::loadMessages(__FILE__);
@@ -22,11 +23,6 @@ class CWebsiteTemplate {
     static $arCurrentSetting = array();
     static $demoMode = false;
     static $settingPathFile;
-
-    public function __construct($demoMode = false)
-    {
-        self::$demoMode = $demoMode;
-    }
     
     static function getPathSettingFile()
     {
@@ -51,7 +47,7 @@ class CWebsiteTemplate {
                 case 'FONT':
                 case 'FONT_SIZE':
                     $src = self::getCss($code, $value);
-                    if (!empty($src)) {
+                    if ($src != false) {
                         Asset::getInstance()->addCss($src);
                     }
                     break;
@@ -65,7 +61,7 @@ class CWebsiteTemplate {
             return false;
         }
         
-        $request = Bitrix\Main\Application::getInstance()->getContext()->getRequest();
+        $request = Application::getInstance()->getContext()->getRequest();
         $filePath = SITE_TEMPLATE_PATH . '/public/css/theme/' . strtolower($codeProperty) . '.css';
 
         if (!file_exists($_SERVER['DOCUMENT_ROOT'] . $filePath) || $request->get('clear_cache') == 'Y') {

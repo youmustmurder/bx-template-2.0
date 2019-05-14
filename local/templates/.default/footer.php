@@ -52,14 +52,22 @@ Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("frontend/dist/css/st
 //show panel setting
 if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSetting['SHOW_PANEL'] == 'Y')) {?>
     <?$APPLICATION->IncludeComponent(
-            'website96:setting.panel',
-            '',
-            array()
+        'website96:setting.panel',
+        '',
+        array()
     );?>
 <?}?>
-
 <?$APPLICATION->IncludeFile(
     "views/header/responsive/template.php",
+    array(),
+    array(
+        "SHOW_BORDER" => false,
+        "MODE" => "php"
+    )
+);?>
+
+<?$APPLICATION->IncludeFile(
+    "views/header/.default/template.php",
     array(),
     array(
         "SHOW_BORDER" => false,
@@ -89,7 +97,7 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
         )
     );?>
 <?}?>
-<?//$APPLICATION->RestartWorkarea(true);?>
+<?$APPLICATION->RestartWorkarea(true);?>
 <?$APPLICATION->IncludeFile(
     "views/footer/template.php",
     array(),

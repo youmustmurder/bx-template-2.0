@@ -1,10 +1,8 @@
-<?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-require_once $_SERVER['DOCUMENT_ROOT'].'/local/tools/settings.php';
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Каталог продукции");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:catalog",
-    mb_strtolower($arSetting['TEMPLATE_TYPE']),
+    '',
 	array(
 		"ACTION_VARIABLE" => "action",
 		"ADD_ELEMENT_CHAIN" => "Y",
@@ -132,7 +130,7 @@ $APPLICATION->SetTitle("Каталог продукции");
 		"SET_LAST_MODIFIED" => "N",
 		"SET_STATUS_404" => "N",
 		"SET_TITLE" => "Y",
-		"SHOW_404" => "N",
+		"SHOW_404" => "Y",
 		"SHOW_DEACTIVATED" => "N",
 		"SHOW_PRICE_COUNT" => "1",
 		"SHOW_TOP_ELEMENTS" => "Y",
@@ -181,4 +179,4 @@ $APPLICATION->SetTitle("Каталог продукции");
 		)
 	),
 	false
-);?><br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
