@@ -1,118 +1,126 @@
-.btn, .btn:hover {
-    text-decoration: none;
+.btn,
+.btn:hover {
+	text-decoration: none;
 }
 
 .btn__default {
-    border-width: 1px;
-    border-style: solid;
-    border-color: #FF1E36;
-    background-color: #FF1E36;
-    color: #fff;
-    transition: 0.3s;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ff1e36;
+	background-color: #ff1e36;
+	color: #fff;
+	transition: 0.3s;
 }
 
 .btn__default:hover {
-    background-color: transparent;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #FF1E36;
-    color: #FF1E36;
+	background-color: transparent;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ff1e36;
+	color: #ff1e36;
 }
 
 .btn__default:active {
-    opacity: 0.7;
+	opacity: 0.7;
 }
 
 .btn__primary {
-    background-color: transparent;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #FF1E36;
-    color: #FF1E36;
-    transition: 0.3s;
+	background-color: transparent;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ff1e36;
+	color: #ff1e36;
+	transition: 0.3s;
 }
 
 .btn__primary:hover {
-    background-color: #FF1E36;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #FF1E36;
-    color: #fff;
+	background-color: #ff1e36;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ff1e36;
+	color: #fff;
 }
 
 .btn__primary:active {
-    opacity: 0.7;
+	opacity: 0.7;
 }
 
 .btn__circle {
-    border-radius: 50px;
+	border-radius: 50px;
 }
 
 .btn__square {
-    border-radius: 4px;
+	border-radius: 4px;
 }
 
 .btn__min {
-    padding: 4px 24px;
+	padding: 4px 24px;
 }
 
 .btn__mid {
-    padding: 11px 24px;
+	padding: 11px 24px;
 }
 
 .btn__big {
-    padding: 19px 24px;
+	padding: 19px 24px;
 }
 
-.btn__blocked, .btn__blocked:hover, .btn__blocked:active {
-    background-color: #95A5A6;
-    color: #fff;
-    border: 1px solid #95A5A6;
+.btn__blocked,
+.btn__blocked:hover,
+.btn__blocked:active {
+	background-color: #95a5a6;
+	color: #fff;
+	border: 1px solid #95a5a6;
 }
 .btn__link {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
-.btn__link, .btn__link:hover, .btn__link:active, .btn__link:focus {
-    color: #2880B9;
-    text-decoration: none;
+.btn__link,
+.btn__link:hover,
+.btn__link:active,
+.btn__link:focus {
+	color: #2880b9;
+	text-decoration: none;
 }
 
 .btn__link--icon-l {
-    img, svg {
-        margin-right: 9px;
-    }
+	img,
+	svg {
+		margin-right: 9px;
+	}
 }
 
 .btn__link--icon-r {
-    img, svg {
-        margin-left: 9px;
-    }
+	img,
+	svg {
+		margin-left: 9px;
+	}
 }
 
 .btn__arrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background-color: #FF1E36;
-    border: none;
-    cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	background-color: #ff1e36;
+	border: none;
+	cursor: pointer;
 }
 
 .btn__icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background-color: #FF1E36;
-    border: none;
-    cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	background-color: #ff1e36;
+	border: none;
+	cursor: pointer;
 }
