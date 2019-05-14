@@ -1,7 +1,13 @@
 <?if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
-\Bitrix\Main\Page\Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/views/modules/header/' . $arParams['SETTING']['HEADER'] . '/header1.css');
+
+global $arCurrentSetting;
+
+use Bitrix\Main\Page\Asset;
+
+Asset::getInstance()->addJs(GetCurDir(__DIR__) . '/script.js');
+Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
+
 ?>
-<link rel="stylesheet" href="local/templates/.default/views/header/default_1/style.css">
 <header class="header">
     <nav class="header-top">
         <div class="container">

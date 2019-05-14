@@ -28,16 +28,14 @@ $arCurrentSetting = CWebsiteTemplate::getTemplateSetting();
 
 //load theme css
 //Debug::dump(CWebsiteTemplate::loadCss());
-//CWebsiteTemplate::loadCss();
+CWebsiteTemplate::loadCss();
 
 //load main css
-//Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("public/css/main.css"));
 Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("frontend/dist/css/styles.css"));
 ?>
 <!doctype html>
 <html lang="<?=$arLang['LANGUAGE_ID']?>">
     <head>
-        <base href="/">
         <link rel="shortcut icon" href="<?=SITE_DIR?>favicon.ico">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,8 +44,30 @@ Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("frontend/dist/css/st
         <title><?=$APPLICATION->GetTitle(false)?></title>
     </head>
 <body>
+<?if ($USER->IsAdmin()) {?>
+    <?$APPLICATION->ShowPanel()?>
+<?}?>
+
+<?
+//show panel setting
+if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSetting['SHOW_PANEL'] == 'Y')) {?>
+    <?$APPLICATION->IncludeComponent(
+        'website96:setting.panel',
+        '',
+        array()
+    );?>
+<?}?>
 <?$APPLICATION->IncludeFile(
-    "views/header/default_1/template.php",
+    "views/header/responsive/template.php",
+    array(),
+    array(
+        "SHOW_BORDER" => false,
+        "MODE" => "php"
+    )
+);?>
+
+<?$APPLICATION->IncludeFile(
+    "views/header/header_6/template.php",
     array(),
     array(
         "SHOW_BORDER" => false,
@@ -79,7 +99,7 @@ Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("frontend/dist/css/st
 <?}?>
 <?$APPLICATION->RestartWorkarea(true);?>
 <?$APPLICATION->IncludeFile(
-    "views/footer/template.php",
+    "views/footer/footer_3/template.php",
     array(),
     array(
         "SHOW_BORDER" => false,
@@ -97,9 +117,8 @@ Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("frontend/dist/css/st
         false
     );*/?>
 <?}?>
+<?CJSCore::Init(['jquery2']);?>
 <?
-CJSCore::Init(['jquery2']);
-
 //include js scripts
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("public/js/app.js"));
 ?>

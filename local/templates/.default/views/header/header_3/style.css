@@ -15,7 +15,8 @@
     display: flex;
     align-items: center;
     max-width: fit-content;
-    flex: 1 1 auto;
+    flex: 1 1 420px;
+    min-width: 420px;
 }
 .header__pic {
     display: flex;
@@ -29,12 +30,16 @@
     border-radius: 50px;
 }
 .header__desc {
-    max-width: 185px;
+    max-width: 170px;
     line-height: 1.5em;
     margin-left: 22px;
 }
 .header__desc p {
     margin: 0;
+}
+.header-search .inp-search {
+    padding-left: 50px;
+    padding-right: 45px;
 }
 .header__phone {
     display: inline-flex;
@@ -54,9 +59,6 @@
 .header__modal {
     font-size: 14px;
     font-weight: bold;
-}
-.header__bottom {
-    border-bottom: 1px solid #ececec;
 }
 .header__list {
     display: flex;
@@ -78,7 +80,6 @@
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
-    color: #333;
     padding: 14px 25px;
     white-space: nowrap;
     box-sizing: border-box;
@@ -106,7 +107,7 @@
     transition: 300ms;
 }
 .header__list li a.js-init_more_menu {
-    padding-left: 40px;
+    padding-left: 50px;
     padding-right: 15px;
 }
 .header__list li.more__menu {
@@ -122,8 +123,7 @@
     min-width: 250px;
     position: absolute;
     right: 0;
-    z-index: 1;
-    border-top: 1px solid #eaeaea;
+    z-index: 11;
     padding: 0;
     box-shadow: 0 5px 15px rgba(28, 28, 28, 0.15);
 }
@@ -138,17 +138,56 @@
 .header__list li.more__menu:hover .submenu, .header__list li.more__menu:focus .submenu {
     display: flex;
 }
-@media screen and (min-width: 320px) and (max-width: 1200px) {
+
+@media screen and (min-width:320px) and (max-width:1200px) {
+    .header-phone a {
+        font-size: 1rem;
+    }
+    .header-phone {
+        margin-right: 10px;
+    }
+    .header-search__min {
+        flex-grow: inherit;
+        width: 270px;
+    }
+    .header-top_navbar li {
+        margin-right: 10px;
+    }
+    .header-logo {
+        max-width:190px;
+    }
+    .header-logo--desc svg {
+        max-width: 170px;
+    }
+    .header-top_navbar li {
+        margin-right: 20px;
+    }
+    .header-top_navbar a {
+        font-size: 0.875rem;
+    }
     .header__desc {
         margin-left: 0;
     }
     .header__desc p {
         display: none;
     }
-    .header__phone {
-        margin-right: 10px;
+}
+
+@media screen and (min-width:320px) and (max-width:991px) {
+    .header {
+        display:none;
     }
-    .header__phone a {
-        font-size: 1em;
+    .header-responsive {
+        display:block;
+    }
+    .head-modal__icon {
+        display: flex;
+        justify-content: flex-end;
+    }
+    .head-nav {
+        flex-grow: 0;
+    }
+    .header-responsive .row>div {
+        padding: 0 10px;
     }
 }
