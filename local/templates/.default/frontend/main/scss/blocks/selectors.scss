@@ -50,15 +50,13 @@
 }
 
 .checkbox__square .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
+  left: calc(50% - 3.5px);
+  top: calc(50% - 3px);
+  width: 10px;
+  height: 7px;
+  background-image: url(../../main/images/check.png);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .checkbox__circle {
@@ -220,15 +218,13 @@
 }
 
 .radio__square .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid #fff;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
+  left: calc(50% - 3.5px);
+  top: calc(50% - 3px);
+  width: 10px;
+  height: 7px;
+  background-image: url(../../main/images/check.png);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .radio__circle {
