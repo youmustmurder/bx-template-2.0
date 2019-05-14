@@ -1,5 +1,5 @@
-const func = (a) => {
-    console.log('test:' + a);
-}
+const func = a => {
+	console.log('test:' + a);
+};
 
 func(1);
