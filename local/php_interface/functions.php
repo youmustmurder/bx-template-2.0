@@ -26,3 +26,11 @@ function GetContentSvgIcon($filename){
         return file_get_contents($iconPath);
     }
 }
+
+function GetCurDir($dirPath)
+{
+    if (!$dirPath) {
+        return false;
+    }
+    return str_replace($_SERVER['DOCUMENT_ROOT'], '', str_replace('\\', '/', $dirPath));
+}
