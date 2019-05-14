@@ -9,7 +9,8 @@ const
 		configFile: path.join(path.dirname(__dirname), '.stylelintrc'),
 		files: '**/*.scss',
 		failOnError: false,
-      	quiet: false,
+		quiet: false,
+		fix: true
 	}),
 	reporter = require('postcss-reporter')({
 		clearReportedMessages: true
@@ -22,13 +23,8 @@ const
 	filesGeneral = findFilesInDir(path.join(path.dirname(__dirname), settings.css.entry_general_folder),'.scss'),
 	prettierConfig = {
 		parser: 'css',
-		singleQuote: true,
-		trailingComma: 'all',
-		bracketSpacing: true,
-		jsxBracketSameLine: false,
 		useTabs: true,
 		tabWidth: 4,
-		semi: true
 	};
 
 const transformFile = (file, output = path.join(path.dirname(file), 'style.css')) => {
@@ -48,7 +44,7 @@ const transformFile = (file, output = path.join(path.dirname(file), 'style.css')
 
 const lintAndFormatCode = (filePath) => {
 	fs.readFile(filePath, 'utf8', (err, css) => {
-		if (err) throw err;
+		if (err) logger.loggerError(`Error: ${ err }`);
 		var formatedCode = css;
 		if (formatedCode != '' && !prettier.check(formatedCode, prettierConfig)) {
 			formatedCode = prettier.format(formatedCode, prettierConfig);
@@ -56,16 +52,20 @@ const lintAndFormatCode = (filePath) => {
 		}
 		postcss([stylelint, reporter])
 			.process(formatedCode, { from: filePath })
-			.then()
+			.then(result => {
+				fs.writeFile(filePath, result.css, () => true);
+			})
 			.catch(err => logger.loggerError(err));
 	});
 };
 
 const buildCss = () => {
 	filesSeparate.map(file => {
+		lintAndFormatCode(file);
 		transformFile(file);
 	});
 	filesGeneral.map(file => {
+		lintAndFormatCode(file);
 		transformFile(path.join(path.dirname(__dirname), settings.css.entry_general_file), path.join(path.dirname(__dirname), settings.css.output_general_file));
 	});
 	logger.log('Finished build css');
@@ -78,8 +78,10 @@ const watchNewFiles = (folderWatch) => {
 		fs.lstat(filePath, (err, stat) => {
 			if (err) throw err;
 			if (stat.isFile()) {
-				lintAndFormatCode(filePath);
-				transformFile(path.join(path.dirname(__dirname), settings.css.entry_general_file), path.join(path.dirname(__dirname), settings.css.output_general_file));
+				if (path.extname(filename) == '.css') {
+					lintAndFormatCode(filePath);
+					transformFile(path.join(path.dirname(__dirname), settings.css.entry_general_file), path.join(path.dirname(__dirname), settings.css.output_general_file));
+				}
 			} else {
 				watchNewFiles(filePath);
 			}
@@ -90,14 +92,14 @@ const watchNewFiles = (folderWatch) => {
 const watchScss = () => {
 	logger.log('Start watching css files');
 	filesSeparate.map(file => {
-		lintAndFormatCode(file);
 		fs.watchFile(file, () => {
+			lintAndFormatCode(file);
 			transformFile(file);
 		});
 	});
 	filesGeneral.map(file => {
-		lintAndFormatCode(file);
 		fs.watchFile(file, () => {
+			lintAndFormatCode(file);
 			transformFile(path.join(path.dirname(__dirname), settings.css.entry_general_file), path.join(path.dirname(__dirname), settings.css.output_general_file));
 		});
 	});

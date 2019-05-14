@@ -30,7 +30,7 @@ const logLinter = (errors, filename) => {
 
 const lintAndFormatCode = (filename) => {
 	fs.readFile(filename, 'utf8', (err, code) => {
-		if (err) throw err;
+		if (err) logger.loggerError(`Error: ${ err }`);
 		var formatedCode = code;
 		if (formatedCode != '' && !prettier.check(formatedCode, prettierConfig)) {
 			formatedCode = prettier.format(formatedCode, prettierConfig);
@@ -70,8 +70,10 @@ const watchNewFiles = (folderWatch) => {
 		fs.lstat(filePath, (err, stat) => {
 			if (err) throw err;
 			if (stat.isFile()) {
-				lintAndFormatCode(filePath);
-				transformFile(path.join(path.dirname(__dirname), settings.js.entry_general_file), path.join(path.dirname(__dirname), settings.js.output_general_file));
+				if (path.extname(filename) == '.js') {
+					lintAndFormatCode(filePath);
+					transformFile(path.join(path.dirname(__dirname), settings.js.entry_general_file), path.join(path.dirname(__dirname), settings.js.output_general_file));
+				}
 			} else {
 				watchNewFiles(filePath);
 			}
