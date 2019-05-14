@@ -27,15 +27,15 @@ $pageLayout = $APPLICATION->GetPageProperty("PAGE_LAYOUT", AppGetCascadeDirPrope
 $arCurrentSetting = CWebsiteTemplate::getTemplateSetting();
 
 //load theme css
+//Debug::dump(CWebsiteTemplate::loadCss());
 CWebsiteTemplate::loadCss();
 
 //load main css
-Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("public/css/main.css"));
+Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("frontend/dist/css/styles.css"));
 ?>
 <!doctype html>
 <html lang="<?=$arLang['LANGUAGE_ID']?>">
     <head>
-        <base href="/">
         <link rel="shortcut icon" href="<?=SITE_DIR?>favicon.ico">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,8 +44,22 @@ Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("public/css/main.css"
         <title><?=$APPLICATION->GetTitle(false)?></title>
     </head>
 <body>
+<?if ($USER->IsAdmin()) {?>
+    <?$APPLICATION->ShowPanel()?>
+<?}?>
+
+<?
+//show panel setting
+if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSetting['SHOW_PANEL'] == 'Y')) {?>
+    <?$APPLICATION->IncludeComponent(
+            'website96:setting.panel',
+            '',
+            array()
+    );?>
+<?}?>
+
 <?$APPLICATION->IncludeFile(
-    "views/header/header_responsive.php",
+    "views/header/responsive/template.php",
     array(),
     array(
         "SHOW_BORDER" => false,
@@ -65,7 +79,7 @@ Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("public/css/main.css"
     );?>
 <?} else {?>
     <?$APPLICATION->IncludeFile(
-        "views/layouts/".$pageLayout.".php",
+        "views/layouts/" . $pageLayout . ".php",
         array(
             "CONTENT" => $pageContent,
         ),
@@ -75,7 +89,7 @@ Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("public/css/main.css"
         )
     );?>
 <?}?>
-<?$APPLICATION->RestartWorkarea(true);?>
+<?//$APPLICATION->RestartWorkarea(true);?>
 <?$APPLICATION->IncludeFile(
     "views/footer/template.php",
     array(),
@@ -85,7 +99,7 @@ Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("public/css/main.css"
     )
 );?>
 <?if($_COOKIE["confirm_fz152"] != 'y'){?>
-    <?$APPLICATION->IncludeComponent(
+    <?/*$APPLICATION->IncludeComponent(
         "website96:inline.value",
         "fz152",
         array(
@@ -93,14 +107,20 @@ Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("public/css/main.css"
             "VALUE" => "Сайт использует файлы cookies и сервис сбора технических данных его посетителей.  Продолжая использовать данный ресурс, вы автоматически соглашаетесь с использованием данных технологий."
         ),
         false
-    );?>
+    );*/?>
 <?}?>
+<?CJSCore::Init(['jquery2']);?>
 <?
-CJSCore::Init(['jquery2']);
-
 //include js scripts
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("public/js/app.js"));
-
 ?>
+<?$APPLICATION->IncludeFile(
+    "scripts.php",
+    array(),
+    array(
+        "SHOW_BORDER" => false,
+        "MODE" => "php"
+    )
+);?>
 <?$APPLICATION->ShowBodyScripts();?>
 </body>
