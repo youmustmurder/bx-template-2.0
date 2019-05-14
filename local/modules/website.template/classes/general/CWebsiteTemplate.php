@@ -50,22 +50,31 @@ class CWebsiteTemplate {
                 case 'COLOR':
                 case 'FONT':
                 case 'FONT_SIZE':
-                    Asset::getInstance()->addCss(self::getCss($code, $value));
+                    $src = self::getCss($code, $value);
+                    if (!empty($src)) {
+                        Asset::getInstance()->addCss($src);
+                    }
                     break;
             }
         }
     }
     
-    protected static function getCss($codeProperty, $value = 'default')
+    public static function getCss($codeProperty, $value = 'default')
     {
+        if (empty($codeProperty)) {
+            return false;
+        }
+        
         $request = Bitrix\Main\Application::getInstance()->getContext()->getRequest();
         $filePath = SITE_TEMPLATE_PATH . '/public/css/theme/' . strtolower($codeProperty) . '.css';
-        
+
         if (!file_exists($_SERVER['DOCUMENT_ROOT'] . $filePath) || $request->get('clear_cache') == 'Y') {
-            
             $content = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/local/modules/' . WEBSITE_MODULE_ID . '/tools/css/' . strtolower($codeProperty) . '.tpl');
-            $ID = self::recursiveArraySearch($value, self::$arParametersList[$codeProperty]);
-            $content = str_replace('#', '#' . self::$arParametersList['COLORS'][$ID]['COLOR_HEX'], $content);
+            $id = self::recursiveArraySearch($value, self::$arParametersList[$codeProperty]);
+            $value = $codeProperty == 'COLOR' || stripos($codeProperty, 'COLOR') ?
+                '#' . self::$arParametersList[$codeProperty][$id]['VALUE'] :
+                self::$arParametersList[$codeProperty][$id]['VALUE'];
+            $content = str_replace('#VALUE#', $value, $content);
             file_put_contents($_SERVER['DOCUMENT_ROOT'] . $filePath, $content);
         }
         return $filePath;
@@ -141,6 +150,7 @@ class CWebsiteTemplate {
             $rsData = $entityDataClass::getList(array('select' => array('*')));
             $elements = array();
             while ($arFields = $rsData->fetch()) {
+               
                 foreach ($arFields as $code => $field) {
                     if (strpos($code, 'UF') === false) {
                         $elements[$arFields['ID']][$code] = $field;
@@ -160,9 +170,9 @@ class CWebsiteTemplate {
                             default:
                                 $elements[$arFields['ID']][$code] = $field;
                         }
-                        
                     }
                 }
+                
             }
             return $elements;
         } else {
@@ -205,10 +215,7 @@ class CWebsiteTemplate {
             'SECTIONS' => 'default',
             'ADVANTAGE' => 'default',
             'FONT_SIZE' => '15',
-            'FONT' => array(
-                'SIMPLE' => 'default',
-                'TITLE' => 'default'
-            ),
+            'FONT' => 'default',
             'REVIEWS' => 'default',
             'LOGO' => 'default',
             'SLIDER' => 'default'

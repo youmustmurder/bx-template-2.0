@@ -27,7 +27,8 @@ $pageLayout = $APPLICATION->GetPageProperty("PAGE_LAYOUT", AppGetCascadeDirPrope
 $arCurrentSetting = CWebsiteTemplate::getTemplateSetting();
 
 //load theme css
-CWebsiteTemplate::loadCss();
+Debug::dump(CWebsiteTemplate::loadCss());
+//CWebsiteTemplate::loadCss();
 
 //load main css
 Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("public/css/main.css"));
@@ -65,7 +66,7 @@ Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("public/css/main.css"
     );?>
 <?} else {?>
     <?$APPLICATION->IncludeFile(
-        "views/layouts/".$pageLayout.".php",
+        "views/layouts/" . $pageLayout . ".php",
         array(
             "CONTENT" => $pageContent,
         ),
@@ -85,7 +86,7 @@ Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("public/css/main.css"
     )
 );?>
 <?if($_COOKIE["confirm_fz152"] != 'y'){?>
-    <?$APPLICATION->IncludeComponent(
+    <?/*$APPLICATION->IncludeComponent(
         "website96:inline.value",
         "fz152",
         array(
@@ -93,14 +94,21 @@ Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("public/css/main.css"
             "VALUE" => "Сайт использует файлы cookies и сервис сбора технических данных его посетителей.  Продолжая использовать данный ресурс, вы автоматически соглашаетесь с использованием данных технологий."
         ),
         false
-    );?>
+    );*/?>
 <?}?>
 <?
 CJSCore::Init(['jquery2']);
 
 //include js scripts
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("public/js/app.js"));
-
 ?>
+<?$APPLICATION->IncludeFile(
+    "scripts.php",
+    array(),
+    array(
+        "SHOW_BORDER" => false,
+        "MODE" => "php"
+    )
+);?>
 <?$APPLICATION->ShowBodyScripts();?>
 </body>
