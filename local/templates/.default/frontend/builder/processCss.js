@@ -29,33 +29,35 @@ const
 
 const transformFile = (file, output = path.join(path.dirname(file), 'style.css')) => {
 	fs.readFile(file, (err, css) => {
-		if (err) throw err;
+		if (err) logger.loggerError(err);
 		postcss([stylelint, reporter, precss, autoprefixer, cssnano])
 			.process(css, { from: file, to: path.dirname(file) })
 			.then(result => {
 				fs.writeFile(output, result.css, () => true);
 				logger.loggerBuild(output);
 			})
-			.catch(err => {
-				logger.loggerError(err);
+			.catch(error => {
+				logger.loggerError(error);
 			});
 	});
 };
 
 const lintAndFormatCode = (filePath) => {
-	fs.readFile(filePath, 'utf8', (err, css) => {
+	fs.readFileSync(filePath, 'utf8', (err, css) => {
 		if (err) logger.loggerError(`Error: ${ err }`);
 		var formatedCode = css;
-		if (formatedCode != '' && !prettier.check(formatedCode, prettierConfig)) {
-			formatedCode = prettier.format(formatedCode, prettierConfig);
-			fs.writeFile(filePath, formatedCode, () => true);
+		if (formatedCode != '') {
+			if (!prettier.check(formatedCode, prettierConfig)) {
+				formatedCode = prettier.format(formatedCode, prettierConfig);
+				fs.writeFile(filePath, formatedCode, () => true);
+			}
+			postcss([stylelint, reporter])
+				.process(formatedCode, { from: filePath })
+				.then(result => {
+					fs.writeFile(filePath, result.css, () => true);
+				})
+				.catch(err => logger.loggerError(err));
 		}
-		postcss([stylelint, reporter])
-			.process(formatedCode, { from: filePath })
-			.then(result => {
-				fs.writeFile(filePath, result.css, () => true);
-			})
-			.catch(err => logger.loggerError(err));
 	});
 };
 
@@ -76,9 +78,9 @@ const watchNewFiles = (folderWatch) => {
 	fs.watch(folderWatch, (event, filename) => {
 		var filePath = path.join(folderWatch, filename);
 		fs.lstat(filePath, (err, stat) => {
-			if (err) throw err;
+			if (err) logger.loggerError(err);
 			if (stat.isFile()) {
-				if (path.extname(filename) == '.css') {
+				if (path.extname(filename) == '.scss') {
 					lintAndFormatCode(filePath);
 					transformFile(path.join(path.dirname(__dirname), settings.css.entry_general_file), path.join(path.dirname(__dirname), settings.css.output_general_file));
 				}
@@ -103,7 +105,7 @@ const watchScss = () => {
 			transformFile(path.join(path.dirname(__dirname), settings.css.entry_general_file), path.join(path.dirname(__dirname), settings.css.output_general_file));
 		});
 	});
-	watchNewFiles(path.join(path.dirname(__dirname), settings.css.entry_general_folder));
+	//watchNewFiles(path.join(path.dirname(__dirname), settings.css.entry_general_folder));
 };
 
 module.exports = { buildCss, watchScss };
