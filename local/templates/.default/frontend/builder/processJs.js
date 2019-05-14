@@ -32,10 +32,10 @@ const lintAndFormatCode = (filename) => {
 	fs.readFile(filename, 'utf8', (err, code) => {
 		if (err) logger.loggerError(`Error: ${ err }`);
 		var formatedCode = code;
-		// if (formatedCode != '' && !prettier.check(formatedCode, prettierConfig)) {
-		// 	formatedCode = prettier.format(formatedCode, prettierConfig);
-		// 	fs.writeFile(filename, formatedCode, () => true);
-		// }
+		if (formatedCode != '' && !prettier.check(formatedCode, prettierConfig)) {
+			formatedCode = prettier.format(formatedCode, prettierConfig);
+			fs.writeFile(filename, formatedCode, () => true);
+		}
 		var message = linter.verify(formatedCode, configEslinter, {
 			filename
 		});
