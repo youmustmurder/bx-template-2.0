@@ -31,6 +31,7 @@ Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("frontend/dist/css/st
 
 //load theme css
 CWebsiteTemplate::loadCss();
+//Debug::dump(CWebsiteTemplate::loadCss());
 ?>
 
 <!doctype html>
