@@ -36,17 +36,5 @@
     "rollup": "^1.11.3",
     "stylelint": "^10.0.1",
     "stylelint-order": "^3.0.0"
-  },
-  "lint-staged": {
-    "*.js": [
-      "npm run lint:write",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": ""
-    }
   }
 }

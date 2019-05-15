@@ -67,7 +67,7 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
 );?>
 
 <?$APPLICATION->IncludeFile(
-    "views/header/.default/template.php",
+    "views/header/header_6/template.php",
     array(),
     array(
         "SHOW_BORDER" => false,
@@ -109,7 +109,7 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
 <?}?>
 <?$APPLICATION->RestartWorkarea(true);?>
 <?$APPLICATION->IncludeFile(
-    "views/footer/template.php",
+    "views/footer/footer_3/template.php",
     array(),
     array(
         "SHOW_BORDER" => false,
