@@ -74,6 +74,16 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
         "MODE" => "php"
     )
 );?>
+<?$APPLICATION->IncludeFile(
+    "views/sliders/slider1/template.php",
+    array(
+        "CONTENT" => $pageContent
+    ),
+    array(
+        "SHOW_BORDER" => false,
+        "MODE" => "php"
+    )
+);?>
 <?if ($APPLICATION->GetCurPage(false) == SITE_DIR) {?>
     <?$APPLICATION->IncludeFile(
         "views/layouts/home.php",
@@ -120,7 +130,7 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
 <?CJSCore::Init(['jquery2']);?>
 <?
 //include js scripts
-Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("public/js/app.js"));
+Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/dist/js/index.js"));
 ?>
 <?$APPLICATION->IncludeFile(
     "scripts.php",

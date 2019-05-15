@@ -6,7 +6,7 @@ Thumbs.db
 /local/templates/package-lock.json
 /local/templates/individual/*.json
 /local/templates/build/
-/local/templates/node_modules/
+/local/templates/.default/node_modules/
 /local/templates/globals.js
 /local/templates/globals.json
 /local/templates/gulpfile.js
