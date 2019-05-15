@@ -1,0 +1,1 @@
+<?php/** * @author Danil Syromolotov <ds@itex.ru> */use Bitrix\Main\Localization\Loc;Loc::loadMessages(__FILE__);$arComponentParameters = array(    'GROUPS' => array(        'BLOCK_PARAMETERS' => array(            'NAME' => Loc::getMessage('WEBSITE_BLOCK_PARAMETERS'),        )    ),    'PARAMETERS' => array(),);

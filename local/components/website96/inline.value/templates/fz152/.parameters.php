@@ -1,0 +1,1 @@
+<?php/** * @author Danil Syromolotov <ds@itex.ru> */use Bitrix\Main\Localization\Loc;Loc::loadMessages(__FILE__);$arTemplateParameters = array(    'VALUE' => array(        'PARENT' => 'TEXT_PARAMETERS',        'TYPE' => 'STRING',        'NAME' => Loc::getMessage('VALUE_TITLE')    ),);

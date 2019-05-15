@@ -30,10 +30,9 @@ $arCurrentSetting = CWebsiteTemplate::getTemplateSetting();
 Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("frontend/dist/css/styles.css"));
 
 //load theme css
-//CWebsiteTemplate::loadCss();
-Debug::dump(CWebsiteTemplate::loadCss());
-
+CWebsiteTemplate::loadCss();
 ?>
+
 <!doctype html>
 <html lang="<?=$arLang['LANGUAGE_ID']?>">
     <head>
@@ -47,8 +46,8 @@ Debug::dump(CWebsiteTemplate::loadCss());
 <body>
 <?if ($USER->IsAdmin()) {?>
     <?$APPLICATION->ShowPanel()?>
+    <?CJSCore::Init(['jquery2']);?>
 <?}?>
-
 <?
 //show panel setting
 if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSetting['SHOW_PANEL'] == 'Y')) {?>
@@ -127,7 +126,6 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
         false
     );*/?>
 <?}?>
-<?CJSCore::Init(['jquery2']);?>
 <?
 //include js scripts
 Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/dist/js/index.js"));
