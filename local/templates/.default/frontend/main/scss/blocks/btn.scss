@@ -1,18 +1,11 @@
 .btn,
 .btn:hover {
 	text-decoration: none;
-}
-
-.btn__default {
-	border-width: 1px;
-	border-style: solid;
-	border-color: #ff1e36;
-	background-color: #ff1e36;
-	color: #fff;
 	transition: 0.3s;
 }
 
-.btn__default:hover {
+.btn--default
+.btn--primary {
 	background-color: transparent;
 	border-width: 1px;
 	border-style: solid;
@@ -20,58 +13,83 @@
 	color: #ff1e36;
 }
 
-.btn__default:active {
-	opacity: 0.7;
-}
-
-.btn__primary {
-	background-color: transparent;
+.btn--default {
 	border-width: 1px;
 	border-style: solid;
 	border-color: #ff1e36;
-	color: #ff1e36;
-	transition: 0.3s;
-}
-
-.btn__primary:hover {
 	background-color: #ff1e36;
-	border-width: 1px;
-	border-style: solid;
-	border-color: #ff1e36;
 	color: #fff;
+	&:hover {
+		background-color: transparent;
+		border-width: 1px;
+		border-style: solid;
+		border-color: #ff1e36;
+		color: #ff1e36;
+	}
+	&:active {
+		opacity: 0.7;
+	}
 }
 
-.btn__primary:active {
-	opacity: 0.7;
+.btn--primary {
+	&:hover {
+		background-color: #ff1e36;
+		border-width: 1px;
+		border-style: solid;
+		border-color: #ff1e36;
+		color: #fff;
+	}
+	&:active {
+		opacity: 0.7;
+	}
 }
 
-.btn__circle {
+.btn--success {
+	border: 1px solid #26AE60;
+	background: #26AE60;
+	color: #fff;
+	&:hover,
+	&:focus {
+		border-color: #26AE60;
+		color: #26AE60;
+	}
+	&:active {
+		border-color: #269060;
+		color: #26AE60;
+	}
+}
+
+.btn--circle {
 	border-radius: 50px;
 }
 
-.btn__square {
+.btn--square {
 	border-radius: 4px;
 }
 
-.btn__min {
+.btn--min {
 	padding: 4px 24px;
 }
 
-.btn__mid {
+.btn--mid {
 	padding: 11px 24px;
 }
 
-.btn__big {
+.btn--big {
 	padding: 19px 24px;
 }
 
-.btn__blocked,
-.btn__blocked:hover,
-.btn__blocked:active {
-	background-color: #95a5a6;
-	color: #fff;
-	border: 1px solid #95a5a6;
+.btn--blocked,
+.btn--blocked:hover,
+.btn--blocked:active {
+	&:hover,
+	&:active {
+		border: 1px solid #95a5a6;
+		background-color: #95a5a6;
+		color: #fff;
+	}
 }
+
 .btn__link {
 	display: flex;
 	align-items: center;
@@ -99,20 +117,7 @@
 	}
 }
 
-.btn__arrow {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 0;
-	width: 64px;
-	height: 64px;
-	border-radius: 50%;
-	background-color: #ff1e36;
-	border: none;
-	cursor: pointer;
-}
-
-.btn__icon {
+.btn--icon {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -120,7 +125,11 @@
 	width: 48px;
 	height: 48px;
 	border-radius: 50%;
-	background-color: #ff1e36;
 	border: none;
+	background-color: #ff1e36;
 	cursor: pointer;
+	&.btn--icon-big {
+		width: 64px;
+		height: 64px;
+	}
 }

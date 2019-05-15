@@ -26,13 +26,14 @@ $pageLayout = $APPLICATION->GetPageProperty("PAGE_LAYOUT", AppGetCascadeDirPrope
 //CWebsiteTemplate::$demoMode = true;
 $arCurrentSetting = CWebsiteTemplate::getTemplateSetting();
 
-//load theme css
-//Debug::dump(CWebsiteTemplate::loadCss());
-CWebsiteTemplate::loadCss();
-
 //load main css
 Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("frontend/dist/css/styles.css"));
+
+//load theme css
+CWebsiteTemplate::loadCss();
+//Debug::dump(CWebsiteTemplate::loadCss());
 ?>
+
 <!doctype html>
 <html lang="<?=$arLang['LANGUAGE_ID']?>">
     <head>
@@ -46,8 +47,8 @@ Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("frontend/dist/css/st
 <body>
 <?if ($USER->IsAdmin()) {?>
     <?$APPLICATION->ShowPanel()?>
+    <?CJSCore::Init(['jquery2']);?>
 <?}?>
-
 <?
 //show panel setting
 if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSetting['SHOW_PANEL'] == 'Y')) {?>
@@ -65,10 +66,19 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
         "MODE" => "php"
     )
 );?>
-
 <?$APPLICATION->IncludeFile(
-    "views/header/header_1/template.php",
+    "views/header/" . $arCurrentSetting['HEADER'] . "/template.php",
     array(),
+    array(
+        "SHOW_BORDER" => false,
+        "MODE" => "php"
+    )
+);?>
+<?$APPLICATION->IncludeFile(
+    "views/sliders/slider1/template.php",
+    array(
+        "CONTENT" => $pageContent
+    ),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
@@ -99,7 +109,7 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
 <?}?>
 <?$APPLICATION->RestartWorkarea(true);?>
 <?$APPLICATION->IncludeFile(
-    "views/footer/footer_3/template.php",
+    "views/footer/" . $arCurrentSetting['FOOTER'] . "/template.php",
     array(),
     array(
         "SHOW_BORDER" => false,
@@ -117,10 +127,9 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
         false
     );*/?>
 <?}?>
-<?CJSCore::Init(['jquery2']);?>
 <?
 //include js scripts
-Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("public/js/app.js"));
+Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/dist/js/index.js"));
 ?>
 <?$APPLICATION->IncludeFile(
     "scripts.php",
