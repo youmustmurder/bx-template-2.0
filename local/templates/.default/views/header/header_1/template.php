@@ -13,26 +13,27 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
         <div class="container">
             <div class="row">
                 <div class="col-lg-7">
-
-                    <ul class="header-top_navbar">
-                        <li>
-                            <a href="/about/">О компании</a>
-                        </li>
-                        <li>
-                            <a href="/news/">Новости</a>
-                        </li>
-                        <li>
-                            <a href="/stocks/">Акции</a>
-                        </li>
-                        <li>
-                            <a href="/delivery/">Доставка и оплата</a>
-                        </li>
-                        <li>
-                            <a href="/contacts/">Контакты</a>
-                        </li>
-                    </ul>
+                    <div class="header-top__navbar">
+                        <ul>
+                            <li>
+                                <a href="/about/">О компании</a>
+                            </li>
+                            <li>
+                                <a href="/news/">Новости</a>
+                            </li>
+                            <li>
+                                <a href="/stocks/">Акции</a>
+                            </li>
+                            <li>
+                                <a href="/delivery/">Доставка и оплата</a>
+                            </li>
+                            <li>
+                                <a href="/contacts/">Контакты</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <address class="col-lg-5 header-address d-flex align-items-center justify-content-end">
+                <address class="col-lg-5 header__address d-flex align-items-center justify-content-end">
                     <a href="/contacts/" class="address__link d-flex">
                         <span class="icon__geo"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="14" viewBox="0 0 12 14">
   <defs>
@@ -110,8 +111,8 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                             </svg>
                         </button>
                     </form>                </div>
-                <div class="header-contact">
-                    <div class="header-phone">
+                <div class="header__contact">
+                    <div class="header__phone">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
                             <defs>
                                 <style>
@@ -125,8 +126,8 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                         </svg>
                         <a href="tel:+7 (343) 372-57-75">+7 (343) 372-57-75</a>
                     </div>
-                    <div class="header-callback">
-                        <a href="#" class="btn js-init-modal__form btn-default" data-sign="WVRveE5EcDdjem94TURvaVEwRkRTRVZmVkVsTlJTSTdjem8wT2lJek5qQXdJanR6T2pFd09pSkRRVU5JUlY5VVdWQkZJanR6T2pFNklrRWlPM002TVRNNklrWlBVazFmUWxST1gwOVFSVTRpTzNNNk1qazZJdENYMExEUXV0Q3cwTGZRc05HQzBZd2cwTGZRc3RDKzBMM1F2dEM2SWp0ek9qRTFPaUpHVDFKTlgwSlVUbDlUVlVKTlNWUWlPM002TVRnNkl0Q2UwWUxRdjlHQTBMRFFzdEM0MFlMUmpDSTdjem94TXpvaVJrOVNUVjlDVkU1ZlZGbFFSU0k3Y3pveE1Ub2lZblJ1TFdSbFptRjFiSFFpTzNNNk1URTZJa1pQVWsxZlJrbEZURVJUSWp0aE9qSTZlMms2TUR0ek9qSTZJakkwSWp0cE9qRTdjem95T2lJeU5TSTdmWE02TVRZNklrWlBVazFmVUU5TVNWUkpRMTlWVWt3aU8zTTZPVG9pTDNCdmJHbDBhV012SWp0ek9qRTJPaUpHVDFKTlgxQlNUMFJWUTFSZlFVUkVJanR6T2pFNklrNGlPM002TVRVNklrWlBVazFmVUZKUFJGVkRWRjlKUkNJN2N6b3dPaUlpTzNNNk1qQTZJa1pQVWsxZlVrVlJWVWxTUlVSZlJrbEZURVJUSWp0aE9qSTZlMms2TUR0ek9qSTZJakkwSWp0cE9qRTdjem95T2lJeU5TSTdmWE02TVRBNklrWlBVazFmVkVsVVRFVWlPM002TWprNkl0Q2UwWUhSZ3RDdzBMTFJqTkdDMExVZzBMZlFzTkdQMExMUXV0R0RJanR6T2prNklrbENURTlEUzE5SlJDSTdjem95T2lJeE5DSTdjem94TVRvaVNVSk1UME5MWDFSWlVFVWlPM002TlRvaVptOXliWE1pTzNNNk1UZzZJa05QVFZCUFRrVk9WRjlVUlUxUVRFRlVSU0k3Y3pvNE9pSXVaR1ZtWVhWc2RDSTdmUT09LmVhNGEwMDU4YTdlZWY2YTI2ZDAwZWMwMjRiNThjYWIyNWFhNmFhNTI1NGMxYzUzNjhjYmE3YWE2NzNhYWM4NDc%3D" data-modal="14">Заказать звонок</a>
+                    <div class="header__call">
+                        <a href="#" class="btn js-init-modal__form btn__default btn__big btn__circle" data-sign="WVRveE5EcDdjem94TURvaVEwRkRTRVZmVkVsTlJTSTdjem8wT2lJek5qQXdJanR6T2pFd09pSkRRVU5JUlY5VVdWQkZJanR6T2pFNklrRWlPM002TVRNNklrWlBVazFmUWxST1gwOVFSVTRpTzNNNk1qazZJdENYMExEUXV0Q3cwTGZRc05HQzBZd2cwTGZRc3RDKzBMM1F2dEM2SWp0ek9qRTFPaUpHVDFKTlgwSlVUbDlUVlVKTlNWUWlPM002TVRnNkl0Q2UwWUxRdjlHQTBMRFFzdEM0MFlMUmpDSTdjem94TXpvaVJrOVNUVjlDVkU1ZlZGbFFSU0k3Y3pveE1Ub2lZblJ1TFdSbFptRjFiSFFpTzNNNk1URTZJa1pQVWsxZlJrbEZURVJUSWp0aE9qSTZlMms2TUR0ek9qSTZJakkwSWp0cE9qRTdjem95T2lJeU5TSTdmWE02TVRZNklrWlBVazFmVUU5TVNWUkpRMTlWVWt3aU8zTTZPVG9pTDNCdmJHbDBhV012SWp0ek9qRTJPaUpHVDFKTlgxQlNUMFJWUTFSZlFVUkVJanR6T2pFNklrNGlPM002TVRVNklrWlBVazFmVUZKUFJGVkRWRjlKUkNJN2N6b3dPaUlpTzNNNk1qQTZJa1pQVWsxZlVrVlJWVWxTUlVSZlJrbEZURVJUSWp0aE9qSTZlMms2TUR0ek9qSTZJakkwSWp0cE9qRTdjem95T2lJeU5TSTdmWE02TVRBNklrWlBVazFmVkVsVVRFVWlPM002TWprNkl0Q2UwWUhSZ3RDdzBMTFJqTkdDMExVZzBMZlFzTkdQMExMUXV0R0RJanR6T2prNklrbENURTlEUzE5SlJDSTdjem95T2lJeE5DSTdjem94TVRvaVNVSk1UME5MWDFSWlVFVWlPM002TlRvaVptOXliWE1pTzNNNk1UZzZJa05QVFZCUFRrVk9WRjlVUlUxUVRFRlVSU0k3Y3pvNE9pSXVaR1ZtWVhWc2RDSTdmUT09LmVhNGEwMDU4YTdlZWY2YTI2ZDAwZWMwMjRiNThjYWIyNWFhNmFhNTI1NGMxYzUzNjhjYmE3YWE2NzNhYWM4NDc%3D" data-modal="14">Заказать звонок</a>
                     </div>
                 </div>
             </div>
@@ -134,31 +135,34 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
     </div>
     <nav class="header-bottom">
         <div class="container">
-            <div class="row row-line">    <ul class="catalog__menu">
-                    <li>
-                        <a href="/catalog/elektronika/">Электроника</a>
-                    </li>
-                    <li>
-                        <a href="/catalog/mebel/">Мебель</a>
-                    </li>
-                    <li>
-                        <a href="/catalog/odezhda/">Одежда</a>
-                    </li>
-                    <li>
-                        <a href="/catalog/krasota-i-zdorove/">Красота и здоровье</a>
-                    </li>
-                    <li>
-                        <a href="/catalog/sport-i-turizm/">Спорт и туризм</a>
-                    </li>
-                    <li class="more__menu">
-                        <a href="#" class="js-init_more_menu"><span class="menu__dots"></span>Еще</a>
-                        <ul class="submenu">
-                            <li>
-                                <a href="/catalog/uslugi/">Услуги</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+            <div class="row row-line">
+                <div class="catalog__menu">
+                    <ul>
+                        <li>
+                            <a href="/catalog/elektronika/">Электроника</a>
+                        </li>
+                        <li>
+                            <a href="/catalog/mebel/">Мебель</a>
+                        </li>
+                        <li>
+                            <a href="/catalog/odezhda/">Одежда</a>
+                        </li>
+                        <li>
+                            <a href="/catalog/krasota-i-zdorove/">Красота и здоровье</a>
+                        </li>
+                        <li>
+                            <a href="/catalog/sport-i-turizm/">Спорт и туризм</a>
+                        </li>
+                        <li class="more__menu">
+                            <a href="#" class="js-init_more_menu"><span class="menu__dots"></span>Еще</a>
+                            <ul>
+                                <li>
+                                    <a href="/catalog/uslugi/">Услуги</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
