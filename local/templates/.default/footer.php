@@ -99,7 +99,7 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
 <?}?>
 <?$APPLICATION->RestartWorkarea(true);?>
 <?$APPLICATION->IncludeFile(
-    "views/footer/footer_3/template.php",
+    "views/footer/" . $arCurrentSetting['FOOTER'] . "/template.php",
     array(),
     array(
         "SHOW_BORDER" => false,
