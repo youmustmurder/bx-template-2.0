@@ -47,7 +47,7 @@
 .header__bottom {
     border-bottom: 1px solid #ececec;
 }
-.header__list {
+.header__list ul {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -55,11 +55,11 @@
     margin: 0;
     list-style: none;
 }
-.header__list li {
+.header__list ul li {
     flex-basis: auto;
     flex-grow: 1;
 }
-.header__list li a {
+.header__list ul li a {
     position: relative;
     display: block;
     width: 100%;
@@ -74,7 +74,7 @@
     z-index: 1;
     border-bottom: 2px solid transparent;
 }
-.header__list li a:before {
+.header__list ul li a:before {
     content: '';
     position: absolute;
     display: block;
@@ -86,22 +86,22 @@
     opacity: 0;
     z-index: -1;
 }
-.header__list li a:hover {
+.header__list ul li a:hover {
     border-bottom: 2px solid #f5f5f5;
 }
-.header__list li a:hover:before {
+.header__list ul li a:hover:before {
     opacity: 0.05;
     background-color: black;
     transition: 300ms;
 }
-.header__list li a.js-init_more_menu {
+.header__list ul li a.js-init_more_menu {
     padding-left: 50px;
     padding-right: 15px;
 }
-.header__list li.more__menu {
+.header__list ul li.more__menu {
     position: relative;
 }
-.header__list li.more__menu .submenu {
+.header__list ul li.more__menu .submenu {
     display: none;
     flex-direction: column;
     margin: 0;
@@ -116,15 +116,15 @@
     padding: 0;
     box-shadow: 0 5px 15px rgba(28, 28, 28, 0.15);
 }
-.header__list li.more__menu .submenu li a {
+.header__list ul li.more__menu .submenu li a {
     text-align: left;
     padding: 15px 25px;
     white-space: normal;
 }
-.header__list li.more__menu:hover > a:before, .header__list li.more__menu:focus > a:before {
+.header__list ul li.more__menu:hover > a:before, .header__list ul li.more__menu:focus > a:before {
     opacity: 0.1;
 }
-.header__list li.more__menu:hover .submenu, .header__list li.more__menu:focus .submenu {
+.header__list ul li.more__menu:hover .submenu, .header__list ul li.more__menu:focus .submenu {
     display: flex;
 }
 

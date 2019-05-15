@@ -13,7 +13,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="header__block header__menu">
-                    <button class="js-init__menu--desktop header__hamburger">
+                    <button class="header__hamburger">
                         <span></span>
                     </button>
                     <div class="head-nav__modal--desktop" style="display: none;">
@@ -21,7 +21,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                             <div class="head-nav__content head-nav__content--desktop">
                                 <div class="head-nav__col">
                                     <div class="head-nav__category-name">Электроника</div>
-                                    <ul class="head-nav__category-list">
+                                    <ul>
                                         <li><a href="#">Мебель</a></li>
                                         <li><a href="#">Одежда</a></li>
                                         <li><a href="#">Красота и здоровье</a></li>
@@ -31,7 +31,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                                 </div>
                                 <div class="head-nav__col">
                                     <div class="head-nav__category-name">Электроника</div>
-                                    <ul class="head-nav__category-list">
+                                    <ul>
                                         <li><a href="#">Мебель</a></li>
                                         <li><a href="#">Одежда</a></li>
                                         <li><a href="#">Красота и здоровье</a></li>
@@ -41,7 +41,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                                 </div>
                                 <div class="head-nav__col">
                                     <div class="head-nav__category-name">Электроника</div>
-                                    <ul class="head-nav__category-list">
+                                    <ul>
                                         <li><a href="#">Мебель</a></li>
                                         <li><a href="#">Одежда</a></li>
                                         <li><a href="#">Красота и здоровье</a></li>
@@ -51,7 +51,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                                 </div>
                                 <div class="head-nav__col">
                                     <div class="head-nav__category-name">Электроника</div>
-                                    <ul class="head-nav__category-list">
+                                    <ul>
                                         <li><a href="#">Мебель</a></li>
                                         <li><a href="#">Одежда</a></li>
                                         <li><a href="#">Красота и здоровье</a></li>
@@ -61,7 +61,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                                 </div>
                                 <div class="head-nav__col">
                                     <div class="head-nav__category-name">Электроника</div>
-                                    <ul class="head-nav__category-list">
+                                    <ul>
                                         <li><a href="#">Мебель</a></li>
                                         <li><a href="#">Одежда</a></li>
                                         <li><a href="#">Красота и здоровье</a></li>
@@ -71,7 +71,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                                 </div>
                                 <div class="head-nav__col">
                                     <div class="head-nav__category-name">Электроника</div>
-                                    <ul class="head-nav__category-list">
+                                    <ul>
                                         <li><a href="#">Мебель</a></li>
                                         <li><a href="#">Одежда</a></li>
                                         <li><a href="#">Красота и здоровье</a></li>
@@ -146,7 +146,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                     </div>
                     <div class="header__text">
                         <a class="header__number" href="tel:+7 (343) 372-57-75">+7 (343) 372-57-75</a>
-                        <a href="#" class="btn js-init-modal__form header__modal" data-sign="WVRveE5EcDdjem94TURvaVEwRkRTRVZmVkVsTlJTSTdjem8wT2lJek5qQXdJanR6T2pFd09pSkRRVU5JUlY5VVdWQkZJanR6T2pFNklrRWlPM002TVRNNklrWlBVazFmUWxST1gwOVFSVTRpTzNNNk1qazZJdENYMExEUXV0Q3cwTGZRc05HQzBZd2cwTGZRc3RDKzBMM1F2dEM2SWp0ek9qRTFPaUpHVDFKTlgwSlVUbDlUVlVKTlNWUWlPM002TVRnNkl0Q2UwWUxRdjlHQTBMRFFzdEM0MFlMUmpDSTdjem94TXpvaVJrOVNUVjlDVkU1ZlZGbFFSU0k3Y3pveE16b2lhR1ZoWkdWeVgxOXRiMlJoYkNJN2N6b3hNVG9pUms5U1RWOUdTVVZNUkZNaU8yRTZNanA3YVRvd08zTTZNam9pTWpRaU8yazZNVHR6T2pJNklqSTFJanQ5Y3pveE5qb2lSazlTVFY5UVQweEpWRWxEWDFWU1RDSTdjem81T2lJdmNHOXNhWFJwWXk4aU8zTTZNVFk2SWtaUFVrMWZVRkpQUkZWRFZGOUJSRVFpTzNNNk1Ub2lUaUk3Y3pveE5Ub2lSazlTVFY5UVVrOUVWVU5VWDBsRUlqdHpPakE2SWlJN2N6b3lNRG9pUms5U1RWOVNSVkZWU1ZKRlJGOUdTVVZNUkZNaU8yRTZNanA3YVRvd08zTTZNam9pTWpRaU8yazZNVHR6T2pJNklqSTFJanQ5Y3pveE1Eb2lSazlTVFY5VVNWUk1SU0k3Y3pveU9Ub2kwSjdSZ2RHQzBMRFFzdEdNMFlMUXRTRFF0OUN3MFkvUXN0QzYwWU1pTzNNNk9Ub2lTVUpNVDBOTFgwbEVJanR6T2pJNklqRTBJanR6T2pFeE9pSkpRa3hQUTB0ZlZGbFFSU0k3Y3pvMU9pSm1iM0p0Y3lJN2N6b3hPRG9pUTA5TlVFOU9SVTVVWDFSRlRWQk1RVlJGSWp0ek9qZzZJaTVrWldaaGRXeDBJanQ5Ljk1MTBhMzcyYWUwNzk2ZmRlZDBiNTExMmUwODU2MDFkYTA2YWY3M2JhNmMyYmQ3Yjk4ZjEyNzE2NDEzZDQyOTE%3D" data-modal="14">Заказать звонок</a>
+                        <a href="#" class="btn header__modal" data-sign="WVRveE5EcDdjem94TURvaVEwRkRTRVZmVkVsTlJTSTdjem8wT2lJek5qQXdJanR6T2pFd09pSkRRVU5JUlY5VVdWQkZJanR6T2pFNklrRWlPM002TVRNNklrWlBVazFmUWxST1gwOVFSVTRpTzNNNk1qazZJdENYMExEUXV0Q3cwTGZRc05HQzBZd2cwTGZRc3RDKzBMM1F2dEM2SWp0ek9qRTFPaUpHVDFKTlgwSlVUbDlUVlVKTlNWUWlPM002TVRnNkl0Q2UwWUxRdjlHQTBMRFFzdEM0MFlMUmpDSTdjem94TXpvaVJrOVNUVjlDVkU1ZlZGbFFSU0k3Y3pveE16b2lhR1ZoWkdWeVgxOXRiMlJoYkNJN2N6b3hNVG9pUms5U1RWOUdTVVZNUkZNaU8yRTZNanA3YVRvd08zTTZNam9pTWpRaU8yazZNVHR6T2pJNklqSTFJanQ5Y3pveE5qb2lSazlTVFY5UVQweEpWRWxEWDFWU1RDSTdjem81T2lJdmNHOXNhWFJwWXk4aU8zTTZNVFk2SWtaUFVrMWZVRkpQUkZWRFZGOUJSRVFpTzNNNk1Ub2lUaUk3Y3pveE5Ub2lSazlTVFY5UVVrOUVWVU5VWDBsRUlqdHpPakE2SWlJN2N6b3lNRG9pUms5U1RWOVNSVkZWU1ZKRlJGOUdTVVZNUkZNaU8yRTZNanA3YVRvd08zTTZNam9pTWpRaU8yazZNVHR6T2pJNklqSTFJanQ5Y3pveE1Eb2lSazlTVFY5VVNWUk1SU0k3Y3pveU9Ub2kwSjdSZ2RHQzBMRFFzdEdNMFlMUXRTRFF0OUN3MFkvUXN0QzYwWU1pTzNNNk9Ub2lTVUpNVDBOTFgwbEVJanR6T2pJNklqRTBJanR6T2pFeE9pSkpRa3hQUTB0ZlZGbFFSU0k3Y3pvMU9pSm1iM0p0Y3lJN2N6b3hPRG9pUTA5TlVFOU9SVTVVWDFSRlRWQk1RVlJGSWp0ek9qZzZJaTVrWldaaGRXeDBJanQ5Ljk1MTBhMzcyYWUwNzk2ZmRlZDBiNTExMmUwODU2MDFkYTA2YWY3M2JhNmMyYmQ3Yjk4ZjEyNzE2NDEzZDQyOTE%3D" data-modal="14">Заказать звонок</a>
                     </div>
                 </div>
                 <div class="header__block header__search header__search--desktop">

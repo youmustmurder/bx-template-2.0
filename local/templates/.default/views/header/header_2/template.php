@@ -114,27 +114,28 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
         <div class="container">
             <div class="row row-line">
                 <div class="col-12">
-
-                    <ul class="header__list">
-                        <li>
-                            <a href="/catalog/elektronika/">Электроника</a>
-                        </li>
-                        <li>
-                            <a href="/catalog/mebel/">Мебель</a>
-                        </li>
-                        <li>
-                            <a href="/catalog/odezhda/">Одежда</a>
-                        </li>
-                        <li>
-                            <a href="/catalog/krasota-i-zdorove/">Красота и здоровье</a>
-                        </li>
-                        <li>
-                            <a href="/catalog/sport-i-turizm/">Спорт и туризм</a>
-                        </li>
-                        <li>
-                            <a href="/catalog/uslugi/">Услуги</a>
-                        </li>
-                    </ul>
+                    <div class="header__list">
+                        <ul>
+                            <li>
+                                <a href="/catalog/elektronika/">Электроника</a>
+                            </li>
+                            <li>
+                                <a href="/catalog/mebel/">Мебель</a>
+                            </li>
+                            <li>
+                                <a href="/catalog/odezhda/">Одежда</a>
+                            </li>
+                            <li>
+                                <a href="/catalog/krasota-i-zdorove/">Красота и здоровье</a>
+                            </li>
+                            <li>
+                                <a href="/catalog/sport-i-turizm/">Спорт и туризм</a>
+                            </li>
+                            <li>
+                                <a href="/catalog/uslugi/">Услуги</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
