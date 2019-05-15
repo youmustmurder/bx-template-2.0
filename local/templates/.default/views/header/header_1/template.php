@@ -13,7 +13,6 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
         <div class="container">
             <div class="row">
                 <div class="col-lg-7">
-
                     <ul class="header-top_navbar">
                         <li>
                             <a href="/about/">О компании</a>

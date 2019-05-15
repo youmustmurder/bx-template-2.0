@@ -30,8 +30,8 @@ $arCurrentSetting = CWebsiteTemplate::getTemplateSetting();
 Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("frontend/dist/css/styles.css"));
 
 //load theme css
-CWebsiteTemplate::loadCss();
-//Debug::dump(CWebsiteTemplate::loadCss());
+//CWebsiteTemplate::loadCss();
+Debug::dump(CWebsiteTemplate::loadCss());
 
 ?>
 <!doctype html>

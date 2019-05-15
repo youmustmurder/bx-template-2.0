@@ -43,12 +43,14 @@ class CWebsiteTemplate {
     {
         foreach (self::$arCurrentSetting as $code => $value) {
             switch ($code) {
-                case 'COLOR':
                 case 'FONT':
+                    $key = self::recursiveArraySearch($value, self::$arParametersList[$code]);
+                    Asset::getInstance()->addCss(self::$arParametersList[$code][$key]['FONT_SRC']);
+                case 'COLOR':
                 case 'FONT_SIZE':
                     $src = self::getCss($code, $value);
                     if ($src != false) {
-                        Asset::getInstance()->addCss($src);
+                       Asset::getInstance()->addCss($src);
                     }
                     break;
             }
