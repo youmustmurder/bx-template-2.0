@@ -26,12 +26,13 @@ $pageLayout = $APPLICATION->GetPageProperty("PAGE_LAYOUT", AppGetCascadeDirPrope
 //CWebsiteTemplate::$demoMode = true;
 $arCurrentSetting = CWebsiteTemplate::getTemplateSetting();
 
-//load theme css
-//Debug::dump(CWebsiteTemplate::loadCss());
-CWebsiteTemplate::loadCss();
-
 //load main css
 Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("frontend/dist/css/styles.css"));
+
+//load theme css
+CWebsiteTemplate::loadCss();
+//Debug::dump(CWebsiteTemplate::loadCss());
+
 ?>
 <!doctype html>
 <html lang="<?=$arLang['LANGUAGE_ID']?>">
@@ -65,9 +66,8 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
         "MODE" => "php"
     )
 );?>
-
 <?$APPLICATION->IncludeFile(
-    "views/header/header_6/template.php",
+    "views/header/" . $arCurrentSetting['HEADER'] . "/template.php",
     array(),
     array(
         "SHOW_BORDER" => false,
