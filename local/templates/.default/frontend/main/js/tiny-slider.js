@@ -182,8 +182,7 @@ var tns = (function() {
 		supported =
 			Math.abs(
 				wrapper.getBoundingClientRect().left -
-					outer.children[count - perPage].getBoundingClientRect()
-						.left,
+					outer.children[count - perPage].getBoundingClientRect().left
 			) < 2;
 
 		body.fake ? resetFakeBody(body, docOverflow) : wrapper.remove();
@@ -465,7 +464,7 @@ var tns = (function() {
 		var opts = Object.defineProperty({}, 'passive', {
 			get: function() {
 				supportsPassive = true;
-			},
+			}
 		});
 		window.addEventListener('test', null, opts);
 	} catch (e) {}
@@ -516,7 +515,7 @@ var tns = (function() {
 						fn(data, eventName);
 					});
 				}
-			},
+			}
 		};
 	}
 
@@ -527,7 +526,7 @@ var tns = (function() {
 		postfix,
 		to,
 		duration,
-		callback,
+		callback
 	) {
 		var tick = Math.min(duration, 10),
 			unit = to.indexOf('%') >= 0 ? '%' : 'px',
@@ -536,7 +535,7 @@ var tns = (function() {
 				element.style[attr]
 					.replace(prefix, '')
 					.replace(postfix, '')
-					.replace(unit, ''),
+					.replace(unit, '')
 			),
 			positionTick = ((to - from) / duration) * tick,
 			running;
@@ -607,9 +606,9 @@ var tns = (function() {
 				preventScrollOnTouch: false,
 				freezable: true,
 				onInit: false,
-				useLocalStorage: true,
+				useLocalStorage: true
 			},
-			options || {},
+			options || {}
 		);
 
 		var doc = document,
@@ -618,7 +617,7 @@ var tns = (function() {
 				ENTER: 13,
 				SPACE: 32,
 				LEFT: 37,
-				RIGHT: 39,
+				RIGHT: 39
 			},
 			tnsStorage = {},
 			localStorageAccess = options.useLocalStorage;
@@ -661,7 +660,7 @@ var tns = (function() {
 						'tADu',
 						'tADe',
 						'tTE',
-						'tAE',
+						'tAE'
 					].forEach(function(item) {
 						tnsStorage.removeItem(item);
 					});
@@ -680,7 +679,7 @@ var tns = (function() {
 						tnsStorage,
 						'tPL',
 						percentageLayout(),
-						localStorageAccess,
+						localStorageAccess
 				  ),
 			CSSMQ = tnsStorage['tMQ']
 				? checkStorageValue(tnsStorage['tMQ'])
@@ -688,7 +687,7 @@ var tns = (function() {
 						tnsStorage,
 						'tMQ',
 						mediaquerySupport(),
-						localStorageAccess,
+						localStorageAccess
 				  ),
 			TRANSFORM = tnsStorage['tTf']
 				? checkStorageValue(tnsStorage['tTf'])
@@ -696,7 +695,7 @@ var tns = (function() {
 						tnsStorage,
 						'tTf',
 						whichProperty('transform'),
-						localStorageAccess,
+						localStorageAccess
 				  ),
 			HAS3DTRANSFORMS = tnsStorage['t3D']
 				? checkStorageValue(tnsStorage['t3D'])
@@ -704,7 +703,7 @@ var tns = (function() {
 						tnsStorage,
 						't3D',
 						has3DTransforms(TRANSFORM),
-						localStorageAccess,
+						localStorageAccess
 				  ),
 			TRANSITIONDURATION = tnsStorage['tTDu']
 				? checkStorageValue(tnsStorage['tTDu'])
@@ -712,7 +711,7 @@ var tns = (function() {
 						tnsStorage,
 						'tTDu',
 						whichProperty('transitionDuration'),
-						localStorageAccess,
+						localStorageAccess
 				  ),
 			TRANSITIONDELAY = tnsStorage['tTDe']
 				? checkStorageValue(tnsStorage['tTDe'])
@@ -720,7 +719,7 @@ var tns = (function() {
 						tnsStorage,
 						'tTDe',
 						whichProperty('transitionDelay'),
-						localStorageAccess,
+						localStorageAccess
 				  ),
 			ANIMATIONDURATION = tnsStorage['tADu']
 				? checkStorageValue(tnsStorage['tADu'])
@@ -728,7 +727,7 @@ var tns = (function() {
 						tnsStorage,
 						'tADu',
 						whichProperty('animationDuration'),
-						localStorageAccess,
+						localStorageAccess
 				  ),
 			ANIMATIONDELAY = tnsStorage['tADe']
 				? checkStorageValue(tnsStorage['tADe'])
@@ -736,7 +735,7 @@ var tns = (function() {
 						tnsStorage,
 						'tADe',
 						whichProperty('animationDelay'),
-						localStorageAccess,
+						localStorageAccess
 				  ),
 			TRANSITIONEND = tnsStorage['tTE']
 				? checkStorageValue(tnsStorage['tTE'])
@@ -744,7 +743,7 @@ var tns = (function() {
 						tnsStorage,
 						'tTE',
 						getEndProperty(TRANSITIONDURATION, 'Transition'),
-						localStorageAccess,
+						localStorageAccess
 				  ),
 			ANIMATIONEND = tnsStorage['tAE']
 				? checkStorageValue(tnsStorage['tAE'])
@@ -752,7 +751,7 @@ var tns = (function() {
 						tnsStorage,
 						'tAE',
 						getEndProperty(ANIMATIONDURATION, 'Animation'),
-						localStorageAccess,
+						localStorageAccess
 				  );
 
 		// get element nodes from selectors
@@ -764,7 +763,7 @@ var tns = (function() {
 				'prevButton',
 				'nextButton',
 				'navContainer',
-				'autoplayButton',
+				'autoplayButton'
 			],
 			optionsElements = {};
 
@@ -971,15 +970,15 @@ var tns = (function() {
 			frozen = false,
 			controlsEvents = {
 				click: onControlsClick,
-				keydown: onControlsKeydown,
+				keydown: onControlsKeydown
 			},
 			navEvents = {
 				click: onNavClick,
-				keydown: onNavKeydown,
+				keydown: onNavKeydown
 			},
 			hoverEvents = {
 				mouseover: mouseoverPause,
-				mouseout: mouseoutRestart,
+				mouseout: mouseoutRestart
 			},
 			visibilityEvent = { visibilitychange: onVisibilityChange },
 			docmentKeydownEvent = { keydown: onDocumentKeydown },
@@ -987,13 +986,13 @@ var tns = (function() {
 				touchstart: onPanStart,
 				touchmove: onPanMove,
 				touchend: onPanEnd,
-				touchcancel: onPanEnd,
+				touchcancel: onPanEnd
 			},
 			dragEvents = {
 				mousedown: onPanStart,
 				mousemove: onPanMove,
 				mouseup: onPanEnd,
-				mouseleave: onPanEnd,
+				mouseleave: onPanEnd
 			},
 			hasControls = hasOption('controls'),
 			hasNav = hasOption('nav'),
@@ -1005,7 +1004,7 @@ var tns = (function() {
 			imgCompleteClass = 'tns-complete',
 			imgEvents = {
 				load: onImgLoaded,
-				error: onImgFailed,
+				error: onImgFailed
 			},
 			imgsComplete,
 			liveregionCurrent,
@@ -1057,7 +1056,7 @@ var tns = (function() {
 					: '',
 				autoplayHtmlStrings = [
 					"<span class='tns-visually-hidden'>",
-					' animation</span>',
+					' animation</span>'
 				],
 				autoplayTimer,
 				animating,
@@ -1129,8 +1128,8 @@ var tns = (function() {
 						0,
 						Math.min(
 							loop ? slideCount - 1 : slideCount - items,
-							ind,
-						),
+							ind
+						)
 				  )
 				: 0;
 			return carousel ? ind + cloneCount : ind;
@@ -1198,7 +1197,7 @@ var tns = (function() {
 				return Math.ceil(
 					fixedWidth
 						? viewportMax / Math.min.apply(null, arr)
-						: Math.max.apply(null, arr),
+						: Math.max.apply(null, arr)
 				);
 			}
 		}
@@ -1305,7 +1304,7 @@ var tns = (function() {
 			gutterTem,
 			fixedWidthTem,
 			speedTem,
-			autoHeightBP,
+			autoHeightBP
 		) {
 			var str = '';
 
@@ -1460,7 +1459,7 @@ var tns = (function() {
 				}
 				setAttrs(item, {
 					'aria-hidden': 'true',
-					tabindex: '-1',
+					tabindex: '-1'
 				});
 			});
 
@@ -1477,7 +1476,7 @@ var tns = (function() {
 					removeAttrs(cloneFirst, 'id');
 					fragmentAfter.insertBefore(
 						cloneFirst,
-						fragmentAfter.firstChild,
+						fragmentAfter.firstChild
 					);
 
 					if (carousel) {
@@ -1525,7 +1524,7 @@ var tns = (function() {
 				if (!autoWidth && horizontal) {
 					imgs = getImageArray(
 						index,
-						Math.min(index + items - 1, slideCountNew - 1),
+						Math.min(index + items - 1, slideCountNew - 1)
 					);
 				}
 
@@ -1534,7 +1533,7 @@ var tns = (function() {
 					: raf(function() {
 							imgsLoadedCheck(
 								arrayFromNodeList(imgs),
-								initSliderTransformStyleCheck,
+								initSliderTransformStyleCheck
 							);
 					  });
 			} else {
@@ -1633,13 +1632,13 @@ var tns = (function() {
 						'font-size:' +
 							win.getComputedStyle(slideItems[0]).fontSize +
 							';',
-						getCssRulesLength(sheet),
+						getCssRulesLength(sheet)
 					);
 					addCSSRule(
 						sheet,
 						'#' + slideId,
 						'font-size:0;',
-						getCssRulesLength(sheet),
+						getCssRulesLength(sheet)
 					);
 				} else if (carousel) {
 					forEach(slideItems, function(slide, i) {
@@ -1660,7 +1659,7 @@ var tns = (function() {
 						sheet,
 						'#' + slideId + '-mw',
 						str,
-						getCssRulesLength(sheet),
+						getCssRulesLength(sheet)
 					);
 				}
 
@@ -1670,13 +1669,13 @@ var tns = (function() {
 					options.gutter,
 					options.fixedWidth,
 					options.speed,
-					options.autoHeight,
+					options.autoHeight
 				);
 				addCSSRule(
 					sheet,
 					'#' + slideId + '-iw',
 					str,
-					getCssRulesLength(sheet),
+					getCssRulesLength(sheet)
 				);
 
 				// container styles
@@ -1687,7 +1686,7 @@ var tns = (function() {
 							  getContainerWidth(
 									options.fixedWidth,
 									options.gutter,
-									options.items,
+									options.items
 							  ) +
 							  ';'
 							: '';
@@ -1698,7 +1697,7 @@ var tns = (function() {
 						sheet,
 						'#' + slideId,
 						str,
-						getCssRulesLength(sheet),
+						getCssRulesLength(sheet)
 					);
 				}
 
@@ -1708,7 +1707,7 @@ var tns = (function() {
 						? getSlideWidthStyle(
 								options.fixedWidth,
 								options.gutter,
-								options.items,
+								options.items
 						  )
 						: '';
 				if (options.gutter) {
@@ -1728,7 +1727,7 @@ var tns = (function() {
 						sheet,
 						'#' + slideId + ' > .tns-item',
 						str,
-						getCssRulesLength(sheet),
+						getCssRulesLength(sheet)
 					);
 				}
 
@@ -1745,7 +1744,7 @@ var tns = (function() {
 					edgePadding,
 					gutter,
 					fixedWidth,
-					autoHeight,
+					autoHeight
 				);
 
 				// container styles
@@ -1753,7 +1752,7 @@ var tns = (function() {
 					container.style.width = getContainerWidth(
 						fixedWidth,
 						gutter,
-						items,
+						items
 					);
 				}
 
@@ -1772,7 +1771,7 @@ var tns = (function() {
 						sheet,
 						'#' + slideId + ' > .tns-item',
 						str,
-						getCssRulesLength(sheet),
+						getCssRulesLength(sheet)
 					);
 				}
 			}
@@ -1822,7 +1821,7 @@ var tns = (function() {
 								gutterBP,
 								fixedWidthBP,
 								speedBP,
-								autoHeightBP,
+								autoHeightBP
 							) +
 							'}';
 					}
@@ -1857,7 +1856,7 @@ var tns = (function() {
 						slideStr += getSlideWidthStyle(
 							fixedWidthBP,
 							gutterBP,
-							itemsBP,
+							itemsBP
 						);
 					}
 					if ('gutter' in opts) {
@@ -1891,7 +1890,7 @@ var tns = (function() {
 								'em) {' +
 								str +
 								'}',
-							sheet.cssRules.length,
+							sheet.cssRules.length
 						);
 					}
 				}
@@ -1909,10 +1908,10 @@ var tns = (function() {
 					getLiveRegionStr() +
 					'</span>  of ' +
 					slideCount +
-					'</div>',
+					'</div>'
 			);
 			liveregionCurrent = outerWrapper.querySelector(
-				'.tns-liveregion .current',
+				'.tns-liveregion .current'
 			);
 
 			// == autoplayInit ==
@@ -1930,10 +1929,10 @@ var tns = (function() {
 							txt +
 							autoplayHtmlStrings[1] +
 							autoplayText[0] +
-							'</button>',
+							'</button>'
 					);
 					autoplayButton = outerWrapper.querySelector(
-						'[data-action]',
+						'[data-action]'
 					);
 				}
 
@@ -1960,7 +1959,7 @@ var tns = (function() {
 				// will not hide the navs in case they're thumbnails
 				if (navContainer) {
 					setAttrs(navContainer, {
-						'aria-label': 'Carousel Pagination',
+						'aria-label': 'Carousel Pagination'
 					});
 					navItems = navContainer.children;
 					forEach(navItems, function(item, i) {
@@ -1968,7 +1967,7 @@ var tns = (function() {
 							'data-nav': i,
 							tabindex: '-1',
 							'aria-label': navStr + (i + 1),
-							'aria-controls': slideId,
+							'aria-controls': slideId
 						});
 					});
 
@@ -1998,7 +1997,7 @@ var tns = (function() {
 						'</div>';
 					outerWrapper.insertAdjacentHTML(
 						getInsertPosition(options.navPosition),
-						navHtml,
+						navHtml
 					);
 
 					navContainer = outerWrapper.querySelector('.tns-nav');
@@ -2011,7 +2010,7 @@ var tns = (function() {
 				if (TRANSITIONDURATION) {
 					var prefix = TRANSITIONDURATION.substring(
 							0,
-							TRANSITIONDURATION.length - 18,
+							TRANSITIONDURATION.length - 18
 						).toLowerCase(),
 						str = 'transition: all ' + speed / 1000 + 's';
 
@@ -2023,13 +2022,12 @@ var tns = (function() {
 						sheet,
 						'[aria-controls^=' + slideId + '-item]',
 						str,
-						getCssRulesLength(sheet),
+						getCssRulesLength(sheet)
 					);
 				}
 
 				setAttrs(navItems[navCurrentIndex], {
-					'aria-label':
-						navStr + (navCurrentIndex + 1) + navStrCurrent,
+					'aria-label': navStr + (navCurrentIndex + 1) + navStrCurrent
 				});
 				removeAttrs(navItems[navCurrentIndex], 'tabindex');
 				addClass(navItems[navCurrentIndex], navActiveClass);
@@ -2051,11 +2049,11 @@ var tns = (function() {
 							slideId +
 							'">' +
 							controlsText[1] +
-							'</button></div>',
+							'</button></div>'
 					);
 
 					controlsContainer = outerWrapper.querySelector(
-						'.tns-controls',
+						'.tns-controls'
 					);
 				}
 
@@ -2067,7 +2065,7 @@ var tns = (function() {
 				if (options.controlsContainer) {
 					setAttrs(controlsContainer, {
 						'aria-label': 'Carousel Navigation',
-						tabindex: '0',
+						tabindex: '0'
 					});
 				}
 
@@ -2077,7 +2075,7 @@ var tns = (function() {
 				) {
 					setAttrs([prevButton, nextButton], {
 						'aria-controls': slideId,
-						tabindex: '-1',
+						tabindex: '-1'
 					});
 				}
 
@@ -2216,7 +2214,7 @@ var tns = (function() {
 				prevButtonHTML,
 				nextButtonHTML,
 				navContainerHTML,
-				autoplayButtonHTML,
+				autoplayButtonHTML
 			];
 
 			tnsList.forEach(function(item, i) {
@@ -2383,7 +2381,7 @@ var tns = (function() {
 				if (freeze !== freezeTem) {
 					if (freeze) {
 						doContainerTransform(
-							getContainerTransformValue(getStartIndex(0)),
+							getContainerTransformValue(getStartIndex(0))
 						);
 						freezeSlider();
 					} else {
@@ -2436,7 +2434,7 @@ var tns = (function() {
 					? addEvents(
 							container,
 							touchEvents,
-							options.preventScrollOnTouch,
+							options.preventScrollOnTouch
 					  )
 					: removeEvents(container, touchEvents);
 			}
@@ -2545,7 +2543,7 @@ var tns = (function() {
 							gutter,
 							fixedWidth,
 							speed,
-							autoHeight,
+							autoHeight
 						);
 					}
 
@@ -2555,7 +2553,7 @@ var tns = (function() {
 							container.style.width = getContainerWidth(
 								fixedWidth,
 								gutter,
-								items,
+								items
 							);
 						}
 
@@ -2571,7 +2569,7 @@ var tns = (function() {
 							sheet,
 							'#' + slideId + ' > .tns-item',
 							str,
-							getCssRulesLength(sheet),
+							getCssRulesLength(sheet)
 						);
 					}
 				}
@@ -2786,7 +2784,7 @@ var tns = (function() {
 			sheet.disabled = true;
 			container.className = container.className.replace(
 				newContainerClasses.substring(1),
-				'',
+				''
 			);
 			removeAttrs(container, ['style']);
 			if (loop) {
@@ -3004,7 +3002,7 @@ var tns = (function() {
 			var imgs = [];
 			while (start <= end) {
 				forEach(slideItems[start].querySelectorAll('img'), function(
-					img,
+					img
 				) {
 					imgs.push(img);
 				});
@@ -3103,13 +3101,13 @@ var tns = (function() {
 				// skip the first slide
 				if (i) {
 					slidePositions.push(
-						item.getBoundingClientRect()[attr] - base,
+						item.getBoundingClientRect()[attr] - base
 					);
 				}
 				// add the end edge
 				if (i === slideCountNew - 1) {
 					slidePositions.push(
-						item.getBoundingClientRect()[attr2] - base,
+						item.getBoundingClientRect()[attr2] - base
 					);
 				}
 			});
@@ -3133,7 +3131,7 @@ var tns = (function() {
 					if (!hasAttr(item, 'aria-hidden')) {
 						setAttrs(item, {
 							'aria-hidden': 'true',
-							tabindex: '-1',
+							tabindex: '-1'
 						});
 						removeClass(item, slideActiveClass);
 					}
@@ -3186,13 +3184,13 @@ var tns = (function() {
 
 					setAttrs(navPrev, {
 						tabindex: '-1',
-						'aria-label': navStr + (navCurrentIndexCached + 1),
+						'aria-label': navStr + (navCurrentIndexCached + 1)
 					});
 					removeClass(navPrev, navActiveClass);
 
 					setAttrs(navCurrent, {
 						'aria-label':
-							navStr + (navCurrentIndex + 1) + navStrCurrent,
+							navStr + (navCurrentIndex + 1) + navStrCurrent
 					});
 					removeAttrs(navCurrent, 'tabindex');
 					addClass(navCurrent, navActiveClass);
@@ -3400,7 +3398,7 @@ var tns = (function() {
 								transformPostfix,
 								getContainerTransformValue(),
 								speed,
-								onTransitionEnd,
+								onTransitionEnd
 							);
 						}
 
@@ -3580,7 +3578,7 @@ var tns = (function() {
 						if (!e) {
 							targetIndex = Math.max(
 								0,
-								Math.min(slideCount - 1, targetIndex),
+								Math.min(slideCount - 1, targetIndex)
 							);
 						}
 
@@ -3662,7 +3660,7 @@ var tns = (function() {
 				}
 				// pass e when click control buttons or keydown
 				render(
-					passEventObject || (e && e.type === 'keydown') ? e : null,
+					passEventObject || (e && e.type === 'keydown') ? e : null
 				);
 			}
 		}
@@ -3687,7 +3685,7 @@ var tns = (function() {
 			}
 			if (hasAttr(target, 'data-nav')) {
 				var navIndex = (navClicked = Number(
-						getAttr(target, 'data-nav'),
+						getAttr(target, 'data-nav')
 					)),
 					targetIndexBase =
 						fixedWidth || autoWidth
@@ -3835,7 +3833,7 @@ var tns = (function() {
 					KEYS.LEFT,
 					KEYS.RIGHT,
 					KEYS.ENTER,
-					KEYS.SPACE,
+					KEYS.SPACE
 				].indexOf(e.keyCode),
 				navIndex = Number(getAttr(curElement, 'data-nav'));
 
@@ -3876,9 +3874,9 @@ var tns = (function() {
 				getTouchDirection(
 					toDegree(
 						lastPosition.y - initPosition.y,
-						lastPosition.x - initPosition.x,
+						lastPosition.x - initPosition.x
 					),
-					swipeAngle,
+					swipeAngle
 				) === options.axis
 			);
 		}
@@ -3916,7 +3914,7 @@ var tns = (function() {
 			lastPosition.y = initPosition.y = $.clientY;
 			if (carousel) {
 				translateInit = parseFloat(
-					container.style[transformAttr].replace(transformPrefix, ''),
+					container.style[transformAttr].replace(transformPrefix, '')
 				);
 				resetDuration(container, '0s');
 			}
@@ -3973,7 +3971,7 @@ var tns = (function() {
 					if (e.type) {
 						events.emit(
 							isTouchEvent(e) ? 'touchMove' : 'dragMove',
-							info(e),
+							info(e)
 						);
 					}
 				} catch (err) {}
@@ -4022,7 +4020,7 @@ var tns = (function() {
 							click: function preventClick(e) {
 								preventDefaultBehavior(e);
 								removeEvents(target, { click: preventClick });
-							},
+							}
 						});
 					}
 
@@ -4065,7 +4063,7 @@ var tns = (function() {
 							render(e, dist);
 							events.emit(
 								isTouchEvent(e) ? 'touchEnd' : 'dragEnd',
-								info(e),
+								info(e)
 							);
 						});
 					} else {
@@ -4158,7 +4156,7 @@ var tns = (function() {
 				pagesCached: pagesCached,
 				sheet: sheet,
 				isOn: isOn,
-				event: e || {},
+				event: e || {}
 			};
 		}
 
@@ -4175,7 +4173,7 @@ var tns = (function() {
 			destroy: destroy,
 			rebuild: function() {
 				return tns(extend(options, optionsElements));
-			},
+			}
 		};
 	};
 

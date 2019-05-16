@@ -1,0 +1,138 @@
+.best-categories {
+	padding: 88px 0;
+}
+
+.best-categories__header {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.best-categories-grid {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -15px;
+}
+
+.best-categories__title {
+	margin-bottom: 55px;
+}
+
+.best-categories-grid__inner {
+	color: #000;
+}
+
+.best-categories-card {
+	flex: 1 0 calc(100% / 4);
+	padding: 0 15px 30px;
+	min-height: 350px;
+	&:nth-child(2) {
+		flex: 1 0 calc(100% / 2);
+		.best-categories-grid__inner {
+			justify-content: flex-end;
+		}
+	}
+	&:nth-child(4) {
+		flex: 1 0;
+		.best-categories-grid__inner {
+			justify-content: space-between;
+		}
+	}
+	&:nth-child(2),
+	&:nth-child(4) {
+		.best-categories-grid__inner {
+			align-items: flex-start;
+		}
+		.best-categories-card__img {
+			position: absolute;
+			top: 50%;
+			right: 15px;
+			transform: translate(0, -50%);
+			margin: 0;
+		}
+		.best-categories-card__title,
+		.best-categories-card__subtitle {
+			text-align: left;
+		}
+	}
+}
+
+.best-categories-grid__inner {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	padding: 40px 30px;
+	height: 100%;
+	background: #F8F8F8;
+}
+
+.best-categories-card__label {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 32px;
+	left: 40px;
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	background: #22C25B;
+	color: #fff;
+}
+
+.best-categories-card-label__number {
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+.best-categories-card-label__percent {
+	font-size: 0.9333rem;
+	font-weight: 500;
+}
+
+.best-categories-card__title,
+.best-categories-card__subtitle {
+	max-width: 250px;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: bold;
+}
+
+.best-categories-card__title {
+	margin-bottom: 10px;
+	font-size: 1.2rem;
+	line-height: 1.733rem;
+}
+
+.best-categories-card__subtitle {
+	color: #7E7E7E;
+	font-size: 0.9333rem;
+	line-height: 1.333rem;
+}
+
+.best-categories-card__img {
+	margin-bottom: 30px;
+	max-height: 100%;
+}
+
+.best-categories-card__text {
+	max-width: 250px;
+	color: #7E7E7E;
+	font-size: 1.067rem;
+	line-height: 1.333rem;
+}
+
+@media (max-width: 1024px) {
+	.best-categories-card {
+		&:nth-child(4) {
+			flex: 1 0 100%;
+		}
+		&:nth-child(3),
+		&:nth-child(5) {
+			order: 1;
+		}
+	}
+}

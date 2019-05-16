@@ -74,6 +74,7 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
         "MODE" => "php"
     )
 );?>
+<!-- test -->
 <?$APPLICATION->IncludeFile(
     "views/sliders/slider1/template.php",
     array(
@@ -84,6 +85,67 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
         "MODE" => "php"
     )
 );?>
+<?$APPLICATION->IncludeFile(
+    "views/categories/categories1/template.php",
+    array(
+        "CONTENT" => $pageContent
+    ),
+    array(
+        "SHOW_BORDER" => false,
+        "MODE" => "php"
+    )
+);?>
+<?$APPLICATION->IncludeFile(
+    "views/products/products1/template.php",
+    array(
+        "CONTENT" => $pageContent
+    ),
+    array(
+        "SHOW_BORDER" => false,
+        "MODE" => "php"
+    )
+);?>
+<?$APPLICATION->IncludeFile(
+    "views/services/services1/template.php",
+    array(
+        "CONTENT" => $pageContent
+    ),
+    array(
+        "SHOW_BORDER" => false,
+        "MODE" => "php"
+    )
+);?>
+<?$APPLICATION->IncludeFile(
+    "views/about/about1/template.php",
+    array(
+        "CONTENT" => $pageContent
+    ),
+    array(
+        "SHOW_BORDER" => false,
+        "MODE" => "php"
+    )
+);?>
+<?$APPLICATION->IncludeFile(
+    "views/reviews/reviews1/template.php",
+    array(
+        "CONTENT" => $pageContent
+    ),
+    array(
+        "SHOW_BORDER" => false,
+        "MODE" => "php"
+    )
+);?>
+<?$APPLICATION->IncludeFile(
+    "views/text/text1/template.php",
+    array(
+        "CONTENT" => $pageContent
+    ),
+    array(
+        "SHOW_BORDER" => false,
+        "MODE" => "php"
+    )
+);?>
+<!-- test -->
 <?if ($APPLICATION->GetCurPage(false) == SITE_DIR) {?>
     <?$APPLICATION->IncludeFile(
         "views/layouts/home.php",

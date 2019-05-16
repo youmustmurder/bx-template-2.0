@@ -1,0 +1,74 @@
+.reviews {
+	padding: 88px 0;
+}
+
+.reviews__header {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-bottom: 45px;
+}
+
+.reviews-post {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	padding: 40px 30px 50px;
+	border-radius: 4px;
+	background: #F8F8F8;
+}
+
+.reviews-post__text {
+	margin-bottom: 15px;
+	color: #1B1B1B;
+	opacity: 0.6;
+	font-size: 1.067rem;
+	line-height: 1.6rem;
+}
+
+.reviews-post__author-wrap {
+	display: grid;
+	grid-template-columns: 1fr 60px;
+	grid-auto-rows: max-content;
+}
+
+.reviews-post__author__fullname,
+.reviews-post__author__proff {
+	font-weight: 500;
+	line-height: 1.6rem;
+}
+
+.reviews-post__author__fullname {
+	grid-column: 1;
+	grid-row: 1;
+	color: #1B1B1B;
+	font-size: 0.9333rem;
+	text-transform: uppercase;
+}
+
+.reviews-post__author__proff {
+	grid-column: 1;
+	grid-row: 2;
+	color: #9B9B9B;
+	font-size: 1.067rem;
+}
+
+.reviews-post__author__img {
+	grid-column: 2;
+	grid-row: span 2;
+	position: relative;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	overflow: hidden;
+	img {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		min-width: 100%;
+		min-height: 100%;
+	}
+}

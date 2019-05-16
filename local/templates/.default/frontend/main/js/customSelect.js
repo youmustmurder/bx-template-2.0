@@ -102,7 +102,7 @@ const customSelect = function(options, cbAfter, cbChoose) {
 
 			for (var i = 0; i < optionsLength; i++) {
 				ul.querySelectorAll('.' + liClass)[i].classList.remove(
-					selectedClass,
+					selectedClass
 				);
 			}
 			t.classList.add(selectedClass);
@@ -132,7 +132,7 @@ const customSelect = function(options, cbAfter, cbChoose) {
 	return {
 		toggle: toggle,
 		close: close,
-		open: open,
+		open: open
 	};
 };
 
