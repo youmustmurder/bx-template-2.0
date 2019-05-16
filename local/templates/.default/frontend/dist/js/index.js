@@ -3642,7 +3642,26 @@ var tns = function () {
   return tns;
 }();
 
-window.addEventListener('load', function () {// var counterStroke = itemCounter('.form-stroke__fieldCount'),
+function debounce(func, wait, immediate) {
+  var timeout;
+  return function executedFunction() {
+    var context = this;
+    var args = arguments;
+
+    var later = function later() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+}
+
+window.addEventListener('load', function () {
+  console.log(debounce); // var counterStroke = itemCounter('.form-stroke__fieldCount'),
   // 	counterUnderline = itemCounter('.form-underline__fieldCount'),
   // 	// customSelectExample = new customSelect({
   // 	// 	elem: 'form-stroke__select',
