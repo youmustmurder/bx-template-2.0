@@ -17,7 +17,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 			<div class="slider-slider__inner">
 				<h2 class="slider-slide__title">Откройте счёт и начните работать уже сегодня</h2>
 				<p class="slider-slide__text">Без кучи документов, поездок в банс и талончиков с номером очереди</p>
-				<a href="" class="btn btn__success btn__circle btn__mid slider-slide__btn">Начать работу</a>
+				<a href="" class="btn btn--success btn--circle btn--mid slider-slide__btn">Начать работу</a>
 				<ul class="slider-slide__numbers slider-slide-numbers">
 					<li class="slider-slide-numbers__num slider-slide-num">
 						<span class="slider-slide-num__value">16</span>

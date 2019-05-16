@@ -59,7 +59,7 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
     );?>
 <?}?>
 <?$APPLICATION->IncludeFile(
-    "views/header/header_1/template.php",
+    "views/header/header_3/template.php",
     array(),
     array(
         "SHOW_BORDER" => false,
