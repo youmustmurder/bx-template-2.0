@@ -6,7 +6,6 @@ use Bitrix\Main\Page\Asset;
 
 Asset::getInstance()->addJs(GetCurDir(__DIR__) . '/script.js');
 Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
-
 ?>
 <header class="header">
     <nav class="header-top">
@@ -14,23 +13,11 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
             <div class="row">
                 <div class="col-lg-7">
                     <div class="header-top__navbar">
-                        <ul>
-                            <li>
-                                <a href="/about/">О компании</a>
-                            </li>
-                            <li>
-                                <a href="/news/">Новости</a>
-                            </li>
-                            <li>
-                                <a href="/stocks/">Акции</a>
-                            </li>
-                            <li>
-                                <a href="/delivery/">Доставка и оплата</a>
-                            </li>
-                            <li>
-                                <a href="/contacts/">Контакты</a>
-                            </li>
-                        </ul>
+                        <?$APPLICATION->IncludeComponent(
+                            'bitrix:menu',
+                            'default',
+                            array()
+                        );?>
                     </div>
                 </div>
                 <address class="col-lg-5 header__address d-flex align-items-center justify-content-end">
