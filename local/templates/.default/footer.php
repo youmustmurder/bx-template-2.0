@@ -59,7 +59,7 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
     );?>
 <?}?>
 <?$APPLICATION->IncludeFile(
-    "views/header/header_3/template.php",
+    "views/header/header_2/template.php",
     array(),
     array(
         "SHOW_BORDER" => false,
@@ -137,6 +137,26 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
 );?>
 <?$APPLICATION->IncludeFile(
     "views/text/text1/template.php",
+    array(
+        "CONTENT" => $pageContent
+    ),
+    array(
+        "SHOW_BORDER" => false,
+        "MODE" => "php"
+    )
+);?>
+<?$APPLICATION->IncludeFile(
+    "views/around/around1/template.php",
+    array(
+        "CONTENT" => $pageContent
+    ),
+    array(
+        "SHOW_BORDER" => false,
+        "MODE" => "php"
+    )
+);?>
+<?$APPLICATION->IncludeFile(
+    "views/rewards/rewards1/template.php",
     array(
         "CONTENT" => $pageContent
     ),
