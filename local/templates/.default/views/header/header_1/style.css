@@ -82,6 +82,8 @@
 .header-search {
     display: flex;
     align-items: center;
+    flex: 1 1 100px;
+    padding: 0 15px;
 }
 .header__contact {
     display: flex;
