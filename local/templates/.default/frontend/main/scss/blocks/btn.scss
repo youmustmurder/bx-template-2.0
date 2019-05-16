@@ -48,14 +48,35 @@
 	border: 1px solid #26AE60;
 	background: #26AE60;
 	color: #fff;
+	svg {
+		fill: #fff;
+	}
 	&:hover,
 	&:focus {
-		border-color: #26AE60;
+		background: none;
+		border: 1px solid#269060;
 		color: #26AE60;
+		svg {
+			fill: #26AE60;
+		}
 	}
 	&:active {
-		border-color: #269060;
+		background: none;
+		border: 1px solid#269060;
 		color: #26AE60;
+		svg {
+			fill: #26AE60;
+		}
+	}
+}
+
+.btn--stock {
+	background: #fff;
+	border: 1px solid #eee;
+	color: #95A5A6;
+	&:hover,
+	&:focus {
+
 	}
 }
 
@@ -103,6 +124,23 @@
 	text-decoration: none;
 }
 
+.btn__link--bold {
+	font-weight: bold;
+}
+
+.btn__link--green {
+	color: #26AE60;
+	svg {
+		fill: #26AE60;
+	}
+	&:active {
+		color: #269060;
+		svg {
+			fill: #269060;
+		}
+	}
+}
+
 .btn__link--icon-l {
 	img,
 	svg {
@@ -126,10 +164,18 @@
 	height: 48px;
 	border-radius: 50%;
 	border: none;
-	background-color: #ff1e36;
 	cursor: pointer;
 	&.btn--icon-big {
 		width: 64px;
 		height: 64px;
+	}
+}
+
+@media (max-width: 768px) {
+	.btn--icon {
+		&.btn--icon-big {
+			width: 48px;
+			height: 48px;
+		}
 	}
 }
