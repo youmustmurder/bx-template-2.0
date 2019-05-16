@@ -21,7 +21,7 @@ function AppGetCascadeDirProperties($PROPERTY_ID, $default_value = false)
 }
 
 function GetContentSvgIcon($filename){
-    $iconPath = $_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/public/images/icons/' . $filename . '.svg';
+    $iconPath = $_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/frontend/main/images/icons/' . $filename . '.svg';
     if(file_exists($iconPath)){
         return file_get_contents($iconPath);
     }

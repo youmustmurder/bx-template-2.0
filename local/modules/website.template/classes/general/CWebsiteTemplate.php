@@ -43,13 +43,14 @@ class CWebsiteTemplate {
     {
         foreach (self::$arCurrentSetting as $code => $value) {
             switch ($code) {
-                case 'COLOR':
                 case 'FONT':
+                    $key = self::recursiveArraySearch($value, self::$arParametersList[$code]);
+                    Asset::getInstance()->addCss(self::$arParametersList[$code][$key]['FONT_SRC']);
+                    Asset::getInstance()->addCss(self::getCss($code, $value));
+                    break;
+                case 'COLOR':
                 case 'FONT_SIZE':
-                    $src = self::getCss($code, $value);
-                    if ($src != false) {
-                        Asset::getInstance()->addCss($src);
-                    }
+                    Asset::getInstance()->addCss(self::getCss($code, $value));
                     break;
             }
         }
@@ -67,6 +68,9 @@ class CWebsiteTemplate {
         if (!file_exists($_SERVER['DOCUMENT_ROOT'] . $filePath) || $request->get('clear_cache') == 'Y') {
             $content = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/local/modules/' . WEBSITE_MODULE_ID . '/tools/css/' . strtolower($codeProperty) . '.tpl');
             $id = self::recursiveArraySearch($value, self::$arParametersList[$codeProperty]);
+            if ($id === false) {
+                $id = self::recursiveArraySearch('default', self::$arParametersList[$codeProperty]);
+            }
             $value = $codeProperty == 'COLOR' || stripos($codeProperty, 'COLOR') ?
                 '#' . self::$arParametersList[$codeProperty][$id]['VALUE'] :
                 self::$arParametersList[$codeProperty][$id]['VALUE'];
