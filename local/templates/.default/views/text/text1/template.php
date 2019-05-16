@@ -11,7 +11,7 @@ Asset::getInstance()->addJs(GetCurDir(__DIR__) . '/bundle.js');
 Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 ?>
 
-<div class="text text--grey">
+<div class="text-block text-block--grey">
 	<div class="container">
 		<div class="col">
 			<div class="row">

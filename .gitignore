@@ -2,6 +2,7 @@
 Thumbs.db
 /.idea/
 /bitrix/
+/.settings.json
 /local/templates/package.json
 /local/templates/package-lock.json
 /local/templates/individual/*.json

@@ -17,7 +17,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 			<div class="col">
 				<div class="best-categories__header">
 					<h2 class="best-categories__title">Популярные категории</h2>
-					<a href="#" class="btn__link btn__link--bold btn__link--green btn__link--icon-r">
+					<a href="#" class="btn__link btn__link--bold btn__link--green btn__link--icon-r best-categories__link-all">
 						Показать все категории
 						<svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 6C0 5.44772 0.447716 5 1 5H14.17L11.2935 2.11549C10.9048 1.7257 10.9053 1.09474 11.2945 0.705492C11.6841 0.315859 12.3159 0.315859 12.7055 0.705492L18 6L12.7055 11.2945C12.3159 11.6841 11.6841 11.6841 11.2945 11.2945C10.9053 10.9053 10.9048 10.2743 11.2935 9.88451L14.17 7H0.999998C0.447714 7 0 6.55228 0 6Z"/></svg>
 					</a>
@@ -30,7 +30,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 							<div class="best-categories-card__subtitle">от 5 000 рублей</div>
 						</a>
 					</li>
-					<li class="best-categories-grid__card best-categories-card">
+					<li class="best-categories-grid__card best-categories-card best-categories-card--sale">
 						<a href="#" class="best-categories-grid__inner">
 							<div class="best-categories-card__label best-categories-card-label">
 								<span class="best-categories-card-label__number">-20</span>
@@ -50,7 +50,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 							<div class="best-categories-card__subtitle">от 2 990 рублей</div>
 						</a>
 					</li>
-					<li class="best-categories-grid__card best-categories-card">
+					<li class="best-categories-grid__card best-categories-card best-categories-card--with-desc">
 						<a href="#" class="best-categories-grid__inner">
 							<div class="best-categories-card__inner-desc">
 								<div class="best-categories-card__title">Игровые станции</div>

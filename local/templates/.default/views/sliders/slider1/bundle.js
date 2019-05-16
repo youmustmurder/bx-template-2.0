@@ -18,10 +18,13 @@ window.addEventListener('load', function () {
   sliderBig.events.on('transitionStart', function (info) {
     positionNav(slider, nav, info);
   });
+  window.addEventListener('resize', debounce(function () {
+    positionNav(slider, nav, sliderBig.getInfo());
+  }, 300));
 });
 
 var positionNav = function positionNav(slider, nav, info) {
-  var right = -1 * (slider.getBoundingClientRect().left - document.querySelector('.container').getBoundingClientRect().left);
+  var right = -1 * (slider.getBoundingClientRect().left - document.querySelector('.container').getBoundingClientRect().left) + 15;
   var nums = slider.querySelectorAll('.slider-slide')[info.displayIndex].querySelector('.slider-slide-numbers');
   var top = -1 * (slider.getBoundingClientRect().top - nums.getBoundingClientRect().top);
   nav.style.top = "".concat(top, "px");
