@@ -59,14 +59,6 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
     );?>
 <?}?>
 <?$APPLICATION->IncludeFile(
-    "views/header/header_2/template.php",
-    array(),
-    array(
-        "SHOW_BORDER" => false,
-        "MODE" => "php"
-    )
-);?>
-<?$APPLICATION->IncludeFile(
     "views/header/" . $arCurrentSetting['HEADER'] . "/template.php",
     array(),
     array(
@@ -76,7 +68,7 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
 );?>
 <!-- test -->
 <?$APPLICATION->IncludeFile(
-    "views/sliders/slider1/template.php",
+    "views/sliders/slider2/template.php",
     array(
         "CONTENT" => $pageContent
     ),
