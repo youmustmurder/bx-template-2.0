@@ -68,7 +68,7 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
 );?>
 <!-- test -->
 <?$APPLICATION->IncludeFile(
-    "views/sliders/slider3/template.php",
+    "views/sliders/slider4/template.php",
     array(
         "CONTENT" => $pageContent
     ),
