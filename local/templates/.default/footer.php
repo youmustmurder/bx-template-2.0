@@ -145,6 +145,16 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
         "MODE" => "php"
     )
 );?>
+<?$APPLICATION->IncludeFile(
+    "views/news/news1/template.php",
+    array(
+        "CONTENT" => $pageContent
+    ),
+    array(
+        "SHOW_BORDER" => false,
+        "MODE" => "php"
+    )
+);?>
 <!-- test -->
 <?if ($APPLICATION->GetCurPage(false) == SITE_DIR) {?>
     <?$APPLICATION->IncludeFile(

@@ -80,6 +80,27 @@
 	}
 }
 
+.btn--border-white {
+	border: 1px solid #eee;
+	background: none;
+	svg {
+		fill: #fff;
+	}
+	&:hover,
+	&:focus {
+		background: #fff;
+		svg {
+			fill: #95A5A6;
+		}
+	}
+	&:active {
+		background: #fff;
+		svg {
+			fill: #95A5A6;
+		}
+	}
+}
+
 .btn--circle {
 	border-radius: 50px;
 }
@@ -141,6 +162,13 @@
 	}
 }
 
+.btn__link--white {
+	color: #fff;
+	svg {
+		fill: #fff;
+	}
+}
+
 .btn__link--icon-l {
 	img,
 	svg {
@@ -163,7 +191,6 @@
 	width: 48px;
 	height: 48px;
 	border-radius: 50%;
-	border: none;
 	cursor: pointer;
 	&.btn--icon-big {
 		width: 64px;
