@@ -69,10 +69,10 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 				</div>
 				<div class="slide-big__nav">
 					<button class="btn btn--icon btn--icon-big btn--stock slider-big__prev">
-						<svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14.1641 6H1.91406L7.16406 0.74994L6.49976 0L-0.000137329 6.5L6.49986 13L7.16406 12.25L1.91406 7H14.1641V6Z" fill="#95A5A6"/></svg>
+						<?=GetContentSvgIcon('arrow_left');?>
 					</button>
 					<button class="btn btn--icon btn--icon-big btn--success slider-big__next">
-						<svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M0 6H12.25L7 0.74994L7.6643 0L14.1642 6.5L7.6642 13L7 12.25L12.25 7H0V6Z" fill="white"/></svg>
+						<?=GetContentSvgIcon('arrow_right');?>
 					</button>
 				</div>
 			</div>
