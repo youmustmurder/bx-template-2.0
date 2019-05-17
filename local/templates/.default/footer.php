@@ -126,16 +126,6 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
     )
 );?>
 <?$APPLICATION->IncludeFile(
-    "views/reviews/reviews1/template.php",
-    array(
-        "CONTENT" => $pageContent
-    ),
-    array(
-        "SHOW_BORDER" => false,
-        "MODE" => "php"
-    )
-);?>
-<?$APPLICATION->IncludeFile(
     "views/text/text1/template.php",
     array(
         "CONTENT" => $pageContent
@@ -147,6 +137,16 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
 );?>
 <?$APPLICATION->IncludeFile(
     "views/news/news1/template.php",
+    array(
+        "CONTENT" => $pageContent
+    ),
+    array(
+        "SHOW_BORDER" => false,
+        "MODE" => "php"
+    )
+);?>
+<?$APPLICATION->IncludeFile(
+    "views/reviews/reviews2/template.php",
     array(
         "CONTENT" => $pageContent
     ),
