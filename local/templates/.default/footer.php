@@ -86,7 +86,7 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
     )
 );?>
 <?$APPLICATION->IncludeFile(
-    "views/categories/categories1/template.php",
+    "views/categories/categories2/template.php",
     array(
         "CONTENT" => $pageContent
     ),
@@ -106,7 +106,7 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
     )
 );?>
 <?$APPLICATION->IncludeFile(
-    "views/services/services1/template.php",
+    "views/services/services2/template.php",
     array(
         "CONTENT" => $pageContent
     ),
