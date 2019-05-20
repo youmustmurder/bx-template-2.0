@@ -2,20 +2,20 @@ const customSelect = function(options, cbAfter, cbChoose) {
 	var elem = typeof (options.elem === 'string')
 		? document.getElementById(options.elem)
 		: options.elem;
-	(mainClass = 'custom-dropdown'),
-		(mainClassActive = 'custom-dropdown_active'),
-		(buttonClass = 'custom-dropdown__button'),
-		(buttonClass2 = 'custom-dropdown_button'),
-		(buttonValueClass = 'custom-dropdown_button__value'),
-		(buttonArrowClass = 'custom-dropdown_button__arrow'),
-		(listContainerClass = 'custom-dropdown__content'),
-		(listClass1 = 'custom-dropdown__list'),
-		(listClass2 = 'custom-dropdown-list'),
-		(liClass = 'custom-dropdown-list__item'),
-		(selectedClass = 'custom-dropdown-list__item_active'),
-		(openClass = 'custom-dropdown-list_open'),
-		(selectOptions = elem.querySelectorAll('option')),
-		(optionsLength = selectOptions.length);
+	var mainClass = 'custom-dropdown',
+		mainClassActive = 'custom-dropdown_active',
+		buttonClass = 'custom-dropdown__button',
+		buttonClass2 = 'custom-dropdown_button',
+		buttonValueClass = 'custom-dropdown_button__value',
+		buttonArrowClass = 'custom-dropdown_button__arrow',
+		listContainerClass = 'custom-dropdown__content',
+		listClass1 = 'custom-dropdown__list',
+		listClass2 = 'custom-dropdown-list',
+		liClass = 'custom-dropdown-list__item',
+		selectedClass = 'custom-dropdown-list__item_active',
+		openClass = 'custom-dropdown-list_open',
+		selectOptions = elem.querySelectorAll('option'),
+		optionsLength = selectOptions.length;
 
 	var selectContainer = document.createElement('div');
 
