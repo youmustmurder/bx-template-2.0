@@ -40,12 +40,13 @@ const lintAndFormatCode = (filename) => {
 	});
 };
 
-const transformFile = async (filename, output = path.join(path.dirname(filename), 'bundle.js')) => {
+const transformFile = async (filename, output = path.join(path.dirname(filename), 'script.js')) => {
 	const bundle = await rollup.rollup({
 		input: filename
 	});
 	const { output: outputSplit } = await bundle.generate({
-		format: 'cjs'
+		format: 'cjs',
+		treeshake: false
 	});
 	for (const chunkOrAsset of outputSplit) {
 		if (chunkOrAsset.isAsset) {

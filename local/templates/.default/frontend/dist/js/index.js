@@ -2,6 +2,10 @@
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+require('micromodal');
+
+require('axios');
+
 var tns = function () {
   // Object.keys
   if (!Object.keys) {
@@ -3642,26 +3646,7 @@ var tns = function () {
   return tns;
 }();
 
-function debounce(func, wait, immediate) {
-  var timeout;
-  return function executedFunction() {
-    var context = this;
-    var args = arguments;
-
-    var later = function later() {
-      timeout = null;
-      if (!immediate) func.apply(context, args);
-    };
-
-    var callNow = immediate && !timeout;
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-    if (callNow) func.apply(context, args);
-  };
-}
-
-window.addEventListener('load', function () {
-  console.log(debounce); // var counterStroke = itemCounter('.form-stroke__fieldCount'),
+window.addEventListener('load', function () {// var counterStroke = itemCounter('.form-stroke__fieldCount'),
   // 	counterUnderline = itemCounter('.form-underline__fieldCount'),
   // 	// customSelectExample = new customSelect({
   // 	// 	elem: 'form-stroke__select',
