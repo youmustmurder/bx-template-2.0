@@ -92,64 +92,10 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
     );?>
 <?}?>
 
-
-
-<?$APPLICATION->IncludeFile(
-    "views/about/about1/template.php",
-    array(
-        "CONTENT" => $pageContent
-    ),
-    array(
-        "SHOW_BORDER" => false,
-        "MODE" => "php"
-    )
-);?>
-
-<?$APPLICATION->IncludeFile(
-    "views/news/news1/template.php",
-    array(
-        "CONTENT" => $pageContent
-    ),
-    array(
-        "SHOW_BORDER" => false,
-        "MODE" => "php"
-    )
-);?>
-<?$APPLICATION->IncludeFile(
-    "views/reviews/reviews2/template.php",
-    array(
-        "CONTENT" => $pageContent
-    ),
-    array(
-        "SHOW_BORDER" => false,
-        "MODE" => "php"
-    )
-);?>
-<?$APPLICATION->IncludeFile(
-    "views/around/around1/template.php",
-    array(
-        "CONTENT" => $pageContent
-    ),
-    array(
-        "SHOW_BORDER" => false,
-        "MODE" => "php"
-    )
-);?>
-<?$APPLICATION->IncludeFile(
-    "views/rewards/rewards1/template.php",
-    array(
-        "CONTENT" => $pageContent
-    ),
-    array(
-        "SHOW_BORDER" => false,
-        "MODE" => "php"
-    )
-);?>
-<!-- test -->
-
 <?$APPLICATION->RestartWorkarea(true);?>
+
 <?$APPLICATION->IncludeFile(
-    "views/footer/footer_3/template.php",
+    "views/footer/" . $arCurrentSetting['FOOTER'] . "/template.php",
     array(),
     array(
         "SHOW_BORDER" => false,
