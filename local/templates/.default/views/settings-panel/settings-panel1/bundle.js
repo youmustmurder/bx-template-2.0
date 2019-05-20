@@ -2,21 +2,9 @@
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-window.onload = function () {
-  document.querySelector('.js-tab-trigger').addEventListener('click', function () {
-    var id = this.getAttribute('data-tab'),
-        content = document.querySelector('.js-tab-content[data-tab="' + id + '"]');
-    conslole.log(id, content);
-    document.querySelector('.js-tab-trigger.active').classList.remove('active');
-    this.classList.add('active');
-    document.querySelector('.js-tab-trigger.active').classList.remove('active');
-    content.classList.add('active');
-  });
-};
-
 var customSelect = function customSelect(options, cbAfter, cbChoose) {
-  var elem = _typeof(options.elem === 'string') ? document.getElementById(options.elem) : options.elem,
-      mainClass = 'custom-dropdown',
+  var elem = _typeof(options.elem === 'string') ? document.getElementById(options.elem) : options.elem;
+  var mainClass = 'custom-dropdown',
       mainClassActive = 'custom-dropdown_active',
       buttonClass = 'custom-dropdown__button',
       buttonClass2 = 'custom-dropdown_button',
@@ -132,7 +120,30 @@ var customSelect = function customSelect(options, cbAfter, cbChoose) {
   };
 };
 
-window.onload = function () {
+window.addEventListener('load', function () {
+  var tabsBtns = document.querySelectorAll('.js-tab-trigger');
+
+  function tabSelection(e) {
+    var id = e.getAttribute('data-tab'),
+        tab = document.querySelectorAll('.js-tab-trigger.active'),
+        content = document.querySelectorAll('.js-tab-content'),
+        contentData = document.querySelector('.js-tab-content[data-tab="' + id + '"]');
+    Array.prototype.forEach.call(tab, function (preview) {
+      preview.classList.remove('active');
+    });
+    e.classList.add('active');
+    Array.prototype.forEach.call(content, function (preview) {
+      preview.classList.remove('active');
+    });
+    contentData.classList.add('active');
+  }
+
+  Array.prototype.forEach.call(tabsBtns, function (preview) {
+    preview.addEventListener('click', function () {
+      tabSelection(this);
+    });
+  });
+  console.log(customSelect);
   var cartSelect = new customSelect({
     elem: 'selectMainfont'
   });
@@ -142,4 +153,18 @@ window.onload = function () {
   var titleSelect = new customSelect({
     elem: 'selectTitlefont'
   });
-};
+});
+/*document.querySelectorAll('.js-tab-trigger').addEventListener('click', function() {
+        alert(123);
+        var id = this.getAttribute('data-tab'),
+            content = document.querySelector('.js-tab-content[data-tab="'+ id +'"]');
+        
+        conslole.log(id, content);
+        
+        document.querySelector('.js-tab-trigger.active').classList.remove('active');
+        this.classList.add('active');
+        
+        document.querySelector('.js-tab-trigger.active').classList.remove('active');
+        content.classList.add('active');
+        
+    });*/

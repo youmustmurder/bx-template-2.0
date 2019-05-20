@@ -11,7 +11,7 @@ Asset::getInstance()->addJs(GetCurDir(__DIR__) . '/bundle.js');
 Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 ?>
 
-<div class="box__modal-setting animated slideInLeft">
+<div class="box__modal-setting">
     <div class="settings__tabs modal__window">
         <ul class="settings__tabs-menu">
             <li class="settings__tabs-menu-item js-tab-trigger active" data-tab="1"><a href="#">Общие настройки</a></li>
@@ -44,21 +44,21 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                     <div class="group__theme-list group__header">
                         <div class="col__line">
                             <label class="view__label view__line view__footer" for="footerView__default">
-                                <img src="/local/templates/individual/views/modules/footer/default/preview.png" alt="">
+                                <img src="/local/templates/.default/views/footer/default/preview.png" alt="">
                                 <input type="radio" name="FOOTER" id="footerView__default" value="default" checked="">
                                 <span class="pageView__name">Вариант 1 (Основной вид)</span>
                             </label>
                         </div>
                         <div class="col__line">
                             <label class="view__label view__line view__footer" for="footerView__footer_2">
-                                <img src="/local/templates/individual/views/modules/footer/footer_2/preview.png" alt="">
+                                <img src="/local/templates/.default/views/footer/footer_2/preview.png" alt="">
                                 <input type="radio" name="FOOTER" id="footerView__footer_2" value="footer_2">
                                 <span class="pageView__name">Вариант 2</span>
                             </label>
                         </div>
                         <div class="col__line">
                             <label class="view__label view__line view__footer" for="footerView__footer_3">
-                                <img src="/local/templates/individual/views/modules/footer/footer_3/preview.png" alt="">
+                                <img src="/local/templates/.default/views/footer/footer_3/preview.png" alt="">
                                 <input type="radio" name="FOOTER" id="footerView__footer_3" value="footer_3">
                                 <span class="pageView__name">Вариант 3</span>
                             </label>
@@ -387,42 +387,42 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                     <div class="group__theme-list group__header">
                         <div class="col__line">
                             <label class="view__label view__line" for="headerView__default">
-                                <img src="/local/templates/individual/views/modules/header/default/preview.png">
+                                <img src="/local/templates/.default/views/header/default/preview.png">
                                 <input type="radio" name="HEADER" id="headerView__default" value="default" checked="">
                                 <span class="pageView__name">Вариант 1 (Основной вид)</span>
                             </label>
                         </div>
                         <div class="col__line">
                             <label class="view__label view__line" for="headerView__header_2">
-                                <img src="/local/templates/individual/views/modules/header/header_2/preview.png">
+                                <img src="/local/templates/.default/views/header/header_2/preview.png">
                                 <input type="radio" name="HEADER" id="headerView__header_2" value="header_2">
                                 <span class="pageView__name">Вариант 2</span>
                             </label>
                         </div>
                         <div class="col__line">
                             <label class="view__label view__line" for="headerView__header_3">
-                                <img src="/local/templates/individual/views/modules/header/header_3/preview.png">
+                                <img src="/local/templates/.default/views/header/header_3/preview.png">
                                 <input type="radio" name="HEADER" id="headerView__header_3" value="header_3">
                                 <span class="pageView__name">Вариант 3</span>
                             </label>
                         </div>
                         <div class="col__line">
                             <label class="view__label view__line" for="headerView__header_4">
-                                <img src="/local/templates/individual/views/modules/header/header_4/preview.png">
+                                <img src="/local/templates/.default/views/header/header_4/preview.png">
                                 <input type="radio" name="HEADER" id="headerView__header_4" value="header_4">
                                 <span class="pageView__name">Вариант 4</span>
                             </label>
                         </div>
                         <div class="col__line">
                             <label class="view__label view__line" for="headerView__header_5">
-                                <img src="/local/templates/individual/views/modules/header/header_5/preview.png">
+                                <img src="/local/templates/.default/views/header/header_5/preview.png">
                                 <input type="radio" name="HEADER" id="headerView__header_5" value="header_5">
                                 <span class="pageView__name">Вариант 5</span>
                             </label>
                         </div>
                         <div class="col__line">
                             <label class="view__label view__line" for="headerView__header_6">
-                                <img src="/local/templates/individual/views/modules/header/header_6/preview.png">
+                                <img src="/local/templates/.default/views/header/header_6/preview.png">
                                 <input type="radio" name="HEADER" id="headerView__header_6" value="header_6">
                                 <span class="pageView__name">Вариант 6</span>
                             </label>

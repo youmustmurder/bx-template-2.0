@@ -5,6 +5,7 @@ import debounce from './debounce';
 
 window.addEventListener('load', () => {
 	console.log(debounce);
+    console.log(customSelect);
 	// var counterStroke = itemCounter('.form-stroke__fieldCount'),
 	// 	counterUnderline = itemCounter('.form-underline__fieldCount'),
 	// 	// customSelectExample = new customSelect({
