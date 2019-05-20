@@ -39,9 +39,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                     <?if ($arFilial['ADDRESS']) {?>
                         <a href="/contacts/" class="address__link d-flex">
                             <span class="icon__geo"><?=GetContentSvgIcon('address');?></span>
-                            <span class="address-value">
-                                <?=$arFilial['ADDRESS']?>
-                            </span>
+                            <span class="address-value"><?=$arFilial['ADDRESS']?></span>
                         </a>
                     <?}?>
                 </address>

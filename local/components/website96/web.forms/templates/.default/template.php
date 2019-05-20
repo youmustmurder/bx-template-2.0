@@ -100,10 +100,10 @@ if(isset($_REQUEST['ajax_form']) && !empty($_REQUEST['ajax_form'])){?>
         </div>
     </div>
 <?} else {?>
-    <a href="#"
+    <button
        class="btn btn--circle btn--mid js-init-modal__form <?=$arParams['FORM_BTN_TYPE']?>"
        data-sign="<?=$arResult["JSON_SIGN"]?>"
        data-lang="<?= LANGUAGE_ID ?>"
        data-site-id="<?= LANGUAGE_ID ?>"
-       data-modal="<?=$arParams['IBLOCK_ID']?>"><?=$arParams['FORM_BTN_TYPE'] == 'btn-icon' ? GetContentSvgIcon('phone') : $arParams['FORM_BTN_OPEN']?></a>
+       data-modal="<?=$arParams['IBLOCK_ID']?>"><?=$arParams['FORM_BTN_TYPE'] == 'btn-icon' ? GetContentSvgIcon('phone') : $arParams['FORM_BTN_OPEN']?></button>
 <?}?>
