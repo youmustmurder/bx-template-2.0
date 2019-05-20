@@ -3645,8 +3645,47 @@ var tns = function () {
 
   return tns;
 }();
+/*
+	@param modalName: String
+	@param url: String
+	@param method: String
+	@param dataAjax: Object
+	@param modalSettings: Object
+	@param before: Function
+	@param after: Function
+*/
 
-window.addEventListener('load', function () {// var counterStroke = itemCounter('.form-stroke__fieldCount'),
+
+var modalFromAjax = function modalFromAjax(modalName) {
+  var url = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '/local/tools/ajax_form.php';
+  var method = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'get';
+  var dataAjax = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
+  var modalSettings = arguments.length > 4 ? arguments[4] : undefined;
+  var before = arguments.length > 5 ? arguments[5] : undefined;
+  var after = arguments.length > 6 ? arguments[6] : undefined;
+
+  if (typeof before === 'function') {
+    before();
+  }
+
+  axios(url, {
+    method: method,
+    params: dataAjax,
+    responseType: 'text'
+  }).then(function (res) {
+    if (res.data != '') {
+      if (typeof after === 'function') {
+        after();
+      }
+
+      document.querySelector('body').insertAdjacentHTML('beforeend', res.data.trim());
+      MicroModal.show(modalName, modalSettings);
+    }
+  });
+};
+
+window.addEventListener('load', function () {
+  console.log(modalFromAjax); // var counterStroke = itemCounter('.form-stroke__fieldCount'),
   // 	counterUnderline = itemCounter('.form-underline__fieldCount'),
   // 	// customSelectExample = new customSelect({
   // 	// 	elem: 'form-stroke__select',
