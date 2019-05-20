@@ -216,7 +216,9 @@ class CWebsiteTemplate {
             'ADVANTAGE' => 'default',
             'FONT_SIZE' => '15',
             'FONT' => 'default',
+            'NEWS' => 'default',
             'REVIEWS' => 'default',
+            'SERVICES' => 'default',
             'LOGO' => 'default',
             'SLIDER' => 'default',
             'PRODUCTS' => 'default'
