@@ -20,11 +20,11 @@
 .papers__link,
 a
 {
-color: #34495e;
+color: #000000;
 }
 .btn-default svg
 {
-fill: #34495e;
+fill: #000000;
 }
 .review__image,
 .product-image__nav.slick-current:before,
@@ -43,7 +43,7 @@ fill: #34495e;
 .btn-icon,
 .slide-item__bottom .slide-prev:before, .slide-item__bottom .slide-next:before
 {
-border-color: #34495e;
+border-color: #000000;
 }
 .cart__panel-show,
 .cart__page .cart__page-checkbox input[type=checkbox]:checked+.cart__page-checktext:before, .politic__checkbox input[type=checkbox]:checked+.politic__text:before,
@@ -63,7 +63,7 @@ border-color: #34495e;
 .container-section--popular .section-item__name:before,
 .sub__category:hover .sub__categoty-name, .sub__category:focus .sub__categoty-name
 {
-background: #34495e;
+background: #000000;
 }
 .logo-circle,
 .logo-svg .cls-1, .logo-svg .cls-2,
@@ -74,22 +74,22 @@ background: #34495e;
 .btn-default:hover svg, .btn-default:focus svg, .btn-default:active svg,
 .btn-primary:hover svg, .btn-primary:focus svg, .btn-primary:active svg
 {
-fill:#34495e;
+fill:#000000;
 }
 .settings__tabs-reset svg path
 {
-stroke:#34495e;
+stroke:#000000;
 }
 .review-nav__image:after
 {
-border-color: #34495e transparent transparent transparent;
+border-color: #000000 transparent transparent transparent;
 }
 .review__next:before,
 .btn-link:after
 {
-border-color: transparent transparent transparent #34495e;
+border-color: transparent transparent transparent #000000;
 }
 .review__prev:before
 {
-border-color: transparent #34495e transparent transparent;
+border-color: transparent #000000 transparent transparent;
 }

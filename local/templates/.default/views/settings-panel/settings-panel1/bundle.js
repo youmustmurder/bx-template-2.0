@@ -6,6 +6,7 @@ window.onload = function () {
   document.querySelector('.js-tab-trigger').addEventListener('click', function () {
     var id = this.getAttribute('data-tab'),
         content = document.querySelector('.js-tab-content[data-tab="' + id + '"]');
+    conslole.log(id, content);
     document.querySelector('.js-tab-trigger.active').classList.remove('active');
     this.classList.add('active');
     document.querySelector('.js-tab-trigger.active').classList.remove('active');
