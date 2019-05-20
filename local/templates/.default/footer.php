@@ -78,6 +78,16 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
     )
 );?>
 <?$APPLICATION->IncludeFile(
+    "views/settings-panel/settings-panel1/template.php",
+    array(
+        "CONTENT" => $pageContent
+    ),
+    array(
+        "SHOW_BORDER" => false,
+        "MODE" => "php"
+    )
+);?>
+<?$APPLICATION->IncludeFile(
     "views/categories/categories2/template.php",
     array(
         "CONTENT" => $pageContent
