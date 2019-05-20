@@ -50,11 +50,15 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 					</a>
 					</div>
 					<div class="header-search">
-						<form class="search__form" method="get" action="/search/">
-							<span class="icon__search"><?=GetContentSvgIcon('search');?></span>
-							<input class="inp inp-search" name="q" id="qplSKIW" autocomplete="off" placeholder="Поиск по сайту" size="20">
-							<button class="btn-search" type="submit" title="Поиск"><?=GetContentSvgIcon('arrow_small_right');?></button>
-						</form>
+                        <?$APPLICATION->IncludeComponent(
+                            "bitrix:search.form",
+                            "",
+                            array(
+	                            "PAGE" => "#SITE_DIR#search/",
+		                        "USE_SUGGEST" => "N",
+	                        ),
+                            false
+                        );?>
 					</div>
 					<div class="header__contact">
 						<?if ($arFilial['PHONE']) {?>
