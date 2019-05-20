@@ -31,7 +31,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_af
 
 
 $APPLICATION->IncludeComponent(
-    "website96:forms",
+    "website96:web.forms",
     $arParams["COMPONENT_TEMPLATE"],
     $arParams,
     false
