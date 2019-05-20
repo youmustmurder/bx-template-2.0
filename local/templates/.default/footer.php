@@ -25,8 +25,8 @@ $pageLayout = $APPLICATION->GetPageProperty("PAGE_LAYOUT", AppGetCascadeDirPrope
 
 //CWebsiteTemplate::$demoMode = true;
 $arCurrentSetting = CWebsiteTemplate::getTemplateSetting();
-
-//Debug::dump($pageContent);
+$arFilial = CWebsiteTemplate::getCurrentFilial();
+//Debug::dump($arFilial);
 
 //load main css
 Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("frontend/dist/css/styles.css"));

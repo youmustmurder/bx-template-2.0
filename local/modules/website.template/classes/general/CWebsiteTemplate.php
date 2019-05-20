@@ -8,7 +8,8 @@ use Bitrix\Highloadblock as HL,
     Bitrix\Main\Localization\Loc,
     Bitrix\Main\Loader,
     Bitrix\Main\Application,
-    Bitrix\Main\Page\Asset;
+    Bitrix\Main\Page\Asset,
+    Bitrix\Iblock\ElementTable;
 
 Loc::loadMessages(__FILE__);
 Loader::includeModule('iblock');
@@ -21,6 +22,7 @@ class CWebsiteTemplate {
 
     static $arParametersList = array();
     static $arCurrentSetting = array();
+    static $arCurrentFilial = array();
     static $demoMode = false;
     static $settingPathFile;
     
@@ -54,6 +56,38 @@ class CWebsiteTemplate {
                     break;
             }
         }
+    }
+    
+    public static function getCurrentFilial()
+    {
+        $arFilial = array();
+        $res = CIBlockElement::GetList(
+            array(),
+            array('IBLOCK_CODE' => 'filials', 'ACTIVE' => 'Y', '!PROPERTY_C_DEFAULT_VALUE' => false),
+            false, array(),
+            array('ID', 'IBLOCK_ID', 'PROPERTY_*')
+        );
+        while ($ar = $res->GetNextElement()) {
+            $ar_res = $ar->GetFields();
+            $ar_res['PROPERTIES'] = $ar->GetProperties();
+            foreach ($ar_res['PROPERTIES'] as $code => $prop) {
+                switch ($code) {
+                    case 'C_CITY':
+                        $arFilial['ADDRESS'] = $ar_res['PROPERTIES']['C_ADDRESS']['VALUE'] && $prop['VALUE'] ?
+                            $prop['VALUE'] . ', ' . $ar_res['PROPERTIES']['C_ADDRESS']['VALUE'] : $prop['VALUE'];
+                        break;
+                    case 'C_PHONE':
+                        $arFilial['PHONE'] = empty($prop['VALUE']) && !empty($ar_res['PROPERTIES']['C_PHONES']['VALUE'][0]) ?
+                            $ar_res['PROPERTIES']['C_PHONES']['VALUE'][0] : $prop['VALUE'];
+                        break;
+                    case 'C_EMAIL':
+                        $arFilial['EMAIL'] = empty($prop['VALUE']) && !empty($ar_res['PROPERTIES']['C_EMAILS']['VALUE'][0]) ?
+                            $ar_res['PROPERTIES']['C_EMAILS']['VALUE'][0] : $prop['VALUE'];
+                        break;
+                }
+            }
+        }
+        return $arFilial;
     }
     
     public static function getCss($codeProperty, $value = 'default')
