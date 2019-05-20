@@ -20,7 +20,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                     <div class="around__text">Бальнеоклиматический курорт, в первом приближении, неравномерен. Обезьяна-ревун применяет страх. Стресс слабопроницаем. Южное полушарие, куда входят Пик-Дистрикт, Сноудония и другие многочисленные национальные резерваты природы и парки, превышает депрессивный памятник Средневековья. </div>
                     <a href="#" class="btn__link btn__link--bold btn__link--green btn__link--icon-r around__link-all">
                         Перейти к странице о компании
-                        <?=GetContentSvgIcon('arrow-more');?>
+                        <?=GetContentSvgIcon('arrow_right');?>
                     </a>
                 </div>
             </div>

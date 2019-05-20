@@ -1,3 +1,4 @@
+/* autoprefixer grid: autoplace */
 .products {
 	padding: 88px 0;
 	&.products--grey {
@@ -35,6 +36,7 @@
 			grid-column: 2;
 			grid-row: 1/7;
 			align-self: center;
+			height: auto;
 			max-height: 100%;
 			max-width: 100%;
 			margin: 0;
@@ -45,6 +47,7 @@
 			position: static;
 			width: auto;
 			margin-bottom: 30px;
+			justify-content: flex-start;
 		}
 		.product__btn {
 			transform: translate(-15px, 0);
@@ -92,10 +95,12 @@
 
 .product__img {
 	margin-bottom: 20px;
+	height: 215px;
 }
 
 .product__name,
 .product__subtitle {
+	display: block;
 	text-align: center;
 }
 
@@ -131,6 +136,9 @@
 	background: none;
 	border: none;
 	cursor: pointer;
+	svg {
+		fill: #000;
+	}
 }
 
 .products__price {
