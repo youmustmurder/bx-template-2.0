@@ -208,9 +208,9 @@ class CWebsiteTemplate {
         $arSetting = array(
             'SHOW_PANEL' => COption::GetOptionString(MODULE_ID, 'WEBSITE_TEMPLATE_SETTING_VIEW_PANEL', 'Y', SITE_ID),
             'TEMPLATE_TYPE' => 'CATALOG',
-            'HEADER' => '.default',
+            'HEADER' => 'default',
             'FAST_ORDER' => 'Y',
-            'FOOTER' => '.default',
+            'FOOTER' => 'default',
             'COLOR' => 'default',
             'SECTIONS' => 'default',
             'ADVANTAGE' => 'default',
@@ -218,15 +218,21 @@ class CWebsiteTemplate {
             'FONT' => 'default',
             'REVIEWS' => 'default',
             'LOGO' => 'default',
-            'SLIDER' => 'default'
+            'SLIDER' => 'default',
+            'PRODUCTS' => 'default'
         );
         
         if (CWebsiteTemplate::$demoMode == true) {
             self::$arCurrentSetting = strlen($_SESSION['TEMPLATE_SETTINGS']) > 1 ? json_decode($_SESSION['TEMPLATE_SETTINGS'], true)
                 : $arSetting;
         } else {
-            self::$arCurrentSetting = file_exists(CWebsiteTemplate::getPathSettingFile()) ? json_decode(file_get_contents(CWebsiteTemplate::getPathSettingFile()), true)
-                : $arSetting;
+            if (file_exists(CWebsiteTemplate::getPathSettingFile())) {
+                self::$arCurrentSetting = json_decode(file_get_contents(CWebsiteTemplate::getPathSettingFile()), true);
+            } else {
+                if (file_put_contents(CWebsiteTemplate::getPathSettingFile(), json_encode($arSetting))) {
+                    self::$arCurrentSetting = $arSetting;
+                }
+            }
         }
         return self::$arCurrentSetting;
     }

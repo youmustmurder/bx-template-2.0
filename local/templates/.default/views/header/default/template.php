@@ -6,7 +6,6 @@ use Bitrix\Main\Page\Asset;
 
 Asset::getInstance()->addJs(GetCurDir(__DIR__) . '/script.js');
 Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
-
 ?>
 <header class="header">
     <nav class="header-top">
@@ -14,23 +13,25 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
             <div class="row">
                 <div class="col-lg-7">
                     <div class="header-top__navbar">
-                        <ul>
-                            <li>
-                                <a href="/about/">О компании</a>
-                            </li>
-                            <li>
-                                <a href="/news/">Новости</a>
-                            </li>
-                            <li>
-                                <a href="/stocks/">Акции</a>
-                            </li>
-                            <li>
-                                <a href="/delivery/">Доставка и оплата</a>
-                            </li>
-                            <li>
-                                <a href="/contacts/">Контакты</a>
-                            </li>
-                        </ul>
+                        <?$APPLICATION->IncludeComponent(
+                            "bitrix:menu",
+                            ".default",
+                            array(
+                                "COMPONENT_TEMPLATE" => ".default",
+                                "ROOT_MENU_TYPE" => "top",
+                                "MENU_CACHE_TYPE" => "N",
+                                "MENU_CACHE_TIME" => "3600",
+                                "MENU_CACHE_USE_GROUPS" => "Y",
+                                "MENU_CACHE_GET_VARS" => array(
+                                ),
+                                "MAX_LEVEL" => "2",
+                                "CHILD_MENU_TYPE" => "left",
+                                "USE_EXT" => "Y",
+                                "DELAY" => "N",
+                                "ALLOW_MULTI_SELECT" => "N"
+                            ),
+                            false
+                        );?>
                     </div>
                 </div>
                 <address class="col-lg-5 header__address d-flex align-items-center justify-content-end">
