@@ -212,16 +212,16 @@ class CWebsiteTemplate {
             'FAST_ORDER' => 'Y',
             'FOOTER' => 'default',
             'COLOR' => 'default',
-            'SECTIONS' => 'default',
+            'SECTION' => 'default',
             'ADVANTAGE' => 'default',
             'FONT_SIZE' => '15',
             'FONT' => 'default',
             'NEWS' => 'default',
-            'REVIEWS' => 'default',
-            'SERVICES' => 'default',
+            'REVIEW' => 'default',
+            'SERVICE' => 'default',
             'LOGO' => 'default',
             'SLIDER' => 'default',
-            'PRODUCTS' => 'default'
+            'PRODUCT' => 'default'
         );
         
         if (CWebsiteTemplate::$demoMode == true) {

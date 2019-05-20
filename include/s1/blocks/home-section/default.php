@@ -5,7 +5,7 @@
 
 $APPLICATION->IncludeComponent(
     "bitrix:catalog.section.list",
-    "home-sections_2",
+    "home-section_default",
     array(
         "IBLOCK_TYPE" => "base",
         "IBLOCK_ID" => "1",
