@@ -4,7 +4,7 @@ const
 	postcss = require('postcss'),
 	precss = require('precss'),
 	cssnano = require('cssnano'),
-	autoprefixer = require('autoprefixer'),
+	autoprefixer = require('autoprefixer')({ grid: 'autoplace' }),
 	stylelint = require('stylelint')({
 		configFile: path.join(path.dirname(__dirname), '.stylelintrc'),
 		files: '**/*.scss',

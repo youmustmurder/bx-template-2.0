@@ -59,14 +59,6 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
     );?>
 <?}?>
 <?$APPLICATION->IncludeFile(
-    "views/header/header_2/template.php",
-    array(),
-    array(
-        "SHOW_BORDER" => false,
-        "MODE" => "php"
-    )
-);?>
-<?$APPLICATION->IncludeFile(
     "views/header/" . $arCurrentSetting['HEADER'] . "/template.php",
     array(),
     array(
@@ -76,7 +68,7 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
 );?>
 <!-- test -->
 <?$APPLICATION->IncludeFile(
-    "views/sliders/slider1/template.php",
+    "views/sliders/slider4/template.php",
     array(
         "CONTENT" => $pageContent
     ),
@@ -86,7 +78,7 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
     )
 );?>
 <?$APPLICATION->IncludeFile(
-    "views/categories/categories1/template.php",
+    "views/categories/categories2/template.php",
     array(
         "CONTENT" => $pageContent
     ),
@@ -106,7 +98,7 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
     )
 );?>
 <?$APPLICATION->IncludeFile(
-    "views/services/services1/template.php",
+    "views/services/services2/template.php",
     array(
         "CONTENT" => $pageContent
     ),
@@ -126,7 +118,7 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
     )
 );?>
 <?$APPLICATION->IncludeFile(
-    "views/reviews/reviews1/template.php",
+    "views/text/text1/template.php",
     array(
         "CONTENT" => $pageContent
     ),
@@ -136,7 +128,17 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
     )
 );?>
 <?$APPLICATION->IncludeFile(
-    "views/text/text1/template.php",
+    "views/news/news1/template.php",
+    array(
+        "CONTENT" => $pageContent
+    ),
+    array(
+        "SHOW_BORDER" => false,
+        "MODE" => "php"
+    )
+);?>
+<?$APPLICATION->IncludeFile(
+    "views/reviews/reviews2/template.php",
     array(
         "CONTENT" => $pageContent
     ),

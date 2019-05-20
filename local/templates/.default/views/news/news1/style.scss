@@ -1,0 +1,157 @@
+.news {
+	position: relative;
+	padding: 80px 0;
+	background: #26AE60;
+}
+
+.news__inner {
+	display: flex;
+	flex-wrap: wrap;
+	border-radius: 5px;
+    overflow: hidden;
+}
+
+.news__title,
+.news__link-all-news {
+	margin-bottom: 45px;
+}
+
+.news__title {
+	flex: 1 1;
+	color: #fff;
+}
+
+.news__link-all-news {
+	flex: 0 1 220px;
+}
+
+.news__slides-inner {
+	flex: 1 1 100%;
+	max-width: 100%;
+	border-radius: 5px;
+    overflow: hidden;
+}
+
+.tns-horizontal.tns-subpixel>.tns-item.news-slide {
+	position: relative;
+	min-height: 360px;
+	padding: 40px 40px 60px;
+	background: #fff;
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 1px;
+		height: 100%;
+		background: #EAEAEA;
+	}
+}
+
+.news-slide__theme {
+	margin-bottom: 10px;
+	color: #95A5A6;
+	font-size: 0.9333rem;
+	line-height: 1.6rem;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.news-slide__title {
+	color: #000;
+	font-size: 1.333rem;
+	line-height: 2.133rem;
+	font-weight: bold;
+}
+
+.news-slide__date {
+	position: absolute;
+	bottom: 40px;
+	left: 40px;
+	opacity: 0.6;
+}
+
+.news__nav {
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	&.news__nav--prev {
+		right: calc(100% + 50px);
+	}
+	&.news__nav--next {
+		left: calc(100% + 50px);
+	}
+}
+
+.news-dots {
+	display: flex;
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
+.news-dots__item {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	margin: 0 3px;
+	background: #eee;
+	opacity: 0.4;
+	transition: 0.3s all ease-out;
+	cursor: pointer;
+	&.tns-nav-active {
+		opacity: 1;
+	}
+}
+
+@media (max-width: 1024px) {
+	.news__title {
+		flex: 0 1 450px;
+	}
+	.news__nav {
+		&.news__nav--prev,
+		&.news__nav--next {
+			top: 0;
+			transform: none;
+		}
+		&.news__nav--prev {
+			right: calc(48px + 15px + 15px);
+		}
+		&.news__nav--next {
+			left: auto;
+			right: 15px;
+		}
+	}
+}
+
+@media (max-width: 860px) {
+	.news {
+		padding: 55px 0;
+	}
+	.news__link-all-news {
+		order: 1;
+		margin: 30px 0 0 0;
+	}
+}
+
+@media (max-width: 860px) and (min-width: 400px) {
+	.news-dots {
+		left: auto;
+		right: 15px;
+		bottom: 60px;
+		transform: none;
+	}
+}
+
+@media (max-width: 400px) {
+	.news__nav {
+		display: none;
+	}
+	.news__link-all-news {
+		margin-top: 80px;
+	}
+	.news-dots {
+		bottom: 100px;
+	}
+}
