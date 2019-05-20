@@ -88,22 +88,3 @@ $APPLICATION->IncludeFile(
         "MODE" => "php"
     )
 );
-
-$APPLICATION->IncludeComponent(
-    'bitrix:news.list',
-    $arCurrentSetting['REVIEWS'],
-    array(
-        'IBLOCK_ID' => 6,
-        'NEWS_COUNT' => 9
-    )
-);
-
-$APPLICATION->IncludeComponent(
-    'bitrix:news.list',
-    $arCurrentSetting['NEWS'],
-    array(
-        'IBLOCK_ID' => 15,
-        'NEWS_COUNT' => 9
-    )
-);
-
