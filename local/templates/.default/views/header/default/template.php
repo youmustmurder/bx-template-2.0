@@ -36,14 +36,14 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                     </div>
                 </div>
                 <address class="col-lg-5 header__address d-flex align-items-center justify-content-end">
-                    <a href="/contacts/" class="address__link d-flex">
-                        <span class="icon__geo"><?=GetContentSvgIcon('address');?></span>
-                        <?if ($arFilial['ADDRESS']) {?>
+                    <?if ($arFilial['ADDRESS']) {?>
+                        <a href="/contacts/" class="address__link d-flex">
+                            <span class="icon__geo"><?=GetContentSvgIcon('address');?></span>
                             <span class="address-value">
                                 <?=$arFilial['ADDRESS']?>
                             </span>
-                        <?}?>
-                    </a>
+                        </a>
+                    <?}?>
                 </address>
             </div>
         </div>
@@ -63,7 +63,9 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                 </div>
                 <div class="header-search">
                     <form class="search__form" method="get" action="/search/">
-    <span class="icon__search"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+    <span class="icon__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
   <defs>
     <style>
       .cls-1 {
