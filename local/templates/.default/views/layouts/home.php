@@ -26,7 +26,7 @@ $APPLICATION->IncludeFile(
 
 /*products*/
 $APPLICATION->IncludeFile(
-    "/include/" . SITE_ID . "/blocks/home-product/" . $arCurrentSetting['SECTION'] . ".php",
+    "/include/" . SITE_ID . "/blocks/home-product/" . $arCurrentSetting['PRODUCTS'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
@@ -36,7 +36,7 @@ $APPLICATION->IncludeFile(
 
 /*services*/
 $APPLICATION->IncludeFile(
-    "/include/" . SITE_ID . "/blocks/home-service/" . $arCurrentSetting['SERVICE'] . ".php",
+    "/include/" . SITE_ID . "/blocks/home-services/" . $arCurrentSetting['SERVICES'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
@@ -59,22 +59,32 @@ if ($arParams['CONTENT']) {?>
     </div>
 <?}
 
-/*news*/
-$APPLICATION->IncludeComponent(
-    'bitrix:news.list',
-    $arCurrentSetting['NEWS'],
+/*about*/
+$APPLICATION->IncludeFile(
+    "/include/" . SITE_ID . "/blocks/home-about/" . $arCurrentSetting['ABOUT'] . ".php",
+    array(),
     array(
-        'IBLOCK_ID' => 15,
-        'NEWS_COUNT' => 9
+        "SHOW_BORDER" => false,
+        "MODE" => "php"
+    )
+);
+
+/*news*/
+$APPLICATION->IncludeFile(
+    "/include/" . SITE_ID . "/blocks/home-news/" . $arCurrentSetting['NEWS'] . ".php",
+    array(),
+    array(
+        "SHOW_BORDER" => false,
+        "MODE" => "php"
     )
 );
 
 /*reviews*/
-$APPLICATION->IncludeComponent(
-    'bitrix:news.list',
-    $arCurrentSetting['REVIEWS'],
+$APPLICATION->IncludeFile(
+    "/include/" . SITE_ID . "/blocks/home-reviews/" . $arCurrentSetting['REVIEWS'] . ".php",
+    array(),
     array(
-        'IBLOCK_ID' => 6,
-        'NEWS_COUNT' => 9
+        "SHOW_BORDER" => false,
+        "MODE" => "php"
     )
 );
