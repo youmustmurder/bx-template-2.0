@@ -26,7 +26,7 @@ $APPLICATION->IncludeFile(
 
 /*products*/
 $APPLICATION->IncludeFile(
-    "/include/" . SITE_ID . "/blocks/home-product/" . $arCurrentSetting['SECTION'] . ".php",
+    "/include/" . SITE_ID . "/blocks/home-product/" . $arCurrentSetting['PRODUCTS'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
@@ -36,7 +36,7 @@ $APPLICATION->IncludeFile(
 
 /*services*/
 $APPLICATION->IncludeFile(
-    "/include/" . SITE_ID . "/blocks/home-service/" . $arCurrentSetting['SERVICE'] . ".php",
+    "/include/" . SITE_ID . "/blocks/home-services/" . $arCurrentSetting['SERVICES'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
@@ -58,6 +58,16 @@ if ($arParams['CONTENT']) {?>
         </div>
     </div>
 <?}
+
+/*about*/
+$APPLICATION->IncludeFile(
+    "/include/" . SITE_ID . "/blocks/home-about/" . $arCurrentSetting['ABOUT'] . ".php",
+    array(),
+    array(
+        "SHOW_BORDER" => false,
+        "MODE" => "php"
+    )
+);
 
 /*news*/
 $APPLICATION->IncludeComponent(
