@@ -25,7 +25,8 @@ $pageLayout = $APPLICATION->GetPageProperty("PAGE_LAYOUT", AppGetCascadeDirPrope
 
 //CWebsiteTemplate::$demoMode = true;
 $arCurrentSetting = CWebsiteTemplate::getTemplateSetting();
-//Debug::dump(CWebsiteTemplate::getTemplateSetting());
+
+//Debug::dump($pageContent);
 
 //load main css
 Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("frontend/dist/css/styles.css"));
@@ -92,26 +93,7 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
 <?}?>
 
 
-<?$APPLICATION->IncludeFile(
-    "views/products/products1/template.php",
-    array(
-        "CONTENT" => $pageContent
-    ),
-    array(
-        "SHOW_BORDER" => false,
-        "MODE" => "php"
-    )
-);?>
-<?$APPLICATION->IncludeFile(
-    "views/services/services2/template.php",
-    array(
-        "CONTENT" => $pageContent
-    ),
-    array(
-        "SHOW_BORDER" => false,
-        "MODE" => "php"
-    )
-);?>
+
 <?$APPLICATION->IncludeFile(
     "views/about/about1/template.php",
     array(
@@ -122,16 +104,7 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
         "MODE" => "php"
     )
 );?>
-<?$APPLICATION->IncludeFile(
-    "views/text/text1/template.php",
-    array(
-        "CONTENT" => $pageContent
-    ),
-    array(
-        "SHOW_BORDER" => false,
-        "MODE" => "php"
-    )
-);?>
+
 <?$APPLICATION->IncludeFile(
     "views/news/news1/template.php",
     array(
