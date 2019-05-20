@@ -70,6 +70,34 @@ $APPLICATION->IncludeFile(
 );
 
 /*news*/
+$APPLICATION->IncludeFile(
+    "/include/" . SITE_ID . "/blocks/home-news/" . $arCurrentSetting['NEWS'] . ".php",
+    array(),
+    array(
+        "SHOW_BORDER" => false,
+        "MODE" => "php"
+    )
+);
+
+/*reviews*/
+$APPLICATION->IncludeFile(
+    "/include/" . SITE_ID . "/blocks/home-reviews/" . $arCurrentSetting['REVIEWS'] . ".php",
+    array(),
+    array(
+        "SHOW_BORDER" => false,
+        "MODE" => "php"
+    )
+);
+
+$APPLICATION->IncludeComponent(
+    'bitrix:news.list',
+    $arCurrentSetting['REVIEWS'],
+    array(
+        'IBLOCK_ID' => 6,
+        'NEWS_COUNT' => 9
+    )
+);
+
 $APPLICATION->IncludeComponent(
     'bitrix:news.list',
     $arCurrentSetting['NEWS'],
@@ -79,12 +107,3 @@ $APPLICATION->IncludeComponent(
     )
 );
 
-/*reviews*/
-$APPLICATION->IncludeComponent(
-    'bitrix:news.list',
-    $arCurrentSetting['REVIEWS'],
-    array(
-        'IBLOCK_ID' => 6,
-        'NEWS_COUNT' => 9
-    )
-);
