@@ -25,6 +25,7 @@ $pageLayout = $APPLICATION->GetPageProperty("PAGE_LAYOUT", AppGetCascadeDirPrope
 
 //CWebsiteTemplate::$demoMode = true;
 $arCurrentSetting = CWebsiteTemplate::getTemplateSetting();
+//Debug::dump(CWebsiteTemplate::getTemplateSetting());
 
 //load main css
 Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("frontend/dist/css/styles.css"));
@@ -66,37 +67,31 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
         "MODE" => "php"
     )
 );?>
-<!-- test -->
-<?$APPLICATION->IncludeFile(
-    "views/sliders/slider4/template.php",
-    array(
-        "CONTENT" => $pageContent
-    ),
-    array(
-        "SHOW_BORDER" => false,
-        "MODE" => "php"
-    )
-);?>
-<?$APPLICATION->IncludeFile(
-    "views/settings-panel/settings-panel1/template.php",
-    array(
-        "CONTENT" => $pageContent
-    ),
-    array(
-        "SHOW_BORDER" => false,
-        "MODE" => "php"
-    )
-);?>
-<?$APPLICATION->IncludeFile(
-    "views/categories/categories2/template.php",
-    array(
-        "CONTENT" => $pageContent
-    ),
-    array(
-        "SHOW_BORDER" => false,
-        "MODE" => "php"
-    )
-);?>
+<?if ($APPLICATION->GetCurPage(false) == SITE_DIR) {?>
+    <?$APPLICATION->IncludeFile(
+        "views/layouts/home.php",
+        array(
+            "CONTENT" => $pageContent
+        ),
+        array(
+            "SHOW_BORDER" => false,
+            "MODE" => "php"
+        )
+    );?>
+<?} else {?>
+    <?$APPLICATION->IncludeFile(
+        "views/layouts/" . $pageLayout . ".php",
+        array(
+            "CONTENT" => $pageContent,
+        ),
+        array(
+            "SHOW_BORDER" => false,
+            "MODE" => "php"
+        )
+    );?>
+<?}?>
+
+
 <?$APPLICATION->IncludeFile(
     "views/products/products1/template.php",
     array(
@@ -178,29 +173,7 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
     )
 );?>
 <!-- test -->
-<?if ($APPLICATION->GetCurPage(false) == SITE_DIR) {?>
-    <?$APPLICATION->IncludeFile(
-        "views/layouts/home.php",
-        array(
-            "CONTENT" => $pageContent
-        ),
-        array(
-            "SHOW_BORDER" => false,
-            "MODE" => "php"
-        )
-    );?>
-<?} else {?>
-    <?$APPLICATION->IncludeFile(
-        "views/layouts/" . $pageLayout . ".php",
-        array(
-            "CONTENT" => $pageContent,
-        ),
-        array(
-            "SHOW_BORDER" => false,
-            "MODE" => "php"
-        )
-    );?>
-<?}?>
+
 <?$APPLICATION->RestartWorkarea(true);?>
 <?$APPLICATION->IncludeFile(
     "views/footer/footer_3/template.php",

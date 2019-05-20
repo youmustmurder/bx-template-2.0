@@ -2,6 +2,8 @@ import tns from './tiny-slider';
 import itemCounter from './itemCounter';
 import customSelect from './customSelect';
 import debounce from './debounce';
+import MictoModal from 'micromodal';
+import axios from 'axios';
 
 window.addEventListener('load', () => {
 	console.log(debounce);
