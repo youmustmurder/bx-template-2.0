@@ -65,11 +65,6 @@ const transformFile = async (filename, output = path.join(path.dirname(filename)
 				fs.writeFile(output, result.code, () => true);
 				logger.loggerBuild(output);
 			});
-			// babel.transformFile(filename, {}, (err, result) => {
-			// 	if (err) logger.loggerError(err);
-			// 	fs.writeFile(output, result.code, () => true);
-			// 	logger.loggerBuild(output);
-			// });
 		}
 	}
 };
