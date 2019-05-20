@@ -107,7 +107,32 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                         <a href="tel:+7 (343) 372-57-75">+7 (343) 372-57-75</a>
                     </div>
                     <div class="header__call">
-                        <a href="#" class="btn btn--primary btn--big btn--circle" data-sign="WVRveE5EcDdjem94TURvaVEwRkRTRVZmVkVsTlJTSTdjem8wT2lJek5qQXdJanR6T2pFd09pSkRRVU5JUlY5VVdWQkZJanR6T2pFNklrRWlPM002TVRNNklrWlBVazFmUWxST1gwOVFSVTRpTzNNNk1qazZJdENYMExEUXV0Q3cwTGZRc05HQzBZd2cwTGZRc3RDKzBMM1F2dEM2SWp0ek9qRTFPaUpHVDFKTlgwSlVUbDlUVlVKTlNWUWlPM002TVRnNkl0Q2UwWUxRdjlHQTBMRFFzdEM0MFlMUmpDSTdjem94TXpvaVJrOVNUVjlDVkU1ZlZGbFFSU0k3Y3pveE1Ub2lZblJ1TFdSbFptRjFiSFFpTzNNNk1URTZJa1pQVWsxZlJrbEZURVJUSWp0aE9qSTZlMms2TUR0ek9qSTZJakkwSWp0cE9qRTdjem95T2lJeU5TSTdmWE02TVRZNklrWlBVazFmVUU5TVNWUkpRMTlWVWt3aU8zTTZPVG9pTDNCdmJHbDBhV012SWp0ek9qRTJPaUpHVDFKTlgxQlNUMFJWUTFSZlFVUkVJanR6T2pFNklrNGlPM002TVRVNklrWlBVazFmVUZKUFJGVkRWRjlKUkNJN2N6b3dPaUlpTzNNNk1qQTZJa1pQVWsxZlVrVlJWVWxTUlVSZlJrbEZURVJUSWp0aE9qSTZlMms2TUR0ek9qSTZJakkwSWp0cE9qRTdjem95T2lJeU5TSTdmWE02TVRBNklrWlBVazFmVkVsVVRFVWlPM002TWprNkl0Q2UwWUhSZ3RDdzBMTFJqTkdDMExVZzBMZlFzTkdQMExMUXV0R0RJanR6T2prNklrbENURTlEUzE5SlJDSTdjem95T2lJeE5DSTdjem94TVRvaVNVSk1UME5MWDFSWlVFVWlPM002TlRvaVptOXliWE1pTzNNNk1UZzZJa05QVFZCUFRrVk9WRjlVUlUxUVRFRlVSU0k3Y3pvNE9pSXVaR1ZtWVhWc2RDSTdmUT09LmVhNGEwMDU4YTdlZWY2YTI2ZDAwZWMwMjRiNThjYWIyNWFhNmFhNTI1NGMxYzUzNjhjYmE3YWE2NzNhYWM4NDc%3D" data-modal="14">Заказать звонок</a>
+                        <?$APPLICATION->IncludeComponent(
+                            "website96:web.forms",
+                            ".default",
+                            array(
+                                "COMPONENT_TEMPLATE" => ".default",
+                                "IBLOCK_TYPE" => "forms",
+                                "IBLOCK_ID" => "14",
+                                "FORM_PRODUCT_ADD" => "N",
+                                "FORM_BTN_TYPE" => "btn-default",
+                                "FORM_FIELDS" => array(
+                                    0 => "24",
+                                    1 => "25",
+                                ),
+                                "FORM_REQUIRED_FIELDS" => array(
+                                    0 => "25",
+                                ),
+                                "FORM_TITLE" => "Форма обратной связи",
+                                "FORM_BTN_OPEN" => "Заказать звонок",
+                                "FORM_BTN_SUBMIT" => "Отправить",
+                                "FORM_POLITIC_URL" => "/politic/",
+                                "CACHE_TYPE" => "A",
+                                "CACHE_TIME" => "3600",
+                                "FORM_PRODUCT_ID" => ""
+                            ),
+                            false
+                        );?>
                     </div>
                 </div>
             </div>
