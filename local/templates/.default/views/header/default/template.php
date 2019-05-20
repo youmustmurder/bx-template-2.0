@@ -13,24 +13,13 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
             <div class="row">
                 <div class="col-lg-7">
                     <div class="header-top__navbar">
-                        <?$APPLICATION->IncludeComponent(
-                            "bitrix:menu",
-                            ".default",
+                        <?$APPLICATION->IncludeFile(
+                            "/include/" . SITE_ID . "/blocks/menu/top.php",
+                            array(),
                             array(
-                                "COMPONENT_TEMPLATE" => ".default",
-                                "ROOT_MENU_TYPE" => "top",
-                                "MENU_CACHE_TYPE" => "N",
-                                "MENU_CACHE_TIME" => "3600",
-                                "MENU_CACHE_USE_GROUPS" => "Y",
-                                "MENU_CACHE_GET_VARS" => array(
-                                ),
-                                "MAX_LEVEL" => "2",
-                                "CHILD_MENU_TYPE" => "left",
-                                "USE_EXT" => "Y",
-                                "DELAY" => "N",
-                                "ALLOW_MULTI_SELECT" => "N"
-                            ),
-                            false
+                                "SHOW_BORDER" => false,
+                                "MODE" => "php"
+                            )
                         );?>
                     </div>
                 </div>
@@ -111,24 +100,13 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
         <div class="container">
             <div class="row row-line">
                 <div class="catalog__menu">
-                    <?$APPLICATION->IncludeComponent(
-                        "bitrix:menu",
-                        ".default",
+                    <?$APPLICATION->IncludeFile(
+                        "/include/" . SITE_ID . "/blocks/menu/catalog_top.php",
+                        array(),
                         array(
-                            "COMPONENT_TEMPLATE" => ".default",
-                            "ROOT_MENU_TYPE" => "catalog_top",
-                            "MENU_CACHE_TYPE" => "N",
-                            "MENU_CACHE_TIME" => "3600",
-                            "MENU_CACHE_USE_GROUPS" => "Y",
-                            "MENU_CACHE_GET_VARS" => array(
-                            ),
-                            "MAX_LEVEL" => "2",
-                            "CHILD_MENU_TYPE" => "left",
-                            "USE_EXT" => "Y",
-                            "DELAY" => "N",
-                            "ALLOW_MULTI_SELECT" => "N"
-                        ),
-                        false
+                            "SHOW_BORDER" => false,
+                            "MODE" => "php"
+                        )
                     );?>
                 </div>
             </div>
