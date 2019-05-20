@@ -42,7 +42,7 @@
 }
 
 .slider-slide__title {
-	max-width: 755px;
+	max-width: 800px;
 	margin-bottom: 10px;
 	color: #fff;
 	font-size: 3.2rem;
@@ -52,7 +52,7 @@
 }
 
 .slider-slide__text {
-	max-width: 370px;
+	max-width: 380px;
 	margin-bottom: 45px;
 	color: #fff;
 	font-size: 1.2rem;
@@ -115,6 +115,9 @@
 	}
 	.slider-slide__title {
 		max-width: 100%;
+	}
+	.slide-big__nav {
+		margin-right: 15px;
 	}
 }
 

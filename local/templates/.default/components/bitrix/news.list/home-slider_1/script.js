@@ -24,7 +24,7 @@ window.addEventListener('load', function () {
 });
 
 var positionNav = function positionNav(slider, nav, info) {
-  var right = -1 * (slider.getBoundingClientRect().left - document.querySelector('.container').getBoundingClientRect().left) + 15;
+  var right = -1 * (slider.getBoundingClientRect().left - document.querySelector('.container').getBoundingClientRect().left);
   var nums = slider.querySelectorAll('.slider-slide')[info.displayIndex].querySelector('.slider-slide-numbers');
   var top = -1 * (slider.getBoundingClientRect().top - nums.getBoundingClientRect().top);
   nav.style.top = "".concat(top, "px");
