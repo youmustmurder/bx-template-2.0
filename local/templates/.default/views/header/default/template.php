@@ -1,7 +1,6 @@
 <?if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
-global $arCurrentSetting,
-       $arFilial;
+global $arFilial;
 
 use Bitrix\Main\Page\Asset;
 
@@ -36,10 +35,10 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                     </div>
                 </div>
                 <address class="col-lg-5 header__address d-flex align-items-center justify-content-end">
-                    <?if ($arFilial['ADDRESS']) {?>
-                        <a href="/contacts/" class="address__link d-flex">
+                    <?if ($arFilial['FULL_ADDRESS']) {?>
+                        <a href="<?=SITE_DIR?>contacts/" class="address__link d-flex">
                             <span class="icon__geo"><?=GetContentSvgIcon('address');?></span>
-                            <span class="address-value"><?=$arFilial['ADDRESS']?></span>
+                            <span class="address-value"><?=$arFilial['FULL_ADDRESS']?></span>
                         </a>
                     <?}?>
                 </address>

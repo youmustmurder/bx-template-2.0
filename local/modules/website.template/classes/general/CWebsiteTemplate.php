@@ -73,8 +73,16 @@ class CWebsiteTemplate {
             foreach ($ar_res['PROPERTIES'] as $code => $prop) {
                 switch ($code) {
                     case 'C_CITY':
-                        $arFilial['ADDRESS'] = $ar_res['PROPERTIES']['C_ADDRESS']['VALUE'] && $prop['VALUE'] ?
+                        $arFilial['FULL_ADDRESS'] = $ar_res['PROPERTIES']['C_ADDRESS']['VALUE'] && $prop['VALUE'] ?
                             $prop['VALUE'] . ', ' . $ar_res['PROPERTIES']['C_ADDRESS']['VALUE'] : $prop['VALUE'];
+                        if ($prop['VALUE']) {
+                            $arFilial['CITY'] = $prop['VALUE'];
+                        }
+                        break;
+                    case 'C_ADDRESS':
+                        if ($prop['VALUE']) {
+                            $arFilial['ADDRESS'] = $prop['VALUE'];
+                        }
                         break;
                     case 'C_PHONE':
                         $arFilial['PHONE'] = empty($prop['VALUE']) && !empty($ar_res['PROPERTIES']['C_PHONES']['VALUE'][0]) ?
