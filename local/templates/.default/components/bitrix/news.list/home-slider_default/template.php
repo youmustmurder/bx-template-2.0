@@ -18,7 +18,6 @@ Loc::loadMessages(__FILE__);
                     <h2 class="slider-slide__title"><?=$arItem['NAME']?></h2>
                     <p class="slider-slide__text"><?=$arItem['PREVIEW_TEXT']?></p>
                     <?if ($arItem['PROPERTIES']['LINK_SECTION']['VALUE']) {?>
-                        <??>
                         <a href="<?=$arItem['PROPERTIES']['LINK_SECTION']['VALUE']?>"
                            class="btn btn--success btn--circle btn--mid slider-slide__btn"><?=$arItem['PROPERTIES']['LINK_BUTTON_NAME']['VALUE'] ?: Loc::getMessage('SLIDE_MORE')?></a>
                     <?}?>
