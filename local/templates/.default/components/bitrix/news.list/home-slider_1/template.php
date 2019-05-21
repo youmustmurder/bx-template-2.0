@@ -12,80 +12,70 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 ?>
 
 <div class="slider-big">
-    <div class="slider-big__slides slider-big-slides">
-        <div class="slider-big__slide slider-slide">
-			<div class="slider-slider__inner">
-				<h2 class="slider-slide__title">Откройте счёт и начните работать уже сегодня</h2>
-				<p class="slider-slide__text">Без кучи документов, поездок в банс и талончиков с номером очереди</p>
-				<a href="" class="btn btn--success btn--circle btn--mid slider-slide__btn">Начать работу</a>
-				<ul class="slider-slide__numbers slider-slide-numbers">
-					<li class="slider-slide-numbers__num slider-slide-num">
-						<span class="slider-slide-num__value">16</span>
-						<span class="slider-slide-num__text">Стран</span>
-					</li>
-					<li class="slider-slide-numbers__num slider-slide-num">
-						<span class="slider-slide-num__value">232</span>
-						<span class="slider-slide-num__text">Города</span>
-					</li>
-					<li class="slider-slide-numbers__num slider-slide-num">
-						<span class="slider-slide-num__value">89 000</span>
-						<span class="slider-slide-num__text">Клиентов в месяц</span>
-					</li>
-				</ul>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="slider-big__slides slider-big-slides">
+					<div class="slider-big__slide slider-big-slide">
+						<div class="slider-big-slide__name">Apple iPhone 8</div>
+						<p class="slider-big-slide__desc">
+							Без кучи документов, поездок в банк и талончиков с номером очереди
+						</p>
+						<div class="slider-big-slide__info">
+							<a href="#" class="btn btn--success btn--square btn--big slider-big-slide__link">Перейти в магазин</a>
+							<span class="slider-big-slide__price">от 39 990 ₽</span>
+						</div>
+						<img class="slider-big-slide__img" src="<?=GetCurDir(__DIR__)?>/uploads/product_preview4.png" alt="">
+					</div>
+					<div class="slider-big__slide slider-big-slide">
+						<div class="slider-big-slide__name">Apple iPhone 8</div>
+						<p class="slider-big-slide__desc">
+							Без кучи документов, поездок в банк и талончиков с номером очереди
+						</p>
+						<div class="slider-big-slide__info">
+							<a href="#" class="btn btn--success btn--square btn--big slider-big-slide__link">Перейти в магазин</a>
+							<span class="slider-big-slide__price">от 39 990 ₽</span>
+						</div>
+						<img class="slider-big-slide__img" src="<?=GetCurDir(__DIR__)?>/uploads/product_preview4.png" alt="">
+					</div>
+					<div class="slider-big__slide slider-big-slide">
+						<div class="slider-big-slide__name">Apple iPhone 8</div>
+						<p class="slider-big-slide__desc">
+							Без кучи документов, поездок в банк и талончиков с номером очереди
+						</p>
+						<div class="slider-big-slide__info">
+							<a href="#" class="btn btn--success btn--square btn--big slider-big-slide__link">Перейти в магазин</a>
+							<span class="slider-big-slide__price">от 39 990 ₽</span>
+						</div>
+						<img class="slider-big-slide__img" src="<?=GetCurDir(__DIR__)?>/uploads/product_preview4.png" alt="">
+					</div>
+				</div>
+				<div class="slider-big__previews">
+					<div class="slider-big__preview slider-big-preview slider-big-preview--active" indexSlide="0">
+						<img class="slider-big-preview__img" src="<?=GetCurDir(__DIR__)?>/uploads/product_preview1.png" alt="">
+						<div class="slider-big-preview__name">Apple Watch</div>
+						<div class="slider-big-preview__price">255 ₽</div>
+					</div>
+					<div class="slider-big__preview slider-big-preview" indexSlide="1">
+						<img class="slider-big-preview__img" src="<?=GetCurDir(__DIR__)?>/uploads/product_preview2.png" alt="">
+						<div class="slider-big-preview__name">Apple Watch</div>
+						<div class="slider-big-preview__price">255 ₽</div>
+					</div>
+					<div class="slider-big__preview slider-big-preview" indexSlide="2">
+						<img class="slider-big-preview__img" src="<?=GetCurDir(__DIR__)?>/uploads/product_preview3.png" alt="">
+						<div class="slider-big-preview__name">Apple Watch</div>
+						<div class="slider-big-preview__price">255 ₽</div>
+					</div>
+				</div>
+				<div class="slide-big__nav">
+					<button class="btn btn--icon btn--icon-big btn--stock slider-big__prev">
+						<?=GetContentSvgIcon('arrow_left');?>
+					</button>
+					<button class="btn btn--icon btn--icon-big btn--success slider-big__next">
+						<?=GetContentSvgIcon('arrow_right');?>
+					</button>
+				</div>
 			</div>
-            <img class="slider-slide__img" src="<?=GetCurDir(__DIR__)?>/img_slider.jpg" alt="website96">
-        </div>
-        <div class="slider-big__slide slider-slide">
-			<div class="slider-slider__inner">
-				<h2 class="slider-slide__title">Откройте счёт и начните работать уже сегодня</h2>
-				<p class="slider-slide__text">Без кучи документов, поездок в банс и талончиков с номером очереди</p>
-				<a href="" class="btn btn--success btn--circle btn--mid slider-slide__btn">Начать работу</a>
-				<ul class="slider-slide__numbers slider-slide-numbers">
-					<li class="slider-slide-numbers__num slider-slide-num">
-						<span class="slider-slide-num__value">16</span>
-						<span class="slider-slide-num__text">Стран</span>
-					</li>
-					<li class="slider-slide-numbers__num slider-slide-num">
-						<span class="slider-slide-num__value">232</span>
-						<span class="slider-slide-num__text">Города</span>
-					</li>
-					<li class="slider-slide-numbers__num slider-slide-num">
-						<span class="slider-slide-num__value">89 000</span>
-						<span class="slider-slide-num__text">Клиентов в месяц</span>
-					</li>
-				</ul>
-			</div>
-            <img class="slider-slide__img" src="<?=GetCurDir(__DIR__)?>/img_slider.jpg" alt="website96">
 		</div>
-		<div class="slider-big__slide slider-slide">
-			<div class="slider-slider__inner">
-				<h2 class="slider-slide__title">Откройте счёт и начните работать уже сегодня</h2>
-				<p class="slider-slide__text">Без кучи документов, поездок в банс и талончиков с номером очереди</p>
-				<a href="" class="btn btn--success btn--circle btn--mid slider-slide__btn">Начать работу</a>
-				<ul class="slider-slide__numbers slider-slide-numbers">
-					<li class="slider-slide-numbers__num slider-slide-num">
-						<span class="slider-slide-num__value">16</span>
-						<span class="slider-slide-num__text">Стран</span>
-					</li>
-					<li class="slider-slide-numbers__num slider-slide-num">
-						<span class="slider-slide-num__value">232</span>
-						<span class="slider-slide-num__text">Города</span>
-					</li>
-					<li class="slider-slide-numbers__num slider-slide-num">
-						<span class="slider-slide-num__value">89 000</span>
-						<span class="slider-slide-num__text">Клиентов в месяц</span>
-					</li>
-				</ul>
-			</div>
-            <img class="slider-slide__img" src="<?=GetCurDir(__DIR__)?>/img_slider.jpg" alt="website96">
-        </div>
-	</div>
-	<div class="slide-big__nav">
-		<button class="btn btn--icon btn--icon-big btn--stock slider-big__prev">
-			<svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14.1641 6H1.91406L7.16406 0.74994L6.49976 0L-0.000137329 6.5L6.49986 13L7.16406 12.25L1.91406 7H14.1641V6Z" fill="#95A5A6"/></svg>
-		</button>
-		<button class="btn btn--icon btn--icon-big btn--success slider-big__next">
-			<svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M0 6H12.25L7 0.74994L7.6643 0L14.1642 6.5L7.6642 13L7 12.25L12.25 7H0V6Z" fill="white"/></svg>
-		</button>
 	</div>
 </div>

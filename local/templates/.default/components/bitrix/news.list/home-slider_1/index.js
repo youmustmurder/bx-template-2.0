@@ -1,33 +1,31 @@
 window.addEventListener('load', () => {
-	const slider = document.querySelector('.slider-big'),
-		nav = document.querySelector('.slide-big__nav'),
-		prevBtn = document.querySelector('.slider-big__prev'),
-		nextBtn = document.querySelector('.slider-big__next');
+	const sliderNode = document.querySelector('.slider-big-slides'),
+		navNode = sliderNode.querySelector('.slide-big__nav'),
+		prevBtnNode = document.querySelector('.slider-big__prev'),
+		nextBtnNode = document.querySelector('.slider-big__next'),
+		previewsNode = document.querySelectorAll('.slider-big-preview');
 	var sliderBig = tns({
-		container: '.slider-big-slides',
+		container: sliderNode,
 		items: 1,
-		prevButton: prevBtn,
-		nextButton: nextBtn,
+		prevButton: prevBtnNode,
+		nextButton: nextBtnNode,
 		nav: false,
-		onInit: info => {
-			positionNav(slider, nav, info);
-		}
 	});
 	sliderBig.events.on('transitionStart', info => {
-		positionNav(slider, nav, info);
+		togglePrevies((info.displayIndex)-1);
 	});
-	window.addEventListener(
-		'resize',
-		debounce(() => {
-			positionNav(slider, nav, sliderBig.getInfo());
-		}, 300)
-	);
-});
+	Array.prototype.forEach.call(previewsNode, (preview) => {
+		preview.addEventListener('click', (e) => {
+			const newIndex = e.target.getAttribute('indexSlide');
+			togglePrevies(newIndex);
+			sliderBig.goTo(newIndex);
+		});
+	});
 
-const positionNav = (slider, nav, info) => {
-	const right = -1 * (slider.getBoundingClientRect().left - document.querySelector('.container').getBoundingClientRect().left);
-	const nums = slider.querySelectorAll('.slider-slide')[info.displayIndex].querySelector('.slider-slide-numbers');
-	const top = -1 *(slider.getBoundingClientRect().top - nums.getBoundingClientRect().top);
-	nav.style.top = `${top}px`;
-	nav.style.right = `${right}px`;
-};
+	const togglePrevies = (newIndex) => {
+		Array.prototype.forEach.call(previewsNode, (prev) => {
+			prev.classList.remove('slider-big-preview--active');
+		});
+		document.querySelector(`.slider-big-preview[indexSlide="${newIndex}"]`).classList.add('slider-big-preview--active');
+	};
+});

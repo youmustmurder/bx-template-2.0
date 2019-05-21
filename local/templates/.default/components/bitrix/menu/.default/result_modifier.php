@@ -24,4 +24,16 @@ if (!empty($arResult)) {
         }
     }
     $arResult = array_values($arResult);
+    
+
+    $i = 1;
+    foreach ($arResult as $k => $arItem) {
+        if ($i > $arParams['MAX_ITEMS']) {
+            $arMenu['SUB_ITEMS'][$k] = $arItem;
+        } else {
+            $arMenu['ITEMS'][$k] = $arItem;
+        }
+        $i++;
+    }
+    $arResult = $arMenu;
 }

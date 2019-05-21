@@ -3,6 +3,10 @@
  * @author Lukmanov Mikhail <lukmanof92@gmail.com>
  */
 
+use Bitrix\Main\Localization\Loc;
+
+Loc::loadMessages(__FILE__);
+
 if (is_array($arResult) && !empty($arResult)) {?>
     <ul>
         <?foreach ($arResult as $i => $arItem) {?>
@@ -17,6 +21,20 @@ if (is_array($arResult) && !empty($arResult)) {?>
                         <?}?>
                     </ul>
                 <?}?>
+            </li>
+        <?}?>
+        <?if($arResult['SUB_ITEMS']) {?>
+            <li class="more__menu">
+                <a href="#" class="js-init_more_menu"><span class="menu__dots"></span><?=Loc::getMessage('MORE_TITLE')?></a>
+                <ul class="submenu">
+                    <?foreach ($arResult['SUB_ITEMS'] as $k => $arItem){?>
+                        <?if($arItem['TEXT'] || $arItem['LINK']){?>
+                            <li>
+                                <a href="<?=$arItem["LINK"]?>"><?=$arItem["TEXT"]?></a>
+                            </li>
+                        <?}?>
+                    <?}?>
+                </ul>
             </li>
         <?}?>
     </ul>
