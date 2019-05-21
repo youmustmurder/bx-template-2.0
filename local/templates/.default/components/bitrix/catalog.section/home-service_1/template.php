@@ -7,7 +7,7 @@ global $arCurrentSetting;
 
 use Bitrix\Main\Page\Asset;
 
-Asset::getInstance()->addJs(GetCurDir(__DIR__) . '/bundle.js');
+Asset::getInstance()->addJs(GetCurDir(__DIR__) . '/script.js');
 Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 ?>
 

@@ -183,5 +183,7 @@ strong {
 a,
 a:hover,
 a:focus {
+	color: #000;
 	text-decoration: none;
+	transition: 0.3s all ease-out;
 }
