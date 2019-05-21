@@ -1,12 +1,12 @@
 {
     "js": {
-        "separate_folder": "./components",
+        "separate_folder": "./views",
         "entry_general_folder": "./frontend/main",
         "entry_general_file": "./frontend/main/js/index.js",
         "output_general_file": "./frontend/dist/js/index.js"
     },
     "css": {
-        "separate_folder": "./components",
+        "separate_folder": "./views",
         "entry_general_folder": "./frontend/main",
         "entry_general_file": "./frontend/main/scss/styles.scss",
         "output_general_file": "./frontend/dist/css/styles.css"
