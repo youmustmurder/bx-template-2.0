@@ -35,5 +35,6 @@ if (!empty($arResult)) {
         }
         $i++;
     }
+    
     $arResult = $arMenu;
 }
