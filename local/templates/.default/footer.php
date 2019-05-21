@@ -60,6 +60,16 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
         array()
     );?>
 <?}?>
+<?
+//responsive header
+$APPLICATION->IncludeFile(
+    "views/header/responsive/template.php",
+    array(),
+    array(
+        "SHOW_BORDER" => false,
+        "MODE" => "php"
+    )
+);?>
 <?$APPLICATION->IncludeFile(
     "views/header/" . $arCurrentSetting['HEADER'] . "/template.php",
     array(),

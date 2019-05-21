@@ -19,45 +19,24 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                     <div class="container">
                         <div class="head-nav__content">
                             <div class="head-nav__menu menu__catalog">
-                                        <ul>
-                    <li>
-                        <a href="/catalog/elektronika/">Электроника</a>
-                    </li>
-                                    <li>
-                        <a href="/catalog/mebel/">Мебель</a>
-                    </li>
-                                    <li>
-                        <a href="/catalog/odezhda/">Одежда</a>
-                    </li>
-                                    <li>
-                        <a href="/catalog/krasota-i-zdorove/">Красота и здоровье</a>
-                    </li>
-                                    <li>
-                        <a href="/catalog/sport-i-turizm/">Спорт и туризм</a>
-                    </li>
-                                    <li>
-                        <a href="/catalog/uslugi/">Услуги</a>
-                    </li>
-                    </ul>
+                                <?$APPLICATION->IncludeFile(
+                                    "/include/" . SITE_ID . "/blocks/menu/catalog_top.php",
+                                    array(),
+                                    array(
+                                        "SHOW_BORDER" => false,
+                                        "MODE" => "php"
+                                    )
+                                );?>
                             </div>
                             <div class="head-nav__menu menu__top">
-                                        <ul>
-                    <li>
-                        <a href="/about/">О компании</a>
-                    </li>
-                                    <li>
-                        <a href="/news/">Новости</a>
-                    </li>
-                                    <li>
-                        <a href="/stocks/">Акции</a>
-                    </li>
-                                    <li>
-                        <a href="/delivery/">Доставка и оплата</a>
-                    </li>
-                                    <li>
-                        <a href="/contacts/">Контакты</a>
-                    </li>
-                    </ul>
+                                <?$APPLICATION->IncludeFile(
+                                    "/include/" . SITE_ID . "/blocks/menu/top.php",
+                                    array(),
+                                    array(
+                                        "SHOW_BORDER" => false,
+                                        "MODE" => "php"
+                                    )
+                                );?>
                             </div>
                             <div class="head-nav__links">
                                 <a class="nav__link" href="tel:+7 (343) 372-57-75">
