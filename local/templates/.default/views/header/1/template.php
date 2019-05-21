@@ -14,18 +14,16 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
         <div class="container">
             <div class="row ">
 				<div class="col d-flex justify-content-between align-items-center">
-					<div class="d-flex align-items-center header__logo header-logo--desc">
-						<a href="<?=SITE_DIR?>">
-							<?$APPLICATION->IncludeFile(
-								"/include/" . SITE_ID . "/logo.php",
-								array(),
-								array(
-									"SHOW_BORDER" => true,
-									"MODE" => "html"
-								)
-							);?>
-						</a>
-					</div>
+					<a href="<?=SITE_DIR?>" class="d-flex align-items-center header__logo">
+						<?$APPLICATION->IncludeFile(
+							"/include/" . SITE_ID . "/logo.php",
+							array(),
+							array(
+								"SHOW_BORDER" => true,
+								"MODE" => "html"
+							)
+						);?>
+					</a>
 					<div class="header-search">
 						<?$APPLICATION->IncludeComponent(
 							"bitrix:search.form",
@@ -38,11 +36,11 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 						);?>
 					</div>
 					<?if ($arFilial['CITY'] || $arFilial['ADDRESS']) {?>
-						<div class="header__block header__address">
-							<div class="header__pic">
+						<div class="header__contact header-contact">
+							<div class="header-contact__icon">
 								<?=GetContentSvgIcon('address');?>
 							</div>
-							<div class="header__text">
+							<div class="header-contact__value">
 								<div>
 									<?=$arFilial['CITY'] ? '<span>' . $arFilial['CITY'] . '</span>' : ''?>
 									<?=$arFilial['ADDRESS'] ? '<span>' . $arFilial['ADDRESS'] . '</span>' : ''?>
@@ -50,13 +48,13 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 							</div>
 						</div>
 					<?}?>
-					<div class="header__block header__phone">
-						<div class="header__pic">
+					<div class="header__contact header-contact">
+						<div class="header-contact__icon">
 							<?=GetContentSvgIcon('phone');?>
 						</div>
-						<div class="header__text">
+						<div class="header-contact__value">
 							<?if ($arFilial['PHONE']) {?>
-								<a class="header__number" href="tel:<?=preg_replace('~[^0-9]+~', '', $arFilial['PHONE']);?>"><?=$arFilial['PHONE']?></a>
+								<a class="header-contact__phone" href="tel:<?=preg_replace('~[^0-9]+~', '', $arFilial['PHONE']);?>"><?=$arFilial['PHONE']?></a>
 							<?}?>
 							<?$APPLICATION->IncludeComponent(
 								"website96:web.forms",
@@ -94,7 +92,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
         <div class="container">
             <div class="row row-line">
                 <div class="col-12">
-                    <div class="header__list">
+                    <div class="header__catalog-menu header-catalog-menu">
                         <?$APPLICATION->IncludeFile(
                             "/include/" . SITE_ID . "/blocks/menu/catalog_top.php",
                             array(),
