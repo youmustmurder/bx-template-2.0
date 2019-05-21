@@ -24,9 +24,9 @@ if (is_array($arResult) && !empty($arResult)) {?>
             </li>
         <?}?>
         <?if($arResult['SUB_ITEMS']) {?>
-            <li class="more__menu">
-                <a href="#" class="js-init_more_menu"><span class="menu__dots"></span><?=Loc::getMessage('MORE_TITLE')?></a>
-                <ul class="submenu">
+            <li class="more__menu more-menu">
+                <a href="#" class="more-menu__link"><span class="menu__dots"></span><?=Loc::getMessage('MORE_TITLE')?></a>
+                <ul class="more-menu__submenu">
                     <?foreach ($arResult['SUB_ITEMS'] as $k => $arItem){?>
                         <?if($arItem['TEXT'] || $arItem['LINK']){?>
                             <li>

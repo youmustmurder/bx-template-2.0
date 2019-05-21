@@ -5,6 +5,7 @@ import debounce from './debounce';
 import MictoModal from './micromodal';
 import axios from './axios';
 import modalFromAjax from './modalFromAjax';
+import { lockScroll, unlockScroll } from './bodyBlock';
 
 window.addEventListener('load', () => {
 	// var counterStroke = itemCounter('.form-stroke__fieldCount'),

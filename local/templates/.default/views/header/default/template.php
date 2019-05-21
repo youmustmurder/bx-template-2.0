@@ -11,7 +11,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
     <nav class="header-top">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-6 col-md-7">
                     <div class="header-top__navbar">
                         <?$APPLICATION->IncludeFile(
                             "/include/" . SITE_ID . "/blocks/menu/top.php",
@@ -23,7 +23,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                         );?>
                     </div>
                 </div>
-                <address class="col-lg-6 header__address header-address d-flex align-items-center justify-content-end">
+                <address class="col-lg-6 col-md-7 header__address header-address d-flex align-items-center justify-content-end">
                     <?if ($arFilial['FULL_ADDRESS']) {?>
                         <a href="<?=SITE_DIR?>contacts/" class="header-address__link d-flex">
                             <span class="header-address__icon"><?=GetContentSvgIcon('address');?></span>
