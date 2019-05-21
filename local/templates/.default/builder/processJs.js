@@ -1,6 +1,7 @@
 const
 	path = require('path'),
 	fs = require('fs'),
+	resolve = require('rollup-plugin-node-resolve'),
 	rollup = require('rollup'),
 	babel = require('@babel/core'),
 	Eslinter = require('eslint').Linter,
@@ -42,11 +43,11 @@ const lintAndFormatCode = (filename) => {
 
 const transformFile = async (filename, output = path.join(path.dirname(filename), 'script.js')) => {
 	const bundle = await rollup.rollup({
-		input: filename
+		input: filename,
+		treeshake: false,
 	});
 	const { output: outputSplit } = await bundle.generate({
 		format: 'cjs',
-		treeshake: false
 	});
 	for (const chunkOrAsset of outputSplit) {
 		if (chunkOrAsset.isAsset) {
