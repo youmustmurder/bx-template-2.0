@@ -101,7 +101,7 @@ if(isset($_REQUEST['ajax_form']) && !empty($_REQUEST['ajax_form'])){?>
     </div>
 <?} else {?>
     <a href="#"
-       class="btn btn--circle btn--mid js-init-modal__form <?=$arParams['FORM_BTN_TYPE']?>"
+       class="btn <?=$arParams['FORM_BTN_TYPE'] != 'btn__link' ? 'btn--circle btn--mid' : ''?> js-init-modal__form <?=$arParams['FORM_BTN_TYPE']?>"
        data-sign="<?=$arResult["JSON_SIGN"]?>"
        data-lang="<?= LANGUAGE_ID ?>"
        data-site-id="<?= LANGUAGE_ID ?>"

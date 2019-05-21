@@ -1,7 +1,6 @@
 <?if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
-global $arCurrentSetting,
-       $arFilial;
+global $arFilial;
 
 use Bitrix\Main\Page\Asset;
 
@@ -14,36 +13,23 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
             <div class="row">
                 <div class="col-lg-7">
                     <div class="header-top__navbar">
-                        <?$APPLICATION->IncludeComponent(
-                            "bitrix:menu",
-                            ".default",
+                        <?$APPLICATION->IncludeFile(
+                            "/include/" . SITE_ID . "/blocks/menu/top.php",
+                            array(),
                             array(
-                                "COMPONENT_TEMPLATE" => ".default",
-                                "ROOT_MENU_TYPE" => "top",
-                                "MENU_CACHE_TYPE" => "N",
-                                "MENU_CACHE_TIME" => "3600",
-                                "MENU_CACHE_USE_GROUPS" => "Y",
-                                "MENU_CACHE_GET_VARS" => array(
-                                ),
-                                "MAX_LEVEL" => "2",
-                                "CHILD_MENU_TYPE" => "left",
-                                "USE_EXT" => "Y",
-                                "DELAY" => "N",
-                                "ALLOW_MULTI_SELECT" => "N"
-                            ),
-                            false
+                                "SHOW_BORDER" => false,
+                                "MODE" => "php"
+                            )
                         );?>
                     </div>
                 </div>
                 <address class="col-lg-5 header__address d-flex align-items-center justify-content-end">
-                    <a href="/contacts/" class="address__link d-flex">
-                        <span class="icon__geo"><?=GetContentSvgIcon('address');?></span>
-                        <?if ($arFilial['ADDRESS']) {?>
-                            <span class="address-value">
-                                <?=$arFilial['ADDRESS']?>
-                            </span>
-                        <?}?>
-                    </a>
+                    <?if ($arFilial['FULL_ADDRESS']) {?>
+                        <a href="<?=SITE_DIR?>contacts/" class="address__link d-flex">
+                            <span class="icon__geo"><?=GetContentSvgIcon('address');?></span>
+                            <span class="address-value"><?=$arFilial['FULL_ADDRESS']?></span>
+                        </a>
+                    <?}?>
                 </address>
             </div>
         </div>
@@ -64,11 +50,15 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 					</a>
 					</div>
 					<div class="header-search">
-						<form class="search__form" method="get" action="/search/">
-							<span class="icon__search"><?=GetContentSvgIcon('search');?></span>
-							<input class="inp inp-search" name="q" id="qplSKIW" autocomplete="off" placeholder="Поиск по сайту" size="20">
-							<button class="btn-search" type="submit" title="Поиск"><?=GetContentSvgIcon('arrow_small_right');?></button>
-						</form>
+                        <?$APPLICATION->IncludeComponent(
+                            "bitrix:search.form",
+                            "",
+                            array(
+	                            "PAGE" => "#SITE_DIR#search/",
+		                        "USE_SUGGEST" => "N",
+	                        ),
+                            false
+                        );?>
 					</div>
 					<div class="header__contact">
 						<?if ($arFilial['PHONE']) {?>
@@ -79,31 +69,31 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 						<?}?>
 						<div class="header__call">
 							<?$APPLICATION->IncludeComponent(
-								"website96:web.forms",
-								".default",
-								array(
-									"COMPONENT_TEMPLATE" => ".default",
-									"IBLOCK_TYPE" => "forms",
-									"IBLOCK_ID" => "14",
-									"FORM_PRODUCT_ADD" => "N",
-									"FORM_BTN_TYPE" => "btn--default",
-									"FORM_FIELDS" => array(
-										0 => "24",
-										1 => "25",
-									),
-									"FORM_REQUIRED_FIELDS" => array(
-										0 => "25",
-									),
-									"FORM_TITLE" => "Форма обратной связи",
-									"FORM_BTN_OPEN" => "Заказать звонок",
-									"FORM_BTN_SUBMIT" => "Отправить",
-									"FORM_POLITIC_URL" => "/politic/",
-									"CACHE_TYPE" => "A",
-									"CACHE_TIME" => "3600",
-									"FORM_PRODUCT_ID" => ""
-								),
-								false
-							);?>
+	"website96:web.forms", 
+	".default", 
+	array(
+		"COMPONENT_TEMPLATE" => ".default",
+		"IBLOCK_TYPE" => "forms",
+		"IBLOCK_ID" => "14",
+		"FORM_PRODUCT_ADD" => "N",
+		"FORM_BTN_TYPE" => "btn--primary",
+		"FORM_FIELDS" => array(
+			0 => "24",
+			1 => "25",
+		),
+		"FORM_REQUIRED_FIELDS" => array(
+			0 => "25",
+		),
+		"FORM_TITLE" => "Форма обратной связи",
+		"FORM_BTN_OPEN" => "Заказать звонок",
+		"FORM_BTN_SUBMIT" => "Отправить",
+		"FORM_POLITIC_URL" => "/politic/",
+		"CACHE_TYPE" => "A",
+		"CACHE_TIME" => "3600",
+		"FORM_PRODUCT_ID" => ""
+	),
+	false
+);?>
 						</div>
 					</div>
 				</div>
@@ -114,24 +104,13 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
         <div class="container">
             <div class="row row-line">
                 <div class="catalog__menu">
-                    <?$APPLICATION->IncludeComponent(
-                        "bitrix:menu",
-                        ".default",
+                    <?$APPLICATION->IncludeFile(
+                        "/include/" . SITE_ID . "/blocks/menu/catalog_top.php",
+                        array(),
                         array(
-                            "COMPONENT_TEMPLATE" => ".default",
-                            "ROOT_MENU_TYPE" => "catalog_top",
-                            "MENU_CACHE_TYPE" => "N",
-                            "MENU_CACHE_TIME" => "3600",
-                            "MENU_CACHE_USE_GROUPS" => "Y",
-                            "MENU_CACHE_GET_VARS" => array(
-                            ),
-                            "MAX_LEVEL" => "2",
-                            "CHILD_MENU_TYPE" => "left",
-                            "USE_EXT" => "Y",
-                            "DELAY" => "N",
-                            "ALLOW_MULTI_SELECT" => "N"
-                        ),
-                        false
+                            "SHOW_BORDER" => false,
+                            "MODE" => "php"
+                        )
                     );?>
                 </div>
             </div>
