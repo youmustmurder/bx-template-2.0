@@ -113,10 +113,17 @@ class CWebsiteTemplate {
             if ($id === false) {
                 $id = self::recursiveArraySearch('default', self::$arParametersList[$codeProperty]);
             }
-            $value = $codeProperty == 'COLOR' || stripos($codeProperty, 'COLOR') ?
-                '#' . self::$arParametersList[$codeProperty][$id]['VALUE'] :
-                self::$arParametersList[$codeProperty][$id]['VALUE'];
-            $content = str_replace('#VALUE#', $value, $content);
+            switch ($codeProperty) {
+                case 'COLOR':
+                    $propValue = '#' . self::$arParametersList[$codeProperty][$id]['VALUE'];
+                    break;
+                case 'FONT_SIZE':
+                    $propValue = self::$arParametersList[$codeProperty][$value]['VALUE'];
+                    break;
+                default:
+                    $propValue = self::$arParametersList[$codeProperty][$id]['VALUE'];
+            }
+            $content = str_replace('#VALUE#', $propValue, $content);
             file_put_contents($_SERVER['DOCUMENT_ROOT'] . $filePath, $content);
         }
         return $filePath;

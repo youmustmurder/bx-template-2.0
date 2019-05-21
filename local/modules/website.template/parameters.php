@@ -9,15 +9,12 @@ CWebsiteTemplate::$arParametersList = array(
     'COLOR' => CWebsiteTemplate::getElementsHLBlock(1),
     'FONT_SIZE' => array(
         'small' => array(
-            'NAME' => '13px',
             'VALUE' => '13px'
         ),
         'default' => array(
-            'NAME' => '15px',
             'VALUE' => '15px'
         ),
         'big' => array(
-            'NAME' => '17px',
             'VALUE' => '17px'
         )
     ),
