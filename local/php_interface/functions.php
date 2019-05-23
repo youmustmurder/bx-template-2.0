@@ -27,12 +27,33 @@ function GetContentSvgIcon($filename){
     }
 }
 
+/**
+ * @param      $dirPath
+ *
+ * @return string
+ */
 function GetCurDir($dirPath)
 {
     if (!$dirPath) {
         return false;
     }
     return str_replace($_SERVER['DOCUMENT_ROOT'], '', str_replace('\\', '/', $dirPath));
+}
+
+/**
+ * @param      $number
+ * @param      $titles
+ * @param bool $appendNumber
+ *
+ * @return string
+ */
+function NumPluralForm($number, $titles, $appendNumber = false)
+{
+    $cases = array(2, 0, 1, 1, 1, 2);
+    
+    return ($appendNumber ? ($number . " ") : "") . $titles[ ($number % 100 > 4
+            && $number % 100 < 20) ? 2 : $cases[ min($number
+            % 10, 5) ] ];
 }
 
 function dump($var) {
