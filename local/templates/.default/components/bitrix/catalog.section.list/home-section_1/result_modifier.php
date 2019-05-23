@@ -31,8 +31,14 @@ if ($arResult['SECTIONS']) {
                     Loc::getMessage('CURRENCY_PRICE') :
                     $ar['PROPERTY_PRODUCT_PRICE_VALUE'];
             }
-            $arResult['SECTIONS'][$k]['SUBTITLE'] = $subTitle;
         }
-        
+        $arResult['SECTIONS'][$k]['SUBTITLE'] = $subTitle;
+        if ($arSection['PICTURE']) {
+            $img = CFile::ResizeImageGet($arSection['PICTURE'],
+                array('width' => 430, 'height' => 300),
+                BX_RESIZE_IMAGE_PROPORTIONAL, true, array());
+            $arResult['SECTIONS'][$k]['PICTURE']['SRC'] = $img['src'];
+
+        }
     }
 }

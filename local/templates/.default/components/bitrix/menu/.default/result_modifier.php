@@ -28,7 +28,7 @@ if (!empty($arResult)) {
 
     $i = 1;
     foreach ($arResult as $k => $arItem) {
-        if ($i > $arParams['MAX_ITEMS']) {
+        if (!empty($arParams['MAX_ITEMS']) && $i > $arParams['MAX_ITEMS']) {
             $arMenu['SUB_ITEMS'][$k] = $arItem;
         } else {
             $arMenu['ITEMS'][$k] = $arItem;
