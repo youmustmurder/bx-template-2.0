@@ -31,7 +31,7 @@ if ($arResult['SECTIONS']) {?>
                     <a href="<?=$arSection['SECTION_PAGE_URL']?>" class="section-item item-<?=$i?>" id="<?=$this->GetEditAreaId($arSection['ID']);?>">
                         <div class="section-item__image">
                             <img
-                                src="\local\templates\individual\public\images\image-hidden.png"
+                                src="<?=$arSection['PICTURE']['SRC']?>"
                                 alt="<?=$arSection['PICTURE']['ALT'] ? $arSection['PICTURE']['ALT'] : $arSection['NAME']?>"
                                 title="<?=$arSection['PICTURE']['TITLE'] ? $arSection['PICTURE']['TITLE'] : $arSection['NAME']?>">
                         </div>
