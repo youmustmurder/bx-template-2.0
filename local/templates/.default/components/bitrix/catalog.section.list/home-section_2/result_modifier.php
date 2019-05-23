@@ -35,11 +35,20 @@ if ($arResult['SECTIONS']) {
                 Loc::getMessage('CURRENCY_PRICE') :
                 $ar['PROPERTY_PRODUCT_PRICE_VALUE'];
         }
-        if ($arSection['PICTURE']) {
+        if ($arSection['PICTURE']['ID'] > 0) {
             $img = CFile::ResizeImageGet($arSection['PICTURE'],
-                array('width' => 255, 'height' => 205),
+                array(
+                    'width' => 255,
+                    'height' => 205
+                ),
                 BX_RESIZE_IMAGE_PROPORTIONAL_ALT, true, array(array("name" => "sharpen", "precision" => 15)));
             $arResult['SECTIONS'][$k]['PICTURE']['SRC'] = $img['src'];
+        } else {
+            $arResult['SECTIONS'][$key]['PICTURE'] = array(
+                'SRC' => SITE_TEMPLATE_PATH . '/public/images/noPhoto.png',
+                'ALT' => Loc::getMessage('NO_IMAGE'),
+                'TITLE' => Loc::getMessage('NO_IMAGE')
+            );
         }
     }
 }

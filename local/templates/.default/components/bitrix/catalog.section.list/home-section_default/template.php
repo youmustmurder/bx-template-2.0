@@ -15,10 +15,12 @@ if ($arResult['SECTIONS']) {?>
                 <div class="container">
                     <div class="row justify-content-md-between justify-content-sm-start align-items-end align-items-md-center">
                         <div class="col-auto">
-                            <h2><?=$arParams['SECTION_TITLE'] ? $arParams['SECTION_TITLE'] : GetMessage('CATEGORIES_SECTION_TITLE_DEFAULT')?></h2>
+                            <h2><?=$arParams['SECTION_TITLE'] ?: Loc::getMessage('CATEGORIES_SECTION_TITLE_DEFAULT')?></h2>
                         </div>
                         <div class="col-auto">
-                            <a href="/catalog/" class="btn btn-link"><?=$arParams['SECTION_LINK'] ? $arParams['SECTION_LINK'] : GetMessage('CATEGORIES_SECTION_LINK_DEFAULT')?></a>
+                            <a href="<?=SITE_DIR?>catalog/" class="btn btn-link">
+                                <?=$arParams['SECTION_LINK'] ?: Loc::getMessage('CATEGORIES_SECTION_LINK_DEFAULT')?>
+                            </a>
                         </div>
                     </div>
                 </div>

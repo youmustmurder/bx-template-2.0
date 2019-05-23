@@ -35,9 +35,18 @@ if ($arResult['SECTIONS']) {
         $arResult['SECTIONS'][$k]['SUBTITLE'] = $subTitle;
         if ($arSection['PICTURE']) {
             $img = CFile::ResizeImageGet($arSection['PICTURE'],
-                array('width' => 430, 'height' => 300),
+                array(
+                    'width' => 430,
+                    'height' => 300
+                ),
                 BX_RESIZE_IMAGE_PROPORTIONAL, true, array());
             $arResult['SECTIONS'][$k]['PICTURE']['SRC'] = $img['src'];
+        } else {
+            $arResult['SECTIONS'][$key]['PICTURE'] = array(
+                'SRC' => SITE_TEMPLATE_PATH . '/public/images/noPhoto.png',
+                'ALT' => Loc::getMessage('NO_IMAGE'),
+                'TITLE' => Loc::getMessage('NO_IMAGE')
+            );
         }
     }
 }
