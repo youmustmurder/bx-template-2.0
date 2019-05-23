@@ -1,12 +1,10 @@
+'use strict';
+
 window.onload = function () {
-    document.querySelector('.header__search--desktop').addEventListener('click', function() {
-        if(this.classList.contains('fixed')) {
-            document.querySelector('.header__search--desktop').classList.remove("fixed");
-            document.querySelector('.header__search-panel').classList.remove("open");
-        } else {
-            
-            document.querySelector('.header__search--desktop').classList.add("fixed");
-            document.querySelector('.header__search-panel').classList.add("open");
-        }
-    });
+  var headerToggleSearch = document.querySelector('.header-search-toggle'),
+      headerSearchPanel = document.querySelector('.header-search-panel');
+  headerToggleSearch.addEventListener('click', function () {
+    headerToggleSearch.classList.toggle('header-search-toggle__fixed');
+    headerSearchPanel.classList.toggle('header-search-panel_open');
+  });
 };

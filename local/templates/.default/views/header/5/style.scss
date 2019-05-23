@@ -1,30 +1,21 @@
 .header {
-	background-color: #fff;
+    background-color: #fff;
 }
 
 .header__top {
-    border-bottom: 1px solid #ececec;
-    padding: 30px 0;
+	padding: 30px 0;
+	border-bottom: 1px solid #ececec;
 }
 
-.header-logo {
-	flex: 0 1 400px;
+.header__top .container {
+    position: relative;
 }
 
-.header-logo__link {
-	display: block;
-	flex: 0 0 190px;
-	height: 51px;
-	margin-right: 15px;
-}
-
-.header-logo__name {
-	flex: 0 0 180px;
-}
-
-.header__burger-wrap {
-    width: 74px;
-    height: 38px;
+.header__logo a {
+    max-width: 180px;
+    flex: 0 1 190px;
+    height: 51px;
+    display: block;
 }
 
 .header__hamburger {
@@ -40,9 +31,8 @@
 		width: 24px;
 		height: 2px;
 		background-color: black;
-		border-radius: 1px;
-		&:after,
-		&:before {
+		&:before,
+		&:after {
 			content: '';
 			position: absolute;
 			left: 0;
@@ -58,7 +48,7 @@
 			bottom: 9px;
 		}
 	}
-	&.header__hamburger_fixed {
+	.fixed {
 		z-index: 1001;
 		position: fixed;
 		span {
@@ -82,39 +72,45 @@
 }
 
 .header__block {
-    display: inline-flex;
+    display: flex;
     align-items: flex-start;
     max-width: fit-content;
     flex: 1 1 auto;
 }
 
-.header-contact {
-	display: inline-flex;
-	align-items: flex-start;
-}
-
 .header-contact__icon {
-	margin: 4px 10px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	margin-right: 10px;
 	svg {
 		height: 20px;
+		margin-top: 2px;
 		fill: #333;
 	}
 }
 
 .header-contact__info {
-	display: flex;
+    display: flex;
     flex-direction: column;
 	justify-content: flex-start;
+	a {
+		line-height: 1.5em;
+		transition: 0.3s all ease-out;
+	}
 	span {
-		display: block;
 		line-height: 1.5em;
 	}
 }
 
+.header-logo__link {
+    max-width: 185px;
+    margin-left: 30px;
+}
+
 .header-contact__number {
-	margin-bottom: 5px;
     color: #333;
-    font-weight: 500;
+    font-weight: bold;
     font-size: 1.2rem;
 }
 
@@ -200,19 +196,20 @@
 	}
 }
 
-@media (max-width:1200px) {
+@media screen and (min-width:320px) and (max-width:1200px) {
+	.header__top {
+		padding: 15px 0;
+	}
+	.header-contact__info {
+		a {
+			font-size: 1rem;
+		}
+	}
+    .header-catalog-menu>ul>li>a {
+		padding: 15px 10px;
+	}
 	.header-search-panel {
 		top: -15px;
     	height: calc(100% + 15px*2);
-	}
-	.header-logo {
-		flex: 0 1 auto;
-	}
-	.header-logo__name {
-		display: none;
-	}
-	.header-contact__info,
-	.header-contact__info a {
-		font-size: 0.9333rem;
 	}
 }

@@ -44,7 +44,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 					<div class="header__block header__contact header-contact">
 						<?if ($arFilial['CITY'] || $arFilial['ADDRESS']) {?>
 							<div class="header-contact__icon">
-								<?=GetContentSvgIcon('address');?>
+								<?=GetContentSvgIcon('geo');?>
 							</div>
 							<div class="header-contact__info">
 								<?=$arFilial['CITY'] ? '<span>' . $arFilial['CITY'] . '</span>' : ''?>
@@ -67,7 +67,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 										"IBLOCK_TYPE" => "forms",
 										"IBLOCK_ID" => "14",
 										"FORM_PRODUCT_ADD" => "N",
-										"FORM_BTN_TYPE" => "btn__link",
+										"FORM_BTN_TYPE" => "link link_secondary",
 										"FORM_FIELDS" => array(
 											0 => "24",
 											1 => "25",
@@ -88,16 +88,10 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 							</div>
 						<?}?>
 					</div>
-					<div class="header__block header__search header__search--desktop">
-						<div class="header__loupe">
-							<button class="header__loupe-pic">
-								<?=GetContentSvgIcon('search-big');?>
-							</button>
-							<button class="header__loupe-crest">
-								<?=GetContentSvgIcon('crest-big');?>
-							</button>
-						</div>
-					</div>
+					<button class="header__search-toggle header-search-toggle">
+						<span class="header-search-toggle__icon-search"><?=GetContentSvgIcon('search');?></span>
+						<span class="header-search-toggle__icon-close"><?=GetContentSvgIcon('close');?></span>
+					</button>
 					<div class="header__search-panel header-search-panel">
 						<?$APPLICATION->IncludeComponent(
 							"bitrix:search.form",

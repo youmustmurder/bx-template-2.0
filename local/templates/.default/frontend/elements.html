@@ -83,11 +83,47 @@
 				<a href="#" class="link link_primary link_icon-left"><img src="main/images/icons/icon.png" alt="">Ссылка с иконкой</a>
 			</div>
             <h2>Поля ввода</h2>
-            <form action="#" class="form-stroke" style="width: 255px">
+			<form action="#" class="form-stroke" style="width: 255px">
                 <div class="form-field">
-                    <input type="text" placeholder="Текст" class="form-stroke__input">
-                    <div class="form-error-text">Ошибка</div>
-                </div>
+                    <input type="text" placeholder="Текст" class="input input_round">
+				</div>
+				<div class="form-field">
+					<input type="text" placeholder="Текст" class="input input_underline">
+				</div>
+				<div class="form-field">
+					<input type="text" placeholder="Текст" class="input input_round" disabled>
+				</div>
+				<div class="form-field">
+					<input type="text" placeholder="Текст" class="input input_underline" disabled>
+				</div>
+				<div class="form-field form-field_error">
+					<input type="text" placeholder="Текст" class="input input_round">
+					<div class="form-field__error">Ошибка</div>
+				</div>
+				<div class="form-field form-field_error">
+					<input type="text" placeholder="Текст" class="input input_underline">
+					<div class="form-field__error">Ошибка</div>
+				</div>
+				<div class="form-field">
+					<input type="text" placeholder="Текст" class="input input_round input_icon-right">
+					<span class="form-field__icon">
+						<svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#969696" fill-rule="evenodd" clip-rule="evenodd" d="M9.375 8.25H8.7825L8.5725 8.0475C9.3075 7.1925 9.75 6.0825 9.75 4.875C9.75 2.1825 7.5675 0 4.875 0C2.1825 0 0 2.1825 0 4.875C0 7.5675 2.1825 9.75 4.875 9.75C6.0825 9.75 7.1925 9.3075 8.0475 8.5725L8.25 8.7825V9.375L12 13.1175L13.1175 12L9.375 8.25ZM4.875 8.25C3.0075 8.25 1.5 6.7425 1.5 4.875C1.5 3.0075 3.0075 1.5 4.875 1.5C6.7425 1.5 8.25 3.0075 8.25 4.875C8.25 6.7425 6.7425 8.25 4.875 8.25Z"/></svg>
+					</span>
+				</div>
+				<div class="form-field">
+					<input type="text" placeholder="Текст" class="input input_underline input_icon-right">
+					<span class="form-field__icon">
+						<svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#969696" fill-rule="evenodd" clip-rule="evenodd" d="M9.375 8.25H8.7825L8.5725 8.0475C9.3075 7.1925 9.75 6.0825 9.75 4.875C9.75 2.1825 7.5675 0 4.875 0C2.1825 0 0 2.1825 0 4.875C0 7.5675 2.1825 9.75 4.875 9.75C6.0825 9.75 7.1925 9.3075 8.0475 8.5725L8.25 8.7825V9.375L12 13.1175L13.1175 12L9.375 8.25ZM4.875 8.25C3.0075 8.25 1.5 6.7425 1.5 4.875C1.5 3.0075 3.0075 1.5 4.875 1.5C6.7425 1.5 8.25 3.0075 8.25 4.875C8.25 6.7425 6.7425 8.25 4.875 8.25Z"/></svg>
+					</span>
+				</div>
+				<div class="form-field">
+					<textarea cols="30" rows="10" placeholder="Текст" class="input input_textarea input_round">Текстовое поле</textarea>
+				</div>
+				<div class="form-field">
+					<textarea cols="30" rows="10" placeholder="Текст" class="input input_textarea input_underline">Текстовое поле</textarea>
+				</div>
+
+
                 <div class="form-field">
                     <input type="text" placeholder="Текст" class="form-stroke__input" disabled>
                 </div>
@@ -102,13 +138,11 @@
                     <div class="form-error-text">Ошибка</div>
                 </div>
                 <textarea name="" id="" cols="30" rows="10" class="form-stroke__textarea"></textarea>
-                
                 <div class="form-stroke__counter">
                     <button type="button" class="but counterBut dec">-</button>
                     <input type="text" class="field form-stroke__fieldCount" value="1" data-min="1" data-max="20">
                     <button type="button" class="but counterBut inc">+</button>
                 </div>
-    
                 <div class="form-field">
                     <div class="form-stroke__select">
                         <select id="form-stroke__select">

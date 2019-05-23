@@ -12,107 +12,103 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 <header class="header">
     <nav class="header__top">
         <div class="container">
-            <div class="row justify-content-between align-items-center">
-                <div class="col-lg-auto header__block header__menu">
-                    <button class="header__hamburger">
-                        <span></span>
-                    </button>
-                    <div class="head-nav__modal--desktop" style="display: none;">
-                        <div class="container">
-                            <div class="head-nav__content head-nav__content--desktop">
-                                <?$APPLICATION->IncludeFile(
-                                    "/include/" . SITE_ID . "/blocks/menu/catalog_top.php",
-                                    array(),
-                                    array(
-                                        "SHOW_BORDER" => false,
-                                        "MODE" => "php"
-                                    )
-                                );?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-auto header__block header__phone">
-                    <div class="header__pic">
-                        <?=GetContentSvgIcon('phone');?>
-                    </div>
-                    <div class="header__text">
-                        <?if ($arFilial['PHONE']) {?>
-                            <a class="header__number" href="tel:<?=preg_replace('~[^0-9]+~', '', $arFilial['PHONE']);?>"><?=$arFilial['PHONE']?></a>
-                        <?}?>
-                        <?$APPLICATION->IncludeComponent(
-                            "website96:web.forms",
-                            ".default",
-                            array(
-                                "COMPONENT_TEMPLATE" => ".default",
-                                "IBLOCK_TYPE" => "forms",
-                                "IBLOCK_ID" => "14",
-                                "FORM_PRODUCT_ADD" => "N",
-                                "FORM_BTN_TYPE" => "btn__link",
-                                "FORM_FIELDS" => array(
-                                    0 => "24",
-                                    1 => "25",
-                                ),
-                                "FORM_REQUIRED_FIELDS" => array(
-                                    0 => "25",
-                                ),
-                                "FORM_TITLE" => "Форма обратной связи",
-                                "FORM_BTN_OPEN" => "Заказать звонок",
-                                "FORM_BTN_SUBMIT" => "Отправить",
-                                "FORM_POLITIC_URL" => "/politic/",
-                                "CACHE_TYPE" => "A",
-                                "CACHE_TIME" => "3600",
-                                "FORM_PRODUCT_ID" => ""
-                            ),
-                            false
-                        );?>
-                    </div>
-                </div>
-                <div class="col-lg-auto d-flex align-items-center header__logo header-logo--desc">
-                    <a href="<?=SITE_DIR?>">
-                        <?$APPLICATION->IncludeFile(
-                            "/include/" . SITE_ID . "/logo.php",
-                            array(),
-                            array(
-                                "SHOW_BORDER" => true,
-                                "MODE" => "html"
-                            )
-                        );?>
-                    </a>
-                </div>
-                <div class="col-lg-auto header__block header__address">
-                    <div class="header__pic">
-                        <?=GetContentSvgIcon('address');?>
-                    </div>
-                    <?if ($arFilial['CITY'] || $arFilial['ADDRESS']){?>
-                        <div class="header__text">
-                            <?=$arFilial['CITY'] ? '<span>' . $arFilial['CITY'] . '</span>' : ''?>
-                            <?=$arFilial['ADDRESS'] ? '<span>' . $arFilial['ADDRESS'] . '</span>' : ''?>
-                        </div>
-                    <?}?>
-                </div>
-                <div class="col-lg-auto header__block header__search header__search--desktop">
-                    <div class="header__loupe">
-                        <button class="header__loupe-pic">
-                            <?=GetContentSvgIcon('search-big');?>
-                        </button>
-                        <button class="header__loupe-crest">
-                            <?=GetContentSvgIcon('crest-big');?>
-                        </button>
-                    </div>
-                </div>
-                <div class="header__search-panel header__search-panel">
-                    <?$APPLICATION->IncludeComponent(
-                        "bitrix:search.form",
-                        "",
-                        array(
-                            "PAGE" => "#SITE_DIR#search/",
-                            "USE_SUGGEST" => "N",
-                        ),
-                        false
-                    );?>
-                </div>
+            <div class="row">
+				<div class="col d-flex justify-content-between align-items-center">
+					<button class="header__hamburger">
+						<span></span>
+					</button>
+					<div class="header__block header__contact header-contact">
+						<div class="header-contact__icon">
+							<?=GetContentSvgIcon('phone');?>
+						</div>
+						<div class="header-contact__info">
+							<?if ($arFilial['PHONE']) {?>
+								<a class="header-contact__number" href="tel:<?=preg_replace('~[^0-9]+~', '', $arFilial['PHONE']);?>"><?=$arFilial['PHONE']?></a>
+							<?}?>
+							<?$APPLICATION->IncludeComponent(
+								"website96:web.forms",
+								".default",
+								array(
+									"COMPONENT_TEMPLATE" => ".default",
+									"IBLOCK_TYPE" => "forms",
+									"IBLOCK_ID" => "14",
+									"FORM_PRODUCT_ADD" => "N",
+									"FORM_BTN_TYPE" => "link link_secondary",
+									"FORM_FIELDS" => array(
+										0 => "24",
+										1 => "25",
+									),
+									"FORM_REQUIRED_FIELDS" => array(
+										0 => "25",
+									),
+									"FORM_TITLE" => "Форма обратной связи",
+									"FORM_BTN_OPEN" => "Заказать звонок",
+									"FORM_BTN_SUBMIT" => "Отправить",
+									"FORM_POLITIC_URL" => "/politic/",
+									"CACHE_TYPE" => "A",
+									"CACHE_TIME" => "3600",
+									"FORM_PRODUCT_ID" => ""
+								),
+								false
+							);?>
+						</div>
+					</div>
+					<div class="d-flex align-items-center header__logo header-logo">
+						<a href="<?=SITE_DIR?>" class="header-logo__link">
+							<?$APPLICATION->IncludeFile(
+								"/include/" . SITE_ID . "/logo.php",
+								array(),
+								array(
+									"SHOW_BORDER" => true,
+									"MODE" => "html"
+								)
+							);?>
+						</a>
+					</div>
+					<div class="header__block header__contact header-contact">
+						<div class="header-contact__icon">
+							<?=GetContentSvgIcon('address');?>
+						</div>
+						<?if ($arFilial['CITY'] || $arFilial['ADDRESS']){?>
+							<div class="header-contact__info">
+								<?=$arFilial['CITY'] ? '<span>' . $arFilial['CITY'] . '</span>' : ''?>
+								<?=$arFilial['ADDRESS'] ? '<span>' . $arFilial['ADDRESS'] . '</span>' : ''?>
+							</div>
+						<?}?>
+					</div>
+					<button class="header__search-toggle header-search-toggle">
+						<span class="header-search-toggle__icon-search"><?=GetContentSvgIcon('search');?></span>
+						<span class="header-search-toggle__icon-close"><?=GetContentSvgIcon('close');?></span>
+					</button>
+					<div class="header__search-panel header-search-panel">
+						<?$APPLICATION->IncludeComponent(
+							"bitrix:search.form",
+							"",
+							array(
+								"PAGE" => "#SITE_DIR#search/",
+								"USE_SUGGEST" => "N",
+							),
+							false
+						);?>
+					</div>
+            	</div>
             </div>
         </div>
     </nav>
 </header>
+
+
+<div class="head-nav__modal--desktop" style="display: none;">
+	<div class="container">
+		<div class="head-nav__content head-nav__content--desktop">
+			<?$APPLICATION->IncludeFile(
+				"/include/" . SITE_ID . "/blocks/menu/catalog_top.php",
+				array(),
+				array(
+					"SHOW_BORDER" => false,
+					"MODE" => "php"
+				)
+			);?>
+		</div>
+	</div>
+</div>
