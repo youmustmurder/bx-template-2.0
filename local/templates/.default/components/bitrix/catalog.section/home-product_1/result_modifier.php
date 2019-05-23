@@ -9,6 +9,7 @@ Loc::loadMessages(__FILE__);
 
 if ($arResult['ITEMS']) {
     foreach ($arResult['ITEMS'] as $k => $arItem) {
+        $arResult['ITEMS'][$k]['CATEGORY'] = CIBlockSection::GetByID($arItem['IBLOCK_SECTION_ID'])->Fetch()['NAME'];
         if ($arItem['PREVIEW_PICTURE']['ID'] > 0) {
             $arSize = $k == 0 ?
                 array(
@@ -24,9 +25,7 @@ if ($arResult['ITEMS']) {
                     'width' => 255,
                     'height' => 205
                 ),
-                BX_RESIZE_IMAGE_PROPORTIONAL_ALT, true, array(
-                    array("name" => "sharpen", "precision" => 15)
-                ));
+                BX_RESIZE_IMAGE_PROPORTIONAL_ALT, true, array());
             $arResult['ITEMS'][$k]['PREVIEW_PICTURE']['SRC'] = $img['src'];
         } else {
             $arResult['ITEMS'][$k]['PREVIEW_PICTURE'] = array(
@@ -34,6 +33,15 @@ if ($arResult['ITEMS']) {
                 'ALT' => Loc::getMessage('NO_IMAGE'),
                 'TITLE' => Loc::getMessage('NO_IMAGE')
             );
+        }
+        if (strlen($arItem['PROPERTIES']['PRODUCT_PRICE']['VALUE']) > 0) {
+            if (intval($arItem['PROPERTIES']['PRODUCT_PRICE']['VALUE']) > 0) {
+                $arResult['ITEMS'][$k]['PRICE']  = number_format($arItem['PROPERTIES']['PRODUCT_PRICE']['VALUE'], 0, '', ' ');
+                $arResult['ITEMS'][$k]['CURRENCY'] = 'Y';
+            } else {
+                $arResult['ITEMS'][$k]['PRICE'] = $arItem['PROPERTIES']['PRODUCT_PRICE']['VALUE'];
+                $arResult['ITEMS'][$k]['CURRENCY'] = 'N';
+            }
         }
     }
 }
