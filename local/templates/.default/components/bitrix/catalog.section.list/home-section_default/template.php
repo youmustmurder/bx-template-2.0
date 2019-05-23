@@ -9,7 +9,6 @@ Loc::loadMessages(__FILE__);
 
 if ($arResult['SECTIONS']) {?>
     <section class="section-home section-categories section-categories__1">
-    <?if ($arResult['SECTIONS']) {?>
         <?if($APPLICATION->GetCurPage(false) === '/'){?>
             <div class="section-title">
                 <div class="container">
@@ -28,9 +27,8 @@ if ($arResult['SECTIONS']) {?>
         <?}?>
         <div class="container">
             <div class="container-section container-section--popular">
-                <?$i = 1;
-                foreach ($arResult['SECTIONS'] as $arSection){?>
-                    <a href="<?=$arSection['SECTION_PAGE_URL']?>" class="section-item item-<?=$i?>" id="<?=$this->GetEditAreaId($arSection['ID']);?>">
+                <?foreach ($arResult['SECTIONS'] as $k => $arSection){?>
+                    <a href="<?=$arSection['SECTION_PAGE_URL']?>" class="section-item " id="<?=$this->GetEditAreaId($arSection['ID']);?>">
                         <div class="section-item__image">
                             <img
                                 src="<?=$arSection['PICTURE']['SRC']?>"
@@ -39,10 +37,8 @@ if ($arResult['SECTIONS']) {?>
                         </div>
                         <div class="section-item__name"><?=$arSection['NAME']?></div>
                     </a>
-                <?$i++;
-                }?>
+                <?}?>
             </div>
         </div>
-    <?}?>
 </section>
 <?}?>
