@@ -5,6 +5,7 @@ const
 	precss = require('precss'),
 	cssnano = require('cssnano'),
 	autoprefixer = require('autoprefixer')({ grid: 'autoplace' }),
+	postcssExtendRule = require('postcss-extend-rule'),
 	stylelint = require('stylelint')({
 		configFile: path.join(path.dirname(__dirname), '.stylelintrc'),
 		files: '**/*.scss',
@@ -30,7 +31,7 @@ const
 const transformFile = (file, output = path.join(path.dirname(file), 'style.css')) => {
 	fs.readFile(file, (err, css) => {
 		if (err) logger.loggerError(err);
-		postcss([stylelint, reporter, precss, autoprefixer, cssnano])
+		postcss([stylelint, reporter, precss, postcssExtendRule, autoprefixer, cssnano])
 			.process(css, { from: file, to: path.dirname(file) })
 			.then(result => {
 				fs.writeFile(output, result.css, () => true);

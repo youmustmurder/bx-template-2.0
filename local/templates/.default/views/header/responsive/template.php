@@ -36,7 +36,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 			</a>
 			<?}?>
             <div class="col-sm-auto header-responsive__callback">
-                <a href="#" class="btn btn--primary btn--circle btn--mid js-init-modal__form" data-sign="%3D" data-modal="14">Заказать звонок</a>
+                <a href="#" class="link link_secondary js-init-modal__form" data-sign="%3D" data-modal="14">Заказать звонок</a>
             </div>
         </div>
     </div>

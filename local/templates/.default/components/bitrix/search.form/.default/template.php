@@ -7,12 +7,12 @@ use Bitrix\Main\Localization\Loc;
 Loc::loadMessages(__FILE__);
 ?>
 
-<form class="search__form" method="get" action="<?=$arResult["FORM_ACTION"]?>">
-    <span class="icon__search"><?=GetContentSvgIcon('search');?></span>
-    <input class="inp inp-search"
+<form class="search-form" method="get" action="<?=$arResult["FORM_ACTION"]?>">
+    <span class="search-form__icon"><?=GetContentSvgIcon('search');?></span>
+    <input class="search-form__input"
            name="q"
            autocomplete="off"
            placeholder="<?=Loc::getMessage('SEARCH_PLACEHOLDER')?>"
            size="20">
-    <button class="btn-search" type="submit" title="Поиск"><?=GetContentSvgIcon('arrow_small_right');?></button>
+    <button class="search-form__button" type="submit" title="Поиск"><?=GetContentSvgIcon('arrow_small_right');?></button>
 </form>

@@ -25,7 +25,10 @@ if (is_array($arResult) && !empty($arResult)) {?>
         <?}?>
         <?if($arResult['SUB_ITEMS']) {?>
             <li class="more__menu more-menu">
-                <a href="#" class="more-menu__link"><span class="menu__dots"></span><?=Loc::getMessage('MORE_TITLE')?></a>
+                <a href="#" class="more-menu__link">
+					<?=Loc::getMessage('MORE_TITLE')?>
+					<span class="menu__dots"><?=GetContentSvgIcon('dots')?></span>
+				</a>
                 <ul class="more-menu__submenu">
                     <?foreach ($arResult['SUB_ITEMS'] as $k => $arItem){?>
                         <?if($arItem['TEXT'] || $arItem['LINK']){?>

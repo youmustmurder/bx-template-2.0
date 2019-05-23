@@ -26,7 +26,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                 <address class="col-lg-6 col-md-7 header__address header-address d-flex align-items-center justify-content-end">
                     <?if ($arFilial['FULL_ADDRESS']) {?>
                         <a href="<?=SITE_DIR?>contacts/" class="header-address__link d-flex">
-                            <span class="header-address__icon"><?=GetContentSvgIcon('address');?></span>
+                            <span class="header-address__icon"><?=GetContentSvgIcon('geo');?></span>
                             <span class="header-address__value"><?=$arFilial['FULL_ADDRESS']?></span>
                         </a>
                     <?}?>
@@ -75,7 +75,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 									"IBLOCK_TYPE" => "forms",
 									"IBLOCK_ID" => "14",
 									"FORM_PRODUCT_ADD" => "N",
-									"FORM_BTN_TYPE" => "btn--primary",
+									"FORM_BTN_TYPE" => "btn btn_round btn_mid btn_outline-primary",
 									"FORM_FIELDS" => array(
 										0 => "24",
 										1 => "25",

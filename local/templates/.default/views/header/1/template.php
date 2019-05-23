@@ -38,7 +38,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 					<?if ($arFilial['CITY'] || $arFilial['ADDRESS']) {?>
 						<div class="header__contact header-contact">
 							<div class="header-contact__icon">
-								<?=GetContentSvgIcon('address');?>
+								<?=GetContentSvgIcon('geo');?>
 							</div>
 							<div class="header-contact__value">
 								<div>
@@ -64,7 +64,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 									"IBLOCK_TYPE" => "forms",
 									"IBLOCK_ID" => "14",
 									"FORM_PRODUCT_ADD" => "N",
-									"FORM_BTN_TYPE" => "btn__link",
+									"FORM_BTN_TYPE" => "link link_secondary",
 									"FORM_FIELDS" => array(
 										0 => "24",
 										1 => "25",

@@ -94,14 +94,14 @@ if(isset($_REQUEST['ajax_form']) && !empty($_REQUEST['ajax_form'])){?>
                     </div>
                 <?}?>
                 <div class="form__group form__group-btn">
-                    <button type="submit" class="btn btn--default btn--circle btn--mid modal__form-submit"><?=$arParams['FORM_BTN_SUBMIT'];?></button>
+                    <button type="submit" class="btn btn_mid modal__form-submit"><?=$arParams['FORM_BTN_SUBMIT'];?></button>
                 </div>
             </form>
         </div>
     </div>
 <?} else {?>
     <a href="#"
-       class="btn <?=$arParams['FORM_BTN_TYPE'] != 'btn__link' ? 'btn--circle btn--mid' : ''?> js-init-modal__form <?=$arParams['FORM_BTN_TYPE']?>"
+       class="<?=$arParams['FORM_BTN_TYPE']?> js-init-modal__form"
        data-sign="<?=$arResult["JSON_SIGN"]?>"
        data-lang="<?= LANGUAGE_ID ?>"
        data-site-id="<?= LANGUAGE_ID ?>"
