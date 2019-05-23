@@ -76,7 +76,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 			<?if ($arFilial['CITY'] || $arFilial['ADDRESS']) {?>
 				<a class="mobile-menu__contact mobile-menu-contact" href="/contacts/">
 					<span class="mobile-menu-contact__icon">
-						<?=GetContentSvgIcon('address');?>
+						<?=GetContentSvgIcon('geo');?>
 					</span>
 					<span class="mobile-menu-contact__value">
 						<?=$arFilial['CITY'] ? '<span>' . $arFilial['CITY'] . '</span>' : ''?>

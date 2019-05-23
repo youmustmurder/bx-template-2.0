@@ -19,8 +19,8 @@
 }
 
 .header-logo__name {
-    max-width: 200px;
-	margin-left: 22px;
+	max-width: 200px;
+	margin-left: 20px;
 	line-height: 1.5em;
 }
 
@@ -65,7 +65,7 @@
 	margin-left: 5px;
 	svg {
 		position: absolute;
-		top: 0;
+		top: -2px;
 		left: 0;
 		height: 18px;
 		fill: #333;
@@ -84,30 +84,15 @@
 				z-index: 1;
 				display: block;
 				width: 100%;
-				padding: 20px 15px;
+				padding: 20px 25px;
 				border-bottom: 2px solid transparent;
 				text-align: center;
 				font-size: 1rem;
 				font-weight: 500;
 				color: #333;
 				white-space: nowrap;
-				&:before {
-					content: '';
-					position: absolute;
-					z-index: -1;
-					left: 0;
-					bottom: 0;
-					width: 100%;
-					height: 100%;
-					background-color: #eaeaea;
-					opacity: 0;
-					transition: 0.3s all ease-out;
-				}
 				&:hover {
-					border-color: #eaeaea;
-					&:before {
-						opacity: 1;
-					}
+					border-color: #ff1e36;
 				}
 			}
 			&.more__menu {
@@ -144,19 +129,19 @@
 			min-width: 250px;
 			border-top: 1px solid #eaeaea;
 			background-color: #fff;
-			box-shadow: 0 5px 15px rgba(28, 28, 28, 0.15);
+			box-shadow: 0 5px 10px rgb(230, 230, 230);
 			transition: 0.3s all ease-out;
 			li {
 				transition: 0.3s all ease-out;
 				a {
 					display: block;
-					padding: 15px 25px;
+					padding: 20px 25px;
 					color: #333;
 					white-space: normal;
 				}
 				&:hover,
 				&:focus {
-					opacity: 0.8;
+					background: rgba(234, 234, 234, 0.5);
 				}
 			}
 		}
@@ -179,17 +164,11 @@
 }
 
 @media (max-width:1200px) {
-	.header__top {
-		padding: 15px 0;
-	}
 	.header-search {
 		padding: 0 15px;
 	}
     .header__phone {
 		margin-right: 15px;
-		a {
-			font-size: 1rem;
-		}
     }
     .header-search__min {
         flex-grow: inherit;
@@ -201,7 +180,18 @@
     .header-logo__name {
         display: none;
 	}
-	.header-catalog-menu>ul>li>a {
-		padding: 15px 10px;
+	.header-contact__value,
+	.header__phone a,
+	.header-catalog-menu>ul>li>a,
+	.header .more-menu .more-menu__submenu li a {
+		font-size: 0.9333rem;
+	}
+	.header-top__navbar ul li a,
+	.header-address__value {
+		font-size: 0.82rem;
+	}
+	.header .more-menu .more-menu__submenu li a,
+	.header-catalog-menu ul li a {
+		padding: 16px 20px;
 	}
 }

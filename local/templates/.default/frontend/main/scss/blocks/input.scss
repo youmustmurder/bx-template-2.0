@@ -1,5 +1,107 @@
 .form-field {
 	position: relative;
+	&.form-field_error {
+		.input {
+			&.input_round,
+			&.input_underline {
+				border-color: #FF1E36;
+			}
+			&.input_round {
+				& + .form-field__error {
+					padding-left: 15px;
+				}
+			}
+		}
+	}
+}
+
+.form-field__error {
+	padding: 8px 0 0 0;
+	color: #FF1E36;
+	font-size: 0.8rem;
+	line-height: 1.2rem;
+}
+
+.form-field__icon {
+	display: flex;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translate(0, -50%);
+	svg {
+		height: 18px;
+	}
+}
+
+.input {
+	width: 100%;
+	border: none;
+	background: none;
+	outline: none;
+	font-size: 0.9333rem;
+	&::placeholder {
+		color: #585757;
+		font-size: 0.9333rem;
+		font-weight: 500;
+		opacity: 0.4;
+	}
+	&.input_round,
+	&.input_underline {
+		&:focus {
+			border-color: #2880B9;
+		}
+	}
+	&.input_round {
+		padding: 13px 16px;
+		border: 1px solid #eee;
+		border-radius: 50px;
+	}
+	&.input_underline {
+		padding: 8px 0;
+		border-bottom: 1px solid #eee;
+	}
+	&[disabled] {
+		&.input_round {
+			border-color: #F5F5F5;
+			background: #F5F5F5;
+			color: #585757;
+			&::placeholder {
+				color: #585757;
+				opacity: 1;
+			}
+		}
+		&.input_underline {
+			color: #585757;
+			&::placeholder {
+				color: #585757;
+				opacity: 1;
+			}
+		}
+	}
+	&.input_icon-right {
+		&.input_round {
+			padding-right: 30px;
+			& + .form-field__icon {
+				right: 10px;
+			}
+		}
+		&.input_underline {
+			padding-right: 20px;
+		}
+	}
+	&.input_textarea {
+		-webkit-appearance: none;
+		&::-webkit-resizer {
+			display: none;
+		}
+		&.input_round {
+			border-radius: 10px;
+		}
+	}
+}
+
+/* .form-field {
+	position: relative;
 }
 
 .form-error-text {
@@ -20,56 +122,69 @@
 	margin-bottom: 45px;
 	transition: 0.3s;
 }
+
 .form-stroke__input::-webkit-input-placeholder {
 	color: #585757;
 	opacity: 0.4;
 }
+
 .form-stroke__input::-moz-placeholder {
 	color: #585757;
 	opacity: 0.4;
 }
+
 .form-stroke__input:-ms-input-placeholder {
 	color: #585757;
 	opacity: 0.4;
 }
+
 .form-stroke__input:-moz-placeholder {
 	color: #585757;
 	opacity: 0.4;
 }
+
 .form-stroke__input[disabled] {
 	background-color: #f9f9f9;
 	border: none;
 }
+
 .form-underline__input[disabled]::-webkit-input-placeholder {
 	color: #585757;
 	opacity: 1;
 }
+
 .form-underline__input[disabled]::-moz-placeholder {
 	color: #585757;
 	opacity: 1;
 }
+
 .form-underline__input[disabled]:-ms-input-placeholder {
 	color: #585757;
 	opacity: 1;
 }
+
 .form-underline__input[disabled]:-moz-placeholder {
 	color: #585757;
 	opacity: 1;
 }
+
 .form-stroke__input:focus {
 	border: 1px solid #2880b9;
 }
+
 .form-stroke__input--icon {
 	background-image: url(../../main/images/icons/icon.png);
 	background-repeat: no-repeat;
 	background-position-y: 50%;
 	background-position-x: calc(100% - 10px);
 }
+
 .form-field.success {
 	.form-stroke__input {
 		border: 1px solid #26ae60;
 	}
 }
+
 .form-field.error {
 	.form-stroke__input {
 		border: 1px solid #ff1e36;
@@ -78,11 +193,13 @@
 		color: #ff1e36;
 	}
 }
+
 .form-stroke__textarea {
 	border-radius: 10px;
 	border: 1px solid #eeeeee;
 	padding: 8px 16px;
 }
+
 .form-stroke__textarea::-webkit-resizer {
 	width: 11px;
 	height: 12px;
@@ -117,52 +234,64 @@
 	margin-bottom: 45px;
 	transition: 0.3s;
 }
+
 .form-underline__input::-webkit-input-placeholder {
 	color: #585757;
 	opacity: 0.4;
 }
+
 .form-underline__input::-moz-placeholder {
 	color: #585757;
 	opacity: 0.4;
 }
+
 .form-underline__input:-ms-input-placeholder {
 	color: #585757;
 	opacity: 0.4;
 }
+
 .form-underline__input:-moz-placeholder {
 	color: #585757;
 	opacity: 0.4;
 }
+
 .form-underline__input[disabled]::-webkit-input-placeholder {
 	color: #585757;
 	opacity: 0.5;
 }
+
 .form-underline__input[disabled]::-moz-placeholder {
 	color: #585757;
 	opacity: 0.5;
 }
+
 .form-underline__input[disabled]:-ms-input-placeholder {
 	color: #585757;
 	opacity: 0.5;
 }
+
 .form-underline__input[disabled]:-moz-placeholder {
 	color: #585757;
 	opacity: 0.5;
 }
+
 .form-underline__input:focus {
 	border-bottom: 1px solid #2880b9;
 }
+
 .form-underline__input--icon {
 	background-image: url(../../main/images/icons/icon.png);
 	background-repeat: no-repeat;
 	background-position-y: 50%;
 	background-position-x: 100%;
 }
+
 .form-field.success {
 	.form-underline__input {
 		border-bottom: 1px solid #26ae60;
 	}
 }
+
 .form-field.error {
 	.form-underline__input {
 		border-bottom: 1px solid #ff1e36;
@@ -171,11 +300,13 @@
 		color: #ff1e36;
 	}
 }
+
 .form-underline__textarea {
 	border: none;
 	border-bottom: 1px solid #eeeeee;
 	padding: 8px 16px;
 }
+
 .form-underline__textarea::-webkit-resizer {
 	width: 11px;
 	height: 12px;
@@ -215,3 +346,4 @@
 		right: 0;
 	}
 }
+ */

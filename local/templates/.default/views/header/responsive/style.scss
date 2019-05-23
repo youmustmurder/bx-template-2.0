@@ -44,12 +44,12 @@
 		&:after {
 			width: 18px;
     		top: calc(50% - 1px);
-    		transform: translate(-2px, 0) rotate(135deg);
+    		transform: rotate(135deg);
 		}
 		&:before {
 			top: auto;
 			bottom: calc(50% - 1px);
-			transform: translate(-2px, 0) rotate(45deg);
+			transform: rotate(45deg);
 		}
 	}
 }
@@ -82,7 +82,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 5px;
+	margin-right: 5px;
+	svg {
+		height: 15px;;
+		fill: #333;
+	}
 }
 
 .head-nav__modal {
@@ -125,13 +129,13 @@
 	margin-bottom: 25px;
 	a {
 		display: block;
-		padding: 7px 0;
-		font-size: 1.125rem;
+		padding: 10px 0;
+		font-size: 1.067rem;
     	color: #333;
 	}
 	&.mobile-menu__menu_nav-site {
 		a {
-			display: inline-block;
+			font-size: 0.8667rem;
 			color: #aaa9ad;
 		}
 	}
@@ -145,23 +149,26 @@
 .mobile-menu__contact {
     display: inline-flex;
     align-items: center;
-    width: 100%;
-    padding-bottom: 10px;
+	width: 100%;
+	margin-bottom: 20px;
     color: #333;
-    font-size: 1.125rem;
-	margin-bottom: 10px;
+    font-size: 1.067rem;
 	text-decoration: none;
 }
 
 .mobile-menu-contact__icon {
-    display: flex;
-    min-width: 46px;
-    height: 46px;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
     align-items: center;
+    min-width: 46px;
+	height: 46px;
+	margin-right: 15px;
     border: 1px solid #aaa9ad;
     border-radius: 50%;
-    margin-right: 15px;
+	svg {
+		height: 15px;
+		fill: #333;
+	}
 }
 
 @media (max-width: 991px){
@@ -174,9 +181,6 @@
 }
 
 @media (max-width: 767px) {
-	.header-responsive {
-		padding: 15px 0;
-	}
 	.header-responsive-phone {
 		padding: 0 15px;
 	}
@@ -200,12 +204,20 @@
 
 @media (max-width: 575px) {
 	.header-responsive {
-		padding: 10px 0;
+		padding: 15px 0;
 	}
     .header-responsive__burger,
     .btn-icon {
         height: 42.5px;
         width: 42.5px;
+	}
+	.header-responsive__burger.header-responsive__burger_open {
+		&:before {
+			transform: translate(-2px, 0) rotate(45deg)
+		}
+		&:after {
+			transform: translate(-2px, 0) rotate(135deg);
+		}
 	}
 	.mobile-menu__content {
 		padding: 80px 15px 15px;
