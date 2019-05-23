@@ -50,7 +50,9 @@ if ($arResult['SECTIONS']) {?>
                                             <img class="best-categories-card__img"
                                                  src="<?=$arSection['PICTURE']['SRC']?>"
                                                  alt="<?=$arSection['PICTURE']['ALT']?>">
+                                            <?/*
                                             <p class="best-categories-card__text">Без кучи документов, поездок в банк и талончиков с номером очереди</p>
+                                            */?>
                                         </a>
                                     </li>
                                     <?break;
