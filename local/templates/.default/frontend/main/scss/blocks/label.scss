@@ -1,16 +1,16 @@
 .label {
 	padding: 7px 17px;
-	border-radius: 12px;
+	border-radius: 50px;
 	text-align: center;
 	color: #fff;
 	font-size: 0.6667rem;
-	&.label--blue {
+	&.label_blue {
 		background: #197ED1;
 	}
-	&.label--yellow {
+	&.label_yellow {
 		background: #EFA32A;
 	}
-	&.label--green {
+	&.label_green {
 		background: #22C25B;
 	}
 }

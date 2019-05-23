@@ -1,6 +1,6 @@
 .products {
 	padding: 88px 0;
-	&.products--grey {
+	&.products-grey {
 		background: #F8F8F8;
 	}
 }
@@ -9,6 +9,10 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+}
+
+.products__title {
+	margin-right: 15px;
 }
 
 .products__title,
@@ -26,11 +30,12 @@
 	padding: 75px 30px 40px;
 	background: #fff;
 	overflow: hidden;
-	&.product--big {
+	transition: 0.3s all ease-out;
+	&.product-big {
 		display: grid;
 		grid-template-columns: 60% 40%;
 		grid-auto-rows: max-content;
-		padding: 40px 30px 30px 30px;
+		padding: 30px 30px 45px 30px;
 		.product__img {
 			grid-column: 2;
 			grid-row: 1/7;
@@ -52,6 +57,7 @@
 		.products__label {
 			position: static;
 			transform: translate(-15px, 0);
+			width: auto;
 		}
 		.product__name,
 		.product__subtitle,
@@ -84,6 +90,10 @@
 			grid-row: 6;
 		}
 	}
+	&:hover,
+	&:focus {
+		box-shadow: 0 5px 10px #e6e6e6;
+	}
 }
 
 .product__rating {
@@ -92,15 +102,23 @@
 
 .product__img {
 	margin-bottom: 20px;
+	height: 170px;
+	img {
+		height: auto;
+		max-width: 100%;
+		max-height: 100%;
+	}
 }
 
-.product__name,
-.product__subtitle {
+.product__info-wrap {
+	min-height: 80px;
+	margin-bottom: 30px;
 	text-align: center;
 }
 
 .product__name {
-	margin-bottom: 5px;
+	display: block;
+	margin-bottom: 7px;
 	color: #000;
 	font-size: 1.067rem;
 	line-height: 1.333rem;
@@ -109,7 +127,6 @@
 }
 
 .product__subtitle {
-	margin-bottom: 40px;
 	color: #7E7E7E;
 	font-size: 0.9333rem;
 	line-height: 1.133rem;
@@ -147,12 +164,15 @@
 	top: 25px;
 	left: 50%;
 	transform: translate(-50%, 0);
+	width: 100%;
 	.label {
 		margin: 0 15px;
 	}
 }
 
 .products__text {
+	position: relative;
+	z-index: 1;
 	max-width: 250px;
 	font-size: 1.067rem;
 	line-height: 1.6rem;
@@ -161,13 +181,32 @@
 
 @media (max-width: 768px) {
 	.product {
-		&.product--big {
+		&.product-big {
+			display: flex;
+			align-items: flex-start;
+			.product__img  {
+				position: absolute;
+				z-index: 0;
+				bottom: 0;
+				right: 15px;
+			}
+		}
+	}
+	.product__info-wrap {
+		min-height: 0;
+	}
+}
+
+@media (max-width: 576px) {
+	.product {
+		&.product-big {
 			display: flex;
 			align-items: flex-start;
 			padding-bottom: 150px;
 			.product__img  {
-				position: absolute;
 				top: calc(100% - 100px);
+				right: auto;
+				bottom: auto;
 				left: 50%;
 				transform: translate(-50%, 0);
 			}

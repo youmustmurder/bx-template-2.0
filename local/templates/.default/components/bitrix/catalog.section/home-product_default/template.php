@@ -33,6 +33,7 @@ Loc::loadMessages(__FILE__);
 								<img src="<?=$arProduct['PREVIEW_PICTURE']['SRC']?>"
 										alt="<?=$arProduct['PREVIEW_PICTURE']['ALT'] ? $arProduct['PREVIEW_PICTURE']['ALT'] : $arProduct['NAME']?>"
 										title="<?=$arProduct['PREVIEW_PICTURE']['TITLE'] ? $arProduct['PREVIEW_PICTURE']['TITLE'] : $arProduct['NAME']?>">
+								<button class="btn btn_mid btn_round btn_primary products-item__link">Подробнее</button>
 							</a>
 							<div class="products-item__desc">
 								<a href="<?=$arProduct['DETAIL_PAGE_URL']?>" class="products-item__name"><?=$arProduct['NAME']?></a>
