@@ -38,7 +38,6 @@ if ($arResult['SECTIONS']) {
                 array('width' => 430, 'height' => 300),
                 BX_RESIZE_IMAGE_PROPORTIONAL, true, array());
             $arResult['SECTIONS'][$k]['PICTURE']['SRC'] = $img['src'];
-
         }
     }
 }
