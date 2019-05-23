@@ -34,3 +34,9 @@ function GetCurDir($dirPath)
     }
     return str_replace($_SERVER['DOCUMENT_ROOT'], '', str_replace('\\', '/', $dirPath));
 }
+
+function dump($var) {
+    echo '<pre>';
+    var_dump($var);
+    echo '</pre>';
+}
