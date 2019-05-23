@@ -1,176 +1,113 @@
 .slider-big {
 	position: relative;
-	max-width: 1350px;
-	margin: auto;
 }
 
-.tns-horizontal.tns-subpixel>.tns-item.slider-slide {
+.tns-horizontal.tns-subpixel>.tns-item.slider-big-slide {
 	position: relative;
-	display: inline-flex;
-	align-items: center;
-	height: 650px;
-	border-radius: 10px;
+	padding: 150px 0;
+	min-height: 460px;
+	color: #fff;
 	overflow: hidden;
-	&:after {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, #000000 103.8%);
-		z-index: -1;
-	}
 }
 
-.slider-slider__inner {
+.slider-big-slide__wrap {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 	width: 100%;
 	max-width: 1140px;
 	margin: auto;
 	padding: 0 15px;
 }
 
-.slider-slide__img {
+.slider-big-slide__img {
 	position: absolute;
 	top: 0;
-	left: 0;
-	bottom: 0;
 	right: 0;
-	min-height: 100%;
+	bottom: 0;
+	left: 0;
 	min-width: 100%;
+	min-height: 100%;
 	z-index: -1;
 }
 
-.slider-slide__title {
-	max-width: 800px;
-	margin-bottom: 10px;
+.slider-big-slide__subtitle {
+	margin-bottom: 5px;
+	padding: 4px 8px;
+	border-radius: 4px;
+	background: #26AE60;
 	color: #fff;
-	font-size: 3.2rem;
-	line-height: 4.267rem;
+	font-size: 0.6667rem;
 	text-transform: uppercase;
+}
+
+.slider-big-slide__title {
+	max-width: 500px;
+	margin-bottom: 10px;
+	font-size: 3.2rem;
+	line-height: 4rem;
 	font-weight: bold;
 }
 
-.slider-slide__text {
-	max-width: 380px;
-	margin-bottom: 45px;
-	color: #fff;
-	font-size: 1.2rem;
-	line-height: 1.733rem;
-}
-
-.slider-slide__btn {
-	display: inline-flex;
-	margin-bottom: 90px;
-}
-
-.slider-slide-numbers {
-	display: flex;
-}
-
-.slider-slide-num {
-	color: #fff;
-	font-weight: 500;
-	&:not(:last-child) {
-		margin-right: 60px;
-	}
-}
-
-.slider-slide-num__value,
-.slider-slide-num__text {
-	display: block;
-}
-
-.slider-slide-num__value {
-	margin-bottom: 5px;
-	font-size: 3.2rem;
-}
-
-.slider-slide-num__text {
+.slider-big-slide__desc {
+	margin-bottom: 35px;
+	max-width: 320px;
 	font-size: 1.067rem;
-	opacity: 0.8;
+	line-height: 1.6rem;
+}
+
+.slide-big-dots {
+	display: flex;
+	position: absolute;
+	right: 15px;
+	bottom: 50px;
+}
+
+.slide-big-dots__item {
+	margin: 0 3px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #fff;
+	cursor: pointer;
+	&.tns-nav-active {
+		background: #26AE60;
+	}
 }
 
 .slide-big__nav {
-	display: flex;
-	justify-content: space-between;
 	position: absolute;
-	z-index: 2;
-	bottom: 0;
-	right: 0;
+	top: 50px;
+	right: 15px;
+	display: flex;
+}
+
+.slider-big__prev,
+.slider-big__next {
+	pointer-events: all;
+}
+
+.slider-big__prev {
+	margin-right: 15px;
+}
+
+.slider-big__wrap-nav {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, 0);
 	width: 100%;
-	max-width: calc(64px*2 + 15px);
+	height: 100%;
+	max-width: 1140px;
+	padding: 0 15px;
+	pointer-events: none;
 }
 
-@media (max-width: 1024px) {
-	.slider-slide__title {
-		text-transform: initial;
+@media (max-width: 660px) {
+	.slider-big-slide__subtitle {
+		margin-bottom: 20px;
 	}
-	.slider-big {
-		max-width: 100%;
-	}
-	.tns-horizontal.tns-subpixel>.tns-item.slider-slide {
-		height: 600px;
-		border-radius: 0;
-	}
-	.slider-slide__title {
-		max-width: 100%;
-	}
-	.slide-big__nav {
-		margin-right: 15px;
-	}
-}
-
-@media (max-width: 768px) {
-	.tns-horizontal.tns-subpixel>.tns-item.slider-slide {
-		height: 530px;
-	}
-	.slider-slide__title {
-		font-size: 2.4rem;
-		line-height: 3.2rem;
-	}
-	.slider-slide__text {
-		margin-bottom: 10px;
-	}
-	.slider-slide__btn {
-		margin-bottom: 60px;
-	}
-	.slider-slide-num__value {
-		font-size: 2.133rem;
-	}
-	.slider-slide-num__text {
-		font-size: 0.9333rem;
-	}
-	.slide-big__nav {
-		max-width: calc(48px*2 + 10px);
-	}
-}
-
-@media (max-width: 576px) {
-	.slide-big__nav {
-		max-width: 48px;
-	}
-	.slider-big__prev {
-		display: none;
-	}
-	.slider-slide-numbers {
-		max-width: 400px;
-	}
-}
-
-@media (max-width: 400px) {
-	.slide-big__nav {
-		display: none;
-	}
-	.slider-slide-num__value {
-		font-size: 1.6rem;
-	}
-	.slider-slide-num__text {
-		font-size: 0.9333rem;
-	}
-	.slider-slide-num {
-		&:not(:last-child) {
-			margin-right: 20px;
-		}
+	.tns-horizontal.tns-subpixel>.tns-item.slider-big-slide {
+		padding: 65px 0 130px;
 	}
 }
