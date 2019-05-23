@@ -1,32 +1,33 @@
 'use strict';
 
 window.addEventListener('load', function () {
-  var slider = document.querySelector('.slider-big'),
-      nav = document.querySelector('.slide-big__nav'),
-      prevBtn = document.querySelector('.slider-big__prev'),
-      nextBtn = document.querySelector('.slider-big__next');
+  var sliderNode = document.querySelector('.slider-big-slides'),
+      navNode = sliderNode.querySelector('.slide-big__nav'),
+      prevBtnNode = document.querySelector('.slider-big__prev'),
+      nextBtnNode = document.querySelector('.slider-big__next'),
+      previewsNode = document.querySelectorAll('.slider-big-preview');
   var sliderBig = tns({
-    container: '.slider-big-slides',
+    container: sliderNode,
     items: 1,
-    prevButton: prevBtn,
-    nextButton: nextBtn,
-    nav: false,
-    onInit: function onInit(info) {
-      positionNav(slider, nav, info);
-    }
+    prevButton: prevBtnNode,
+    nextButton: nextBtnNode,
+    nav: false
   });
   sliderBig.events.on('transitionStart', function (info) {
-    positionNav(slider, nav, info);
+    togglePrevies(info.displayIndex - 1);
   });
-  window.addEventListener('resize', debounce(function () {
-    positionNav(slider, nav, sliderBig.getInfo());
-  }, 300));
-});
+  Array.prototype.forEach.call(previewsNode, function (preview) {
+    preview.addEventListener('click', function (e) {
+      var newIndex = e.target.getAttribute('indexSlide');
+      togglePrevies(newIndex);
+      sliderBig.goTo(newIndex);
+    });
+  });
 
-var positionNav = function positionNav(slider, nav, info) {
-  var right = -1 * (slider.getBoundingClientRect().left - document.querySelector('.container').getBoundingClientRect().left);
-  var nums = slider.querySelectorAll('.slider-slide')[info.displayIndex].querySelector('.slider-slide-numbers');
-  var top = -1 * (slider.getBoundingClientRect().top - nums.getBoundingClientRect().top);
-  nav.style.top = "".concat(top, "px");
-  nav.style.right = "".concat(right, "px");
-};
+  var togglePrevies = function togglePrevies(newIndex) {
+    Array.prototype.forEach.call(previewsNode, function (prev) {
+      prev.classList.remove('slider-big-preview--active');
+    });
+    document.querySelector(".slider-big-preview[indexSlide=\"".concat(newIndex, "\"]")).classList.add('slider-big-preview--active');
+  };
+});
