@@ -27,7 +27,7 @@ if ($arResult['ITEMS']) {?>
                         <img src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>"
                              alt="<?=$arItem['PREVIEW_PICTURE']['ALT']?>">
                     </div>
-                    <div class="services__item-title"><?=$arItem['NAME']?></div>
+                    <a href="<?=$arItem['DETAIL_PAGE_URL']?>" class="services__item-title"><?=$arItem['NAME']?></a>
                     <?if ($arItem['PREVIEW_TEXT']) {?>
                         <div class="services__item-text"><?=$arItem['PREVIEW_TEXT']?></div>
                     <?}?>

@@ -38,7 +38,7 @@ $APPLICATION->IncludeFile(
 );
 */
 /*services*/
-
+/*
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-services/" . $arCurrentSetting['SERVICES'] . ".php",
     array(),
@@ -47,7 +47,7 @@ $APPLICATION->IncludeFile(
         "MODE" => "php"
     )
 );
-
+*/
 /*seo text*/
 /*
 if ($arParams['CONTENT']) {?>
@@ -65,7 +65,7 @@ if ($arParams['CONTENT']) {?>
 <?}
 */
 /*about*/
-/*
+
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-about/" . $arCurrentSetting['ABOUT'] . ".php",
     array(),
@@ -74,7 +74,7 @@ $APPLICATION->IncludeFile(
         "MODE" => "php"
     )
 );
-*/
+
 /*news*/
 /*
 $APPLICATION->IncludeFile(
