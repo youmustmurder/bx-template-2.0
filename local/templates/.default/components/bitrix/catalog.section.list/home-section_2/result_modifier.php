@@ -41,7 +41,9 @@ if ($arResult['SECTIONS']) {
                     'width' => 255,
                     'height' => 205
                 ),
-                BX_RESIZE_IMAGE_PROPORTIONAL_ALT, true, array(array("name" => "sharpen", "precision" => 15)));
+                BX_RESIZE_IMAGE_PROPORTIONAL_ALT, true,
+                array(array("name" => "sharpen", "precision" => 15))
+            );
             $arResult['SECTIONS'][$k]['PICTURE']['SRC'] = $img['src'];
         } else {
             $arResult['SECTIONS'][$key]['PICTURE'] = array(

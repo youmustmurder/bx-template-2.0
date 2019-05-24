@@ -9,23 +9,16 @@ Loc::loadMessages(__FILE__);
 
 if ($arResult['ITEMS']) {
     foreach ($arResult['ITEMS'] as $k => $arItem) {
-        $arResult['ITEMS'][$k]['PARENT_SECTION'] = CIBlockSection::GetByID($arItem['IBLOCK_SECTION_ID'])->Fetch();
+        $arResult['ITEMS'][$k]['PARENT_SECTION'] = CIBlockSection::GetByID($arItem['IBLOCK_SECTION_ID'])->GetNext();
         if ($arItem['PREVIEW_PICTURE']['ID'] > 0) {
-            $arSize = $k == 0 ?
-                array(
-                    'width' => 360,
-                    'height' => 370
-                ) :
-                array(
-                    'width' => 290,
-                    'height' => 200
-                );
             $img = CFile::ResizeImageGet($arItem['PREVIEW_PICTURE']['ID'],
-                array(
-                    'width' => 255,
-                    'height' => 205
-                ),
-                BX_RESIZE_IMAGE_PROPORTIONAL_ALT, true, array());
+            array(
+                'width' => 180,
+                'height' => 200
+            ),
+            BX_RESIZE_IMAGE_PROPORTIONAL_ALT, true,
+                array(array("name" => "sharpen", "precision" => 15))
+            );
             $arResult['ITEMS'][$k]['PREVIEW_PICTURE']['SRC'] = $img['src'];
         } else {
             $arResult['ITEMS'][$k]['PREVIEW_PICTURE'] = array(
@@ -33,6 +26,19 @@ if ($arResult['ITEMS']) {
                 'ALT' => Loc::getMessage('NO_IMAGE'),
                 'TITLE' => Loc::getMessage('NO_IMAGE')
             );
+        }
+        if (strlen($arItem['PROPERTIES']['PRODUCT_PRICE']['VALUE']) > 0) {
+            if (intval($arItem['PROPERTIES']['PRODUCT_PRICE']['VALUE']) > 0) {
+                $arResult['ITEMS'][$k]['PRICE'] = array(
+                    'VALUE' => number_format($arItem['PROPERTIES']['PRODUCT_PRICE']['VALUE'], 0, '', ' '),
+                    'CURRENCY' => 'Y'
+                );
+            } else {
+                $arResult['ITEMS'][$k]['PRICE'] = array(
+                    'VALUE' => $arItem['PROPERTIES']['PRODUCT_PRICE']['VALUE'],
+                    'CURRENCY' => 'N'
+                );
+            }
         }
         if (strlen($arItem['PROPERTIES']['PRODUCT_OLD_PRICE']['VALUE']) > 0 || $arItem['PROPERTIES']['PRODUCT_DISCOUNT']['VALUE']) {
             if (intval($arItem['PROPERTIES']['PRODUCT_OLD_PRICE']['VALUE']) > 0) {
@@ -49,14 +55,14 @@ if ($arResult['ITEMS']) {
                             'CURRENCY' => intval($oldPrice) > 0 ? 'Y' : 'N'
                         );
                     }
-                
+                    
                 } else {
                     $arResult['ITEMS'][$k]['OLD_PRICE'] = array(
                         'VALUE' => $arItem['PROPERTIES']['PRODUCT_OLD_PRICE']['VALUE'],
                         'CURRENCY' => 'N'
                     );
                 }
-            
+                
             }
         }
     }

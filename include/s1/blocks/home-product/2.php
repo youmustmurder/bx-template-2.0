@@ -8,7 +8,7 @@ $arrFilter = array('PROPERTY_PRODUCT_ON_HOME_VALUE' => 1);
 
 $APPLICATION->IncludeComponent(
     "bitrix:catalog.section",
-    "home-product_default",
+    "home-product_2",
     array(
         "IBLOCK_ID" => "1",
         "IBLOCK_TYPE" => "base",
