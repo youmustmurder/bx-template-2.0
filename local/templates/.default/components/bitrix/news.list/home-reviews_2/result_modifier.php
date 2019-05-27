@@ -18,10 +18,6 @@ if ($arResult['ITEMS']) {
             $arResult['ITEMS'][$k]['PREVIEW_PICTURE']['SRC'] = $img['src'];
         }
         if ($arItem['PROPERTIES']['REVIEW_CLIENT_DATE']['VALUE']) {
-            if ($arParams['ACTIVE_DATE_FORMAT']) {
-                $formatDate = FormatDate($arParams['ACTIVE_DATE_FORMAT'], $arItem['PROPERTIES']['REVIEW_CLIENT_DATE']['VALUE']);
-            }
- 
             $arResult['ITEMS'][$k]['PROPERTIES']['REVIEW_CLIENT_DATE']['VALUE'] = $arParams['ACTIVE_DATE_FORMAT'] ?
                 FormatDate($arParams['ACTIVE_DATE_FORMAT'], MakeTimeStamp($arItem['PROPERTIES']['REVIEW_CLIENT_DATE']['VALUE'])) :
                 $arItem['PROPERTIES']['REVIEW_CLIENT_DATE']['VALUE'];
