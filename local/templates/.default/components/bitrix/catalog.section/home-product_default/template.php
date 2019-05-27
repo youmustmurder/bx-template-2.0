@@ -21,7 +21,7 @@ if($arResult['ITEMS']){?>
                     </a>
                 </div>
 				<div class="products__grid row justify-content-start">
-					<?foreach ($arResult['ITEMS'] as $key => $arItem){?>
+					<?foreach ($arResult['ITEMS'] as $key => $arItem) {?>
 						<div class="products__item products-item col-lg-3 col-md-4 col-sm-6 col-12">
                             <?if ($arItem['PROPERTIES']['PRODUCT_LABEL']['VALUE'] || $arItem['PROPERTIES']['PRODUCT_DISCOUNT']['VALUE']) {?>
                                 <ul class="products__label">
