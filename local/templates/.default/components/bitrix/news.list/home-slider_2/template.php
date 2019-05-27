@@ -12,7 +12,10 @@ if ($arResult['ITEMS']) {?>
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <div class="slider-big__slides slider-big-slides">
+                    <div class="slider-big__slides slider-big-slides"
+                         data-arrows="<?=$arParams['SLIDER_ARROWS'] == 'N' ? 'false' : 'true'?>"
+                         data-autoplay="<?=$arParams['SLIDER_AUTOPLAY'] == 'N' ? 'false' : 'true'?>"
+                         data-speed="<?=$arParams['SLIDER_TIME'] ?: 0?>">
                         <?foreach ($arResult['ITEMS'] as $k => $arItem) {?>
                             <div class="slider-big__slide slider-big-slide">
                                 <div class="slider-big-slide__name"><?=$arItem['NAME']?></div>
@@ -56,14 +59,16 @@ if ($arResult['ITEMS']) {?>
                             </div>
                         <?}?>
                     </div>
-                    <div class="slide-big__nav">
-                        <button class="btn btn--icon btn--icon-big btn--stock slider-big__prev">
-                            <?=GetContentSvgIcon('arrow_left');?>
-                        </button>
-                        <button class="btn btn--icon btn--icon-big btn--success slider-big__next">
-                            <?=GetContentSvgIcon('arrow_right');?>
-                        </button>
-                    </div>
+                    <?if (count($arResult['ITEMS']) > 1 && $arParams['SLIDER_ARROWS'] == 'Y') {?>
+                        <div class="slide-big__nav">
+                            <button class="btn btn--icon btn--icon-big btn--stock slider-big__prev">
+                                <?=GetContentSvgIcon('arrow_left');?>
+                            </button>
+                            <button class="btn btn--icon btn--icon-big btn--success slider-big__next">
+                                <?=GetContentSvgIcon('arrow_right');?>
+                            </button>
+                        </div>
+                    <?}?>
                 </div>
             </div>
         </div>
