@@ -1,15 +1,13 @@
-<?php
+<?if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 /**
  * @author Lukmanov Mikhail <lukmanof92@gmail.com>
  */
 
-global $arCurrentSetting;
-
 use Bitrix\Main\Localization\Loc;
 
 Loc::loadMessages(__FILE__);
-?>
 
+if ($arResult['ITEMS']) {?>
 <div class="slider-big">
 	<div class="slider-big__slides">
         <?foreach ($arResult['ITEMS'] as $k => $arItem) {?>
@@ -45,7 +43,9 @@ Loc::loadMessages(__FILE__);
         </div>
     <?}?>
 	<div class="slide-big__dots slide-big-dots">
-		<div class="slide-big-dots__item"></div>
-		<div class="slide-big-dots__item"></div>
+        <?foreach ($arResult['ITEMS'] as $item) {?>
+		    <div class="slide-big-dots__item"></div>
+        <?}?>
 	</div>
 </div>
+<?}?>
