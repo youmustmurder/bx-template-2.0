@@ -65,7 +65,7 @@ if ($arParams['CONTENT']) {?>
 <?}
 */
 /*about*/
-
+/*
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-about/" . $arCurrentSetting['ABOUT'] . ".php",
     array(),
@@ -74,9 +74,9 @@ $APPLICATION->IncludeFile(
         "MODE" => "php"
     )
 );
-
+*-/
 /*news*/
-/*
+
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-news/" . $arCurrentSetting['NEWS'] . ".php",
     array(),
@@ -85,7 +85,7 @@ $APPLICATION->IncludeFile(
         "MODE" => "php"
     )
 );
-*/
+
 /*reviews*/
 /*
 $APPLICATION->IncludeFile(
