@@ -3,12 +3,7 @@
  * @author Lukmanov Mikhail <lukmanof92@gmail.com>
  */
 
-global $arCurrentSetting;
-
-use Bitrix\Main\Page\Asset;
-
-Asset::getInstance()->addJs(GetCurDir(__DIR__) . '/bundle.js');
-Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
+use Bitrix\Main\Localization\Loc;
 ?>
 
 <section class="reviews">

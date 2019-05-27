@@ -24,7 +24,7 @@ if ($arResult['ITEMS']) {
                             'height' => 96
                         ),
                         BX_RESIZE_IMAGE_PROPORTIONAL, false,
-                        array(array("name" => "sharpen", "precision" => 100))
+                        array(array("name" => "sharpen", "precision" => 15))
                     )['src'];
                 }
                 if (intval($ar['PROPERTY_PRODUCT_PRICE_VALUE']) > 0) {

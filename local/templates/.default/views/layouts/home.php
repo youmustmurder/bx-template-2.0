@@ -5,7 +5,7 @@
 global $arCurrentSetting;
 
 /*slider*/
-
+/*
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-slider/" . $arCurrentSetting['SLIDER'] . ".php",
     array(),
@@ -14,9 +14,9 @@ $APPLICATION->IncludeFile(
         "MODE" => "php"
     )
 );
-
+*/
 /*sections*/
-
+/*
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-section/" . $arCurrentSetting['SECTIONS'] . ".php",
     array(),
@@ -25,9 +25,9 @@ $APPLICATION->IncludeFile(
         "MODE" => "php"
     )
 );
-
+*/
 /*products*/
-
+/*
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-product/" . $arCurrentSetting['PRODUCTS'] . ".php",
     array(),
@@ -36,7 +36,7 @@ $APPLICATION->IncludeFile(
         "MODE" => "php"
     )
 );
-
+**/
 /*services*/
 /*
 $APPLICATION->IncludeFile(
@@ -87,7 +87,7 @@ $APPLICATION->IncludeFile(
 );
 */
 /*reviews*/
-/*
+
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-reviews/" . $arCurrentSetting['REVIEWS'] . ".php",
     array(),
@@ -97,5 +97,5 @@ $APPLICATION->IncludeFile(
     )
 );
 
-*/
+
 ?>
