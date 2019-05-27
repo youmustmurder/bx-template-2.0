@@ -10,24 +10,24 @@ Loc::loadMessages(__FILE__);
 $arTemplateParameters = array(
     "SLIDER_AUTOPLAY" => array(
         'PARENT' => 'BASE',
-        'NAME' => Loc::getMessage('HOME_SLIDER_DEFAULT_AUTOPLAY_TITLE'),
+        'NAME' => Loc::getMessage('HOME_SLIDER_1_AUTOPLAY_TITLE'),
         'TYPE' => 'CHECKBOX',
         'DEFAULT' => 'Y'
     ),
     "SLIDER_ARROWS" => array(
         'PARENT' => 'BASE',
-        'NAME' => Loc::getMessage('HOME_SLIDER_DEFAULT_ARROWS_TITLE'),
+        'NAME' => Loc::getMessage('HOME_SLIDER_1_ARROWS_TITLE'),
         'TYPE' => 'CHECKBOX',
         'DEFAULT' => 'Y'
     ),
     "SLIDER_TIME" => array(
         'PARENT' => 'BASE',
-        'NAME' => Loc::getMessage('HOME_SLIDER_DEFAULT_AUTOPLAY_TIME_TITLE'),
+        'NAME' => Loc::getMessage('HOME_SLIDER_1_AUTOPLAY_TIME_TITLE'),
         'TYPE' => 'STRING',
         'DEFAULT' => '3000'
     ),
     'NEWS_COUNT' => array(
-        'NAME' => Loc::getMessage('HOME_SLIDER_DEFAULT_NEWS_COUNT_TITLE'),
+        'NAME' => Loc::getMessage('HOME_SLIDER_1_NEWS_COUNT_TITLE'),
         'PARENT' => 'BASE',
         'TYPE' => 'STRING',
         'DEFAULT' => '5'
