@@ -3,13 +3,11 @@
  * @author Lukmanov Mikhail <lukmanof92@gmail.com>
  */
 
-global $arCurrentSetting;
-
 use Bitrix\Main\Localization\Loc;
 
 Loc::loadMessages(__FILE__);
-?>
 
+if ($arResult['ITEMS']) {?>
 <div class="slider-big">
     <div class="slider-big__slides slider-big-slides">
         <?foreach ($arResult['ITEMS'] as $arItem) {?>
@@ -49,3 +47,4 @@ Loc::loadMessages(__FILE__);
         </div>
     <?}?>
 </div>
+<?}?>
