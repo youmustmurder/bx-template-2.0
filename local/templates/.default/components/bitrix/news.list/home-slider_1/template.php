@@ -9,7 +9,10 @@ Loc::loadMessages(__FILE__);
 
 if ($arResult['ITEMS']) {?>
 <div class="slider-big">
-    <div class="slider-big__slides slider-big-slides">
+    <div class="slider-big__slides slider-big-slides"
+         data-arrows="<?=$arParams['SLIDER_ARROWS'] == 'N' ? 'false' : 'true'?>"
+         data-autoplay="<?=$arParams['SLIDER_AUTOPLAY'] == 'N' ? 'false' : 'true'?>"
+         data-speed="<?=$arParams['SLIDER_TIME'] ?: 0?>">
         <?foreach ($arResult['ITEMS'] as $arItem) {?>
             <div class="slider-big__slide slider-slide">
                 <div class="slider-slider__inner">
@@ -36,7 +39,7 @@ if ($arResult['ITEMS']) {?>
             </div>
         <?}?>
 	</div>
-    <?if (count($arResult['ITEMS']) > 1) {?>
+    <?if (count($arResult['ITEMS']) > 1 && $arParams['SLIDER_ARROWS'] == 'Y') {?>
         <div class="slide-big__nav">
             <button class="btn btn--icon btn--icon-big btn--stock slider-big__prev">
                 <svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14.1641 6H1.91406L7.16406 0.74994L6.49976 0L-0.000137329 6.5L6.49986 13L7.16406 12.25L1.91406 7H14.1641V6Z" fill="#95A5A6"/></svg>
