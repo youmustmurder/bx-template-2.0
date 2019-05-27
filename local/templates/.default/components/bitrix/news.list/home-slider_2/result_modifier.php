@@ -18,12 +18,14 @@ if ($arResult['ITEMS']) {
             );
             while ($ar = $rsProduct->GetNext()) {
                 if ($ar['PREVIEW_PICTURE']) {
-                    $img = CFile::ResizeImageGet(
-                        $ar['PREVIEW_PICTURE'],
-                        array('width' => 70, 'height' => 80),
-                        BX_RESIZE_IMAGE_EXACT
-                    );
-                    $ar['PREVIEW_PICTURE'] = $img['src'];
+                    $ar['PREVIEW_PICTURE'] = CFile::ResizeImageGet($ar['PREVIEW_PICTURE'],
+                        array(
+                            'width' => 96,
+                            'height' => 96
+                        ),
+                        BX_RESIZE_IMAGE_PROPORTIONAL, false,
+                        array(array("name" => "sharpen", "precision" => 100))
+                    )['src'];
                 }
                 if (intval($ar['PROPERTY_PRODUCT_PRICE_VALUE']) > 0) {
                     $ar['PROPERTY_PRODUCT_PRICE_VALUE'] = number_format($ar['PROPERTY_PRODUCT_PRICE_VALUE'], 0, '', ' ');

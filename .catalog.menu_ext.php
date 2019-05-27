@@ -15,7 +15,7 @@ $aMenuLinksExt = $APPLICATION->IncludeComponent(
 		"DEPTH_LEVEL" => "1",
 		"CACHE_TYPE" => "A",
 		"SEF_BASE_URL" => "",
-		"DETAIL_PAGE_URL" => "#SECTION_ID#/#ELEMENT_ID#"
+		"DETAIL_PAGE_URL" => ""
 	),
 	false
 );
