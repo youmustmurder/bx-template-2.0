@@ -5,7 +5,7 @@
 global $arCurrentSetting;
 
 /*slider*/
-/*
+
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-slider/" . $arCurrentSetting['SLIDER'] . ".php",
     array(),
@@ -14,7 +14,7 @@ $APPLICATION->IncludeFile(
         "MODE" => "php"
     )
 );
-*/
+
 /*sections*/
 /*
 $APPLICATION->IncludeFile(
@@ -76,7 +76,7 @@ $APPLICATION->IncludeFile(
 );
 *-/
 /*news*/
-
+/*
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-news/" . $arCurrentSetting['NEWS'] . ".php",
     array(),
@@ -85,7 +85,7 @@ $APPLICATION->IncludeFile(
         "MODE" => "php"
     )
 );
-
+*/
 /*reviews*/
 /*
 $APPLICATION->IncludeFile(

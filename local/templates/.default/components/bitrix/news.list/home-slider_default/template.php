@@ -9,7 +9,10 @@ Loc::loadMessages(__FILE__);
 
 if ($arResult['ITEMS']) {?>
     <div class="slider-big">
-        <div class="slider-big__slides">
+        <div class="slider-big__slides"
+             data-arrows="<?=$arParams['SLIDER_ARROWS'] == 'N' ? 'false' : 'true'?>"
+             data-autoplay="<?=$arParams['SLIDER_AUTOPLAY'] == 'N' ? 'false' : 'true'?>"
+             data-speed="<?=$arParams['SLIDER_TIME'] ?: 0?>">
             <?foreach ($arResult['ITEMS'] as $k => $arItem) {?>
                 <div class="slider-big__slide slider-big-slide">
                     <div class="slider-big-slide__wrap">
@@ -32,7 +35,7 @@ if ($arResult['ITEMS']) {?>
             <?}?>
         </div>
         <div class="slider-big__wrap-nav">
-            <?if (count($arResult['ITEMS']) > 1) {?>
+            <?if (count($arResult['ITEMS']) > 1 && $arParams['SLIDER_ARROWS'] == 'Y') {?>
                 <div class="slide-big__nav">
                     <button class="btn btn--icon btn--icon-big btn--stock slider-big__prev">
                         <?=GetContentSvgIcon('arrow_left');?>
