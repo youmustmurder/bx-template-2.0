@@ -44,7 +44,7 @@
 
 .slider-big-slide__desc {
 	margin-bottom: 20px;
-	max-width: 320px;
+	max-width: 350px;
 	text-align: center;
 	font-size: 1.067rem;
 	line-height: 1.6rem;
@@ -103,6 +103,13 @@
 	}
 	.slider-big__next {
 		right: 15px;
+	}
+}
+
+@media (max-width: 768px) {
+	.slider-big-slide__title {
+		font-size: 2.4rem;
+		line-height: 3.067rem;
 	}
 }
 

@@ -20,7 +20,7 @@ if ($arResult['ITEMS']) {?>
                     <div class="slider-big-slide__desc"><?=$arItem['PREVIEW_TEXT']?></div>
                     <?if ($arItem['PROPERTIES']['LINK_SECTION']['VALUE']) {?>
                         <a href="<?=$arItem['PROPERTIES']['LINK_SECTION']['VALUE']?>"
-                           class="btn btn--success btn--square btn--mid btn--icon-right">
+                           class="btn btn_mid btn_success btn_icon-right">
                             <?=$arItem['PROPERTIES']['LINK_BUTTON_NAME']['VALUE'] ?: Loc::getMessage('SLIDE_MORE')?>
                             <?=GetContentSvgIcon('cart');?>
                         </a>
@@ -34,10 +34,10 @@ if ($arResult['ITEMS']) {?>
 	</div>
     <?if (count($arResult['ITEMS']) > 1) {?>
         <div class="slide-big__nav">
-            <button class="btn btn--icon btn--icon-big btn--stock slider-big__prev">
+            <button class="btn btn_circle-default btn_light btn_light_to-green slider-big__prev">
                 <?=GetContentSvgIcon('arrow_left');?>
             </button>
-            <button class="btn btn--icon btn--icon-big btn--stock slider-big__next">
+            <button class="btn btn_circle-default btn_light btn_light_to-green slider-big__next">
                 <?=GetContentSvgIcon('arrow_right');?>
             </button>
         </div>

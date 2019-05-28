@@ -11,6 +11,7 @@ window.addEventListener('load', function () {
     prevButton: prevBtnNode,
     nextButton: nextBtnNode,
     nav: true,
-    navContainer: navContainer
+    navContainer: navContainer,
+    autoHeight: true
   });
 });

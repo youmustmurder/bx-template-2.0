@@ -1,15 +1,26 @@
 window.addEventListener('load', () => {
 	const sliderNode = document.querySelector('.slider-big-slides'),
-		navNode = sliderNode.querySelector('.slide-big__nav'),
 		prevBtnNode = document.querySelector('.slider-big__prev'),
 		nextBtnNode = document.querySelector('.slider-big__next'),
 		previewsNode = document.querySelectorAll('.slider-big-preview');
+
+	const togglePrevies = (newIndex) => {
+		Array.prototype.forEach.call(previewsNode, (prev) => {
+			prev.classList.remove('slider-big-preview--active');
+		});
+		document.querySelector(`.slider-big-preview[indexSlide="${newIndex}"]`).classList.add('slider-big-preview--active');
+	};
+
 	var sliderBig = tns({
 		container: sliderNode,
 		items: 1,
 		prevButton: prevBtnNode,
 		nextButton: nextBtnNode,
 		nav: false,
+		autoHeight: true,
+		onInit: info => {
+			togglePrevies(info.displayIndex-1);
+		}
 	});
 	sliderBig.events.on('transitionStart', info => {
 		togglePrevies((info.displayIndex)-1);
@@ -21,11 +32,4 @@ window.addEventListener('load', () => {
 			sliderBig.goTo(newIndex);
 		});
 	});
-
-	const togglePrevies = (newIndex) => {
-		Array.prototype.forEach.call(previewsNode, (prev) => {
-			prev.classList.remove('slider-big-preview--active');
-		});
-		document.querySelector(`.slider-big-preview[indexSlide="${newIndex}"]`).classList.add('slider-big-preview--active');
-	};
 });

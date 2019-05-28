@@ -3,18 +3,33 @@ window.addEventListener('load', () => {
 		nav = document.querySelector('.slide-big__nav'),
 		prevBtn = document.querySelector('.slider-big__prev'),
 		nextBtn = document.querySelector('.slider-big__next');
+
+	const positionNav = (info) => {
+		var right = -1 * (slider.getBoundingClientRect().left - document.querySelector('.tns-slide-active .slider-slider__inner').getBoundingClientRect().left - 15),
+			nums = slider.querySelectorAll('.slider-slide')[info.displayIndex].querySelector('.slider-slide-numbers'),
+			top;
+		if (nums != null) {
+			top = -1 *(slider.getBoundingClientRect().top - nums.getBoundingClientRect().top) + 'px';
+		} else {
+			top = 'calc(100% - 110px)';
+		}
+		nav.style.top = top;
+		nav.style.right = `${right}px`;
+	};
+
 	var sliderBig = tns({
 		container: '.slider-big-slides',
 		items: 1,
 		prevButton: prevBtn,
 		nextButton: nextBtn,
 		nav: false,
+		autoHeight: true,
 		onInit: info => {
-			positionNav(slider, nav, info);
+			positionNav(info);
 		}
 	});
-	sliderBig.events.on('transitionStart', info => {
-		positionNav(slider, nav, info);
+	sliderBig.events.on('transitionEnd', info => {
+		positionNav(info);
 	});
 	window.addEventListener(
 		'resize',
@@ -23,11 +38,3 @@ window.addEventListener('load', () => {
 		}, 300)
 	);
 });
-
-const positionNav = (slider, nav, info) => {
-	const right = -1 * (slider.getBoundingClientRect().left - document.querySelector('.container').getBoundingClientRect().left);
-	const nums = slider.querySelectorAll('.slider-slide')[info.displayIndex].querySelector('.slider-slide-numbers');
-	const top = -1 *(slider.getBoundingClientRect().top - nums.getBoundingClientRect().top);
-	nav.style.top = `${top}px`;
-	nav.style.right = `${right}px`;
-};

@@ -25,7 +25,7 @@ if ($arResult['ITEMS']) {?>
                         </div>
                         <?if ($arItem['PROPERTIES']['LINK_SECTION']['VALUE']) {?>
                             <a href="<?=$arItem['PROPERTIES']['LINK_SECTION']['VALUE']?>"
-                               class="btn btn--success btn--square btn--big"><?=$arItem['PROPERTIES']['LINK_BUTTON_NAME']['VALUE'] ?: Loc::getMessage('SLIDE_MORE')?></a>
+                               class="btn btn_big btn_round btn_success"><?=$arItem['PROPERTIES']['LINK_BUTTON_NAME']['VALUE'] ?: Loc::getMessage('SLIDE_MORE')?></a>
                         <?}?>
                     </div>
                     <img class="slider-big-slide__img"
@@ -37,10 +37,10 @@ if ($arResult['ITEMS']) {?>
         <div class="slider-big__wrap-nav">
             <?if (count($arResult['ITEMS']) > 1 && $arParams['SLIDER_ARROWS'] == 'Y') {?>
                 <div class="slide-big__nav">
-                    <button class="btn btn--icon btn--icon-big btn--stock slider-big__prev">
+                    <button class="btn btn_circle-default btn_outline-secondary slider-big__prev">
                         <?=GetContentSvgIcon('arrow_left');?>
                     </button>
-                    <button class="btn btn--icon btn--icon-big btn--stock slider-big__next">
+                    <button class="btn btn_circle-default btn_outline-secondary slider-big__next">
                         <?=GetContentSvgIcon('arrow_right');?>
                     </button>
                 </div>

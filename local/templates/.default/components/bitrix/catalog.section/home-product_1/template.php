@@ -20,7 +20,7 @@ if ($arResult['ITEMS']) {?>
 					</a>
 				</div>
 				<div class="products__grid-wrap">
-					<div class="grid grid-3column">
+					<div class="grid grid_3column">
                         <?foreach ($arResult['ITEMS'] as $k => $arItem) {
                             switch ($k) {
                                 case '0':?>

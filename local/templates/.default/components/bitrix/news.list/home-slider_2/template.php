@@ -18,21 +18,23 @@ if ($arResult['ITEMS']) {?>
                          data-speed="<?=$arParams['SLIDER_TIME'] ?: 0?>">
                         <?foreach ($arResult['ITEMS'] as $k => $arItem) {?>
                             <div class="slider-big__slide slider-big-slide">
-                                <div class="slider-big-slide__name"><?=$arItem['NAME']?></div>
-                                <p class="slider-big-slide__desc"><?=$arItem['PREVIEW_TEXT']?></p>
-                                <div class="slider-big-slide__info">
-                                    <?if ($arItem['PROPERTIES']['LINK_SECTION']['VALUE'] || $arItem['PROPERTIES']['PRODUCT']['DETAIL_PAGE_URL']) {?>
-                                        <a href="<?=$arItem['PROPERTIES']['LINK_SECTION']['VALUE'] ?: $arItem['PROPERTIES']['PRODUCT']['DETAIL_PAGE_URL']?>"
-                                           class="btn btn--success btn--square btn--big slider-big-slide__link"><?=$arItem['PROPERTIES']['LINK_BUTTON_NAME']['VALUE'] ?: Loc::getMessage('SLIDE_MORE')?></a>
-                                        <?if ($arItem['PROPERTIES']['PRODUCT']['PROPERTY_PRODUCT_PRICE_VALUE']) {?>
-                                            <span class="slider-big-slide__price">
-                                                <?=$arItem['PROPERTIES']['PRODUCT']['CURRENCY'] == 'Y' ?
-                                                    Loc::getMessage('FROM_PRICE') . $arItem['PROPERTIES']['PRODUCT']['PROPERTY_PRODUCT_PRICE_VALUE'] . ' ₽'  :
-                                                    $arItem['PROPERTIES']['PRODUCT']['PROPERTY_PRODUCT_PRICE_VALUE']?>
-                                            </span>
-                                        <?}?>
-                                    <?}?>
-                                </div>
+								<div class="slider-big-slide__wrap">
+									<div class="slider-big-slide__name"><?=$arItem['NAME']?></div>
+									<p class="slider-big-slide__desc"><?=$arItem['PREVIEW_TEXT']?></p>
+									<div class="slider-big-slide__info">
+										<?if ($arItem['PROPERTIES']['LINK_SECTION']['VALUE'] || $arItem['PROPERTIES']['PRODUCT']['DETAIL_PAGE_URL']) {?>
+											<a href="<?=$arItem['PROPERTIES']['LINK_SECTION']['VALUE'] ?: $arItem['PROPERTIES']['PRODUCT']['DETAIL_PAGE_URL']?>"
+											class="btn btn_big btn_success slider-big-slide__link"><?=$arItem['PROPERTIES']['LINK_BUTTON_NAME']['VALUE'] ?: Loc::getMessage('SLIDE_MORE')?></a>
+											<?if ($arItem['PROPERTIES']['PRODUCT']['PROPERTY_PRODUCT_PRICE_VALUE']) {?>
+												<span class="slider-big-slide__price">
+													<?=$arItem['PROPERTIES']['PRODUCT']['CURRENCY'] == 'Y' ?
+														Loc::getMessage('FROM_PRICE') . $arItem['PROPERTIES']['PRODUCT']['PROPERTY_PRODUCT_PRICE_VALUE'] . ' ₽'  :
+														$arItem['PROPERTIES']['PRODUCT']['PROPERTY_PRODUCT_PRICE_VALUE']?>
+												</span>
+											<?}?>
+										<?}?>
+									</div>
+								</div>
                                 <img class="slider-big-slide__img"
                                      src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>"
                                      alt="<?=$arItem['PREVIEW_PICTURE']['ALT']?>">
@@ -61,10 +63,10 @@ if ($arResult['ITEMS']) {?>
                     </div>
                     <?if (count($arResult['ITEMS']) > 1 && $arParams['SLIDER_ARROWS'] == 'Y') {?>
                         <div class="slide-big__nav">
-                            <button class="btn btn--icon btn--icon-big btn--stock slider-big__prev">
+                            <button class="btn btn_circle-default btn_outline-secondary btn_outline-secondary-to-success slider-big__prev">
                                 <?=GetContentSvgIcon('arrow_left');?>
                             </button>
-                            <button class="btn btn--icon btn--icon-big btn--success slider-big__next">
+                            <button class="btn btn_circle-default btn_outline-secondary btn_outline-secondary-to-success slider-big__next">
                                 <?=GetContentSvgIcon('arrow_right');?>
                             </button>
                         </div>
