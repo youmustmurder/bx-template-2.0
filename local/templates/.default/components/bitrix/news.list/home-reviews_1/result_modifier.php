@@ -8,14 +8,19 @@ if ($arResult['ITEMS']) {
         if ($arItem['PREVIEW_PICTURE']) {
             $img = CFile::ResizeImageGet($arItem['PREVIEW_PICTURE']['ID'],
                 array(
-                    'width' => 60,
+                    'width' => 300,
                     'height' => 60
                 ),
-                BX_RESIZE_IMAGE_PROPORTIONAL,
+                BX_RESIZE_IMAGE_PROPORTIONAL_ALT,
                 false,
                 array(array("name" => "sharpen", "precision" => 15))
             );
             $arResult['ITEMS'][$k]['PREVIEW_PICTURE']['SRC'] = $img['src'];
+        }
+        if ($arItem['PROPERTIES']['REVIEW_CLIENT_DATE']['VALUE']) {
+            $arResult['ITEMS'][$k]['PROPERTIES']['REVIEW_CLIENT_DATE']['VALUE'] = $arParams['ACTIVE_DATE_FORMAT'] ?
+                FormatDate($arParams['ACTIVE_DATE_FORMAT'], MakeTimeStamp($arItem['PROPERTIES']['REVIEW_CLIENT_DATE']['VALUE'])) :
+                $arItem['PROPERTIES']['REVIEW_CLIENT_DATE']['VALUE'];
         }
     }
 }

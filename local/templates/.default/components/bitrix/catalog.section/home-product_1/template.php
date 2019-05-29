@@ -92,7 +92,6 @@ if ($arResult['ITEMS']) {?>
                                                                 <?=$arItem['PROPERTIES']['PRODUCT_LABEL']['VALUE'][$i]?></li>
                                                         <?}?>
                                                     <?}?>
-        
                                                 </ul>
                                             <?}?>
                                             <a href="<?=$arItem['DETAIL_PAGE_URL']?>" class="product__img">

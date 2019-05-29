@@ -38,7 +38,7 @@ $APPLICATION->IncludeFile(
 );
 
 /*services*/
-/*
+
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-services/" . $arCurrentSetting['SERVICES'] . ".php",
     array(),
@@ -47,7 +47,7 @@ $APPLICATION->IncludeFile(
         "MODE" => "php"
     )
 );
-*/
+
 /*seo text*/
 /*
 if ($arParams['CONTENT']) {?>
@@ -88,14 +88,14 @@ $APPLICATION->IncludeFile(
 */
 /*reviews*/
 
-$APPLICATION->IncludeFile(
+/* $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-reviews/" . $arCurrentSetting['REVIEWS'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-);
+); */
 
 
 ?>
