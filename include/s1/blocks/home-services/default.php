@@ -7,7 +7,7 @@ $APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
 	"home-service_default", 
 	array(
-		"IBLOCK_ID" => "17",
+		"IBLOCK_ID" => "18",
 		"IBLOCK_TYPE" => "base",
 		"COMPONENT_TEMPLATE" => "home-service_default",
 		"NEWS_COUNT" => "5",
