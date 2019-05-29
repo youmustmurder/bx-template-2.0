@@ -14,7 +14,7 @@ if ($arResult['ITEMS']) {?>
 			<div class="col">
 				<div class="reviews__inner">
 					<h2 class="reviews__title">Отзывы наших клиентов</h2>
-					<a href="#" class="link link_success link_icon-right reviews__link-all">
+					<a href="#" class="link link_bold link_success link_icon-right reviews__link-all">
 						Показать все отзывы
 						<?=GetContentSvgIcon('arrow_right');?>
 					</a>
