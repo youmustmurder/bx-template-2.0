@@ -87,15 +87,15 @@ $APPLICATION->IncludeFile(
 );
 */
 /*reviews*/
-
-/* $APPLICATION->IncludeFile(
+/*
+$APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-reviews/" . $arCurrentSetting['REVIEWS'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-); */
-
+);
+*/
 
 ?>
