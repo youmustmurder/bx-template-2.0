@@ -1,7 +1,7 @@
 window.addEventListener('load', () => {
 	const slider = document.querySelector('.news__slides'),
-		prevBtn = document.querySelector('.news__nav--prev'),
-		nextBtn = document.querySelector('.news__nav--next'),
+		prevBtn = document.querySelector('.news__nav_prev'),
+		nextBtn = document.querySelector('.news__nav_next'),
 		navContainer = document.querySelector('.news-dots');
 
 	var sliderBig = tns({
