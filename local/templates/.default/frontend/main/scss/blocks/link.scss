@@ -58,5 +58,13 @@
 		svg {
 			fill: #fff;
 		}
+		&:hover,
+		&:focus,
+		&:active {
+			color: #aaa9ad;
+			svg {
+				fill: #aaa9ad;
+			}
+		}
 	}
 }

@@ -8,11 +8,11 @@ Asset::getInstance()->addJs(GetCurDir(__DIR__) . '/script.js');
 Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 
 ?>
-<footer>
-    <div class="footer-top">
+<footer class="footer">
+    <div class="footer__top footer-top">
         <div class="container">
-            <div class="row justify-content-between align-items-start">
-                <div class="footer-nav col-12">
+            <div class="row">
+                <div class="footer__nav footer-nav col-12">
                     <?$APPLICATION->IncludeComponent(
                         "bitrix:menu",
                         ".default",
@@ -38,14 +38,14 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
             </div>
         </div>
     </div>
-    <div class="footer-bottom">
+    <div class="footer__bottom footer-bottom">
         <div class="container">
-            <div class="row justify-content-sm-between align-items-center">
-                <div class="col-auto copyright">
+            <div class="row footer-bottom__wrap">
+                <div class="col-12 col-sm-6 footer__copyright">
                     <?$APPLICATION->IncludeFile("/include/".SITE_ID."/copyright.php", [], ["SHOW_BORDER" => true, "MODE" => "text"]);?>
                 </div>
-                <div class="col-auto developer">
-                    <a rel="nofollow" href="http://website96.ru/" target="_blank" title="Разработано Website96"><?=GetContentSvgIcon('website96')?></a>
+                <div class="col-12 col-sm-6 footer__developer">
+                    <a rel="nofollow" href="http://website96.ru/" target="_blank" title="Разработано Website96"><?=GetContentSvgIcon('logo')?></a>
                 </div>
             </div>
         </div>
