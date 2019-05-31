@@ -10,7 +10,7 @@ use Bitrix\Main\Localization\Loc;
 Loc::loadMessages(__FILE__);
 
 if ($arResult['ITEMS']) {?>
-<section class="services services--grey">
+<section class="services services_grey">
 	<div class="container">
 		<div class="row">
 			<div class="col">
@@ -20,10 +20,10 @@ if ($arResult['ITEMS']) {?>
 						Без кучи документов, поездок в банк и талончиков с номером очереди
 					</p>
 				</div>
-				<ul class="grid grid--3column">
+				<ul class="services__list service-list">
                     <?foreach ($arResult['ITEMS'] as $k => $arItem) {
                         ?>
-                        <li class="grid__item <?=$k == 0 || $k == 1 ? 'grid__item--middle' : ''?>">
+                        <li class="service-list__item service-list-item <?=$k == 0 || $k == 1 ? 'service-list-item_middle' : ''?>">
                             <a href="<?=$arItem['DETAIL_PAGE_URL']?>"
                                class="service<?=$k == 0 || $k == 1 ? ' service--middle' : ''?><?=$k == 0 ? ' service--left' : ''?><?=$k == 1 ? ' service--right' : ''?><?=$arItem['PROPERTIES']['DISPLAY_MODE']['VALUE_XML_ID'] != 'dark' ? ' service--dark' : ''?>">
                                 <div class="service__inner">

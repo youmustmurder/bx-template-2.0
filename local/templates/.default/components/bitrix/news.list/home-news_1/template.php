@@ -19,7 +19,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 					<h2 class="news__title">Последние новости</h2>
 					<a href="#" class="link link_light link_icon-right news__link-all-news">
 						Показать все новости
-						<?=GetContentSvgIcon('arrow_right');?>
+						<span class="link__icon"><?=GetContentSvgIcon('arrow_right');?></span>
 					</a>
 					<div class="news__slides-inner">
 						<div class="news__slides">

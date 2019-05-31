@@ -15,7 +15,9 @@ if ($arResult['SECTIONS']) {?>
 					<?if($APPLICATION->GetCurPage(false) === '/'){?>
 					<div class="best-categories__header">
 							<h2 class="best-categories__title"><?=$arParams['SECTION_TITLE'] ? $arParams['SECTION_TITLE'] : GetMessage('CATEGORIES_SECTION_TITLE_DEFAULT')?></h2>
-							<a href="#" class="link link_success link_icon-right best-categories__link-all"><?=$arParams['SECTION_LINK'] ? $arParams['SECTION_LINK'] : GetMessage('CATEGORIES_SECTION_LINK_DEFAULT')?></a>
+							<a href="#" class="link link_success link_icon-right best-categories__link-all">
+								<?=$arParams['SECTION_LINK'] ? $arParams['SECTION_LINK'] : GetMessage('CATEGORIES_SECTION_LINK_DEFAULT')?>
+							</a>
 					</div>
 					<?}?>
 					<div class="best-categories__grid best-categories-grid">

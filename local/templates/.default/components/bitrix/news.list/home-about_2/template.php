@@ -26,7 +26,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 								<p class="about__text">Наша компания представлена в 234 городах 16-ти стран на двух континентах</p>
 								<a href="#" class="link link_success link_icon-right about__link-company">
 									Перейти к странице о компании
-									<?=GetContentSvgIcon('arrow_right');?>
+									<span class="link__icon"><?=GetContentSvgIcon('arrow_right');?></span>
 								</a>
 								<button class="about__btn-refresh about-btn-refresh">
 									<span class="btn btn_circle-min btn_success about-btn-refresh__icon">
@@ -42,7 +42,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 									<span class="h4">Новости</span>
 									<a href="#" class="link link_success link_icon-right about__link-all-news">
 										Показать все новости
-										<?=GetContentSvgIcon('arrow_right');?>
+										<span class="link__icon"><?=GetContentSvgIcon('arrow_right');?></span>
 									</a>
 								</div>
 								<ul class="about__news about-news">

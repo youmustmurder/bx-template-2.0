@@ -1,6 +1,6 @@
 .services {
 	padding: 88px 0;
-	&.services--grey {
+	&.services_grey {
 		background: #F8F8F8;
 	}
 }
@@ -14,7 +14,7 @@
 
 .services__title,
 .services__text {
-	margin-bottom: 45px;
+	margin-bottom: 70px;
 }
 
 .services__title {
@@ -22,23 +22,31 @@
 }
 
 .services__text {
+	max-width: 373px;
 	font-size: 1.2rem;
 	line-height: 2rem;
-	max-width: 373px;
 	opacity: 0.6;
+	font-weight: 500;
 }
 
-.services__item-pic {
+.service-item__pic {
 	margin-bottom: 40px;
 }
 
-.services__item-title {
-	font-size: 1.6rem;
-	line-height: 1.933rem;
-	margin-bottom: 20px;
+.service-item__title,
+.service-item__text {
+	max-width: 320px;
 }
 
-.services__item-text {
+.service-item__title {
+	display: block;
+	margin-bottom: 20px;
+	font-size: 1.6rem;
+	line-height: 1.933rem;
+	color: #1B1B1B;
+}
+
+.service-item__text {
 	font-size: 1.2rem;
 	line-height: 2rem;
 	opacity: 0.6;
@@ -51,12 +59,8 @@
 }
 
 @media (max-width: 768px) {
-	.services__item-title,
-	.services__item-text {
-		max-width: 320px;
-	}
-	.services__item {
-		margin-bottom: 30px;
+	.services__text {
+		margin-bottom: 60px;
 	}
 }
 
@@ -64,15 +68,15 @@
 	.services {
 		padding: 56px 0;
 	}
-	.services__item-pic {
+	.service-item__pic {
 		margin-bottom: 25px;
 	}
-	.services__item-title {
+	.service-item__title {
 		font-size: 1.2rem;
 		line-height: 1.467rem;
 		margin-bottom: 10px;
 	}
-	.services__item-text {
+	.service-item__text {
 		font-size: 1.067rem;
 		line-height: 1.733rem;
 	}
@@ -87,5 +91,8 @@
 	.services__text {
 		font-size: 0.9333rem;
 		line-height: 1.333rem;
+	}
+	.services__text {
+		margin-bottom: 30px;
 	}
 }

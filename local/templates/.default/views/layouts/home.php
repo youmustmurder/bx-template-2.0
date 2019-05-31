@@ -6,14 +6,14 @@ global $arCurrentSetting;
 
 /*slider*/
 
-/* $APPLICATION->IncludeFile(
+$APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-slider/" . $arCurrentSetting['SLIDER'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-); */
+);
 
 /*sections*/
 
@@ -28,25 +28,25 @@ global $arCurrentSetting;
 
 /*products*/
 
-/* $APPLICATION->IncludeFile(
+$APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-product/" . $arCurrentSetting['PRODUCTS'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-); */
+);
 
 /*services*/
 
-$APPLICATION->IncludeFile(
-    "/include/" . SITE_ID . "/blocks/home-services/" . $arCurrentSetting['SERVICES'] . ".php",
+/* $APPLICATION->IncludeFile(
+    "/include/" . SITE_ID . "/blocks/home-services/1.php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-);
+); */
 
 /*seo text*/
 
@@ -77,17 +77,17 @@ $APPLICATION->IncludeFile(
 
 /*news*/
 
-$APPLICATION->IncludeFile(
+/* $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-news/1.php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-);
+); */
 
 /*reviews*/
-/*
+/* 
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-reviews/" . $arCurrentSetting['REVIEWS'] . ".php",
     array(),
@@ -96,6 +96,6 @@ $APPLICATION->IncludeFile(
         "MODE" => "php"
     )
 );
-*/
+ */
 
 ?>

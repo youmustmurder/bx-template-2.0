@@ -14,7 +14,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
         <div class="container">
             <div class="row ">
 				<div class="col d-flex justify-content-between align-items-center">
-					<div class="header__block header__menu">
+					<div class="header__block header__block_menu">
 						<button class="header__hamburger">
 							<span></span>
 						</button>
@@ -51,7 +51,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 							false
 						);?>
 					</div>
-					<div class="header__block header__phone header-phone">
+					<div class="header__block header__block_phone header-phone">
 						<div class="header-phone__icon">
 							<?=GetContentSvgIcon('phone');?>
 						</div>
@@ -94,9 +94,9 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
     </nav>
 </header>
 
-<div class="head-nav__modal--desktop" style="display: none;">
+<div class="header-menu">
 	<div class="container">
-		<div class="head-nav__content head-nav__content--desktop">
+		<div class="header-menu__content">
 			<?$APPLICATION->IncludeFile(
 				"/include/" . SITE_ID . "/blocks/menu/catalog_top.php",
 				array(),

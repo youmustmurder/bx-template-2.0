@@ -16,7 +16,7 @@ if ($arResult['ITEMS']) {?>
 					<h2 class="reviews__title">Отзывы наших клиентов</h2>
 					<a href="#" class="link link_bold link_success link_icon-right reviews__link-all">
 						Показать все отзывы
-						<?=GetContentSvgIcon('arrow_right');?>
+						<span class="link__icon"><?=GetContentSvgIcon('arrow_right');?></span>
 					</a>
 					<ul class="reviews__list reviews-list">
 						<li class="reviews-list__item reviews-list-item">
@@ -33,7 +33,7 @@ if ($arResult['ITEMS']) {?>
 						</li>
 						<li class="reviews-list__item reviews-list-item">
 							<div class="reviews-list-item__wrap">
-								<div class="reviews-list-item__text">«Отличный ассортимент, позволяющий заказать нужные вещи в одном месте, хорошие акции, возможность оплатить часть заказа бонусами "Спасибо" от Сбербанка»<div>
+								<div class="reviews-list-item__text">«Отличный ассортимент, позволяющий заказать нужные вещи в одном месте, хорошие акции, возможность оплатить часть заказа бонусами "Спасибо" от Сбербанка»</div>
 								<div class="reviews-list-item__author-wrap">
 									<div class="reviews-list-item__author">АЛЕКСАНДР ДУКАЛИС</div>
 									<div class="reviews-list-item__proff">Маркетинг-директор «Газпром»</div>

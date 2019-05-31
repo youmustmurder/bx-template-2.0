@@ -45,10 +45,11 @@ if ($arResult['ITEMS']) {?>
                         <?foreach ($arResult['ITEMS'] as $k => $arItem) {?>
                             <div class="slider-big__preview slider-big-preview" indexSlide="<?=$k?>">
                                 <?if ($arItem['PROPERTIES']['PRODUCT']['VALUE']) {?>
-                                    <?if ($arItem['PROPERTIES']['PRODUCT']['PREVIEW_PICTURE']) {?>
-                                        <img class="slider-big-preview__img"
-                                             src="<?=$arItem['PROPERTIES']['PRODUCT']['PREVIEW_PICTURE']?>"
-                                             alt="<?=$arItem['PROPERTIES']['PRODUCT']['NAME']?>">
+									<?if ($arItem['PROPERTIES']['PRODUCT']['PREVIEW_PICTURE']) {?>
+										<div class="slider-big-preview__img">
+											<img src="<?=$arItem['PROPERTIES']['PRODUCT']['PREVIEW_PICTURE']?>"
+												 alt="<?=$arItem['PROPERTIES']['PRODUCT']['NAME']?>">
+										</div>
                                     <?}?>
                                     <div class="slider-big-preview__name"><?=$arItem['PROPERTIES']['PRODUCT']['NAME']?></div>
                                     <?if ($arItem['PROPERTIES']['PRODUCT']['PROPERTY_PRODUCT_PRICE_VALUE']) {?>

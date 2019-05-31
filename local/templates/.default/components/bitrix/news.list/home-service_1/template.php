@@ -8,7 +8,7 @@ use Bitrix\Main\Localization\Loc;
 Loc::loadMessages(__FILE__);
 
 if ($arResult['ITEMS']) {?>
-<section class="services services--grey">
+<section class="services services_grey">
 	<div class="container">
 		<div class="row">
 			<div class="col">
@@ -22,14 +22,14 @@ if ($arResult['ITEMS']) {?>
 		</div>
         <div class="row">
             <?foreach ($arResult['ITEMS'] as $k => $arItem) {?>
-                <div class="col-12 col-md-6 col-lg-4 services__item">
-                    <div class="services__item-pic">
+                <div class="col-12 col-md-6 col-lg-4 services__item service-item">
+                    <div class="service-item__pic">
                         <img src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>"
                              alt="<?=$arItem['PREVIEW_PICTURE']['ALT']?>">
                     </div>
-                    <a href="<?=$arItem['DETAIL_PAGE_URL']?>" class="services__item-title"><?=$arItem['NAME']?></a>
+                    <a href="<?=$arItem['DETAIL_PAGE_URL']?>" class="service-item__title"><?=$arItem['NAME']?></a>
                     <?if ($arItem['PREVIEW_TEXT']) {?>
-                        <div class="services__item-text"><?=$arItem['PREVIEW_TEXT']?></div>
+                        <div class="service-item__text"><?=$arItem['PREVIEW_TEXT']?></div>
                     <?}?>
                 </div>
             <?}?>

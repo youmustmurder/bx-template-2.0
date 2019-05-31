@@ -32,10 +32,9 @@ if ($arResult['ITEMS']) {?>
                                 <?if ($arItem['PROPERTIES']['REVIEW_CLIENT_DATE']['VALUE']) {?>
                                     <div class="reviews-desc-item__date"><?=$arItem['PROPERTIES']['REVIEW_CLIENT_DATE']['VALUE']?></div>
                                 <?}?>
-                                <a href="<?=$arParams['SECTION_LINK'] ?: Loc::getMessage('HOME_REVIEWS_2_SECTION_LINK_DEFAULT', array('#SITE_DIR#' => SITE_DIR))?>"
-                                   class="link link_light link_icon-right reviews-desc-item__link">
+                                <a href="<?=$arParams['SECTION_LINK'] ?: Loc::getMessage('HOME_REVIEWS_2_SECTION_LINK_DEFAULT', array('#SITE_DIR#' => SITE_DIR))?>" class="link link_light link_icon-right reviews-desc-item__link">
                                     <?=$arParams['SECTION_LINK_NAME'] ?: Loc::getMessage('HOME_REVIEWS_2_SECTION_LINK_NAME')?>
-                                    <?=GetContentSvgIcon('arrow_right');?>
+                                    <span class="link__icon"><?=GetContentSvgIcon('arrow_right');?></span>
                                 </a>
                             </div>
                         <?}?>

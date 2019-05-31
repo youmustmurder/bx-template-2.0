@@ -53,7 +53,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 							);?>
 						</div>
 					</div>
-					<div class="d-flex align-items-center header__logo header-logo">
+					<div class="d-flex align-items-center justify-content-center header__logo header-logo">
 						<a href="<?=SITE_DIR?>" class="header-logo__link">
 							<?$APPLICATION->IncludeFile(
 								"/include/" . SITE_ID . "/logo.php",
@@ -76,10 +76,12 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 							</div>
 						<?}?>
 					</div>
-					<button class="header__search-toggle header-search-toggle">
-						<span class="header-search-toggle__icon-search"><?=GetContentSvgIcon('search');?></span>
-						<span class="header-search-toggle__icon-close"><?=GetContentSvgIcon('close');?></span>
-					</button>
+					<div class="header__block header__block_search-toggle">
+						<button class="header__search-toggle header-search-toggle">
+							<span class="header-search-toggle__icon-search"><?=GetContentSvgIcon('search');?></span>
+							<span class="header-search-toggle__icon-close"><?=GetContentSvgIcon('close');?></span>
+						</button>
+					</div>
 					<div class="header__search-panel header-search-panel">
 						<?$APPLICATION->IncludeComponent(
 							"bitrix:search.form",
@@ -98,9 +100,9 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 </header>
 
 
-<div class="head-nav__modal--desktop" style="display: none;">
+<div class="header-menu">
 	<div class="container">
-		<div class="head-nav__content head-nav__content--desktop">
+		<div class="header-menu__content">
 			<?$APPLICATION->IncludeFile(
 				"/include/" . SITE_ID . "/blocks/menu/catalog_top.php",
 				array(),

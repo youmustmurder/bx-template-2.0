@@ -1,5 +1,6 @@
 .btn {
 	display: inline-flex;
+	align-items: center;
 	border: none;
 	background: none;
 	border-radius: 4px;
@@ -9,6 +10,8 @@
 	transition: 0.3s all ease-out;
 	cursor: pointer;
 	svg {
+		height: 19px;
+		max-width: 20px;
 		transition: 0.3s all ease-out;
 	}
 	&.btn_min {
