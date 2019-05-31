@@ -33,6 +33,9 @@ Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("frontend/dist/css/st
 
 //load theme css
 CWebsiteTemplate::loadCss();
+
+//load main js
+Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/dist/js/index.js"));
 //Debug::dump(CWebsiteTemplate::loadCss());
 ?>
 
@@ -123,10 +126,6 @@ $APPLICATION->IncludeFile(
         false
     );*/?>
 <?}?>
-<?
-//include js scripts
-Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/dist/js/index.js"));
-?>
 <?$APPLICATION->IncludeFile(
     "scripts.php",
     array(),
@@ -135,5 +134,6 @@ Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/dist/js/inde
         "MODE" => "php"
     )
 );?>
+
 <?$APPLICATION->ShowBodyScripts();?>
 </body>
