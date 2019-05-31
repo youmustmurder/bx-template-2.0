@@ -28,10 +28,10 @@
     display: flex;
     justify-content: center;
 	align-items: center;
-	flex: 0 0 45px;
+	flex: 0 0 auto;
     height: 45px;
     width: 45px;
-    margin-right: 19px;
+    margin-right: 15px;
     padding: 15px;
     border: 1px solid #ebebeb;
 	border-radius: 50px;
@@ -42,14 +42,8 @@
 }
 
 .header-contact__value {
-    display: flex;
-    flex-direction: column;
-	justify-content: center;
 	span {
-		&:not(:last-child) {
-			display: inline-block;
-			margin-bottom: 5px;
-		}
+		line-height: 1.2rem;
 	}
 }
 
@@ -88,7 +82,7 @@
 		display: flex;
 		justify-content: space-between;
 		& > li {
-			flex: 1 0;
+			flex: 1 0 auto;
 			cursor: pointer;
 			& > a {
 				position: relative;
@@ -125,7 +119,7 @@
 
 .header {
 	.more-menu {
-		flex: 0 1;
+		flex: 0 1 auto;
 		.more-menu__submenu {
 			position: absolute;
 			z-index: 2;

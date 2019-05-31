@@ -15,7 +15,7 @@ if ($arResult['SECTIONS']) {?>
                         <h2 class="best-categories__title"><?=$arParams['SECTION_TITLE'] ?: Loc::getMessage('CATEGORIES_SECTION_TITLE_DEFAULT')?></h2>
                         <a href="#" class="link link_success link_icon-right best-categories__link-all">
                             <?=$arParams['SECTION_LINK'] ?: Loc::getMessage('CATEGORIES_SECTION_LINK_DEFAULT')?>
-                            <?=GetContentSvgIcon('arrow_right');?>
+                            <span class="link__icon"><?=GetContentSvgIcon('arrow_right');?></span>
                         </a>
                     </div>
                     <ul class="best-categories__grid best-categories-grid">

@@ -71,9 +71,11 @@
 	display: flex;
 	align-items: center;
 	flex: 0 1 190px;
+	svg,
 	img {
 		flex: 1 1 100%;
 		width: auto;
+		max-height: 55px;
 	}
 }
 

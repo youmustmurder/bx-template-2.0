@@ -41,10 +41,8 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 								<?=GetContentSvgIcon('geo');?>
 							</div>
 							<div class="header-contact__value">
-								<div>
-									<?=$arFilial['CITY'] ? '<span>' . $arFilial['CITY'] . '</span>' : ''?>
-									<?=$arFilial['ADDRESS'] ? '<span>' . $arFilial['ADDRESS'] . '</span>' : ''?>
-								</div>
+								<?=$arFilial['CITY'] ? '<span>' . $arFilial['CITY'] . '</span>' : ''?>
+								<?=$arFilial['ADDRESS'] ? '<span>' . $arFilial['ADDRESS'] . '</span>' : ''?>
 							</div>
 						</div>
 					<?}?>

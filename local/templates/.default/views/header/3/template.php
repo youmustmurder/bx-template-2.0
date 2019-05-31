@@ -109,9 +109,9 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
     </nav>
 </header>
 
-<div class="head-nav__modal--desktop" style="display: none;">
+<div class="header-menu">
 	<div class="container">
-		<div class="head-nav__content head-nav__content--desktop">
+		<div class="header-menu__content">
 			<?$APPLICATION->IncludeFile(
 				"/include/" . SITE_ID . "/blocks/menu/catalog_top.php",
 				array(),

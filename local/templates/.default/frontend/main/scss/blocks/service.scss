@@ -3,11 +3,11 @@
 	display: flex;
 	align-items: flex-end;
 	padding: 40px 30px;
-	min-height: 370px;
+	min-height: 270px;
 	overflow: hidden;
 	border-radius: 5px;
 	background: #fff;
-	&.service--dark {
+	&.service_dark {
 		.service__title,
 		.service__text {
 			opacity: 1;
@@ -24,16 +24,16 @@
 			z-index: 1;
 		}
 	}
-	&.service--left {
+	&.service_left {
 		.service__img {
 			left: auto;
 			right: 0;
 		}
 	}
-	&.service--right {
+	&.service_right {
 		justify-content: flex-end;
 	}
-	&.service--middle {
+	&.service_middle {
 		align-items: flex-start;
 	}
 }
