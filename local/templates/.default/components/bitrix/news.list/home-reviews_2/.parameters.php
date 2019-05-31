@@ -2,7 +2,7 @@
 /**
  * @author Lukmanov Mikhail <lukmanof92@gmail.com>
  */
-
+dump(SITE_DIR);
 use Bitrix\Main\Localization\Loc;
 
 Loc::loadMessages(__FILE__);
@@ -10,24 +10,23 @@ Loc::loadMessages(__FILE__);
 $arTemplateParameters = array(
     "BLOCK_TITLE" => array(
         'PARENT' => 'BASE',
-        'NAME' => Loc::getMessage('HOME_REVIEWS_2_BLOCK_TITLE_NAME'),
+        'NAME' => Loc::getMessage('HOME_REVIEWS_3_BLOCK_TITLE_NAME'),
         'TYPE' => 'STRING',
-        'DEFAULT' => Loc::getMessage('HOME_REVIEWS_2_BLOCK_TITLE_DEFAULT')
+        'DEFAULT' => Loc::getMessage('HOME_REVIEWS_3_BLOCK_TITLE_DEFAULT')
     ),
     "SECTION_LINK_NAME" => array(
         'PARENT' => 'BASE',
-        'NAME' => Loc::getMessage('HOME_REVIEWS_2_SECTION_LINK_NAME_NAME'),
+        'NAME' => Loc::getMessage('HOME_REVIEWS_3_SECTION_LINK_NAME_NAME'),
         'TYPE' => 'STRING',
-        'DEFAULT' => Loc::getMessage('HOME_REVIEWS_2_SECTION_LINK_NAME_DEFAULT')
+        'DEFAULT' => Loc::getMessage('HOME_REVIEWS_3_SECTION_LINK_NAME_DEFAULT')
     ),
     "SECTION_LINK" => array(
         'PARENT' => 'BASE',
-        'NAME' => Loc::getMessage('HOME_REVIEWS_2_SECTION_LINK_NAME'),
+        'NAME' => Loc::getMessage('HOME_REVIEWS_3_SECTION_LINK_NAME'),
         'TYPE' => 'STRING',
-        'DEFAULT' => Loc::getMessage('HOME_REVIEWS_2_SECTION_LINK_DEFAULT')
+        'DEFAULT' => Loc::getMessage('HOME_REVIEWS_3_SECTION_LINK_DEFAULT')
     ),
     'PREVIEW_TRUNCATE_LEN' => array('HIDDEN' => 'Y'),
-    //'ACTIVE_DATE_FORMAT' => array('HIDDEN' => 'Y'),
     'SET_TITLE' => array('HIDDEN' => 'Y'),
     'SET_BROWSER_TITLE' => array('HIDDEN' => 'Y'),
     'SET_META_KEYWORDS' => array('HIDDEN' => 'Y'),

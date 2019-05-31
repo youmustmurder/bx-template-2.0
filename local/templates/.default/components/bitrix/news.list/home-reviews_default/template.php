@@ -21,7 +21,7 @@ if ($arResult['ITEMS']) {?>
 					<ul class="reviews__list reviews-list">
 						<li class="reviews-list__item reviews-list-item">
 							<div class="reviews-list-item__wrap">
-								<p class="reviews-list-item__text">«Отличный ассортимент, позволяющий заказать нужные вещи в одном месте, хорошие акции, возможность оплатить часть заказа бонусами "Спасибо" от Сбербанка»</p>
+								<div class="reviews-list-item__text">«Отличный ассортимент, позволяющий заказать нужные вещи в одном месте, хорошие акции, возможность оплатить часть заказа бонусами "Спасибо" от Сбербанка»</div>
 								<div class="reviews-list-item__author-wrap">
 									<div class="reviews-list-item__author">АЛЕКСАНДР ДУКАЛИС</div>
 									<div class="reviews-list-item__proff">Маркетинг-директор «Газпром»</div>
@@ -33,7 +33,7 @@ if ($arResult['ITEMS']) {?>
 						</li>
 						<li class="reviews-list__item reviews-list-item">
 							<div class="reviews-list-item__wrap">
-								<p class="reviews-list-item__text">«Отличный ассортимент, позволяющий заказать нужные вещи в одном месте, хорошие акции, возможность оплатить часть заказа бонусами "Спасибо" от Сбербанка»</p>
+								<div class="reviews-list-item__text">«Отличный ассортимент, позволяющий заказать нужные вещи в одном месте, хорошие акции, возможность оплатить часть заказа бонусами "Спасибо" от Сбербанка»<div>
 								<div class="reviews-list-item__author-wrap">
 									<div class="reviews-list-item__author">АЛЕКСАНДР ДУКАЛИС</div>
 									<div class="reviews-list-item__proff">Маркетинг-директор «Газпром»</div>
@@ -45,7 +45,7 @@ if ($arResult['ITEMS']) {?>
 						</li>
 						<li class="reviews-list__item reviews-list-item">
 							<div class="reviews-list-item__wrap">
-								<p class="reviews-list-item__text">«Отличный ассортимент, позволяющий заказать нужные вещи в одном месте, хорошие акции, возможность оплатить часть заказа бонусами "Спасибо" от Сбербанка»</p>
+								<div class="reviews-list-item__text">«Отличный ассортимент, позволяющий заказать нужные вещи в одном месте, хорошие акции, возможность оплатить часть заказа бонусами "Спасибо" от Сбербанка»</div>
 								<div class="reviews-list-item__author-wrap">
 									<div class="reviews-list-item__author">АЛЕКСАНДР ДУКАЛИС</div>
 									<div class="reviews-list-item__proff">Маркетинг-директор «Газпром»</div>

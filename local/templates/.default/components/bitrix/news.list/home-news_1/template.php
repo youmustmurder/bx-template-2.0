@@ -17,9 +17,9 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 			<div class="col">
 				<div class="news__inner">
 					<h2 class="news__title">Последние новости</h2>
-					<a href="#" class="btn__link btn__link--bold btn__link--white btn__link--icon-r news__link-all-news">
+					<a href="#" class="link link_light link_icon-right news__link-all-news">
 						Показать все новости
-						<?=GetContentSvgIcon('arrow_right_bold');?>
+						<?=GetContentSvgIcon('arrow_right');?>
 					</a>
 					<div class="news__slides-inner">
 						<div class="news__slides">
@@ -45,10 +45,10 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 						</div>
 					</div>
 					</div>
-					<button class="btn btn--icon btn--border-white news__nav news__nav--prev">
+					<button class="btn btn_circle-default btn_outline-light news__nav news__nav_prev">
 						<?=GetContentSvgIcon('arrow_left');?>
 					</button>
-					<button class="btn btn--icon btn--border-white news__nav news__nav--next">
+					<button class="btn btn_circle-default btn_outline-light news__nav news__nav_next">
 						<?=GetContentSvgIcon('arrow_right');?>
 					</button>
 				</div>
