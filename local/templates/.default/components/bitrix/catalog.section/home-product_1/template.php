@@ -37,9 +37,9 @@ if ($arResult['ITEMS']) {?>
                                                             </li>
                                                         <?}?>
                                                         <?if ($arItem['PROPERTIES']['PRODUCT_LABEL']['VALUE_XML_ID']) {?>
-                                                            <?foreach ($arItem['PROPERTIES']['PRODUCT_LABEL']['VALUE_XML_ID'] as $k => $XML_ID) {?>
+                                                            <?foreach ($arItem['PROPERTIES']['PRODUCT_LABEL']['VALUE_XML_ID'] as $i => $XML_ID) {?>
                                                                 <li class="label <?=$XML_ID == 'NEW' ? 'label_yellow' : 'label_blue'?>">
-                                                                    <?=$arItem['PROPERTIES']['PRODUCT_LABEL']['VALUE'][$k]?></li>
+                                                                    <?=$arItem['PROPERTIES']['PRODUCT_LABEL']['VALUE'][$i]?></li>
                                                             <?}?>
                                                         <?}?>
                                                     </ul>
@@ -100,8 +100,8 @@ if ($arResult['ITEMS']) {?>
                                             </a>
 											<div class="product__info-wrap">
 												<a href="<?=$arItem['DETAIL_PAGE_URL']?>" class="product__name"><?=$arItem['NAME']?></a>
-												<?if ($arItem['CATEGORY']) {?>
-													<div class="product__subtitle"><?=$arItem['CATEGORY']?></div>
+												<?if ($arItem['PARENT_SECTION']) {?>
+													<div class="product__subtitle"><?=$arItem['PARENT_SECTION']['NAME']?></div>
 												<?}?>
 											</div>
                                             <div class="product__btns">
