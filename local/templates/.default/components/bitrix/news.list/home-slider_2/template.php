@@ -11,7 +11,7 @@ if ($arResult['ITEMS']) {?>
     <div class="slider-big">
         <div class="container">
             <div class="row">
-                <div class="col">
+                <div class="col slider-big__col">
                     <div class="slider-big__slides slider-big-slides"
                          data-arrows="<?=$arParams['SLIDER_ARROWS'] == 'N' ? 'false' : 'true'?>"
                          data-autoplay="<?=$arParams['SLIDER_AUTOPLAY'] == 'N' ? 'false' : 'true'?>"
@@ -35,41 +35,46 @@ if ($arResult['ITEMS']) {?>
 										<?}?>
 									</div>
 								</div>
-                                <?if ($arItem['PROPERTIES']['PRODUCT']['PICTURE']) {?>
-                                    <img class="slider-big-slide__img"
-                                         src="<?=$arItem['PROPERTIES']['PRODUCT']['PICTURE']?>"
-                                         alt="<?=$arItem['PROPERTIES']['PRODUCT']['NAME']?>">
+								<?if ($arItem['PROPERTIES']['PRODUCT']['PICTURE']) {?>
+									<div class="slider-big-slide__img">
+                                    	<img src="<?=$arItem['PROPERTIES']['PRODUCT']['PICTURE']?>"
+										 	 alt="<?=$arItem['PROPERTIES']['PRODUCT']['NAME']?>">
+									</div>
                                 <?}?>
                             </div>
                         <?}?>
-                    </div>
-                    <div class="slider-big__previews">
-                        <?foreach ($arResult['ITEMS'] as $k => $arItem) {?>
-                            <div class="slider-big__preview slider-big-preview" indexSlide="<?=$k?>">
-                                <?if ($arItem['PROPERTIES']['PRODUCT']['VALUE']) {?>
-									<?if ($arItem['PROPERTIES']['PRODUCT']['PREVIEW_PICTURE']) {?>
-										<div class="slider-big-preview__img">
-											<img src="<?=$arItem['PROPERTIES']['PRODUCT']['PREVIEW_PICTURE']?>"
-												 alt="<?=$arItem['PROPERTIES']['PRODUCT']['NAME']?>">
-										</div>
-                                    <?}?>
-                                    <div class="slider-big-preview__name"><?=$arItem['PROPERTIES']['PRODUCT']['NAME']?></div>
-                                    <?if ($arItem['PROPERTIES']['PRODUCT']['PROPERTY_PRODUCT_PRICE_VALUE']) {?>
-                                        <div class="slider-big-preview__price">
-                                            <?=$arItem['PROPERTIES']['PRODUCT']['PROPERTY_PRODUCT_PRICE_VALUE']?>
-                                            <?=$arItem['PROPERTIES']['PRODUCT']['CURRENCY'] == 'Y' ? ' ₽' : ''?>
-                                        </div>
-                                    <?}?>
-                                <?}?>
-                            </div>
-                        <?}?>
-                    </div>
+					</div>
+					<div class="slider-big__previews-wrap">
+						<div class="slider-big__previews">
+							<?foreach ($arResult['ITEMS'] as $k => $arItem) {?>
+								<div class="slider-big__preview slider-big-preview" indexSlide="<?=$k?>">
+									<div class="slider-big-preview__wrap">
+										<?if ($arItem['PROPERTIES']['PRODUCT']['VALUE']) {?>
+											<?if ($arItem['PROPERTIES']['PRODUCT']['PREVIEW_PICTURE']) {?>
+												<div class="slider-big-preview__img">
+													<img src="<?=$arItem['PROPERTIES']['PRODUCT']['PREVIEW_PICTURE']?>"
+														alt="<?=$arItem['PROPERTIES']['PRODUCT']['NAME']?>">
+												</div>
+											<?}?>
+											<div class="slider-big-preview__name"><?=$arItem['PROPERTIES']['PRODUCT']['NAME']?></div>
+											<?if ($arItem['PROPERTIES']['PRODUCT']['PROPERTY_PRODUCT_PRICE_VALUE']) {?>
+												<div class="slider-big-preview__price">
+													<?=$arItem['PROPERTIES']['PRODUCT']['PROPERTY_PRODUCT_PRICE_VALUE']?>
+													<?=$arItem['PROPERTIES']['PRODUCT']['CURRENCY'] == 'Y' ? ' ₽' : ''?>
+												</div>
+											<?}?>
+										<?}?>
+									</div>
+								</div>
+							<?}?>
+						</div>
+					</div>
                     <?if (count($arResult['ITEMS']) > 1 && $arParams['SLIDER_ARROWS'] == 'Y') {?>
                         <div class="slide-big__nav">
-                            <button class="btn btn_circle-default btn_outline-secondary btn_outline-secondary-to-success slider-big__prev">
+                            <button class="btn btn_circle-default btn_light_to-success slider-big__prev">
                                 <?=GetContentSvgIcon('arrow_left');?>
                             </button>
-                            <button class="btn btn_circle-default btn_outline-secondary btn_outline-secondary-to-success slider-big__next">
+                            <button class="btn btn_circle-default btn_light_to-success slider-big__next">
                                 <?=GetContentSvgIcon('arrow_right');?>
                             </button>
                         </div>

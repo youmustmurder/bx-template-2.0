@@ -42,7 +42,8 @@
 	&.btn_primary,
 	&.btn_secondary,
 	&.btn_success,
-	&.btn_light {
+	&.btn_light,
+	&.btn_light_to-success {
 		border-width: 2px;
 		border-style: solid;
 		svg {
@@ -116,7 +117,13 @@
 
 		}
 	}
-	&.btn_light_to-green {
+	&.btn_light_to-success {
+		border-color: #EEEEEE;
+		background: #fff;
+		color: #95A5A6;
+		svg {
+			fill: #95A5A6;
+		}
 		&:hover,
 		&:focus {
 			border-color: #26AE60;

@@ -2,14 +2,8 @@ window.addEventListener('load', () => {
 	const sliderNode = document.querySelector('.slider-big-slides'),
 		prevBtnNode = document.querySelector('.slider-big__prev'),
 		nextBtnNode = document.querySelector('.slider-big__next'),
+		previewsSliderNode = document.querySelector('.slider-big__previews'),
 		previewsNode = document.querySelectorAll('.slider-big-preview');
-
-	const togglePrevies = (newIndex) => {
-		Array.prototype.forEach.call(previewsNode, (prev) => {
-			prev.classList.remove('slider-big-preview--active');
-		});
-		document.querySelector(`.slider-big-preview[indexSlide="${newIndex}"]`).classList.add('slider-big-preview--active');
-	};
 
 	var sliderBig = tns({
 		container: sliderNode,
@@ -19,21 +13,35 @@ window.addEventListener('load', () => {
 		nextButton: nextBtnNode,
 		nav: false,
 		autoHeight: true,
-		autoplay: (typeof sliderNode.getAttribute('data-autoplay') != 'undefined') ? (!!sliderNode.getAttribute('data-autoplay')) : false,
-		autoplayTimeout: (typeof sliderNode.getAttribute('data-speed') != 'undefined') ? (sliderNode.getAttribute('data-speed')) : 5000,
+		// autoplay: (typeof sliderNode.getAttribute('data-autoplay') != 'undefined') ? (!!sliderNode.getAttribute('data-autoplay')) : false,
+		// autoplayTimeout: (typeof sliderNode.getAttribute('data-speed') != 'undefined') ? (sliderNode.getAttribute('data-speed')) : 5000,
 		autoplayButtonOutput: false,
-		onInit: info => {
-			togglePrevies(info.displayIndex-1);
-		}
-	});
-	sliderBig.events.on('transitionStart', info => {
-		togglePrevies((info.displayIndex)-1);
 	});
 	Array.prototype.forEach.call(previewsNode, (preview) => {
 		preview.addEventListener('click', (e) => {
 			const newIndex = e.target.getAttribute('indexSlide');
-			togglePrevies(newIndex);
 			sliderBig.goTo(newIndex);
 		});
 	});
+
+	var sliderPreviews = tns({
+		container: previewsSliderNode,
+		items: 3,
+		nav: false,
+		prevButton: prevBtnNode,
+		nextButton: nextBtnNode,
+		onInit: (info) => {
+			updateSliderPrevies(info);
+		}
+	});
+	sliderBig.events.on('transitionStart', info => {
+		updateSliderPrevies(sliderPreviews.getInfo());
+	});
+
+	function updateSliderPrevies(info) {
+		var indexPrev = info.indexCached,
+			indexCurrent = info.index;
+		info.slideItems[indexPrev].classList.remove('slider-big-preview_active');
+		info.slideItems[indexCurrent].classList.add('slider-big-preview_active');
+	}
 });
