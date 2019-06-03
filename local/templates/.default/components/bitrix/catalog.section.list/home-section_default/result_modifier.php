@@ -9,16 +9,16 @@ Loc::loadMessages(__FILE__);
 
 $arSizes = array(
     'quad' => array(
-        'width' => 260,
-        'height' => 275,
+        'width' => 215,
+        'height' => 190,
     ),
     'vertical' => array(
-        'width' => 540,
-        'height' => 275,
+        'width' => 500,
+        'height' => 190,
     ),
     'horizontal' => array(
-        'width' => 260,
-        'height' => 575,
+        'width' => 220,
+        'height' => 445
     )
 );
 if ($arResult['SECTIONS']) {
