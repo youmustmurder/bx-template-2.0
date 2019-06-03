@@ -12,6 +12,7 @@ window.addEventListener('load', function () {
     nextButton: nextBtnNode,
     nav: true,
     navContainer: navContainer,
-    autoHeight: true
+    autoHeight: true,
+    autoplay: typeof liderNode.getAttribute('data-autoplay') != 'undefined'
   });
 });

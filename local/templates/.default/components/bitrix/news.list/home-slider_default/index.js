@@ -3,7 +3,7 @@ window.addEventListener('load', () => {
 		prevBtnNode = document.querySelector('.slider-big__prev'),
 		nextBtnNode = document.querySelector('.slider-big__next'),
 		navContainer = document.querySelector('.slide-big-dots');
-		
+
 	var sliderBig = tns({
 		container: sliderNode,
 		items: 1,
@@ -11,6 +11,7 @@ window.addEventListener('load', () => {
 		nextButton: nextBtnNode,
 		nav: true,
 		navContainer,
-		autoHeight: true
+		autoHeight: true,
+		autoplay: (typeof liderNode.getAttribute('data-autoplay') != 'undefined')
 	});
 });

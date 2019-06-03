@@ -1,4 +1,6 @@
 html,
-body {
+body,
+button,
+a {
     font-family: #VALUE#, sans-serif;
 }

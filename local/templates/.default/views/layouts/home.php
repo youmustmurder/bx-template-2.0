@@ -6,6 +6,10 @@ global $arCurrentSetting;
 
 /*slider*/
 
+?>
+<main>
+<?
+
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-slider/" . $arCurrentSetting['SLIDER'] . ".php",
     array(),
@@ -17,14 +21,14 @@ $APPLICATION->IncludeFile(
 
 /*sections*/
 
-/* $APPLICATION->IncludeFile(
+$APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-section/" . $arCurrentSetting['SECTIONS'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-); */
+);
 
 /*products*/
 
@@ -99,3 +103,5 @@ $APPLICATION->IncludeFile(
  */
 
 ?>
+
+</main>
