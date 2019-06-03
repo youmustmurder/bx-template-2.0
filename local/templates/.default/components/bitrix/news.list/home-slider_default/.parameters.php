@@ -32,6 +32,15 @@ $arTemplateParameters = array(
         'TYPE' => 'STRING',
         'DEFAULT' => '5'
     ),
+    'SLIDER_BTN_TYPE' => array(
+        'NAME' => Loc::getMessage('HOME_SLIDER_DEFAULT_BTN_TYPE_TITLE'),
+        'PARENT' => 'BASE',
+        'TYPE' => 'LIST',
+        'VALUES' => array(
+            'BIG' => Loc::getMessage('HOME_SLIDER_DEFAULT_BTN_TYPE_BIG'),
+            'MID' => Loc::getMessage('HOME_SLIDER_DEFAULT_BTN_TYPE_MID')
+        )
+    ),
     'PREVIEW_TRUNCATE_LEN' => array('HIDDEN' => 'Y'),
     'ACTIVE_DATE_FORMAT' => array('HIDDEN' => 'Y'),
     'SET_TITLE' => array('HIDDEN' => 'Y'),
