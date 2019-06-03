@@ -6,9 +6,14 @@ html{
 	height: 100%;
 }
 body{
-/* 	display: flex;
-	flex-direction: column; */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	height: 100%;
+}
+
+main {
+	flex: 1 0 auto;
 }
 
 .header {
