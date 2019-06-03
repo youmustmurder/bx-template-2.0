@@ -5,8 +5,8 @@ window.addEventListener('load', () => {
 		nextBtn = document.querySelector('.slider-big__next');
 
 	const positionNav = (info) => {
-		var right = -1 * (slider.getBoundingClientRect().left - document.querySelector('.tns-slide-active .slider-slider__inner').getBoundingClientRect().left - 15),
-			nums = slider.querySelectorAll('.slider-slide')[info.displayIndex].querySelector('.slider-slide-numbers'),
+		var right = -1 * (slider.getBoundingClientRect().left - document.querySelector('.tns-slide-active .slider-big-slide__inner').getBoundingClientRect().left - 15),
+			nums = slider.querySelectorAll('.slider-big-slide')[info.displayIndex].querySelector('.slider-big-slide-numbers'),
 			top;
 		if (nums != null) {
 			top = -1 *(slider.getBoundingClientRect().top - nums.getBoundingClientRect().top) + 'px';
