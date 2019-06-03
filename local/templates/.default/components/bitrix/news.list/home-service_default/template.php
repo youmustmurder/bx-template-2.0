@@ -25,7 +25,7 @@ if ($arResult['ITEMS']) {?>
                         ?>
                         <li class="service-list__item service-list-item <?=$k == 0 || $k == 1 ? 'service-list-item_middle' : ''?>">
                             <a href="<?=$arItem['DETAIL_PAGE_URL']?>"
-                               class="service<?=$k == 0 || $k == 1 ? ' service--middle' : ''?><?=$k == 0 ? ' service--left' : ''?><?=$k == 1 ? ' service--right' : ''?><?=$arItem['PROPERTIES']['DISPLAY_MODE']['VALUE_XML_ID'] != 'dark' ? ' service--dark' : ''?>">
+                               class="service<?=$k == 0 || $k == 1 ? ' service--middle' : ''?><?=$k == 0 ? ' service--left' : ''?><?=$k == 1 ? ' service--right' : ''?><?=$arItem['PROPERTIES']['DISPLAY_MODE']['VALUE_XML_ID'] != 'dark' ? ' service-dark' : ''?>">
                                 <div class="service__inner">
                                     <div class="service__title"><?=$arItem['NAME']?></div>
                                     <?if ($arItem['PREVIEW_TEXT']) {?>
