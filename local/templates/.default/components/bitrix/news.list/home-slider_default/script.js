@@ -8,13 +8,14 @@ window.addEventListener('load', function () {
   var sliderBig = tns({
     container: sliderNode,
     items: 1,
+    controls: typeof slider.getAttribute('data-arrows') != 'undefined' ? !!slider.getAttribute('data-arrows') : true,
     prevButton: prevBtnNode,
     nextButton: nextBtnNode,
-    nav: true,
+    nav: false,
     navContainer: navContainer,
     autoHeight: true,
-    // autoplay: (typeof sliderNode.getAttribute('data-autoplay') != 'undefined') ? (!!sliderNode.getAttribute('data-autoplay')) : false,
-    // autoplayTimeout: (typeof sliderNode.getAttribute('data-speed') != 'undefined') ? (!!sliderNode.getAttribute('data-speed')) : 5000,
+    autoplay: typeof sliderNode.getAttribute('data-autoplay') != 'undefined' ? !!sliderNode.getAttribute('data-autoplay') : false,
+    autoplayTimeout: typeof sliderNode.getAttribute('data-speed') != 'undefined' ? sliderNode.getAttribute('data-speed') : 5000,
     autoplayButtonOutput: false
   });
 });

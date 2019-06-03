@@ -8,11 +8,11 @@ use Bitrix\Main\Localization\Loc;
 Loc::loadMessages(__FILE__);
 
 if ($arResult['ITEMS']) {?>
-<div class="slider-big">
-    <div class="slider-big__slides slider-big-slides"
-         data-arrows="<?=$arParams['SLIDER_ARROWS'] == 'N' ? 'false' : 'true'?>"
-         data-autoplay="<?=$arParams['SLIDER_AUTOPLAY'] == 'N' ? 'false' : 'true'?>"
-         data-speed="<?=$arParams['SLIDER_TIME'] ?: 0?>">
+<div class="slider-big"
+	 data-arrows="<?=$arParams['SLIDER_ARROWS'] == 'N' ? 'false' : 'true'?>"
+     data-autoplay="<?=$arParams['SLIDER_AUTOPLAY'] == 'N' ? 'false' : 'true'?>"
+     data-speed="<?=$arParams['SLIDER_TIME'] ?: 0?>">
+    <div class="slider-big__slides slider-big-slides">
         <?foreach ($arResult['ITEMS'] as $arItem) {
             $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
             $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => Loc::getMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));

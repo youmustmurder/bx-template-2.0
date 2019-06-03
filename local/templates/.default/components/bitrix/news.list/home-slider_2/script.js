@@ -16,10 +16,14 @@ window.addEventListener('load', function () {
   var sliderBig = tns({
     container: sliderNode,
     items: 1,
+    controls: typeof sliderNode.getAttribute('data-arrows') != 'undefined' ? !!sliderNode.getAttribute('data-arrows') : true,
     prevButton: prevBtnNode,
     nextButton: nextBtnNode,
     nav: false,
     autoHeight: true,
+    autoplay: typeof sliderNode.getAttribute('data-autoplay') != 'undefined' ? !!sliderNode.getAttribute('data-autoplay') : false,
+    autoplayTimeout: typeof sliderNode.getAttribute('data-speed') != 'undefined' ? sliderNode.getAttribute('data-speed') : 5000,
+    autoplayButtonOutput: false,
     onInit: function onInit(info) {
       togglePrevies(info.displayIndex - 1);
     }
