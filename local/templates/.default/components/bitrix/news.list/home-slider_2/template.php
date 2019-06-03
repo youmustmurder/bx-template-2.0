@@ -35,9 +35,11 @@ if ($arResult['ITEMS']) {?>
 										<?}?>
 									</div>
 								</div>
-                                <img class="slider-big-slide__img"
-                                     src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>"
-                                     alt="<?=$arItem['PREVIEW_PICTURE']['ALT']?>">
+                                <?if ($arItem['PROPERTIES']['PRODUCT']['PICTURE']) {?>
+                                    <img class="slider-big-slide__img"
+                                         src="<?=$arItem['PROPERTIES']['PRODUCT']['PICTURE']?>"
+                                         alt="<?=$arItem['PROPERTIES']['PRODUCT']['NAME']?>">
+                                <?}?>
                             </div>
                         <?}?>
                     </div>
