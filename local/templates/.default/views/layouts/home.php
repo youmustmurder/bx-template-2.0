@@ -43,14 +43,14 @@ $APPLICATION->IncludeFile(
 
 /*services*/
 
-/* $APPLICATION->IncludeFile(
-    "/include/" . SITE_ID . "/blocks/home-services/1.php",
+$APPLICATION->IncludeFile(
+    "/include/" . SITE_ID . "/blocks/home-services/default.php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-); */
+);
 
 /*seo text*/
 
