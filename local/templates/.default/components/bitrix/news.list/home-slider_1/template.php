@@ -13,8 +13,12 @@ if ($arResult['ITEMS']) {?>
          data-arrows="<?=$arParams['SLIDER_ARROWS'] == 'N' ? 'false' : 'true'?>"
          data-autoplay="<?=$arParams['SLIDER_AUTOPLAY'] == 'N' ? 'false' : 'true'?>"
          data-speed="<?=$arParams['SLIDER_TIME'] ?: 0?>">
-        <?foreach ($arResult['ITEMS'] as $arItem) {?>
-            <div class="slider-big__slide slider-slide">
+        <?foreach ($arResult['ITEMS'] as $arItem) {
+            $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+            $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => Loc::getMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+            ?>
+            <div class="slider-big__slide slider-slide"
+                 id="<?=$this->GetEditAreaId($arItem['ID']);?>">
                 <div class="slider-slider__inner">
                     <h2 class="slider-slide__title"><?=$arItem['NAME']?></h2>
                     <p class="slider-slide__text"><?=$arItem['PREVIEW_TEXT']?></p>
