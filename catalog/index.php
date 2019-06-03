@@ -1,9 +1,9 @@
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Каталог продукции");
 ?><?$APPLICATION->IncludeComponent(
-	"bitrix:catalog",
-	"",
-	Array(
+	"bitrix:catalog", 
+	".default", 
+	array(
 		"ACTION_VARIABLE" => "action",
 		"ADD_ELEMENT_CHAIN" => "Y",
 		"ADD_PICT_PROP" => "-",
@@ -25,16 +25,25 @@ $APPLICATION->SetTitle("Каталог продукции");
 		"DETAIL_BRAND_USE" => "N",
 		"DETAIL_BROWSER_TITLE" => "-",
 		"DETAIL_CHECK_SECTION_ID_VARIABLE" => "Y",
-		"DETAIL_DETAIL_PICTURE_MODE" => array("POPUP","MAGNIFIER"),
+		"DETAIL_DETAIL_PICTURE_MODE" => array(
+			0 => "POPUP",
+			1 => "MAGNIFIER",
+		),
 		"DETAIL_DISPLAY_NAME" => "Y",
 		"DETAIL_DISPLAY_PREVIEW_TEXT_MODE" => "E",
 		"DETAIL_IMAGE_RESOLUTION" => "16by9",
-		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => array(),
+		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => array(
+		),
 		"DETAIL_META_DESCRIPTION" => "-",
 		"DETAIL_META_KEYWORDS" => "-",
 		"DETAIL_PRODUCT_INFO_BLOCK_ORDER" => "sku,props",
 		"DETAIL_PRODUCT_PAY_BLOCK_ORDER" => "rating,price,priceRanges,quantityLimit,quantity,buttons",
-		"DETAIL_PROPERTY_CODE" => array("PRODUCT_LABEL","PRODUCT_OLD_PRICE","PRODUCT_PRICE",""),
+		"DETAIL_PROPERTY_CODE" => array(
+			0 => "PRODUCT_LABEL",
+			1 => "PRODUCT_OLD_PRICE",
+			2 => "PRODUCT_PRICE",
+			3 => "",
+		),
 		"DETAIL_SET_CANONICAL_URL" => "Y",
 		"DETAIL_SHOW_POPULAR" => "Y",
 		"DETAIL_SHOW_SLIDER" => "N",
@@ -56,8 +65,11 @@ $APPLICATION->SetTitle("Каталог продукции");
 		"IBLOCK_TYPE" => "base",
 		"INCLUDE_SUBSECTIONS" => "N",
 		"INSTANT_RELOAD" => "N",
-		"LABEL_PROP" => array("PRODUCT_ON_HOME"),
-		"LABEL_PROP_MOBILE" => array(),
+		"LABEL_PROP" => array(
+			0 => "PRODUCT_ON_HOME",
+		),
+		"LABEL_PROP_MOBILE" => array(
+		),
 		"LABEL_PROP_POSITION" => "top-left",
 		"LAZY_LOAD" => "N",
 		"LINE_ELEMENT_COUNT" => "3",
@@ -71,8 +83,12 @@ $APPLICATION->SetTitle("Каталог продукции");
 		"LIST_META_KEYWORDS" => "-",
 		"LIST_PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons,compare",
 		"LIST_PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false}]",
-		"LIST_PROPERTY_CODE" => array("PRODUCT_LABEL",""),
-		"LIST_PROPERTY_CODE_MOBILE" => array(),
+		"LIST_PROPERTY_CODE" => array(
+			0 => "PRODUCT_LABEL",
+			1 => "",
+		),
+		"LIST_PROPERTY_CODE_MOBILE" => array(
+		),
 		"LIST_SHOW_SLIDER" => "Y",
 		"LIST_SLIDER_INTERVAL" => "3000",
 		"LIST_SLIDER_PROGRESS" => "N",
@@ -93,11 +109,13 @@ $APPLICATION->SetTitle("Каталог продукции");
 		"PAGER_TITLE" => "Товары",
 		"PAGE_ELEMENT_COUNT" => "30",
 		"PARTIAL_PRODUCT_PROPERTIES" => "N",
-		"PRICE_CODE" => array(),
+		"PRICE_CODE" => array(
+		),
 		"PRICE_VAT_INCLUDE" => "Y",
 		"PRICE_VAT_SHOW_VALUE" => "N",
 		"PRODUCT_ID_VARIABLE" => "id",
-		"PRODUCT_PROPERTIES" => array(),
+		"PRODUCT_PROPERTIES" => array(
+		),
 		"PRODUCT_PROPS_VARIABLE" => "prop",
 		"PRODUCT_QUANTITY_VARIABLE" => "quantity",
 		"SEARCH_CHECK_DATES" => "Y",
@@ -113,7 +131,6 @@ $APPLICATION->SetTitle("Каталог продукции");
 		"SECTION_TOP_DEPTH" => "1",
 		"SEF_FOLDER" => "/catalog/",
 		"SEF_MODE" => "Y",
-		"SEF_URL_TEMPLATES" => Array("compare"=>"","element"=>"#ELEMENT_CODE#.html","section"=>"#SECTION_CODE_PATH#/","sections"=>"","smart_filter"=>""),
 		"SET_LAST_MODIFIED" => "N",
 		"SET_STATUS_404" => "N",
 		"SET_TITLE" => "Y",
@@ -134,8 +151,12 @@ $APPLICATION->SetTitle("Каталог продукции");
 		"TOP_LINE_ELEMENT_COUNT" => "2",
 		"TOP_PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons,compare",
 		"TOP_PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false}]",
-		"TOP_PROPERTY_CODE" => array("",""),
-		"TOP_PROPERTY_CODE_MOBILE" => array(),
+		"TOP_PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"TOP_PROPERTY_CODE_MOBILE" => array(
+		),
 		"TOP_SHOW_SLIDER" => "Y",
 		"TOP_SLIDER_INTERVAL" => "3000",
 		"TOP_SLIDER_PROGRESS" => "N",
@@ -152,6 +173,15 @@ $APPLICATION->SetTitle("Каталог продукции");
 		"USE_PRICE_COUNT" => "N",
 		"USE_PRODUCT_QUANTITY" => "N",
 		"USE_REVIEW" => "N",
-		"USE_STORE" => "N"
-	)
+		"USE_STORE" => "N",
+		"COMPONENT_TEMPLATE" => ".default",
+		"SEF_URL_TEMPLATES" => array(
+			"sections" => "",
+			"section" => "#SECTION_CODE_PATH#/",
+			"element" => "#ELEMENT_CODE#.html",
+			"compare" => "",
+			"smart_filter" => "",
+		)
+	),
+	false
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
