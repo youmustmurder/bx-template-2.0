@@ -45,10 +45,10 @@ if ($arResult['ITEMS']) {?>
 	</div>
     <?if (count($arResult['ITEMS']) > 1 && $arParams['SLIDER_ARROWS'] == 'Y') {?>
         <div class="slide-big__nav">
-            <button class="btn btn_circle-default btn_light btn_light_to-green slider-big__prev">
+            <button class="btn btn_circle-default btn_light btn_light_to-success slider-big__prev">
 				<?=GetContentSvgIcon('arrow_left');?>
             </button>
-            <button class="btn btn_circle-default btn_light btn_light_to-green slider-big__next">
+            <button class="btn btn_circle-default btn_light btn_light_to-success slider-big__next">
 				<?=GetContentSvgIcon('arrow_right');?>
             </button>
         </div>
