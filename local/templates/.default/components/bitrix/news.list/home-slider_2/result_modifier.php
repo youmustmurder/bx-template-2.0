@@ -18,6 +18,7 @@ if ($arResult['ITEMS']) {
             );
             while ($ar = $rsProduct->GetNext()) {
                 if ($ar['PREVIEW_PICTURE']) {
+                    $ar['PICTURE'] = CFile::GetPath($ar['PREVIEW_PICTURE']);
                     $ar['PREVIEW_PICTURE'] = CFile::ResizeImageGet($ar['PREVIEW_PICTURE'],
                         array(
                             'width' => 96,

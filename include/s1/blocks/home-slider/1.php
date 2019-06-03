@@ -11,10 +11,10 @@ $APPLICATION->IncludeComponent(
 		"IBLOCK_TYPE" => "base",
 		"IBLOCK_ID" => "2",
 		"NEWS_COUNT" => "9",
-		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY1" => "SORT",
 		"SORT_ORDER1" => "DESC",
 		"SORT_BY2" => "SORT",
-		"SORT_ORDER2" => "ASC",
+		"SORT_ORDER2" => "DESC",
 		"FILTER_NAME" => "",
 		"FIELD_CODE" => array(
 			0 => "",
