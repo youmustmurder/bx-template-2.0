@@ -66,7 +66,8 @@ $APPLICATION->IncludeComponent(
 		"MESSAGE_404" => "",
 		"SLIDER_AUTOPLAY" => "Y",
 		"SLIDER_ARROWS" => "Y",
-		"SLIDER_TIME" => "3000"
+		"SLIDER_TIME" => "3000",
+		"SLIDER_BTN_TYPE" => "MID"
 	),
 	false
 );
