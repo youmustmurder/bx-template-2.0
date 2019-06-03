@@ -9,6 +9,7 @@ Loc::loadMessages(__FILE__);
 
 if ($arResult['ITEMS']) {
     foreach ($arResult['ITEMS'] as $k => $arItem) {
+       
         $arResult['ITEMS'][$k]['PARENT_SECTION'] = CIBlockSection::GetByID($arItem['IBLOCK_SECTION_ID'])->Fetch();
         if ($arItem['PREVIEW_PICTURE']['ID'] > 0) {
             $arSize = $k == 0 ?
@@ -33,6 +34,19 @@ if ($arResult['ITEMS']) {
                 'ALT' => Loc::getMessage('NO_IMAGE'),
                 'TITLE' => Loc::getMessage('NO_IMAGE')
             );
+        }
+        if (strlen($arItem['PROPERTIES']['PRODUCT_PRICE']['VALUE']) > 0) {
+            if (intval($arItem['PROPERTIES']['PRODUCT_PRICE']['VALUE']) > 0) {
+                $arResult['ITEMS'][$k]['PRICE'] = array(
+                    'VALUE' => number_format($arItem['PROPERTIES']['PRODUCT_PRICE']['VALUE'], 0, '', ' '),
+                    'CURRENCY' => 'Y'
+                );
+            } else {
+                $arResult['ITEMS'][$k]['PRICE'] = array(
+                    'VALUE' => $arItem['PROPERTIES']['PRODUCT_PRICE']['VALUE'],
+                    'CURRENCY' => 'N'
+                );
+            }
         }
         if (strlen($arItem['PROPERTIES']['PRODUCT_OLD_PRICE']['VALUE']) > 0 || $arItem['PROPERTIES']['PRODUCT_DISCOUNT']['VALUE']) {
             if (intval($arItem['PROPERTIES']['PRODUCT_OLD_PRICE']['VALUE']) > 0) {
