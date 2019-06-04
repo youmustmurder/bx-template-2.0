@@ -12,7 +12,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 <div class="header-responsive">
     <div class="container">
         <div class="row justify-content-between align-items-center">
-            <nav class="col-md col-sm-2 col-3 header-responsive__burger-wrap">
+            <nav class="col-md-1 col-sm-2 col-3 header-responsive__burger-wrap">
                 <button class="header-responsive__burger"></button>
             </nav>
             <div class="col-md-3 col-sm-6 col-6 header-responsive__logo d-flex align-items-center">
@@ -36,7 +36,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 			</a>
 			<?}?>
             <div class="col-sm-auto header-responsive__callback">
-                <a href="#" class="link link_secondary js-init-modal__form" data-sign="%3D" data-modal="14">Заказать звонок</a>
+                <a href="#" class="btn btn_mid btn_round btn_primary js-init-modal__form" data-sign="%3D" data-modal="14">Заказать звонок</a>
             </div>
         </div>
     </div>

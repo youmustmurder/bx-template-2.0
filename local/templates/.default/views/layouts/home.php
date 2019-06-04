@@ -43,14 +43,14 @@ $APPLICATION->IncludeFile(
 
 /*services*/
 
-$APPLICATION->IncludeFile(
+/* $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-services/" . $arCurrentSetting['SERVICES'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-);
+); */
 
 /*seo text*/
 

@@ -172,6 +172,14 @@
 	}
 }
 
+.mobile-menu-contact__value {
+	line-height: 1.733rem;
+}
+
+.mobile-menu__contacts {
+	width: 100%;
+}
+
 @media (max-width: 991px){
 	.header {
 		display: none;
@@ -190,12 +198,13 @@
 		display: none;
 	}
 	.header-responsive-phone__icon {
+		flex: 0 0 46px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		width: 46px;
 		height: 46px;
-		border: 1px solid #ff223d;
+		border: 2px solid #ff223d;
 		border-radius: 50%;
 		svg {
 			fill: #ff223d;
