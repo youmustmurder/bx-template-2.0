@@ -15,19 +15,24 @@
 		}
 		&:after {
 			content: '';
+			display: block;
 			position: absolute;
 			top: 0;
 			left: 0;
 			width: 100%;
 			height: 100%;
+			background: rgba(0, 0, 0, 0.3);
 			background: linear-gradient(180deg, rgba(0, 0, 0, 6e-05) 0%, rgba(0, 0, 0, 0.6) 100%);
 			z-index: 1;
 		}
 	}
 	&.service_left {
+		.service__title,
+		.service__text {
+			max-width: 85%;
+		}
 		.service__img {
-			left: auto;
-			right: 0;
+			left: 80%;
 		}
 	}
 	&.service_right {

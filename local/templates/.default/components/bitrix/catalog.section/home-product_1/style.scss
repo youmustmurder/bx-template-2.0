@@ -194,6 +194,9 @@
 }
 
 @media (max-width: 768px) {
+	.products {
+		padding: 65px 0;
+	}
 	.product {
 		&.product-big {
 			display: flex;
@@ -203,6 +206,11 @@
 				z-index: 0;
 				bottom: 0;
 				right: 15px;
+				max-width: 48%;
+			}
+			.product__name,
+			.products__text {
+				max-width: 50%;
 			}
 		}
 	}
@@ -226,6 +234,10 @@
 				bottom: auto;
 				left: 50%;
 				transform: translate(-50%, 0);
+			}
+			.product__name,
+			.products__text {
+				max-width: 100%;
 			}
 		}
 	}

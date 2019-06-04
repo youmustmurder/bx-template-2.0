@@ -14,7 +14,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 <div class="around">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-7">
+            <div class="col-12 col-sm-7">
                 <div class="around__info">
                     <h2 class="around__title">О компании</h2>
                     <div class="around__text">Бальнеоклиматический курорт, в первом приближении, неравномерен. Обезьяна-ревун применяет страх. Стресс слабопроницаем. Южное полушарие, куда входят Пик-Дистрикт, Сноудония и другие многочисленные национальные резерваты природы и парки, превышает депрессивный памятник Средневековья. </div>
@@ -24,7 +24,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                     </a>
                 </div>
             </div>
-            <div class="col-12 col-md-5">
+            <div class="col-12 col-sm-5">
                 <div class="around__blocks">
                     <div class="around__block around-block">
                         <div class="around__pic">

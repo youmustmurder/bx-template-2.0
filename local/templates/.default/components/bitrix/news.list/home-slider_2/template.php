@@ -15,7 +15,7 @@ if ($arResult['ITEMS']) {?>
                     <div class="slider-big__slides slider-big-slides"
                          data-arrows="<?=$arParams['SLIDER_ARROWS'] == 'N' ? 'false' : 'true'?>"
                          data-autoplay="<?=$arParams['SLIDER_AUTOPLAY'] == 'N' ? 'false' : 'true'?>"
-                         data-speed="<?=$arParams['SLIDER_TIME'] ?: 0?>">
+						 data-speed="<?=$arParams['SLIDER_TIME'] ?: 0?>">
                         <?foreach ($arResult['ITEMS'] as $k => $arItem) {?>
                             <div class="slider-big__slide slider-big-slide">
 								<div class="slider-big-slide__wrap">

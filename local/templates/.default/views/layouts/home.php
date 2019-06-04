@@ -21,25 +21,25 @@ $APPLICATION->IncludeFile(
 
 /*sections*/
 
-$APPLICATION->IncludeFile(
+/* $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-section/" . $arCurrentSetting['SECTIONS'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-);
+); */
 
 /*products*/
 
-$APPLICATION->IncludeFile(
+/* $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-product/" . $arCurrentSetting['PRODUCTS'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-);
+); */
 
 /*services*/
 
@@ -50,7 +50,7 @@ $APPLICATION->IncludeFile(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-);
+); */
 
 /*seo text*/
 
@@ -70,7 +70,7 @@ if ($arParams['CONTENT']) {?>
 
 /*about*/
 
-$APPLICATION->IncludeFile(
+/* $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-about/2.php",
     array(),
     array(

@@ -41,9 +41,10 @@
 .service-item__title {
 	display: block;
 	margin-bottom: 20px;
+	color: #1B1B1B;
 	font-size: 1.6rem;
 	line-height: 1.933rem;
-	color: #1B1B1B;
+	font-weight: 500;
 }
 
 .service-item__text {
@@ -59,15 +60,18 @@
 }
 
 @media (max-width: 768px) {
+	.services {
+		padding: 55px 0;
+	}
 	.services__text {
-		margin-bottom: 60px;
+		margin-bottom: 40px;
+	}
+	.services__title {
+		margin-bottom: 20px;
 	}
 }
 
 @media (max-width: 576px) {
-	.services {
-		padding: 56px 0;
-	}
 	.service-item__pic {
 		margin-bottom: 25px;
 	}
@@ -80,19 +84,17 @@
 		font-size: 1.067rem;
 		line-height: 1.733rem;
 	}
+	.services__text {
+		margin-bottom: 30px;
+	}
+	.service-item__pic {
+		margin-bottom: 30px;
+	}
 }
 
 @media (max-width: 400px) {
-	.services__title {
+	.services__text {
 		font-size: 1.2rem;
-		line-height: 30px;
-		margin-bottom: 18px;
-	}
-	.services__text {
-		font-size: 0.9333rem;
-		line-height: 1.333rem;
-	}
-	.services__text {
-		margin-bottom: 30px;
+		line-height: 2rem;
 	}
 }
