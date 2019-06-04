@@ -104,7 +104,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 	<div class="container">
 		<div class="header-menu__content">
 			<?$APPLICATION->IncludeFile(
-				"/include/" . SITE_ID . "/blocks/menu/catalog_top.php",
+				"/include/" . SITE_ID . "/blocks/menu/catalog_top_full.php",
 				array(),
 				array(
 					"SHOW_BORDER" => false,
