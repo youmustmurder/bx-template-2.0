@@ -35,7 +35,10 @@ $APPLICATION->IncludeComponent(
 		"CACHE_FILTER" => "N",
 		"ADD_SECTIONS_CHAIN" => "N",
 		"COMPONENT_TEMPLATE" => "home-section_1",
-		"SEF_MODE" => "N"
+		"SEF_MODE" => "N",
+		"SECTION_LINK_NAME" => "",
+		"SECTION_LINK" => "catalog/",
+		"MAX_ITEMS" => "5"
 	),
 	false
 );

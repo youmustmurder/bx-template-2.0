@@ -21,9 +21,11 @@ if ($arResult['SECTIONS']) {?>
                     </div>
                     <ul class="best-categories__grid best-categories-grid">
                         <?foreach ($arResult['SECTIONS'] as $k => $arSection) {
+                            $this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_EDIT"));
+                            $this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_DELETE"), array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_CONFIRM')));
                             switch ($k){
                                 case '1':?>
-                                    <li class="best-categories-grid__card best-categories-card best-categories-card_sale">
+                                    <li class="best-categories-grid__card best-categories-card best-categories-card_sale" id="<?=$this->GetEditAreaId($arSection['ID']); ?>">
                                         <a href="<?=$arSection['SECTION_PAGE_URL']?>" class="best-categories-grid__inner">
                                             <?if ($arSection['UF_SECTION_PERCENT'] || (intval($arSection['UF_SECTION_PERCENT']) > 0)) {?>
                                                 <div class="best-categories-card__label best-categories-card-label">
@@ -42,7 +44,7 @@ if ($arResult['SECTIONS']) {?>
                                     </li>
                                     <?break;
                                 case '3':?>
-                                    <li class="best-categories-grid__card best-categories-card best-categories-card_with-desc">
+                                    <li class="best-categories-grid__card best-categories-card best-categories-card_with-desc" id="<?=$this->GetEditAreaId($arSection['ID']); ?>">
                                         <a href="<?=$arSection['SECTION_PAGE_URL']?>" class="best-categories-grid__inner">
                                             <div class="best-categories-card__inner-desc">
                                                 <div class="best-categories-card__title"><?=$arSection['NAME']?></div>
@@ -58,7 +60,7 @@ if ($arResult['SECTIONS']) {?>
                                     </li>
                                     <?break;
                                 default:?>
-                                    <li class="best-categories-grid__card best-categories-card">
+                                    <li class="best-categories-grid__card best-categories-card" id="<?=$this->GetEditAreaId($arSection['ID']); ?>">
                                         <a href="<?=$arSection['SECTION_PAGE_URL']?>" class="best-categories-grid__inner">
                                             <div class="best-categories-card__title"><?=$arSection['NAME']?></div>
                                             <img class="best-categories-card__img"

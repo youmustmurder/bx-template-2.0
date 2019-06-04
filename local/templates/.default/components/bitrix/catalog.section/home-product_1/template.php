@@ -22,9 +22,11 @@ if ($arResult['ITEMS']) {?>
 				<div class="products__grid-wrap">
 					<div class="grid grid_3column">
                         <?foreach ($arResult['ITEMS'] as $k => $arItem) {
+                            $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+                            $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
                             switch ($k) {
                                 case '0':?>
-                                    <div class="grid__item grid__item-big">
+                                    <div class="grid__item grid__item-big" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
                                         <div class="product product-big">
                                             <div class="product__btns">
                                                 <?if ($arItem['PROPERTIES']['PRODUCT_LABEL']['VALUE'] || $arItem['PROPERTIES']['PRODUCT_DISCOUNT']['VALUE']) {?>
@@ -75,7 +77,7 @@ if ($arResult['ITEMS']) {?>
                                     </div>
                                     <?break;
                                 default:?>
-                                    <div class="grid__item">
+                                    <div class="grid__item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
                                         <div class="product">
                                             <?if ($arItem['PROPERTIES']['PRODUCT_LABEL']['VALUE'] || $arItem['PROPERTIES']['PRODUCT_DISCOUNT']['VALUE']) {?>
                                                 <ul class="products__label">

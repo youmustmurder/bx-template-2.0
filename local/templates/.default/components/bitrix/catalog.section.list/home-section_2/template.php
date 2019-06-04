@@ -21,8 +21,11 @@ if ($arResult['SECTIONS']) {?>
                     </a>
                 </div>
 				<ul class="best-categories__cards best-categories-cards">
-					<?foreach ($arResult['SECTIONS'] as $k => $arSection) {?>
-						<li class="best-categories-cards__item best-categories-card">
+					<?foreach ($arResult['SECTIONS'] as $k => $arSection) {
+                        $this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_EDIT"));
+                        $this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_DELETE"), array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_CONFIRM')));
+                        ?>
+						<li class="best-categories-cards__item best-categories-card" id="<?=$this->GetEditAreaId($arSection['ID']); ?>">
 							<a href="<?=$arSection['SECTION_PAGE_URL']?>" class="best-categories-card__link">
 								<div class="best-categories-card__img">
 									<img src="<?=$arSection['PICTURE']['SRC']?>"
