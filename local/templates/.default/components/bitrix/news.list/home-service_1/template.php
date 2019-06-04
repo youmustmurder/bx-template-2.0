@@ -15,7 +15,14 @@ if ($arResult['ITEMS']) {?>
 				<div class="services__header">
 					<h2 class="services__title"><?=$arParams['SECTION_TITLE'] ?: Loc::getMessage('SERVICES_SECTION_TITLE_DEFAULT')?></h2>
 					<p class="services__text">
-						Без кучи документов, поездок в банк и талончиков с номером очереди
+                        <?$APPLICATION->IncludeFile(
+                            "/include/" . SITE_ID . "/content/home/home-services_text.php",
+                            array(),
+                            array(
+                                "SHOW_BORDER" => true,
+                                "MODE" => "text"
+                            )
+                        );?>
 					</p>
 				</div>
 			</div>
