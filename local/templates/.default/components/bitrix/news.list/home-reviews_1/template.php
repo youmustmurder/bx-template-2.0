@@ -18,8 +18,10 @@ if ($arResult['ITEMS']) {?>
 						<div class="reviews__logos reviews-logos">
 							<?foreach ($arResult['ITEMS'] as $k => $arItem) {?>
 								<div class="reviews-logos__item" indexDesc="<?=$k?>">
-									<img src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>"
-										alt="<?=Loc::getMessage('HOME_REVIEWS_2_REVIEW_IMAGE_ALT')?>">
+                                    <?if ($arItem['PROPERTIES']['REVIEW_CLIENT_LOGO']['SRC']) {?>
+                                        <img src="<?=$arItem['PROPERTIES']['REVIEW_CLIENT_LOGO']['SRC']?>"
+                                            alt="<?=Loc::getMessage('HOME_REVIEWS_2_REVIEW_IMAGE_ALT')?>">
+                                    <?}?>
 								</div>
 							<?}?>
 						</div>
