@@ -43,7 +43,7 @@ $APPLICATION->IncludeFile(
 
 /*services*/
 
-$APPLICATION->IncludeFile(
+/* $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-services/" . $arCurrentSetting['SERVICES'] . ".php",
     array(),
     array(
@@ -81,14 +81,14 @@ if ($arParams['CONTENT']) {?>
 
 /*news*/
 
- $APPLICATION->IncludeFile(
+/*  $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-news/1.php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-);
+); */
 
 /*reviews*/
 
