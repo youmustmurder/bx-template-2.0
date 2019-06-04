@@ -11,7 +11,7 @@ if ($arResult['ITEMS']) {?>
 <div class="slider-big">
 	<div class="slider-big__slides">
         <?foreach ($arResult['ITEMS'] as $k => $arItem) {?>
-            <div class="slider-big__slide slider-big-slide">
+            <div class="slider-big__slide slider-big-slide slider-big-slide slider-big-slide_shadow">
                 <div class="slider-big-slide__wrap">
                     <?if ($arItem['PROPERTIES']['SUBTITLE']['VALUE']) {?>
                         <div class="slider-big-slide__subtitle"><?=$arItem['PROPERTIES']['SUBTITLE']['VALUE']?></div>

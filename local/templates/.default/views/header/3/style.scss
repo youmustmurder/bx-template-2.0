@@ -129,12 +129,28 @@
 	background: none;
 	cursor: pointer;
 	transition: 0.3s all ease-out;
+	&.header-search-toggle__fixed {
+		.header-search-toggle__icon-close {
+			opacity: 1;
+			visibility: visible;
+		}
+		.header-search-toggle__icon-search {
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+}
+
+.header-search-toggle__icon-search {
+	opacity: 1;
+	visibility: visible;
 }
 
 .header-search-toggle__icon-search,
 .header-search-toggle__icon-close {
 	height: 100%;
 	width: 100%;
+	transition: 0.3s all ease-out;
 	svg {
 		position: absolute;
 		top: 50%;
@@ -147,7 +163,8 @@
 }
 
 .header-search-toggle__icon-close {
-    opacity: 0;
+	opacity: 0;
+	visibility: hidden;
 }
 
 .header__search.fixed {

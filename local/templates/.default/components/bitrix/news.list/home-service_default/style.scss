@@ -69,6 +69,9 @@
 }
 
 @media (max-width: 768px) {
+	.services {
+		padding: 55px 0;
+	}
 	.service-list-item {
 		&:nth-child(3),
 		&:nth-child(4),
@@ -77,6 +80,12 @@
 			max-width: 100%;
 			max-height: 370px;
 		}
+	}
+	.services__title {
+		margin-bottom: 15px;
+	}
+	.services__text {
+		margin-bottom: 35px;
 	}
 }
 
@@ -94,13 +103,11 @@
 		}
 	}
 	.services__title {
-		margin-bottom: 15px;
+		margin-bottom: 10px;
+		font-size: 1.2rem;
 	}
 	.services__text {
 		margin-bottom: 40px;
-	}
-	.service {
-		padding: 55px 0;
 	}
 }
 

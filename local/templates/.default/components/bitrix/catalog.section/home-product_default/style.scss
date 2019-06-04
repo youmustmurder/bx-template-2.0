@@ -1,3 +1,5 @@
+/* autoprefixer grid: autoplace */
+
 .products {
 	padding: 88px 0;
 	&.products_grey {
@@ -53,6 +55,21 @@
 				opacity: 0.4;
 			}
 	  	}
+	}
+}
+
+.products-item__labels {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	padding: 5px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	.label {
+		margin: 0 5px 5px;
 	}
 }
 
@@ -145,8 +162,14 @@
 }
 
 @media (max-width: 768px) {
+	.products {
+		padding: 65px 0;
+	}
 	.products__wrap   {
 		grid-template-columns: 1fr;
+	}
+	.products__title {
+		margin-bottom: 25px;
 	}
 	.products__link-all {
 		grid-column: 1;

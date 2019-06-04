@@ -25,12 +25,10 @@ if ($arResult['SECTIONS']) {?>
 						foreach ($arResult['SECTIONS'] as $arSection){?>
 							<li class="best-categories-grid__card best-categories-grid-card best-categories-grid-card_<?=$i?>" id="<?=$this->GetEditAreaId($arSection['ID']);?>">
 								<a href="<?=$arSection['SECTION_PAGE_URL']?>">
-									<div class="best-categories-grid-card__image-wrap">
-										<img
-											src="<?=$arSection['PICTURE']['SRC']?>"
-											alt="<?=$arSection['PICTURE']['ALT'] ? $arSection['PICTURE']['ALT'] : $arSection['NAME']?>"
-											title="<?=$arSection['PICTURE']['TITLE'] ? $arSection['PICTURE']['TITLE'] : $arSection['NAME']?>">
-									</div>
+									<img src="<?=$arSection['PICTURE']['SRC']?>"
+										 class="best-categories-grid-card__image"
+										 alt="<?=$arSection['PICTURE']['ALT'] ? $arSection['PICTURE']['ALT'] : $arSection['NAME']?>"
+										 title="<?=$arSection['PICTURE']['TITLE'] ? $arSection['PICTURE']['TITLE'] : $arSection['NAME']?>">
 									<div class="best-categories-grid-card__name"><?=$arSection['NAME']?></div>
 								</a>
 							</li>

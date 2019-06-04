@@ -18,12 +18,6 @@ window.addEventListener('load', function () {
     // autoplayTimeout: (typeof sliderNode.getAttribute('data-speed') != 'undefined') ? (sliderNode.getAttribute('data-speed')) : 5000,
     autoplayButtonOutput: false
   });
-  Array.prototype.forEach.call(previewsNode, function (preview) {
-    preview.addEventListener('click', function (e) {
-      var newIndex = e.target.getAttribute('indexSlide');
-      sliderBig.goTo(newIndex);
-    });
-  });
   var sliderPreviews = tns({
     container: previewsSliderNode,
     items: 3,
@@ -34,7 +28,7 @@ window.addEventListener('load', function () {
       updateSliderPrevies(info);
     }
   });
-  sliderBig.events.on('transitionStart', function (info) {
+  sliderBig.events.on('indexChanged', function () {
     updateSliderPrevies(sliderPreviews.getInfo());
   });
 
@@ -43,5 +37,15 @@ window.addEventListener('load', function () {
         indexCurrent = info.index;
     info.slideItems[indexPrev].classList.remove('slider-big-preview_active');
     info.slideItems[indexCurrent].classList.add('slider-big-preview_active');
+    console.log(info);
   }
+
+  Array.prototype.forEach.call(sliderPreviews.getInfo().slideItems, function (preview) {
+    preview.addEventListener('click', function (e) {
+      var newIndex = e.target.getAttribute('indexslide');
+      sliderBig.goTo(newIndex);
+      sliderPreviews.goTo(newIndex);
+      updateSliderPrevies(sliderPreviews.getInfo());
+    });
+  });
 });

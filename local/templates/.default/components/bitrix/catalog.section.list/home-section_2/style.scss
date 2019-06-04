@@ -87,15 +87,22 @@
 
 @media (max-width: 1200px) {
 	.best-categories-card {
+		flex: 1 1 calc(100% / 3);
+		max-width: calc(100% / 3);
+	}
+}
+
+@media (max-width: 1024px) {
+	.best-categories-card {
 		flex: 1 1 calc(100% / 2);
 		max-width: calc(100% / 2);
+	}
+	.best-categories-card__info {
+		padding: 15px 20px 35px;
 	}
 }
 
 @media (max-width: 768px) {
-	.best-categories-card__info {
-		padding: 15px 20px 35px;
-	}
 	.best-categories-card__title {
 		margin-bottom: 5px;
 	}

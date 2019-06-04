@@ -68,6 +68,7 @@
 		}
 		.best-categories-card__title,
 		.best-categories-card__subtitle {
+			max-width: 250px;
 			text-align: left;
 		}
 	}
@@ -99,7 +100,7 @@
 
 .best-categories-card__title,
 .best-categories-card__subtitle {
-	max-width: 250px;
+	max-width: 97%;
 	text-transform: uppercase;
 	text-align: center;
 	font-weight: bold;
@@ -118,7 +119,7 @@
 }
 
 .best-categories-card__img {
-	flex: 0 0;
+	flex: 0 0 auto;
 	margin-bottom: 30px;
 	max-height: 200px;
 	max-width: 100%;

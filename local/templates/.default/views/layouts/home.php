@@ -21,36 +21,36 @@ $APPLICATION->IncludeFile(
 
 /*sections*/
 
-$APPLICATION->IncludeFile(
+/* $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-section/" . $arCurrentSetting['SECTIONS'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-);
+); */
 
 /*products*/
 
-$APPLICATION->IncludeFile(
+/* $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-product/" . $arCurrentSetting['PRODUCTS'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-);
+); */
 
 /*services*/
 
-$APPLICATION->IncludeFile(
-    "/include/" . SITE_ID . "/blocks/home-services/default.php",
+/* $APPLICATION->IncludeFile(
+    "/include/" . SITE_ID . "/blocks/home-services/1.php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-);
+); */
 
 /*seo text*/
 
@@ -70,14 +70,14 @@ $APPLICATION->IncludeFile(
 
 /*about*/
 
-/* $APPLICATION->IncludeFile(
-    "/include/" . SITE_ID . "/blocks/home-about/2.php",
+$APPLICATION->IncludeFile(
+    "/include/" . SITE_ID . "/blocks/home-about/1.php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-); */
+);
 
 /*news*/
 

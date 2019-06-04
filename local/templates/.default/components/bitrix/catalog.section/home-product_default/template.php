@@ -23,7 +23,7 @@ if($arResult['ITEMS']){?>
 						<?foreach ($arResult['ITEMS'] as $key => $arItem) {?>
 							<div class="products__item products-item col-lg-3 col-md-4 col-sm-6 col-12">
 								<?if ($arItem['PROPERTIES']['PRODUCT_LABEL']['VALUE'] || $arItem['PROPERTIES']['PRODUCT_DISCOUNT']['VALUE']) {?>
-									<ul class="products__label">
+									<ul class="products-item__labels">
 										<?if ($arItem['PROPERTIES']['PRODUCT_DISCOUNT']['VALUE']) {?>
 											<li class="label label_green">
 												<?=intval($arItem['PROPERTIES']['PRODUCT_DISCOUNT']['VALUE']) > 0 ?
