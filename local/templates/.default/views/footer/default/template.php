@@ -15,35 +15,34 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
     <div class="footer__top footer-top">
         <div class="container">
             <div class="row justify-content-between align-items-start">
-                <?if ($arCurrentSetting['TEMPLATE_TYPE'] != 'COMPANY'){?>
-                    <div class="footer__nav footer-nav col-lg-3 col-md-4 col-sm-6">
-                        <div class="footer-nav__title"><?=Loc::getMessage('PRODUCT_CATALOG')?></div>
-                        <div class="footer-nav__catalog">
-                            <?$APPLICATION->IncludeComponent(
-                                "bitrix:menu",
-                                ".default",
-                                array(
-                                    "ALLOW_MULTI_SELECT" => "N",
-                                    "CHILD_MENU_TYPE" => "",
-                                    "DELAY" => "N",
-                                    "MAX_LEVEL" => "1",
-                                    "MENU_CACHE_GET_VARS" => array(
-                                    ),
-                                    "MENU_CACHE_TIME" => "3600",
-                                    "MENU_CACHE_TYPE" => "Y",
-                                    "MENU_CACHE_USE_GROUPS" => "Y",
-                                    "ROOT_MENU_TYPE" => "catalog",
-                                    "USE_EXT" => "Y",
-                                    "COMPONENT_TEMPLATE" => ".default",
-                                    "COMPOSITE_FRAME_MODE" => "A",
-                                    "COMPOSITE_FRAME_TYPE" => "AUTO"
-                                ),
-                                $component
-                            );?>
-                        </div>
+                <div class="footer__nav footer-nav col-lg-3 col-md-4 col-sm-6">
+                    <div class="footer-nav__title"><?=Loc::getMessage('PRODUCT_CATALOG')?></div>
+                    <div class="footer-nav__catalog">
+                        <?$APPLICATION->IncludeComponent(
+	"bitrix:menu", 
+	".default", 
+	array(
+		"ALLOW_MULTI_SELECT" => "N",
+		"CHILD_MENU_TYPE" => "",
+		"DELAY" => "N",
+		"MAX_LEVEL" => "1",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MENU_CACHE_TIME" => "3600",
+		"MENU_CACHE_TYPE" => "Y",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"ROOT_MENU_TYPE" => "catalog",
+		"USE_EXT" => "Y",
+		"COMPONENT_TEMPLATE" => ".default",
+		"COMPOSITE_FRAME_MODE" => "A",
+		"COMPOSITE_FRAME_TYPE" => "AUTO",
+		"MAX_ITEMS" => ""
+	),
+	$component
+);?>
                     </div>
-                <?}?>
-                <div class="footer__nav footer-nav footer-nav_two-columns <?=$arCurrentSetting['TEMPLATE_TYPE'] != 'COMPANY' ? 'col-lg-5 col-md-4 col-sm-6' : 'col-lg-8 col-md-8 col-sm-12'?>">
+                </div>
+                <div class="footer__nav footer-nav footer-nav_two-columns col-lg-5 col-md-4 col-sm-6">
                     <?$APPLICATION->IncludeComponent(
                         "bitrix:menu",
                         ".default",
@@ -66,7 +65,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                         false
                     );?>
                 </div>
-                <div class="<?=$arCurrentSetting['TEMPLATE_TYPE'] != 'COMPANY' ? 'col-lg-3 col-md-4 col-sm-12' : 'col-lg-4 col-md-4 col-sm-12'?>">
+                <div class="col-lg-3 col-md-4 col-sm-12">
                     <?if ($arFilial['PHONE']) {?>
                         <div class="footer__contact footer-contact">
                             <div class="footer-contact__icon"><?=GetContentSvgIcon('phone');?></div>

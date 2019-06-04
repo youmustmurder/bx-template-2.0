@@ -1,8 +1,8 @@
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Каталог продукции");
 ?><?$APPLICATION->IncludeComponent(
-	"bitrix:catalog",
-    '',
+	"bitrix:catalog", 
+	".default", 
 	array(
 		"ACTION_VARIABLE" => "action",
 		"ADD_ELEMENT_CHAIN" => "Y",
@@ -32,7 +32,8 @@ $APPLICATION->SetTitle("Каталог продукции");
 		"DETAIL_DISPLAY_NAME" => "Y",
 		"DETAIL_DISPLAY_PREVIEW_TEXT_MODE" => "E",
 		"DETAIL_IMAGE_RESOLUTION" => "16by9",
-		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => "",
+		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => array(
+		),
 		"DETAIL_META_DESCRIPTION" => "-",
 		"DETAIL_META_KEYWORDS" => "-",
 		"DETAIL_PRODUCT_INFO_BLOCK_ORDER" => "sku,props",
@@ -57,6 +58,7 @@ $APPLICATION->SetTitle("Каталог продукции");
 		"ELEMENT_SORT_FIELD2" => "id",
 		"ELEMENT_SORT_ORDER" => "asc",
 		"ELEMENT_SORT_ORDER2" => "desc",
+		"FILE_404" => "",
 		"FILTER_HIDE_ON_MOBILE" => "N",
 		"FILTER_VIEW_MODE" => "VERTICAL",
 		"IBLOCK_ID" => "1",
@@ -66,7 +68,8 @@ $APPLICATION->SetTitle("Каталог продукции");
 		"LABEL_PROP" => array(
 			0 => "PRODUCT_ON_HOME",
 		),
-		"LABEL_PROP_MOBILE" => "",
+		"LABEL_PROP_MOBILE" => array(
+		),
 		"LABEL_PROP_POSITION" => "top-left",
 		"LAZY_LOAD" => "N",
 		"LINE_ELEMENT_COUNT" => "3",
@@ -84,7 +87,8 @@ $APPLICATION->SetTitle("Каталог продукции");
 			0 => "PRODUCT_LABEL",
 			1 => "",
 		),
-		"LIST_PROPERTY_CODE_MOBILE" => "",
+		"LIST_PROPERTY_CODE_MOBILE" => array(
+		),
 		"LIST_SHOW_SLIDER" => "Y",
 		"LIST_SLIDER_INTERVAL" => "3000",
 		"LIST_SLIDER_PROGRESS" => "N",
@@ -128,7 +132,7 @@ $APPLICATION->SetTitle("Каталог продукции");
 		"SEF_FOLDER" => "/catalog/",
 		"SEF_MODE" => "Y",
 		"SET_LAST_MODIFIED" => "N",
-		"SET_STATUS_404" => "Y+",
+		"SET_STATUS_404" => "N",
 		"SET_TITLE" => "Y",
 		"SHOW_404" => "Y",
 		"SHOW_DEACTIVATED" => "N",
@@ -151,7 +155,8 @@ $APPLICATION->SetTitle("Каталог продукции");
 			0 => "",
 			1 => "",
 		),
-		"TOP_PROPERTY_CODE_MOBILE" => "",
+		"TOP_PROPERTY_CODE_MOBILE" => array(
+		),
 		"TOP_SHOW_SLIDER" => "Y",
 		"TOP_SLIDER_INTERVAL" => "3000",
 		"TOP_SLIDER_PROGRESS" => "N",
@@ -169,7 +174,7 @@ $APPLICATION->SetTitle("Каталог продукции");
 		"USE_PRODUCT_QUANTITY" => "N",
 		"USE_REVIEW" => "N",
 		"USE_STORE" => "N",
-		"COMPONENT_TEMPLATE" => "shop",
+		"COMPONENT_TEMPLATE" => ".default",
 		"SEF_URL_TEMPLATES" => array(
 			"sections" => "",
 			"section" => "#SECTION_CODE_PATH#/",

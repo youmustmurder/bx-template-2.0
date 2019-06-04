@@ -9,8 +9,8 @@
         "MENU_CACHE_USE_GROUPS" => "Y",
         "MENU_CACHE_GET_VARS" => array(
         ),
-        "MAX_LEVEL" => "1",
-        "MAX_ITEMS" => '6',
+        "MAX_LEVEL" => "3",
+        "MAX_ITEMS" => '99',
         "CHILD_MENU_TYPE" => "left",
         "USE_EXT" => "Y",
         "DELAY" => "N",
