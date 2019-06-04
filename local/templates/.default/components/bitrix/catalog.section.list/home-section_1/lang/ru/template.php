@@ -1,3 +1,4 @@
 <?php
 $MESS["CATEGORIES_SECTION_TITLE_DEFAULT"] = "Популярные категории";
-$MESS["CATEGORIES_SECTION_LINK_DEFAULT"] = "Перейти в каталог";
+$MESS["CATEGORIES_SECTION_LINK_NAME_DEFAULT"] = "Перейти в каталог";
+$MESS["CATEGORIES_SECTION_LINK_DEFAULT"] = "#SITE_DIR#catalog/";

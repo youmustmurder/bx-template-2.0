@@ -18,9 +18,15 @@ $arTemplateParameters = array(
         "TYPE" => "STRING",
         "PARENT" => "BASE"
     ),
+    "SECTION_LINK_NAME" => array(
+        "NAME" => Loc::getMessage("CATEGORIES_NAME_SECTION_LINK_NAME"),
+        "TYPE" => "STRING",
+        "PARENT" => "BASE"
+    ),
     "SECTION_LINK" => array(
         "NAME" => Loc::getMessage("CATEGORIES_NAME_SECTION_LINK"),
         "TYPE" => "STRING",
-        "PARENT" => "BASE"
+        "PARENT" => "BASE",
+        "DEFAULT" => "catalog/"
     )
 );

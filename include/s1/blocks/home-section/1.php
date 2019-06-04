@@ -35,7 +35,6 @@ $APPLICATION->IncludeComponent(
 		"CACHE_FILTER" => "N",
 		"ADD_SECTIONS_CHAIN" => "N",
 		"COMPONENT_TEMPLATE" => "home-section_1",
-		"SECTION_LINK" => "",
 		"SEF_MODE" => "N"
 	),
 	false
