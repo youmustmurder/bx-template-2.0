@@ -153,6 +153,8 @@
 		height: 100%;
 	}
 	a {
+		display: block;
+		min-height: 45px;
 		color: #2D2D2D;
 	}
 	.header-menu__content {
@@ -175,11 +177,13 @@
 	.menu__dots {
 		display: none;
 	}
+	.submenu,
 	.more-menu__submenu {
 		padding: 30px 0 0 0;
 		li {
 			a {
-				padding: 10px 0;
+				padding: 5px 0;
+				min-height: 0;
 				font-size: 1rem;
 				line-height: 1.2rem;
 				font-weight: normal;

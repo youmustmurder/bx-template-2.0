@@ -7,7 +7,7 @@ window.addEventListener('load', () => {
 	var sliderBig = tns({
 		container: sliderNode,
 		items: 1,
-		controls: (typeof slider.getAttribute('data-arrows') != 'undefined') ? (!!slider.getAttribute('data-arrows')) : true,
+		controls: (typeof sliderNode.getAttribute('data-arrows') != 'undefined') ? (!!sliderNode.getAttribute('data-arrows')) : true,
 		prevButton: prevBtnNode,
 		nextButton: nextBtnNode,
 		nav: false,
