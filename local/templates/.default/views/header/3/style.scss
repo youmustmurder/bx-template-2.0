@@ -228,6 +228,7 @@
 	background: #fff;
 	visibility: hidden;
 	pointer-events: none;
+	overflow: auto;
 	opacity: 0;
 	transition: 0.3s all ease-out;
 	&.header-menu__show {
@@ -241,7 +242,6 @@
 	}
 	a {
 		display: block;
-		min-height: 45px;
 		color: #2D2D2D;
 	}
 	.header-menu__content {
@@ -266,11 +266,10 @@
 	}
 	.submenu,
 	.more-menu__submenu {
-		padding: 30px 0 0 0;
+		padding: 15px 0 0 0;
 		li {
 			a {
 				padding: 5px 0;
-				min-height: 0;
 				font-size: 1rem;
 				line-height: 1.2rem;
 				font-weight: normal;
