@@ -12,14 +12,18 @@ if (!empty($arResult)) {
             $parentID = $i;
             $arResult[$i]['ITEMS'] = array();
         } elseif ($arItem['DEPTH_LEVEL']==2 && $parentID!==false) {
-            $arResult[$parentID]['ITEMS'][$i] = $arItem;
-            $subParentID = $i;
+            if ($arParams['MAX_LEVEL'] > 1) {
+                $arResult[$parentID]['ITEMS'][$i] = $arItem;
+                $subParentID = $i;
+            }
             unset($arResult[$i]);
         } elseif ($arItem['DEPTH_LEVEL']==3 && isset($arResult[$parentID]['ITEMS'][$subParentID])) {
-            if (!isset($arResult[$parentID]['ITEMS'][$subParentID]['ITEMS'])) {
-                $arResult[$parentID]['ITEMS'][$subParentID]['ITEMS'] = array();
+            if ($arParams['MAX_LEVEL'] > 2) {
+                if (!isset($arResult[$parentID]['ITEMS'][$subParentID]['ITEMS'])) {
+                    $arResult[$parentID]['ITEMS'][$subParentID]['ITEMS'] = array();
+                }
+                $arResult[$parentID]['ITEMS'][$subParentID]['ITEMS'][] = $arItem;
             }
-            $arResult[$parentID]['ITEMS'][$subParentID]['ITEMS'][] = $arItem;
             unset($arResult[$i]);
         }
     }
@@ -37,4 +41,5 @@ if (!empty($arResult)) {
     }
     
     $arResult = $arMenu;
+ 
 }
