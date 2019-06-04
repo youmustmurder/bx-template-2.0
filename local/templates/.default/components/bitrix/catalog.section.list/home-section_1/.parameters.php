@@ -28,5 +28,11 @@ $arTemplateParameters = array(
         "TYPE" => "STRING",
         "PARENT" => "BASE",
         "DEFAULT" => "catalog/"
+    ),
+    "MAX_ITEMS" => array(
+        "NAME" => Loc::getMessage("CATEGORIES_NAME_MAX_ITEMS"),
+        "TYPE" => "STRING",
+        "PARENT" => "BASE",
+        "DEFAULT" => "5"
     )
 );
