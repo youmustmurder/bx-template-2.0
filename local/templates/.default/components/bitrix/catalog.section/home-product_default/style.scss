@@ -54,20 +54,24 @@
 			img {
 				opacity: 0.4;
 			}
-	  	}
+		}
+		.products-item__labels {
+			opacity: 0.4;
+		}
 	}
 }
 
 .products-item__labels {
 	position: absolute;
 	z-index: 1;
-	top: 0;
-	left: 0;
+	top: 20px;
+	left: 15px;
 	padding: 5px;
-	width: 100%;
+	width: calc(100% - 30px);
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	transition: 0.3s all ease-out;
 	.label {
 		margin: 0 5px 5px;
 	}

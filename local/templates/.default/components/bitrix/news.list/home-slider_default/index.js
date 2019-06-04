@@ -10,7 +10,7 @@ window.addEventListener('load', () => {
 		controls: (typeof sliderNode.getAttribute('data-arrows') != 'undefined') ? (!!sliderNode.getAttribute('data-arrows')) : true,
 		prevButton: prevBtnNode,
 		nextButton: nextBtnNode,
-		nav: false,
+		nav: true,
 		navContainer,
 		autoHeight: true,
 		autoplay: (typeof sliderNode.getAttribute('data-autoplay') != 'undefined') ? (!!sliderNode.getAttribute('data-autoplay')) : false,

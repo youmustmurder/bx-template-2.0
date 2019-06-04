@@ -11,7 +11,7 @@ window.addEventListener('load', function () {
     controls: typeof sliderNode.getAttribute('data-arrows') != 'undefined' ? !!sliderNode.getAttribute('data-arrows') : true,
     prevButton: prevBtnNode,
     nextButton: nextBtnNode,
-    nav: false,
+    nav: true,
     navContainer: navContainer,
     autoHeight: true,
     autoplay: typeof sliderNode.getAttribute('data-autoplay') != 'undefined' ? !!sliderNode.getAttribute('data-autoplay') : false,

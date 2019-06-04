@@ -57,7 +57,7 @@
 
 .best-categories-card__info {
 	flex: 1 0 auto;
-	padding: 40px 20px 45px;
+	padding: 35px 20px 35px;
 	background-color: #fff;
 }
 
@@ -72,16 +72,16 @@
 }
 
 .best-categories-card__title {
-	font-size: 1.467rem;
-	line-height: 2.133rem;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
 	font-weight: bold;
 	margin-bottom: 12px;
 }
 
 .best-categories-card__price {
 	color: #26AE60;
-	font-size: 1.2rem;
-	line-height: 1.333rem;
+    font-size: 1rem;
+    line-height: 1.333rem;
 	font-weight: 500;
 }
 
