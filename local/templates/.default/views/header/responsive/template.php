@@ -18,7 +18,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
             <div class="col-md-3 col-sm-6 col-6 header-responsive__logo d-flex align-items-center">
                 <a href="/" class="d-inline-flex align-items-center head-logo__link" style="height:70px">
                     <?$APPLICATION->IncludeFile(
-                        "/include/" . SITE_ID . "/logo.php",
+                        "/include/" . SITE_ID . "/content/logo.php",
                         array(),
                         array(
                             "SHOW_BORDER" => true,
