@@ -22,7 +22,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 					<div class="d-flex align-items-center header__logo header-logo">
 						<a href="<?=SITE_DIR?>" class="header-logo__link">
 							<?$APPLICATION->IncludeFile(
-								"/include/" . SITE_ID . "/logo.php",
+								"/include" . SITE_ID . "/content/logo.php",
 								array(),
 								array(
 									"SHOW_BORDER" => true,
@@ -32,7 +32,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 						</a>
 						<div class="header-logo__name">
 							<?$APPLICATION->IncludeFile(
-								"/include/" . SITE_ID . "/slogan.php",
+								"/include" . SITE_ID . "/content/slogan.php",
 								array(),
 								array(
 									"SHOW_BORDER" => true,

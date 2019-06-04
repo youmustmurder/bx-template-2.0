@@ -56,7 +56,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 					<div class="d-flex align-items-center justify-content-center header__logo header-logo">
 						<a href="<?=SITE_DIR?>" class="header-logo__link">
 							<?$APPLICATION->IncludeFile(
-								"/include/" . SITE_ID . "/logo.php",
+								"/include" . SITE_ID . "/content/logo.php",
 								array(),
 								array(
 									"SHOW_BORDER" => true,
