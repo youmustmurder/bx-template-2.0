@@ -1,7 +1,5 @@
 <?if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
-global $arCurrentSetting;
-
 use Bitrix\Main\Page\Asset;
 
 Asset::getInstance()->addJs(GetCurDir(__DIR__) . '/script.js');
@@ -44,8 +42,22 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                 <div class="col-12 col-sm-6 footer__copyright">
                     <?$APPLICATION->IncludeFile("/include/".SITE_ID."/copyright.php", [], ["SHOW_BORDER" => true, "MODE" => "text"]);?>
                 </div>
+                <div class="col-12 col-md-4 footer__socials footer-socials">
+                    <a href="#" class="footer-socials__item">
+                        <?=GetContentSvgIcon('vk');?>
+                    </a>
+                    <a href="#" class="footer-socials__item">
+                        <?=GetContentSvgIcon('fb');?>
+                    </a>
+                    <a href="#" class="footer-socials__item">
+                        <?=GetContentSvgIcon('ig');?>
+                    </a>
+                    <a href="#" class="footer-socials__item">
+                        <?=GetContentSvgIcon('tw');?>
+                    </a>
+                </div>
                 <div class="col-12 col-sm-6 footer__developer">
-                    <a rel="nofollow" href="http://website96.ru/" target="_blank" title="Разработано Website96"><?=GetContentSvgIcon('logo')?></a>
+                    <a rel="nofollow" href="https://website96.ru/" target="_blank" title="Разработано Website96"><?=GetContentSvgIcon('logo')?></a>
                 </div>
             </div>
         </div>
