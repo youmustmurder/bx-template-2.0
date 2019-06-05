@@ -2,8 +2,6 @@
 
 global $arFilial;
 
-dump($arFilial);
-
 use Bitrix\Main\Page\Asset,
     Bitrix\Main\Localization\Loc;
 
