@@ -17,7 +17,10 @@ $aMenuLinksExt = $APPLICATION->IncludeComponent(
 		"SEF_BASE_URL" => "",
 		"DETAIL_PAGE_URL" => ""
 	),
-	false
+	$component,
+    array(
+        'HIDE_ICONS' => 'Y'
+    )
 );
 
 $aMenuLinks = array_merge($aMenuLinks, $aMenuLinksExt);

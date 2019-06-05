@@ -9,7 +9,7 @@ global $arCurrentSetting;
 ?>
 <main>
 <?
-
+/*
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-slider/" . $arCurrentSetting['SLIDER'] . ".php",
     array(),
@@ -19,7 +19,7 @@ $APPLICATION->IncludeFile(
     )
 );
 
-/*sections*/
+
 
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-section/" . $arCurrentSetting['SECTIONS'] . ".php",
@@ -30,7 +30,7 @@ $APPLICATION->IncludeFile(
     )
 );
 
-/*products*/
+
 
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-product/" . $arCurrentSetting['PRODUCTS'] . ".php",
@@ -41,7 +41,7 @@ $APPLICATION->IncludeFile(
     )
 );
 
-/*services*/
+
 
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-services/" . $arCurrentSetting['SERVICES'] . ".php",
@@ -52,7 +52,7 @@ $APPLICATION->IncludeFile(
     )
 );
 
-/*seo text*/
+
 
 if ($arParams['CONTENT']) {?>
     <div class="text-block text-block--grey">
@@ -68,7 +68,7 @@ if ($arParams['CONTENT']) {?>
     </div>
 <?}
 
-/*about*/
+
 
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-about/" . $arCurrentSetting['ABOUT'] . ".php",
@@ -79,7 +79,7 @@ $APPLICATION->IncludeFile(
     )
 );
 
-/*news*/
+
 
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-news/" . $arCurrentSetting['NEWS'] . ".php",
@@ -90,7 +90,7 @@ $APPLICATION->IncludeFile(
     )
 );
 
-/*reviews*/
+*/
 
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-reviews/" . $arCurrentSetting['REVIEWS'] . ".php",
