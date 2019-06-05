@@ -31,7 +31,7 @@
 		padding: 8px 0;
 	}
 	&.footer-nav_two-columns {
-		margin-top: -8px;
+		margin-top: -10px;
 		ul {
 			columns: 2;
 			column-gap: 30px;
@@ -186,6 +186,9 @@
 	}
 	.footer-nav {
 		margin-bottom: 15px;
+		&.footer-nav_two-columns {
+			margin-top: 0;
+		}
 		&.footer-nav_two-columns a,
 		a {
 			padding: 5px 0;

@@ -4,34 +4,56 @@ window.addEventListener('load', () => {
 		sliderReviewsPrevBtnNode = document.querySelector('.reviews__arrow_prev'),
 		sliderReviewsNextBtnNode = document.querySelector('.reviews__arrow_next');
 
-	// const handlerClickLogo = (e) => {
-	// 	const indexDesc = e.target.getAttribute('indexDesc');
-	// 	sliderDesc.goTo(indexDesc);
-	// 	e.preventDefault();
-	// };
+	const toggleActiveSliderReviews = () => {
+		var info = sliderReviewsPhotos.getInfo(),
+			indexPrev = info.indexCached,
+			indexCurrent = info.index;
+
+		info.slideItems[indexPrev].classList.remove('reviews-photo-list-item_active');
+		info.slideItems[indexCurrent].classList.add('reviews-photo-list-item_active');
+	};
 
 	var sliderReviewsPhotos = tns({
 		container: sliderReviewsPhotosNode,
-		items: 4,
+		items: 1,
 		gutter: 20,
 		nav: false,
 		prevButton: sliderReviewsPrevBtnNode,
 		nextButton: sliderReviewsNextBtnNode,
-		center: true,
-		// onInit: () => {
-		// 	const arraySlidesLogoNode = sliderLogosNode.querySelectorAll('.reviews-logos__item');
-		// 	Array.prototype.forEach.call(arraySlidesLogoNode, (slide) => {
-		// 		slide.addEventListener('click', handlerClickLogo);
-		// 	});
-		// }
+		responsive: {
+			490: {
+				items: 4,
+			},
+			370: {
+				items: 2
+			}
+		},
+		onInit: (info) => {
+			var indexPrev = info.indexCached,
+				indexCurrent = info.index;
+
+			info.slideItems[indexPrev].classList.remove('reviews-photo-list-item_active');
+			info.slideItems[indexCurrent].classList.add('reviews-photo-list-item_active');
+		}
 	});
 	var sliderReviewsDesc = tns({
 		container: sliderReviewsDescNode,
-		items: 1,
 		nav: false,
-		controls: false,
+		items: 1,
 		autoHeight: true,
 		prevButton: sliderReviewsPrevBtnNode,
 		nextButton: sliderReviewsNextBtnNode,
+		mode: 'gallery',
+	});
+	sliderReviewsPhotos.events.on('indexChanged', () => {
+		toggleActiveSliderReviews();
+	});
+	Array.prototype.forEach.call(sliderReviewsPhotos.getInfo().slideItems, (slide, index) => {
+		slide.addEventListener('click', () => {
+			var indexSlide = slide.getAttribute('data-index');
+			sliderReviewsDesc.goTo(indexSlide);
+			sliderReviewsPhotos.goTo(indexSlide);
+			toggleActiveSliderReviews();
+		});
 	});
 });

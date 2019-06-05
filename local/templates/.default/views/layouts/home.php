@@ -10,36 +10,36 @@ global $arCurrentSetting;
 <main>
 <?
 
-$APPLICATION->IncludeFile(
+/* $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-slider/" . $arCurrentSetting['SLIDER'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-);
+); */
 
 /*sections*/
 
-$APPLICATION->IncludeFile(
+/* $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-section/" . $arCurrentSetting['SECTIONS'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-);
+); */
 
 /*products*/
 
-$APPLICATION->IncludeFile(
+/* $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-product/" . $arCurrentSetting['PRODUCTS'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-);
+); */
 
 /*services*/
 

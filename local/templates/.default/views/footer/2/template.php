@@ -18,7 +18,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
         <div class="container">
             <div class="row justify-content-between align-items-start">
                 <?if($arParams['SETTING']['TEMPLATE_TYPE'] != 'COMPANY'){?>
-                    <div class="footer__nav footer-nav col-lg-2 col-md-6">
+                    <div class="footer__nav footer-nav col-lg-2 col-md-4">
                         <div class="footer-nav__title">Каталог продукции</div>
                         <div class="footer-nav__catalog">
                             <?$APPLICATION->IncludeComponent(
@@ -45,7 +45,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                         </div>
                     </div>
                 <?}?>
-                <div class="footer__nav footer-nav footer-nav_two-columns col-lg-4 col-md-6">
+                <div class="footer__nav footer-nav footer-nav_two-columns col-lg-4 col-md-8">
                     <?$APPLICATION->IncludeComponent(
                         "bitrix:menu",
                         ".default",
