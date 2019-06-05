@@ -16,30 +16,12 @@ if ($arResult['ITEMS']) {?>
 					<h2>Отзывы наших клиентов</h2>
 				</div>
 				<div class="col-lg-7 offset-lg-2 reviews-content">
-					<div class="reviews__photo-list reviews-photo-list">
-						<?foreach ($arResult['ITEMS'] as $key => $arReview){?>
-							<div class="reviews-photo-list__item">
-								<img src="<?=$arReview['PREVIEW_PICTURE']['SRC']?>" />
-							</div>
-						<?}?>
-					</div>
-					<div class="reviews-main__list-wrap">
-						<div class="reviews-main__list reviews-main-list">
+					<div class="reviews__photo-list-wrap">
+						<div class="reviews__photo-list reviews-photo-list">
 							<?foreach ($arResult['ITEMS'] as $key => $arReview){?>
-								<div class="reviews-main-list__item reviews-main-list-item">
-									<div class="reviews-main-list-item__desc"><?=$arReview['PREVIEW_TEXT']?></div>
-									<div class="reviews-main-list-item__client">
-										<div class="row justify-content-between">
-											<div class="col-sm-auto">
-												<div class=" review-client__name"><?=$arReview['NAME']?></div>
-												<?if($arReview['PROPERTIES']['REVIEW_CLIENT_ADD_OPTION']){?>
-													<div class="review-client__optional"><?=$arReview['PROPERTIES']['REVIEW_CLIENT_ADD_OPTION']['VALUE']?></div>
-												<?}?>
-											</div>
-											<div class="col-sm-auto">
-												<a href="/reviews/" class="btn btn-primary"><?=$arParams['SECTION_LINK'] ? $arParams['SECTION_LINK'] : GetMessage('REVIEWS_SECTION_LINK_DEFAULT')?></a>
-											</div>
-										</div>
+								<div class="reviews-photo-list__item reviews-photo-list-item">
+									<div class="reviews-photo-list-item__inner">
+										<img src="<?=$arReview['PREVIEW_PICTURE']['SRC']?>" />
 									</div>
 								</div>
 							<?}?>
@@ -50,6 +32,22 @@ if ($arResult['ITEMS']) {?>
 						<button class="reviews__arrow reviews__arrow_next">
 							<?=GetContentSvgIcon('arrow_right');?>
 						</button>
+					</div>
+					<div class="reviews-main__list-wrap">
+						<div class="reviews-main__list reviews-main-list">
+							<?foreach ($arResult['ITEMS'] as $key => $arReview){?>
+								<div class="reviews-main-list__item reviews-main-list-item">
+									<div class="reviews-main-list-item__desc"><?=$arReview['PREVIEW_TEXT']?></div>
+									<div class="reviews-main-list-item__client">
+										<div class="review-client__name"><?=$arReview['NAME']?></div>
+										<?if($arReview['PROPERTIES']['REVIEW_CLIENT_ADD_OPTION']){?>
+											<div class="review-client__optional"><?=$arReview['PROPERTIES']['REVIEW_CLIENT_ADD_OPTION']['VALUE']?></div>
+										<?}?>
+										<a href="/reviews/" class="btn btn_mid btn_round btn_primary review-client__all">Все отзывы</a>
+									</div>
+								</div>
+							<?}?>
+						</div>
 					</div>
 				</div>
 			</div>

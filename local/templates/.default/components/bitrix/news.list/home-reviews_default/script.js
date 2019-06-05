@@ -2,7 +2,9 @@
 
 window.addEventListener('load', function () {
   var sliderReviewsPhotosNode = document.querySelector('.reviews-photo-list'),
-      sliderReviewsDescNode = document.querySelector('.reviews-main-list'); // const handlerClickLogo = (e) => {
+      sliderReviewsDescNode = document.querySelector('.reviews-main-list'),
+      sliderReviewsPrevBtnNode = document.querySelector('.reviews__arrow_prev'),
+      sliderReviewsNextBtnNode = document.querySelector('.reviews__arrow_next'); // const handlerClickLogo = (e) => {
   // 	const indexDesc = e.target.getAttribute('indexDesc');
   // 	sliderDesc.goTo(indexDesc);
   // 	e.preventDefault();
@@ -13,7 +15,9 @@ window.addEventListener('load', function () {
     items: 4,
     gutter: 20,
     nav: false,
-    controls: false // onInit: () => {
+    prevButton: sliderReviewsPrevBtnNode,
+    nextButton: sliderReviewsNextBtnNode,
+    center: true // onInit: () => {
     // 	const arraySlidesLogoNode = sliderLogosNode.querySelectorAll('.reviews-logos__item');
     // 	Array.prototype.forEach.call(arraySlidesLogoNode, (slide) => {
     // 		slide.addEventListener('click', handlerClickLogo);
@@ -26,6 +30,8 @@ window.addEventListener('load', function () {
     items: 1,
     nav: false,
     controls: false,
-    autoHeight: true
+    autoHeight: true,
+    prevButton: sliderReviewsPrevBtnNode,
+    nextButton: sliderReviewsNextBtnNode
   });
 });

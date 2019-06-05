@@ -1,6 +1,8 @@
 window.addEventListener('load', () => {
 	const sliderReviewsPhotosNode = document.querySelector('.reviews-photo-list'),
-		sliderReviewsDescNode = document.querySelector('.reviews-main-list');
+		sliderReviewsDescNode = document.querySelector('.reviews-main-list'),
+		sliderReviewsPrevBtnNode = document.querySelector('.reviews__arrow_prev'),
+		sliderReviewsNextBtnNode = document.querySelector('.reviews__arrow_next');
 
 	// const handlerClickLogo = (e) => {
 	// 	const indexDesc = e.target.getAttribute('indexDesc');
@@ -13,7 +15,9 @@ window.addEventListener('load', () => {
 		items: 4,
 		gutter: 20,
 		nav: false,
-		controls: false,
+		prevButton: sliderReviewsPrevBtnNode,
+		nextButton: sliderReviewsNextBtnNode,
+		center: true,
 		// onInit: () => {
 		// 	const arraySlidesLogoNode = sliderLogosNode.querySelectorAll('.reviews-logos__item');
 		// 	Array.prototype.forEach.call(arraySlidesLogoNode, (slide) => {
@@ -27,5 +31,7 @@ window.addEventListener('load', () => {
 		nav: false,
 		controls: false,
 		autoHeight: true,
+		prevButton: sliderReviewsPrevBtnNode,
+		nextButton: sliderReviewsNextBtnNode,
 	});
 });
