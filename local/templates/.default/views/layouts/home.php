@@ -4,12 +4,10 @@
  */
 global $arCurrentSetting;
 
-/*slider*/
-
 ?>
 <main>
 <?
-/*
+
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-slider/" . $arCurrentSetting['SLIDER'] . ".php",
     array(),
@@ -68,7 +66,7 @@ if ($arParams['CONTENT']) {?>
     </div>
 <?}
 
-
+/*
 
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-about/" . $arCurrentSetting['ABOUT'] . ".php",
@@ -89,8 +87,8 @@ $APPLICATION->IncludeFile(
         "MODE" => "php"
     )
 );
-
 */
+
 
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-reviews/" . $arCurrentSetting['REVIEWS'] . ".php",
