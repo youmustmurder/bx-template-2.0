@@ -93,6 +93,7 @@ $APPLICATION->IncludeFile(
         )
     );?>
 <?} else {?>
+
     <?$APPLICATION->IncludeFile(
         "views/layouts/" . $pageLayout . ".php",
         array(
@@ -135,5 +136,5 @@ $APPLICATION->IncludeFile(
     )
 );?>
 
-<?$APPLICATION->ShowBodyScripts();?>
+<?//$APPLICATION->ShowBodyScripts();?>
 </body>
