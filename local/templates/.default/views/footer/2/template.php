@@ -18,7 +18,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
         <div class="container">
             <div class="row justify-content-between align-items-start">
                 <?if($arParams['SETTING']['TEMPLATE_TYPE'] != 'COMPANY'){?>
-                    <div class="footer__nav footer-nav col-lg-2 col-md-3 col-sm-6">
+                    <div class="footer__nav footer-nav col-lg-2 col-md-6">
                         <div class="footer-nav__title">Каталог продукции</div>
                         <div class="footer-nav__catalog">
                             <?$APPLICATION->IncludeComponent(
@@ -45,7 +45,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                         </div>
                     </div>
                 <?}?>
-                <div class="footer__nav footer-nav footer-nav_two-columns col-lg-4 col-md-5 col-sm-6">
+                <div class="footer__nav footer-nav footer-nav_two-columns col-lg-4 col-md-6">
                     <?$APPLICATION->IncludeComponent(
                         "bitrix:menu",
                         ".default",
@@ -68,7 +68,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                         false
                     );?>
                 </div>
-                <div class="footer__info footer-info col-lg-5 col-md-4 col-sm-12">
+                <div class="footer__info footer-info col-lg-5 col-md-12">
                     <?if ($arFilial['PHONE']) {?>
                         <div class="footer__contact footer-contact">
                             <div class="footer-contact__content">
@@ -76,7 +76,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                                 <a class="footer-contact__link"
                                    href="tel:<?=preg_replace('~[^0-9]+~', '', $arFilial['PHONE']);?>"><?=$arFilial['PHONE']?></a>
                             </div>
-                            <a href="#" class="btn btn_min btn_primary btn_round js-init-modal__form" data-sign="WVRveE5EcDdjem94TURvaVEwRkRTRVZmVkVsTlJTSTdjem8wT2lJek5qQXdJanR6T2pFd09pSkRRVU5JUlY5VVdWQkZJanR6T2pFNklrRWlPM002TVRNNklrWlBVazFmUWxST1gwOVFSVTRpTzNNNk1qazZJdENYMExEUXV0Q3cwTGZRc05HQzBZd2cwTGZRc3RDKzBMM1F2dEM2SWp0ek9qRTFPaUpHVDFKTlgwSlVUbDlUVlVKTlNWUWlPM002TVRnNkl0Q2UwWUxRdjlHQTBMRFFzdEM0MFlMUmpDSTdjem94TXpvaVJrOVNUVjlDVkU1ZlZGbFFSU0k3Y3pveU1Ub2lZblJ1TFdSbFptRjFiSFFnWW5SdUxYZG9hWFJsSWp0ek9qRXhPaUpHVDFKTlgwWkpSVXhFVXlJN1lUb3lPbnRwT2pBN2N6b3lPaUl5TkNJN2FUb3hPM002TWpvaU1qVWlPMzF6T2pFMk9pSkdUMUpOWDFCUFRFbFVTVU5mVlZKTUlqdHpPams2SWk5d2IyeHBkR2xqTHlJN2N6b3hOam9pUms5U1RWOVFVazlFVlVOVVgwRkVSQ0k3Y3pveE9pSk9JanR6T2pFMU9pSkdUMUpOWDFCU1QwUlZRMVJmU1VRaU8zTTZNRG9pSWp0ek9qSXdPaUpHVDFKTlgxSkZVVlZKVWtWRVgwWkpSVXhFVXlJN1lUb3lPbnRwT2pBN2N6b3lPaUl5TkNJN2FUb3hPM002TWpvaU1qVWlPMzF6T2pFd09pSkdUMUpOWDFSSlZFeEZJanR6T2pJNU9pTFFudEdCMFlMUXNOQ3kwWXpSZ3RDMUlOQzMwTERSajlDeTBMclJneUk3Y3pvNU9pSkpRa3hQUTB0ZlNVUWlPM002TWpvaU1UUWlPM002TVRFNklrbENURTlEUzE5VVdWQkZJanR6T2pVNkltWnZjbTF6SWp0ek9qRTRPaUpEVDAxUVQwNUZUbFJmVkVWTlVFeEJWRVVpTzNNNk9Eb2lMbVJsWm1GMWJIUWlPMzA9Ljg4Y2VmMTc0MjNlZTA0NWNkZDYwNWI3ZmIyZDhhMmE4M2M2NTQ4OTFjY2NlN2U1YjczYWMzZTM1ZWI4MTU4NjE%3D" data-modal="14">Заказать звонок</a>
+                            <a href="#" class="btn btn_min btn_primary btn_round footer__link-callback js-init-modal__form" data-sign="WVRveE5EcDdjem94TURvaVEwRkRTRVZmVkVsTlJTSTdjem8wT2lJek5qQXdJanR6T2pFd09pSkRRVU5JUlY5VVdWQkZJanR6T2pFNklrRWlPM002TVRNNklrWlBVazFmUWxST1gwOVFSVTRpTzNNNk1qazZJdENYMExEUXV0Q3cwTGZRc05HQzBZd2cwTGZRc3RDKzBMM1F2dEM2SWp0ek9qRTFPaUpHVDFKTlgwSlVUbDlUVlVKTlNWUWlPM002TVRnNkl0Q2UwWUxRdjlHQTBMRFFzdEM0MFlMUmpDSTdjem94TXpvaVJrOVNUVjlDVkU1ZlZGbFFSU0k3Y3pveU1Ub2lZblJ1TFdSbFptRjFiSFFnWW5SdUxYZG9hWFJsSWp0ek9qRXhPaUpHVDFKTlgwWkpSVXhFVXlJN1lUb3lPbnRwT2pBN2N6b3lPaUl5TkNJN2FUb3hPM002TWpvaU1qVWlPMzF6T2pFMk9pSkdUMUpOWDFCUFRFbFVTVU5mVlZKTUlqdHpPams2SWk5d2IyeHBkR2xqTHlJN2N6b3hOam9pUms5U1RWOVFVazlFVlVOVVgwRkVSQ0k3Y3pveE9pSk9JanR6T2pFMU9pSkdUMUpOWDFCU1QwUlZRMVJmU1VRaU8zTTZNRG9pSWp0ek9qSXdPaUpHVDFKTlgxSkZVVlZKVWtWRVgwWkpSVXhFVXlJN1lUb3lPbnRwT2pBN2N6b3lPaUl5TkNJN2FUb3hPM002TWpvaU1qVWlPMzF6T2pFd09pSkdUMUpOWDFSSlZFeEZJanR6T2pJNU9pTFFudEdCMFlMUXNOQ3kwWXpSZ3RDMUlOQzMwTERSajlDeTBMclJneUk3Y3pvNU9pSkpRa3hQUTB0ZlNVUWlPM002TWpvaU1UUWlPM002TVRFNklrbENURTlEUzE5VVdWQkZJanR6T2pVNkltWnZjbTF6SWp0ek9qRTRPaUpEVDAxUVQwNUZUbFJmVkVWTlVFeEJWRVVpTzNNNk9Eb2lMbVJsWm1GMWJIUWlPMzA9Ljg4Y2VmMTc0MjNlZTA0NWNkZDYwNWI3ZmIyZDhhMmE4M2M2NTQ4OTFjY2NlN2U1YjczYWMzZTM1ZWI4MTU4NjE%3D" data-modal="14">Заказать звонок</a>
                         </div>
                     <?}?>
                     <?if ($arFilial['EMAIL']) {?>
@@ -98,17 +98,6 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                             </div>
                         </div>
                     <?}?>
-                    <div class="col footer__search footer-search">
-						<?$APPLICATION->IncludeComponent(
-                            "bitrix:search.form",
-                            "",
-                            array(
-	                            "PAGE" => "#SITE_DIR#search/",
-		                        "USE_SUGGEST" => "N",
-	                        ),
-                            false
-                        );?>
-                    </div>
                 </div>
             </div>
         </div>

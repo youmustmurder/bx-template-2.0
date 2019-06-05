@@ -91,18 +91,32 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
     <div class="footer__bottom footer-bottom">
         <div class="container">
             <div class="row footer__bottom-wrap">
-                <div class="col-12 col-sm-6 footer__copyright">
+				<div class="col-12 col-md-4 footer__copyright">
                     <?$APPLICATION->IncludeFile(
-                        "/include/" . SITE_ID . "/copyright.php",
+                        "/include/".SITE_ID."/copyright.php",
                         array(),
                         array(
                             "SHOW_BORDER" => true,
                             "MODE" => "text"
-                        )
-                    );?>
+                        ));
+                    ?>
                 </div>
-                <div class="col-12 col-sm-6 footer__developer">
-                    <a rel="nofollow" href="http://website96.ru/" target="_blank" title="Разработано Website96"><?=GetContentSvgIcon('logo')?></a>
+                <div class="col-12 col-md-4 footer__socials footer-socials">
+                    <a href="#" class="footer-socials__item">
+                        <?=GetContentSvgIcon('vk');?>
+                    </a>
+                    <a href="#" class="footer-socials__item">
+                        <?=GetContentSvgIcon('fb');?>
+                    </a>
+                    <a href="#" class="footer-socials__item">
+                        <?=GetContentSvgIcon('ig');?>
+                    </a>
+                    <a href="#" class="footer-socials__item">
+                        <?=GetContentSvgIcon('tw');?>
+                    </a>
+                </div>
+                <div class="col-12 col-md-4 footer__developer">
+                    <a rel="nofollow" href="https://website96.ru/" target="_blank" title="Разработано Website96"><?=GetContentSvgIcon('logo')?></a>
                 </div>
             </div>
         </div>
