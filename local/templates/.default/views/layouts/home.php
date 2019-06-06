@@ -28,36 +28,36 @@ global $arCurrentSetting;
     )
 ); */
 
-$APPLICATION->IncludeFile(
+/* $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-stocks/default.php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-);
+); */
 
-$APPLICATION->IncludeFile(
+/* $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-product/" . $arCurrentSetting['PRODUCTS'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-);
+); */
 
 
-$APPLICATION->IncludeFile(
+/* $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-services/" . $arCurrentSetting['SERVICES'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-);
+); */
 
 
-
+/*
 if ($arParams['CONTENT']) {?>
     <div class="text-block text-block--grey">
         <div class="container">
@@ -71,16 +71,16 @@ if ($arParams['CONTENT']) {?>
         </div>
     </div>
 <?}
+ */
 
-
-/* $APPLICATION->IncludeFile(
+$APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-about/" . $arCurrentSetting['ABOUT'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-); */
+);
 
 
 /* $APPLICATION->IncludeFile(
@@ -92,12 +92,13 @@ if ($arParams['CONTENT']) {?>
     )
 ); */
 
-$APPLICATION->IncludeFile(
+/* $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-reviews/" . $arCurrentSetting['REVIEWS'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-);?>
+);?> */
+?>
 </main>
