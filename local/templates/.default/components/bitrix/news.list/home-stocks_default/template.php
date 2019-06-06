@@ -40,12 +40,14 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
             <?}?>
         </div>
 		<?if(count($arResult['ITEMS']) > 1){?>
-			<button class="section-stocks__arrow section-stocks__arrow_prev">
-				<?=GetContentSvgIcon('arrow_left');?>
-			</button>
-			<button class="section-stocks__arrow section-stocks__arrow_next">
-				<?=GetContentSvgIcon('arrow_right');?>
-			</button>
+			<div class="section-stocks__arrow-wrap">
+				<button class="btn btn_circle-default btn_light btn_light_to-success section-stocks__arrow_prev">
+					<?=GetContentSvgIcon('arrow_left');?>
+				</button>
+				<button class="btn btn_circle-default btn_light btn_light_to-success section-stocks__arrow_next">
+					<?=GetContentSvgIcon('arrow_right');?>
+				</button>
+			</div>
             <div class="section-stocks__dots section-stocks-dots">
 				<?foreach ($arResult['ITEMS'] as $k => $arSlide){?>
 					<span class="section-stocks-dots__dot"></span>
