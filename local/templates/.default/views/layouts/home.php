@@ -28,6 +28,14 @@ $APPLICATION->IncludeFile(
     )
 );
 
+$APPLICATION->IncludeFile(
+    "/include/" . SITE_ID . "/blocks/home-stocks/default.php",
+    array(),
+    array(
+        "SHOW_BORDER" => false,
+        "MODE" => "php"
+    )
+);
 
 
 $APPLICATION->IncludeFile(
@@ -66,7 +74,7 @@ if ($arParams['CONTENT']) {?>
     </div>
 <?}
 
-/*
+
 
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-about/" . $arCurrentSetting['ABOUT'] . ".php",
@@ -87,7 +95,7 @@ $APPLICATION->IncludeFile(
         "MODE" => "php"
     )
 );
-*/
+
 
 
 $APPLICATION->IncludeFile(
