@@ -28,8 +28,11 @@ if ($arResult['ITEMS']) {?>
 			</div>
 		</div>
         <div class="row">
-            <?foreach ($arResult['ITEMS'] as $k => $arItem) {?>
-                <div class="col-12 col-md-6 col-lg-4 services__item service-item">
+            <?foreach ($arResult['ITEMS'] as $k => $arItem) {
+                $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_EDIT"));
+                $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_DELETE"), array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_CONFIRM')));
+                ?>
+                <div class="col-12 col-md-6 col-lg-4 services__item service-item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
                     <div class="service-item__pic">
                         <img src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>"
                              alt="<?=$arItem['PREVIEW_PICTURE']['ALT']?>">
