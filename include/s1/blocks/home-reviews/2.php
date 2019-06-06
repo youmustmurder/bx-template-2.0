@@ -63,7 +63,7 @@ $APPLICATION->IncludeComponent(
 		"MESSAGE_404" => "",
 		"BLOCK_TITLE" => "Отзывы наших клиентов",
 		"SECTION_LINK_NAME" => "Показать все отзывы",
-		"SECTION_LINK" => "#SITE_DIR#reviews/"
+		"SECTION_LINK" => ""
 	),
 	false
 );

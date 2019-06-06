@@ -17,7 +17,7 @@ if($arResult['ITEMS']){?>
 					<h2 class="products__title"><?=$arParams['SECTION_TITLE'] ?: Loc::getMessage('PRODUCTS_SECTION_TITLE_DEFAULT')?></h2>
 					<a href="<?=SITE_DIR?>catalog/" class="link link_success link_icon-right products__link-all">
 						<?=$arParams['SECTION_LINK'] ?: Loc::getMessage('PRODUCTS_SECTION_LINK_DEFAULT')?>
-						<span class="link__icon"><?=GetContentSvgIcon('arrow-more');?></span>
+                        <span class="link__icon"><?=GetContentSvgIcon('arrow_right');?></span>
 					</a>
 					<div class="products__grid row justify-content-start">
 						<?foreach ($arResult['ITEMS'] as $key => $arItem) {

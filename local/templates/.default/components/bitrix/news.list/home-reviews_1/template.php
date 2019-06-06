@@ -15,7 +15,7 @@ if ($arResult['ITEMS']) {?>
 				<div class="rewards__wrap">
 					<h2 class="rewards__title"><?=$arParams['BLOCK_TITLE'] ?: Loc::getMessage('HOME_REVIEWS_1_BLOCK_TITLE')?></h2>
 					<a href="<?=$arParams['SECTION_LINK'] ?: Loc::getMessage('HOME_REVIEWS_1_SECTION_LINK_DEFAULT', array('#SITE_DIR#' => SITE_DIR))?>"
-                       class="link link_bold link_success link_icon-right reward__link-all">
+                       class="link link_success link_icon-right reward__link-all">
 						<?=$arParams['SECTION_LINK_NAME'] ?: Loc::getMessage('HOME_REVIEWS_1_SECTION_LINK_NAME')?>
 						<span class="link__icon"><?=GetContentSvgIcon('arrow_right');?></span>
 					</a>
