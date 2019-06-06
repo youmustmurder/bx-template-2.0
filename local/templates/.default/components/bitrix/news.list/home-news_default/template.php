@@ -11,7 +11,7 @@ Asset::getInstance()->addJs(GetCurDir(__DIR__) . '/script.js');
 Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 ?>
 
-<section class="section-news section-news__catalog<?=$arParams['SETTING']['TEMPLATE_TYPE'] == 'COMPANY' ? ' section-news__company-block' : ''?>"
+<section class="section-news section-news_about"
 	style="background-image: url('<?=GetCurDir(__DIR__)?>/uploads/about_back.png');">
 	<?if($arResult['ITEMS']){?>
 		<div class="container">
