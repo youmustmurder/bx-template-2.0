@@ -37,6 +37,7 @@
     "precss": "^4.0.0",
     "prettier": "1.17.0",
     "rollup": "^1.11.3",
+    "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-node-resolve": "^5.0.0",
     "stylelint": "^10.0.1",
     "stylelint-order": "^3.0.0"

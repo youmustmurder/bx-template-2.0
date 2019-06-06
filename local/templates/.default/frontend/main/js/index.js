@@ -2,8 +2,7 @@ import tns from './tiny-slider';
 import itemCounter from './itemCounter';
 import customSelect from './customSelect';
 import debounce from './debounce';
-import MictoModal from './micromodal';
-import axios from './axios';
+import fetch from './fetch';
 import modalFromAjax from './modalFromAjax';
 import { lockScroll, unlockScroll } from './bodyBlock';
 import HeaderMenu from './headerMenu';
@@ -17,7 +16,6 @@ window.addEventListener('load', () => {
 				modalName: 'callback_modal',
 				dataAjax: collectorAttributes(btn)
 			};
-			console.log(settings);
 			modalFromAjax(settings);
 		});
 	});

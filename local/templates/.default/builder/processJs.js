@@ -18,7 +18,9 @@ const
 		singleQuote: true,
 		useTabs: true,
 		tabWidth: 4,
-	};
+	},
+	json = require('rollup-plugin-json');
+
 
 const logLinter = (errors, filename) => {
 	errors.map(({ message, line, column }) => {
@@ -48,6 +50,14 @@ const transformFile = async (filename, output = path.join(path.dirname(filename)
 	});
 	const { output: outputSplit } = await bundle.generate({
 		format: 'cjs',
+		plugins: [
+			json({
+				include: 'node_modules/**',
+				indent: '  ',
+				compact: true,
+      			namedExports: true
+			})
+		]
 	});
 	for (const chunkOrAsset of outputSplit) {
 		if (chunkOrAsset.isAsset) {

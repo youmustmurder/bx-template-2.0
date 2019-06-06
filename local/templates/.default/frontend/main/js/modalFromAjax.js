@@ -1,3 +1,5 @@
+// import MicroModal from './micromodal';
+
 /*
 	@param modalName: String
 	@param url: String
@@ -8,11 +10,11 @@
 	@param after: Function
 */
 
-const modalFromAjax = ({ modalName, url='/local/tools/ajax_form.php', method='get', dataAjax = {}, modalSettings = {}, before, after }) => {
+function modalFromAjax ({ modalName, url='/local/tools/ajax_form.php', method='get', dataAjax = {}, modalSettings = {}, before, after }) {
 	if (typeof before === 'function') {
 		before();
 	}
-	axios(url, {
+	fetch(url, {
 		method,
 		params: dataAjax,
 		responseType: 'text'
@@ -21,9 +23,12 @@ const modalFromAjax = ({ modalName, url='/local/tools/ajax_form.php', method='ge
 			if (typeof after === 'function') {
 				after();
 			}
-			document.querySelector('body').insertAdjacentHTML('beforeend', res.data.trim());
-			MicroModal.show(modalName, modalSettings);
+			console.log(res.data.trim());
+			//document.querySelector('body').insertAdjacentHTML('beforeend', res.data.trim());
+			//MicroModal.show(modalName, modalSettings);
 		}
+	}).catch(err => {
+		console.log(err);
 	});
 };
 
