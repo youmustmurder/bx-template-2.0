@@ -1,0 +1,146 @@
+.section-stocks {
+	position: relative;
+	overflow: hidden;
+}
+
+.section-stocks-slide {
+	position: relative;
+	overflow: hidden;
+	padding: 105px 55px 145px;
+	color: #fff;
+	&:after {
+		content: '';
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+		background: #000;
+		opacity: 0.5;
+		pointer-events: none;
+	}
+}
+
+.section-stocks-slide__wrap {
+	position: relative;
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.section-stocks-slide__title,
+.section-stocks-slide__subtitle {
+	color: #fff;
+}
+
+.section-stocks-slide__title {
+	margin: 0 0 25px;
+	font-size: 3rem;
+	line-height: 1em;
+    font-weight: 700;
+}
+
+.section-stocks-slide__percent {
+	font-size: 4.5rem;
+	color: #ff223d;
+}
+
+.section-stocks-slide__subtitle {
+	font-size: 2.625rem;
+    font-weight: 400;
+}
+
+.section-stocks-slide__link {
+	margin-top: 55px;
+}
+
+.section-stocks-dots {
+	position: absolute;
+	z-index: 2;
+	bottom: 80px;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.section-stocks-dots__dot {
+	width: 10px;
+	height: 10px;
+	margin: 0 15px;
+	border-radius: 50%;
+	border: 2px solid #fff;
+	cursor: pointer;
+}
+
+.section-stocks__arrow {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	z-index: 2;
+	top: 50%;
+	transform: translate(0, -50%);
+	width: 80px;
+	height: 80px;
+	padding: 0;
+	border: none;
+	border-radius: 50%;
+	background: #fff;
+	cursor: pointer;
+	&.section-stocks__arrow_prev {
+		left: -40px;
+		justify-content: flex-end;
+		svg {
+			transform: translateX(-15px);
+		}
+	}
+	&.section-stocks__arrow_next {
+		right: -40px;
+		svg {
+			transform: translateX(15px);
+		}
+	}
+	svg {
+		fill: #333;
+	}
+}
+
+@media (max-width: 768px) {
+	.section-stocks-slide {
+		padding: 65px 55px;
+	}
+	.section-stocks-slide__title {
+		margin-bottom: 15px;
+		font-size: 2.133rem;
+		line-height: 2.533rem;
+	}
+	.section-stocks-slide__subtitle {
+		font-size: 1.5rem;
+	}
+	.section-stocks-slide__percent {
+		font-size: 2.667rem;
+	}
+	.section-stocks-slide__link {
+		margin-top: 25px;
+	}
+	.section-stocks-dots {
+		display: none;
+	}
+}
+
+@media (max-width: 576px) {
+	.section-stocks-slide__title {
+		font-size: 1.733rem;
+		line-height: 2.133rem;
+	}
+	.section-stocks-slide__subtitle {
+		font-size: 1.2rem;
+	}
+	.section-stocks-slide__percent {
+		font-size: 1.8rem;
+	}
+}

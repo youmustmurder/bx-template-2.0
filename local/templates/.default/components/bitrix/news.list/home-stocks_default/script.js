@@ -1,20 +1,19 @@
-$(document).ready(function() {
-    $('.slider-stocks').slick({
-        dots: ($('.slider-stocks').attr('data-dots') == 'true') ? true : false,
-        arrows: ($('.slider-stocks').attr('data-arrows') == 'true') ? true : false,
-        autoplay: ($('.slider-stocks').attr('data-autoplay') == 'true') ? true : false,
-        autoplaySpeed:$('.slider-stocks').attr('data-speed'),
-        appendDots: $('.slider-stock-dots'),
-        prevArrow: '<button type="button" class="slide-prev slick-prev"></button>',
-        nextArrow: '<button type="button" class="slide-next slick-next"></button>',
-        adaptiveHeight: true,
-        responsive:[
-            {
-                breakpoint: 992,
-                settings: {
-                    arrows: false
-                }
-            }
-        ]
+'use strict';
+
+window.addEventListener('load', function () {
+  var sliderStock = function () {
+    var sliderNode = document.querySelector('.slider-stocks__slider'),
+        prevBtnNode = document.querySelector('.section-stocks__arrow_prev'),
+        nextBtnNode = document.querySelector('.section-stocks__arrow_next'),
+        navContainer = document.querySelector('.section-stocks-dots');
+    var sliderBig = tns({
+      container: sliderNode,
+      items: 1,
+      prevButton: prevBtnNode,
+      nextButton: nextBtnNode,
+      nav: true,
+      navContainer: navContainer,
+      autoHeight: true
     });
+  }();
 });

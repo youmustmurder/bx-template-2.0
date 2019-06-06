@@ -1,22 +1,19 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
-/** @var array $arParams */
-/** @var array $arResult */
-/** @global CMain $APPLICATION */
-/** @global CUser $USER */
-/** @global CDatabase $DB */
-/** @var CBitrixComponentTemplate $this */
-/** @var string $templateName */
-/** @var string $templateFile */
-/** @var string $templateFolder */
-/** @var string $componentPath */
-/** @var CBitrixComponent $component */
-$this->setFrameMode(true);
+<?php
+/**
+ * @author Lukmanov Mikhail <lukmanof92@gmail.com>
+ */
 
+global $arCurrentSetting;
+
+use Bitrix\Main\Page\Asset;
+
+Asset::getInstance()->addJs(GetCurDir(__DIR__) . '/script.js');
+Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 ?>
 
 <section class="section-stocks">
     <?if($arResult['ITEMS']){?>
-        <div class="slider-stocks"
+        <div class="slider-stocks__slider"
              data-dots="<?=count($arResult['ITEMS']) > 0 ? 'true':'false'?>"
              data-arrows="<?=$arParams['SLIDER_ARROWS'] == 'N' ? 'false' : 'true'?>"
              data-speed="<?=$arParams['SLIDER_TIME'] > 0 ? $arParams['SLIDER_TIME'] : '0'?>"
@@ -25,42 +22,34 @@ $this->setFrameMode(true);
                 $this->AddEditAction($arSlide['ID'], $arSlide['EDIT_LINK'], CIBlock::GetArrayByID($arSlide["IBLOCK_ID"], "ELEMENT_EDIT"));
                 $this->AddDeleteAction($arSlide['ID'], $arSlide['DELETE_LINK'], CIBlock::GetArrayByID($arSlide["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
                 ?>
-                <div class="stock-item" style="background-image: url(<?=$arSlide['PREVIEW_PICTURE']['SRC']?>);" id="<?=$this->GetEditAreaId($arSlide['ID']);?>">
-                    <div class="container">
-                        <div class="row align-items-start justify-content-center">
-                            <div class="col justify-content-center stock-item__caption">
-
-                                <?if($arSlide['PROPERTIES']['STOCK_FIRST_TEXT']['VALUE']){?>
-                                    <h2 class="stock-title"><?=$arSlide['PROPERTIES']['STOCK_FIRST_TEXT']['VALUE']?>
-                                        <?if($arSlide['PROPERTIES']['STOCK_PERCENT']['VALUE']){?>
-                                            <span class="stock-percent"><?=$arSlide['PROPERTIES']['STOCK_PERCENT']['VALUE']?>%</span>
-                                        <?}?>
-                                    </h2>
-                                <?}?>
-                                <?if($arSlide['PROPERTIES']['STOCK_TWO_TEXT']['VALUE']){?>
-                                    <h3 class="stock-subtitle"><?=$arSlide['PROPERTIES']['STOCK_TWO_TEXT']['VALUE']?></h3>
-                                <?}?>
-                            </div>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="w-100"></div>
-                            <div class="col-auto stock-item__link section-slider">
-                                <a href="<?=$arSlide['DETAIL_PAGE_URL']?>" class="btn btn-primary"><?=GetMessage('LINK_TO_CATALOG')?></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="section-stocks__slide section-stocks-slide" style="background-image: url(<?=$arSlide['PREVIEW_PICTURE']['SRC']?>);" id="<?=$this->GetEditAreaId($arSlide['ID']);?>">
+					<div class="section-stocks-slide__wrap">
+						<?if($arSlide['PROPERTIES']['STOCK_FIRST_TEXT']['VALUE']){?>
+							<h2 class="section-stocks-slide__title"><?=$arSlide['PROPERTIES']['STOCK_FIRST_TEXT']['VALUE']?>
+								<?if($arSlide['PROPERTIES']['STOCK_PERCENT']['VALUE']){?>
+									<span class="section-stocks-slide__percent"><?=$arSlide['PROPERTIES']['STOCK_PERCENT']['VALUE']?>%</span>
+								<?}?>
+							</h2>
+						<?}?>
+						<?if($arSlide['PROPERTIES']['STOCK_TWO_TEXT']['VALUE']){?>
+							<h3 class="section-stocks-slide__subtitle"><?=$arSlide['PROPERTIES']['STOCK_TWO_TEXT']['VALUE']?></h3>
+						<?}?>
+						<a href="<?=$arSlide['DETAIL_PAGE_URL']?>" class="btn btn_mid btn_round btn_primary section-stocks-slide__link"><?=GetMessage('LINK_TO_CATALOG')?></a>
+					</div>
+				</div>
             <?}?>
         </div>
-        <?if(count($arResult['ITEMS']) > 1){?>
-            <div class="slider-dots">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-auto">
-                            <div class="slider-stock-dots"></div>
-                        </div>
-                    </div>
-                </div>
+		<?if(count($arResult['ITEMS']) > 1){?>
+			<button class="section-stocks__arrow section-stocks__arrow_prev">
+				<?=GetContentSvgIcon('arrow_left');?>
+			</button>
+			<button class="section-stocks__arrow section-stocks__arrow_next">
+				<?=GetContentSvgIcon('arrow_right');?>
+			</button>
+            <div class="section-stocks__dots section-stocks-dots">
+				<?foreach ($arResult['ITEMS'] as $k => $arSlide){?>
+					<span class="section-stocks-dots__dot"></span>
+				<?}?>
             </div>
         <?}?>
     <?}?>

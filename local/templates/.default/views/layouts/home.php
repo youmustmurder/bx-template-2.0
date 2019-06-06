@@ -28,14 +28,14 @@ global $arCurrentSetting;
     )
 ); */
 
-/* $APPLICATION->IncludeFile(
+$APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-stocks/default.php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-); */
+);
 
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-product/" . $arCurrentSetting['PRODUCTS'] . ".php",
@@ -73,25 +73,24 @@ if ($arParams['CONTENT']) {?>
 <?}
 
 
-
-$APPLICATION->IncludeFile(
+/* $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-about/" . $arCurrentSetting['ABOUT'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-);
+); */
 
 
-$APPLICATION->IncludeFile(
+/* $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-news/" . $arCurrentSetting['NEWS'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-);
+); */
 
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-reviews/" . $arCurrentSetting['REVIEWS'] . ".php",
