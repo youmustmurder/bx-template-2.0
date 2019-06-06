@@ -60,7 +60,11 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
     <?$APPLICATION->IncludeComponent(
         'website96:setting.panel',
         '',
-        array()
+        array(),
+        false,
+        array(
+            'HIDE_ICONS' => 'Y'
+        )
     );?>
 <?}?>
 <?
