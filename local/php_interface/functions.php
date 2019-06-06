@@ -37,7 +37,8 @@ function GetCurDir($dirPath)
     if (!$dirPath) {
         return false;
     }
-    return str_replace($_SERVER['DOCUMENT_ROOT'], '', str_replace('\\', '/', $dirPath));
+    $path = str_replace($_SERVER['DOCUMENT_ROOT'], '', str_replace('\\', '/', $dirPath));
+    return substr($path, 0, 1)  == '/' ? $path : '/' . $path;
 }
 
 /**

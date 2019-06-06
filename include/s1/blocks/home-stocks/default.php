@@ -5,25 +5,27 @@
 
 $APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
-	"home-about_1", 
+	"home-stocks_default", 
 	array(
-		"IBLOCK_ID" => "3",
-		"NEWS_COUNT" => "3",
-		"COMPONENT_TEMPLATE" => "home-about_1",
+		"COMPONENT_TEMPLATE" => "home-stocks_default",
 		"IBLOCK_TYPE" => "base",
-		"SORT_BY1" => "ACTIVE_FROM",
+		"IBLOCK_ID" => "10",
+		"NEWS_COUNT" => "9",
+		"SORT_BY1" => "SORT",
 		"SORT_ORDER1" => "DESC",
 		"SORT_BY2" => "SORT",
-		"SORT_ORDER2" => "ASC",
+		"SORT_ORDER2" => "DESC",
 		"FILTER_NAME" => "",
-		"FIELD_CODE" => array(
-			0 => "",
-			1 => "",
-		),
+		"FIELD_CODE" => "",
 		"PROPERTY_CODE" => array(
-			0 => "",
-			1 => "ICON_FILE",
-			2 => "",
+			0 => "STOCK_TWO_TEXT",
+			1 => "STOCK_FIRST_TEXT",
+			2 => "STOCK_PERCENT",
+			3 => "",
+			4 => "",
+			5 => "",
+			6 => "",
+			7 => "",
 		),
 		"CHECK_DATES" => "Y",
 		"DETAIL_URL" => "",
@@ -62,9 +64,10 @@ $APPLICATION->IncludeComponent(
 		"SET_STATUS_404" => "N",
 		"SHOW_404" => "N",
 		"MESSAGE_404" => "",
-		"BLOCK_TITLE" => "О компании",
-		"SECTION_LINK_NAME" => "Читать подробнее",
-		"SECTION_LINK" => "#SITE_DIR#about/"
+		"SLIDER_AUTOPLAY" => "Y",
+		"SLIDER_ARROWS" => "Y",
+		"SLIDER_TIME" => "3000",
+		"ACTIVE_COMPONENT" => "Y"
 	),
 	false
 );

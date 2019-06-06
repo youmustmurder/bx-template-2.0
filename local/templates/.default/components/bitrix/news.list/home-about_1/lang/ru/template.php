@@ -1,0 +1,4 @@
+<?php
+$MESS['HOME_ABOUT_1_BLOCK_TITLE'] = 'О компании';
+$MESS['HOME_ABOUT_1_SECTION_LINK_DEFAULT'] = '#SITE_DIR#about/';
+$MESS['HOME_ABOUT_1_SECTION_LINK_NAME'] = 'Читать подробнее';

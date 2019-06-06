@@ -29,9 +29,12 @@ if ($arResult['ITEMS']) {?>
 				</div>
 				<ul class="services__list service-list">
                     <?foreach ($arResult['ITEMS'] as $k => $arItem) {
+                        $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_EDIT"));
+                        $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_DELETE"), array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_CONFIRM')));
                         ?>
-                        <li class="service-list__item service-list-item <?=$k == 0 || $k == 1 ? 'service-list-item_middle' : ''?>">
+                        <li class="service-list__item service-list-item <?=$k == 0 || $k == 1 ? 'service-list-item_middle' : ''?>" >
                             <a href="<?=$arItem['DETAIL_PAGE_URL']?>"
+                               id="<?=$this->GetEditAreaId($arItem['ID']);?>"
                                class="service<?=$k == 0 || $k == 1 ? ' service_middle' : ''?><?=$k == 0 ? ' service_left' : ''?><?=$k == 1 ? ' service_right' : ''?><?=$arItem['PROPERTIES']['DISPLAY_MODE']['VALUE_XML_ID'] != 'dark' ? ' service_dark' : ''?>">
                                 <div class="service__inner">
                                     <div class="service__title"><?=$arItem['NAME']?></div>

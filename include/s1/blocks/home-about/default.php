@@ -5,7 +5,7 @@
 
 $APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
-	"home-about_default",
+	"home-about_default", 
 	array(
 		"IBLOCK_ID" => "15",
 		"NEWS_COUNT" => "9",
@@ -60,7 +60,11 @@ $APPLICATION->IncludeComponent(
 		"PAGER_BASE_LINK_ENABLE" => "N",
 		"SET_STATUS_404" => "N",
 		"SHOW_404" => "N",
-		"MESSAGE_404" => ""
+		"MESSAGE_404" => "",
+		"BLOCK_TITLE" => "О компании",
+		"SECTION_LINK_NAME" => "Читать подробнее",
+		"SECTION_LINK" => "#SITE_DIR#about/",
+		"BLOCK_IMG" => "/upload/medialibrary/5f7/5f71c3431330d59ba78ad7bede9f3b6d.jpg"
 	),
 	false
 );
