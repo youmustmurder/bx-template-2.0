@@ -8,7 +8,7 @@ $APPLICATION->IncludeComponent(
 	"home-news_default", 
 	array(
 		"IBLOCK_ID" => "15",
-		"NEWS_COUNT" => "9",
+		"NEWS_COUNT" => "3",
 		"COMPONENT_TEMPLATE" => "home-news_default",
 		"IBLOCK_TYPE" => "base",
 		"SORT_BY1" => "ACTIVE_FROM",

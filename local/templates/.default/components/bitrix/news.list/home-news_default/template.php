@@ -31,7 +31,7 @@ if($arResult['ITEMS']){?>
 							<div class="section-news-list__item section-news__item section-news-item">
 								<a href="<?=$arItem['DETAIL_PAGE_URL']?>"
                                    class="section-news-item__link"
-                                   id="<?=$this->GetEditAreaId($arItem['ID']);?>">
+                                   id="<?=$this->GetEditAreaId($arItem['ID'])?>">
 									<div class="section-news-item__date">
 										<span class="section-news-item__day"><?=$arItem['DATE_NEWS'][0]?></span>
 										<span class="section-news-item__mounth"><?=$arItem['DATE_NEWS'][1]?> <?=$arItem['DATE_NEWS'][2]?></span>
