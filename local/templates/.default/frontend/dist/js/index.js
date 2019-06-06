@@ -5971,8 +5971,10 @@ function collectorAttributes(e) {
   var attributes = null;
 
   if (typeof e.target == 'undefined') {
+    // eslint-disable-next-line prefer-destructuring
     attributes = e.attributes;
   } else {
+    // eslint-disable-next-line prefer-destructuring
     attributes = e.target.attributes;
   }
 
