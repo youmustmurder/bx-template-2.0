@@ -3,14 +3,10 @@
  * @author Lukmanov Mikhail <lukmanof92@gmail.com>
  */
 
-use Bitrix\Main\Localization\Loc;
-
+use Bitrix\Main\Localization\Loc
+    ;
 Loc::loadMessages(__FILE__);
-
-Asset::getInstance()->addJs(GetCurDir(__DIR__) . '/script.js');
-Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 ?>
-
 <section class="section-news section-news_about"
 	style="background-image: url('<?=GetCurDir(__DIR__)?>/uploads/about_back.png');">
 	<?if($arResult['ITEMS']){?>
