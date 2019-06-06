@@ -19,7 +19,7 @@
 }
 
 .header-logo__name {
-	max-width: 200px;
+	max-width: 210px;
 	margin-left: 20px;
 	line-height: 1.5em;
 }
@@ -49,10 +49,15 @@
 		font-size: 1.125rem;
 		transition: 0.3s all ease-out;
 	}
+	svg {
+		margin-right: 5px;
+		fill: #ff1e36;
+	}
 }
 
 .header__call,
 .header__phone {
+	button,
 	a {
 		white-space: nowrap;
 	}

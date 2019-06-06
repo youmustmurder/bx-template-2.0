@@ -56,7 +56,7 @@ if($arResult['ITEMS']){?>
                                            class="products-item__name"><?=$arItem['NAME']?></a>
                                         <?if ($arItem['PARENT_SECTION']) {?>
                                             <a href="<?=$arItem['PARENT_SECTION']['SECTION_PAGE_URL']?>"
-                                               class="product__item-category"><?=$arItem['PARENT_SECTION']['NAME']?></a>
+                                               class="products-item__category"><?=$arItem['PARENT_SECTION']['NAME']?></a>
                                         <?}?>
                                     </div>
                                     <?if ($arItem['PRICE'] || $arItem['OLD_PRICE']){?>
