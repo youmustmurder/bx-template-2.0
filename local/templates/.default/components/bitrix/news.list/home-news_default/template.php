@@ -6,11 +6,11 @@
 use Bitrix\Main\Localization\Loc;
 
 Loc::loadMessages(__FILE__);
-?>
-<?if($arResult['ITEMS']){?>
+
+if($arResult['ITEMS']){?>
 <section class="section-news section-news__catalog"
-    <?if ($arParams['BLOCK_IMAGE']) {?>
-	    style="background-image: url('<?=$arParams['BLOCK_IMAGE']?>');"
+    <?if ($arParams['BLOCK_IMG']) {?>
+	    style="background-image: url('<?=$arParams['BLOCK_IMG']?>');"
     <?}?>>
 		<div class="container">
 			<div class="row">
