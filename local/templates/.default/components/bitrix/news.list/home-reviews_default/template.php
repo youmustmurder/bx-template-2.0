@@ -19,24 +19,26 @@ if ($arResult['ITEMS']) {?>
 					<div class="reviews__photo-list-wrap">
 						<div class="reviews__photo-list reviews-photo-list">
 							<?foreach ($arResult['ITEMS'] as $key => $arReview){?>
-								<div class="reviews-photo-list__item reviews-photo-list-item">
+								<div class="reviews-photo-list__item reviews-photo-list-item" data-index="<?=$key?>">
 									<div class="reviews-photo-list-item__inner">
-										<img src="<?=$arReview['PREVIEW_PICTURE']['SRC']?>" />
+										<div class="reviews-photo-list-item__image">
+											<img src="<?=$arReview['PREVIEW_PICTURE']['SRC']?>" />
+										</div>
 									</div>
 								</div>
 							<?}?>
 						</div>
-						<button class="reviews__arrow reviews__arrow_prev">
-							<?=GetContentSvgIcon('arrow_left');?>
-						</button>
-						<button class="reviews__arrow reviews__arrow_next">
-							<?=GetContentSvgIcon('arrow_right');?>
-						</button>
 					</div>
+					<button class="reviews__arrow reviews__arrow_prev">
+						<?=GetContentSvgIcon('arrow_left');?>
+					</button>
+					<button class="reviews__arrow reviews__arrow_next">
+						<?=GetContentSvgIcon('arrow_right');?>
+					</button>
 					<div class="reviews-main__list-wrap">
 						<div class="reviews-main__list reviews-main-list">
 							<?foreach ($arResult['ITEMS'] as $key => $arReview){?>
-								<div class="reviews-main-list__item reviews-main-list-item">
+								<div class="reviews-main-list__item reviews-main-list-item" data-index="<?=$key?>">
 									<div class="reviews-main-list-item__desc"><?=$arReview['PREVIEW_TEXT']?></div>
 									<div class="reviews-main-list-item__client">
 										<div class="review-client__name"><?=$arReview['NAME']?></div>

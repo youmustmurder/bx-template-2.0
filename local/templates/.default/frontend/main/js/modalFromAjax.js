@@ -8,7 +8,7 @@
 	@param after: Function
 */
 
-const modalFromAjax = (modalName, url='/local/tools/ajax_form.php', method='get', dataAjax = {}, modalSettings, before, after) => {
+const modalFromAjax = ({ modalName, url='/local/tools/ajax_form.php', method='get', dataAjax = {}, modalSettings = {}, before, after }) => {
 	if (typeof before === 'function') {
 		before();
 	}

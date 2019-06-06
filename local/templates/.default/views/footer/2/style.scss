@@ -122,6 +122,24 @@
 	.footer-nav {
         margin-bottom: 30px;
 	}
+	.footer-info {
+		display: flex;
+		align-items: flex-start;
+		flex-wrap: wrap;
+	}
+	.footer-contact {
+		flex: 0 1;
+		flex-basis: calc(100% / 3);
+		&:not(:last-child) {
+			margin-bottom: 25px;
+		}
+	}
+	.footer-contact__content {
+		flex: 1 0 100%;
+	}
+	.footer__link-callback {
+		margin: 10px 0 0 0;
+	}
 }
 
 @media (max-width: 767px) {
@@ -132,6 +150,13 @@
 	}
 	.footer-socials {
 		margin: 10px 0;
+	}
+}
+
+@media (max-width: 700px) {
+	.footer-contact {
+		flex: 1 1;
+		flex-basis: 100%;
 	}
 }
 
@@ -154,8 +179,4 @@
 		font-size: 0.8667rem;
 		line-height: 1.333rem;
     }
-    .footer-contact__content {
-		flex: 1 0 100%;
-        margin-bottom: 15px;
-	}
 }
