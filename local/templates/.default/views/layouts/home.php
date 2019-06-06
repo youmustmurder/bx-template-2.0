@@ -37,29 +37,28 @@ $APPLICATION->IncludeFile(
     )
 );
 
-/* $APPLICATION->IncludeFile(
+$APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-product/" . $arCurrentSetting['PRODUCTS'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-); */
+);
 
 
-
-/* $APPLICATION->IncludeFile(
+$APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-services/" . $arCurrentSetting['SERVICES'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-); */
+);
 
 
 
-/* if ($arParams['CONTENT']) {?>
+if ($arParams['CONTENT']) {?>
     <div class="text-block text-block--grey">
         <div class="container">
             <div class="col">
@@ -71,7 +70,7 @@ $APPLICATION->IncludeFile(
             </div>
         </div>
     </div>
-<?} */
+<?}
 
 
 
@@ -85,25 +84,21 @@ $APPLICATION->IncludeFile(
 );
 
 
-/* $APPLICATION->IncludeFile(
+$APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-news/" . $arCurrentSetting['NEWS'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-); */
+);
 
-/* $APPLICATION->IncludeFile(
+$APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-reviews/" . $arCurrentSetting['REVIEWS'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-); */
-
-
-?>
-
+);?>
 </main>
