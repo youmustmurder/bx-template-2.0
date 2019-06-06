@@ -10,7 +10,7 @@ $APPLICATION->IncludeComponent(
 		"COMPONENT_TEMPLATE" => "home-reviews_default",
 		"IBLOCK_TYPE" => "base",
 		"IBLOCK_ID" => "6",
-		"NEWS_COUNT" => "20",
+		"NEWS_COUNT" => "9",
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_ORDER1" => "DESC",
 		"SORT_BY2" => "SORT",
@@ -60,7 +60,10 @@ $APPLICATION->IncludeComponent(
 		"PAGER_BASE_LINK_ENABLE" => "N",
 		"SET_STATUS_404" => "N",
 		"SHOW_404" => "N",
-		"MESSAGE_404" => ""
+		"MESSAGE_404" => "",
+		"BLOCK_TITLE" => "Отзывы наших клиентов",
+		"SECTION_LINK_NAME" => "Все отзывы",
+		"SECTION_LINK" => "#SITE_DIR#reviews/"
 	),
 	false
 );
