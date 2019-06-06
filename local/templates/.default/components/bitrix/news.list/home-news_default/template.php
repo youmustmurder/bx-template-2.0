@@ -8,7 +8,9 @@ use Bitrix\Main\Localization\Loc
 Loc::loadMessages(__FILE__);
 ?>
 <section class="section-news section-news_about"
-	style="background-image: url('<?=GetCurDir(__DIR__)?>/uploads/about_back.png');">
+    <?if ($arParams['BLOCK_IMG']) {?>
+	    style="background-image: url('<?=$arParams['BLOCK_IMG']?>')"
+    <?}?>>
 	<?if($arResult['ITEMS']){?>
 		<div class="container">
 			<div class="row">
