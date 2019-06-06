@@ -7,29 +7,17 @@ global $arCurrentSetting;
 ?>
 <main>
 <?
-
-/* $APPLICATION->IncludeFile(
+$APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-slider/" . $arCurrentSetting['SLIDER'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-); */
-
-
-
-/* $APPLICATION->IncludeFile(
-    "/include/" . SITE_ID . "/blocks/home-section/" . $arCurrentSetting['SECTIONS'] . ".php",
-    array(),
-    array(
-        "SHOW_BORDER" => false,
-        "MODE" => "php"
-    )
-); */
+);
 
 $APPLICATION->IncludeFile(
-    "/include/" . SITE_ID . "/blocks/home-stocks/default.php",
+    "/include/" . SITE_ID . "/blocks/home-section/" . $arCurrentSetting['SECTIONS'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
@@ -46,6 +34,14 @@ $APPLICATION->IncludeFile(
     )
 );
 
+$APPLICATION->IncludeFile(
+    "/include/" . SITE_ID . "/blocks/home-stocks/default.php",
+    array(),
+    array(
+        "SHOW_BORDER" => false,
+        "MODE" => "php"
+    )
+);
 
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-services/" . $arCurrentSetting['SERVICES'] . ".php",
@@ -55,8 +51,6 @@ $APPLICATION->IncludeFile(
         "MODE" => "php"
     )
 );
-
-
 
 if ($arParams['CONTENT']) {?>
     <div class="text-block text-block--grey">
@@ -72,25 +66,23 @@ if ($arParams['CONTENT']) {?>
     </div>
 <?}
 
-
-/* $APPLICATION->IncludeFile(
+$APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-about/" . $arCurrentSetting['ABOUT'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-); */
+);
 
-
-/* $APPLICATION->IncludeFile(
+$APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-news/" . $arCurrentSetting['NEWS'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-); */
+);
 
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-reviews/" . $arCurrentSetting['REVIEWS'] . ".php",
