@@ -5,22 +5,35 @@
 
 if ($arResult['ITEMS']) {
     foreach ($arResult['ITEMS'] as $k => $arItem) {
-        if ($arItem['PROPERTIES']['REVIEW_CLIENT_LOGO']['VALUE']) {
-            $img = CFile::ResizeImageGet($arItem['PROPERTIES']['REVIEW_CLIENT_LOGO']['VALUE'],
-                array(
-                    'width' => 300,
-                    'height' => 60
-                ),
-                BX_RESIZE_IMAGE_PROPORTIONAL_ALT,
-                false,
-                array(array("name" => "sharpen", "precision" => 15))
-            );
-            $arResult['ITEMS'][$k]['PROPERTIES']['REVIEW_CLIENT_LOGO']['SRC'] = $img['src'];
+        if ($arItem['PREVIEW_PICTURE']) {
+            $arResult['ITEMS'][$k]['PREVIEW_PICTURE']['SRC'] =
+                CFile::ResizeImageGet($arItem['PREVIEW_PICTURE']['ID'],
+                    array(
+                        'width' => 275,
+                        'height' => 385
+                    ),
+                    BX_RESIZE_IMAGE_PROPORTIONAL_ALT,
+                    false,
+                    array(array("name" => "sharpen", "precision" => 15))
+                )['src'];
         }
         if ($arItem['PROPERTIES']['REVIEW_CLIENT_DATE']['VALUE']) {
             $arResult['ITEMS'][$k]['PROPERTIES']['REVIEW_CLIENT_DATE']['VALUE'] = $arParams['ACTIVE_DATE_FORMAT'] ?
                 FormatDate($arParams['ACTIVE_DATE_FORMAT'], MakeTimeStamp($arItem['PROPERTIES']['REVIEW_CLIENT_DATE']['VALUE'])) :
                 $arItem['PROPERTIES']['REVIEW_CLIENT_DATE']['VALUE'];
+        }
+        if ($arItem['PROPERTIES']['REVIEW_CLIENT_LOGO']['VALUE']) {
+            
+            $arResult['ITEMS'][$k]['PROPERTIES']['REVIEW_CLIENT_LOGO']['SRC'] =
+                CFile::ResizeImageGet($arItem['PROPERTIES']['REVIEW_CLIENT_LOGO']['VALUE'],
+                    array(
+                        'width' => 160,
+                        'height' => 60
+                    ),
+                    BX_RESIZE_IMAGE_PROPORTIONAL_ALT,
+                    false,
+                    array(array("name" => "sharpen", "precision" => 15))
+                )['src'];
         }
     }
 }

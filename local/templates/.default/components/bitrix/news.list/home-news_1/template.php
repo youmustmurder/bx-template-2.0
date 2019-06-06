@@ -3,47 +3,38 @@
  * @author Lukmanov Mikhail <lukmanof92@gmail.com>
  */
 
-global $arCurrentSetting;
+use Bitrix\Main\Localization\Loc;
 
-use Bitrix\Main\Page\Asset;
+Loc::loadMessages(__FILE__);
 
-Asset::getInstance()->addJs(GetCurDir(__DIR__) . '/script.js');
-Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
-?>
-
+if ($arResult['ITEMS']) {?>
 <section class="news">
 	<div class="container">
 		<div class="row">
 			<div class="col">
 				<div class="news__inner">
-					<h2 class="news__title">Последние новости</h2>
-					<a href="#" class="link link_light link_icon-right news__link-all-news">
-						Показать все новости
+					<h2 class="news__title"><?=$arParams['BLOCK_TITLE'] ?: Loc::getMessage('HOME_NEWS_1_BLOCK_TITLE')?></h2>
+					<a href="<?=$arParams['SECTION_LINK'] ?: Loc::getMessage('HOME_NEWS_1_SECTION_LINK_DEFAULT', array('#SITE_DIR#' => SITE_DIR))?>"
+                       class="link link_light link_icon-right news__link-all-news">
+                        <?=$arParams['SECTION_LINK_NAME'] ?: Loc::getMessage('HOME_NEWS_1_SECTION_LINK_NAME')?>
 						<span class="link__icon"><?=GetContentSvgIcon('arrow_right');?></span>
 					</a>
 					<div class="news__slides-inner">
 						<div class="news__slides">
-						<div class="news__slide news-slide">
-							<div class="news-slide__theme">Мебель</div>
-							<a href="#" class="news-slide__title">SECRET — новый тренд в производстве мебели</a>
-							<div class="news-slide__date">28 апреля, 2019</div>
-						</div>
-						<div class="news__slide news-slide">
-							<div class="news-slide__theme">Мебель</div>
-							<a href="#" class="news-slide__title">SECRET — новый тренд в производстве мебели</a>
-							<div class="news-slide__date">28 апреля, 2019</div>
-						</div>
-						<div class="news__slide news-slide">
-							<div class="news-slide__theme">Мебель</div>
-							<a href="#" class="news-slide__title">SECRET — новый тренд в производстве мебели</a>
-							<div class="news-slide__date">28 апреля, 2019</div>
-						</div>
-						<div class="news__slide news-slide">
-							<div class="news-slide__theme">Мебель</div>
-							<a href="#" class="news-slide__title">SECRET — новый тренд в производстве мебели</a>
-							<div class="news-slide__date">28 апреля, 2019</div>
-						</div>
-					</div>
+                            <?foreach ($arResult['ITEMS'] as $arItem) {
+                                $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+                                $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+                                ?>
+                                <div class="news__slide news-slide" id="<?=$this->GetEditAreaId($arItem['ID'])?>">
+                                    <?/*
+                                    <div class="news-slide__theme"></div>
+                                    */?>
+                                    <a href="<?=$arItem['DETAIL_PAGE_URL']?>"
+                                       class="news-slide__title"><?=$arItem['NAME']?></a>
+                                    <div class="news-slide__date"><?=$arItem['DISPLAY_ACTIVE_FROM']?></div>
+                                </div>
+                            <?}?>
+					    </div>
 					</div>
 					<button class="btn btn_circle-default btn_outline-light news__nav news__nav_prev">
 						<?=GetContentSvgIcon('arrow_left');?>
@@ -56,7 +47,9 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 		</div>
 	</div>
 	<div class="news__dots news-dots">
-		<span class="news-dots__item"></span>
-		<span class="news-dots__item"></span>
+        <?foreach ($arResult['ITEMS'] as $arItem) {?>
+		    <span class="news-dots__item"></span>
+        <?}?>
 	</div>
 </section>
+<?}?>

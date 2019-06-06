@@ -8,7 +8,7 @@ $APPLICATION->IncludeComponent(
 	"home-news_default", 
 	array(
 		"IBLOCK_ID" => "15",
-		"NEWS_COUNT" => "9",
+		"NEWS_COUNT" => "3",
 		"COMPONENT_TEMPLATE" => "home-news_default",
 		"IBLOCK_TYPE" => "base",
 		"SORT_BY1" => "ACTIVE_FROM",
@@ -60,7 +60,11 @@ $APPLICATION->IncludeComponent(
 		"PAGER_BASE_LINK_ENABLE" => "N",
 		"SET_STATUS_404" => "N",
 		"SHOW_404" => "N",
-		"MESSAGE_404" => ""
+		"MESSAGE_404" => "",
+		"BLOCK_TITLE" => "Последние новости",
+		"SECTION_LINK_NAME" => "Посмотреть все",
+		"SECTION_LINK" => "#SITE_DIR#news/",
+		"BLOCK_IMG" => "/upload/medialibrary/48b/48b1b7a2eee7d91b173c38696b51dbe6.jpg"
 	),
 	false
 );
