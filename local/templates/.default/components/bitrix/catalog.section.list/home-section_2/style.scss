@@ -34,6 +34,9 @@
 	flex-direction: column;
 	height: 100%;
 	color: #000;
+	&:hover {
+		box-shadow: 0 5px 10px #e6e6e6;
+	}
 }
 
 .best-categories-card__img {

@@ -42,6 +42,10 @@
 	min-height: 400px;
 	.service {
 		height: 100%;
+		transition: 0.3s all ease-out;
+		&:hover {
+			box-shadow: 0 5px 10px #e6e6e6;
+		}
 	}
 	&.service-list-item_middle {
 		flex: 1 1 calc((100% / 2));

@@ -47,6 +47,10 @@
 	height: 100%;
 	padding: 25px 40px 50px;
 	background-color: #F8F8F8;
+	transition: 0.3s all ease-out;
+	&:hover {
+		box-shadow: 0 5px 10px #e6e6e6;
+	}
 }
 
 .rewards-item__logo {

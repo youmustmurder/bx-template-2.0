@@ -31,6 +31,9 @@
 	height: 100%;
 	background: #F8F8F8;
 	color: #000;
+	&:hover {
+		box-shadow: 0 5px 10px #e6e6e6;
+	}
 }
 
 .best-categories-card {
