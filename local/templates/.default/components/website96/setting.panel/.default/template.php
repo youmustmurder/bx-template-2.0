@@ -21,6 +21,7 @@ $arParameters = CWebsiteTemplate::$arParametersList;
 
 <div class="settings-panel">
 	<form class="settings-panel__inner tabs">
+        <?=bitrix_sessid_post()?>
 		<ul class="settings-panel__tabs-nav settings-panel-tabs-nav">
 			<li class="settings-panel-tabs-nav__item settings-panel-tabs-nav-item tabs__toggle tabs__toggle_active">
 				<button class="settings-panel-tabs-nav-item__btn"
