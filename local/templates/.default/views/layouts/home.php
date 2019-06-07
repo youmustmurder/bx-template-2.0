@@ -7,6 +7,7 @@ global $arCurrentSetting;
 ?>
 <main>
 <?
+
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-slider/" . $arCurrentSetting['SLIDER'] . ".php",
     array(),

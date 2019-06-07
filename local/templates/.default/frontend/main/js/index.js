@@ -7,6 +7,7 @@ import modalFromAjax from './modalFromAjax';
 import { lockScroll, unlockScroll } from './bodyBlock';
 import HeaderMenu from './headerMenu';
 import collectorAttributes from './collector-attributes';
+import Tabs from './tabs';
 
 window.addEventListener('load', () => {
 	const modalCallbackButtons = document.querySelectorAll('.js-init-modal__form');

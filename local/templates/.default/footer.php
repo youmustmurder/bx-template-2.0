@@ -56,7 +56,7 @@ Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/dist/js/inde
 <?}?>
 <?
 //show panel setting
-if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSetting['SHOW_PANEL'] == 'Y')) {?>
+//if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSetting['SHOW_PANEL'] == 'Y')) {?>
     <?$APPLICATION->IncludeComponent(
         'website96:setting.panel',
         '',
@@ -66,7 +66,7 @@ if (CWebsiteTemplate::$demoMode == true || ($USER->IsAdmin() && $arCurrentSettin
             'HIDE_ICONS' => 'Y'
         )
     );?>
-<?}?>
+<?//}?>
 <?
 //responsive header
 $APPLICATION->IncludeFile(
