@@ -344,7 +344,7 @@ dump($arParameters);
 		</button>
 		<button class="btn btn_icon-left settings-panel__btn settings-panel__btn_apply">
 			<span class="btn__icon"><?=GetContentSvgIcon('success');?></span>
-			<?=Loc::getMessage('SETTING_PANEL_BUTTON_APPLY')?>Применить
+			<?=Loc::getMessage('SETTING_PANEL_BUTTON_APPLY')?>
 		</button>
 		<button class="btn btn_icon-left settings-panel__btn settings-panel__btn_reset">
 			<span class="btn__icon"><?=GetContentSvgIcon('close');?></span>
