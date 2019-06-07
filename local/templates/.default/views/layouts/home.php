@@ -32,7 +32,7 @@ $APPLICATION->IncludeFile(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-);
+); */
 
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-stocks/default.php",
@@ -41,7 +41,7 @@ $APPLICATION->IncludeFile(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-);
+); */
 
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-services/" . $arCurrentSetting['SERVICES'] . ".php",
@@ -50,7 +50,7 @@ $APPLICATION->IncludeFile(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-);
+); */
 
 if ($arParams['CONTENT']) {?>
     <div class="text-block text-block--grey">
@@ -65,6 +65,7 @@ if ($arParams['CONTENT']) {?>
         </div>
     </div>
 <?}
+ */
 
 $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-about/" . $arCurrentSetting['ABOUT'] . ".php",
@@ -84,12 +85,13 @@ $APPLICATION->IncludeFile(
     )
 );
 
-$APPLICATION->IncludeFile(
+/* $APPLICATION->IncludeFile(
     "/include/" . SITE_ID . "/blocks/home-reviews/" . $arCurrentSetting['REVIEWS'] . ".php",
     array(),
     array(
         "SHOW_BORDER" => false,
         "MODE" => "php"
     )
-);?>
+);?> */
+?>
 </main>
