@@ -31,13 +31,14 @@ window.addEventListener('load', () => {
 
 		settingApply.addEventListener('click', () => {
 			var data = serialize(settingForm);
-			data['SET_SETTING'] = 'Y';
+			var body = new FormData();
+			for (var i in data) {
+				body.append(i, data[i]);
+			}
+			body.append('SET_SETTING', 'Y');
 			fetch(uri, {
 				method: 'POST',
-				body: JSON.stringify(data),
-				headers: {
-					"Content-Type": "application/json"
-				},
+				body,
 			}).then(res => {
 				console.log(res);
 			}).catch(err => {
@@ -46,14 +47,11 @@ window.addEventListener('load', () => {
 		});
 
 		settingReset.addEventListener('click', () => {
+			var body = new FormData();
+			body.append('RESET', 'Y');
 			fetch(uri, {
 				method: 'GET',
-				body: JSON.stringify({
-					reset: 'Y'
-				}),
-				headers: {
-					"Content-Type": "application/json"
-				},
+				body,
 			}).then(res => {
 				console.log(res);
 			}).catch(err => {

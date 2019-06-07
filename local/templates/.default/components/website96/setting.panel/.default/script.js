@@ -30,13 +30,16 @@ window.addEventListener('load', function () {
     });
     settingApply.addEventListener('click', function () {
       var data = serialize(settingForm);
-      data['SET_SETTING'] = 'Y';
+      var body = new FormData();
+
+      for (var i in data) {
+        body.append(i, data[i]);
+      }
+
+      body.append('SET_SETTING', 'Y');
       fetch(uri, {
         method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-          "Content-Type": "application/json"
-        }
+        body: body
       }).then(function (res) {
         console.log(res);
       })["catch"](function (err) {
@@ -44,14 +47,11 @@ window.addEventListener('load', function () {
       });
     });
     settingReset.addEventListener('click', function () {
+      var body = new FormData();
+      body.append('RESET', 'Y');
       fetch(uri, {
         method: 'GET',
-        body: JSON.stringify({
-          reset: 'Y'
-        }),
-        headers: {
-          "Content-Type": "application/json"
-        }
+        body: body
       }).then(function (res) {
         console.log(res);
       })["catch"](function (err) {
