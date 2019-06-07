@@ -8,38 +8,47 @@ h6, .h6 {
 	font-weight: bold;
 }
 
-h1,
-.h1 {
-	font-size: 3.2rem;
-	line-height: 4rem;
+@media (min-width: 992px) {
+	h1,
+	.h1 {
+		font-size: 3.2rem;
+		line-height: 4rem;
+	}
+	h2,
+	.h2 {
+		font-size: 2.4rem;
+		line-height: 3.067rem;
+	}
+
+	h3,
+	.h3 {
+		font-size: 1.6rem;
+		line-height: 2.133rem;
+	}
+
+	h4,
+	.h4 {
+		font-size: 1.333rem;
+		line-height: 1.733rem;
+	}
+
+	h5,
+	.h5 {
+		font-size: 1.067rem;
+		line-height: 1.467rem;
+	}
+
+	h6,
+	.h6 {
+		font-size: 0.9333rem;
+		line-height: 1.333rem;
+	}
 }
 
-h2,
-.h2 {
-	font-size: 2.4rem;
-	line-height: 3.067rem;
-}
-
-h3,
-.h3 {
-	font-size: 1.6rem;
-	line-height: 2.133rem;
-}
-
-h4,
-.h4 {
-	font-size: 1.333rem;
-	line-height: 1.733rem;
-}
-
-h5,
-.h5 {
-	font-size: 1.067rem;
-	line-height: 1.467rem;
-}
-
-h6,
-.h6 {
-	font-size: 0.9333rem;
-	line-height: 1.333rem;
+@media (max-width: 992px) {
+	h1,
+	.h1 {
+		font-size: 2.4rem;
+		line-height: 4rem;
+	}
 }

@@ -65,6 +65,7 @@
 		.product__name,
 		.product__subtitle,
 		.products__price {
+			position: static;
 			text-align: left;
 		}
 		.product__name {
@@ -159,6 +160,10 @@
 }
 
 .products__price {
+	position: absolute;
+	left: 0;
+	bottom: 40px;
+	width: 100%;
 	text-align: center;
 	color: #26AE60;
 	font-size: 1.6rem;
