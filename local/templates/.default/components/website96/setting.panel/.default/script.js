@@ -1,16 +1,62 @@
 'use strict';
 
 window.addEventListener('load', function () {
-  var togglePanel = document.querySelector('.settings-panel__btn_toggle'),
-      settingsPanel = document.querySelector('.settings-panel');
-  togglePanel.addEventListener('click', function () {
-    settingsPanel.classList.toggle('settings-panel_show');
-  });
-  var settingsTabs = new Tabs(document.querySelector('.settings-panel__inner'));
-  settingsTabs.init();
-  var cartSelect = new customSelect({
-    elem: 'selectMainfont'
-  }); // var sizeSelect = new customSelect({
+  var settingsPanel = function () {
+    function clickOutSettings(e) {
+      var target = e.target;
+
+      if (target != settingsPanel && !settingsPanel.contains(target) && openSettings) {
+        toggleShowSettingsPanel();
+      }
+    }
+
+    function toggleShowSettingsPanel() {
+      settingsPanel.classList.toggle('settings-panel_show');
+      openSettings = settingsPanel.classList.contains('settings-panel_show');
+      openSettings ? lockScroll() : unlockScroll();
+    }
+
+    var togglePanel = document.querySelector('.settings-panel__btn_toggle'),
+        settingsPanel = document.querySelector('.settings-panel'),
+        settingApply = document.querySelector('.settings-panel__btn_apply'),
+        settingReset = document.querySelector('.settings-panel__btn_reset'),
+        settingForm = document.querySelector('.settings-panel__inner'),
+        uri = '/local/tools/setting_panel.php';
+    var openSettings = settingsPanel.classList.contains('settings-panel_show');
+    openSettings ? lockScroll(false) : unlockScroll();
+    document.querySelector('body').addEventListener('click', clickOutSettings);
+    togglePanel.addEventListener('click', function () {
+      toggleShowSettingsPanel();
+    });
+    settingApply.addEventListener('click', function () {
+      var data = serialize(settingForm);
+      fetch(uri, {
+        method: 'GET',
+        params: data
+      }).then(function (res) {
+        console.log(res);
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    });
+    settingReset.addEventListener('click', function () {
+      fetch(uri, {
+        method: 'GET',
+        params: {
+          reset: 'Y'
+        }
+      }).then(function (res) {
+        console.log(res);
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    });
+    var settingsTabs = new Tabs(document.querySelector('.settings-panel__inner'));
+    settingsTabs.init();
+    var cartSelect = new customSelect({
+      elem: 'selectMainfont'
+    });
+  }(); // var sizeSelect = new customSelect({
   //     elem: 'selectSizefont'
   // });
   // var titleSelect = new customSelect({
@@ -36,6 +82,7 @@ window.addEventListener('load', function () {
   //         tabSelection(this);
   //     });
   // });
+
 });
 /*document.querySelectorAll('.js-tab-trigger').addEventListener('click', function() {
         alert(123);

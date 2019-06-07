@@ -12,7 +12,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 ?>
 
 <div class="settings-panel">
-	<div class="settings-panel__inner tabs">
+	<form class="settings-panel__inner tabs">
 		<ul class="settings-panel__tabs-nav settings-panel-tabs-nav">
 			<li class="settings-panel-tabs-nav__item settings-panel-tabs-nav-item tabs__toggle tabs__toggle_active">
 				<button class="settings-panel-tabs-nav-item__btn" data-toggle="collapse" data-target="#common" aria-expanded="true" aria-controls="common">Общие настройки</button>
@@ -182,7 +182,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 				</div>
 			</div>
 		</div>
-	</div>
+	</form>
 	<div class="settings-panel__buttons">
 		<button class="btn settings-panel__btn settings-panel__btn_toggle">
 			<span class="btn__icon"><?=GetContentSvgIcon('magic_wand');?></span>
@@ -192,7 +192,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 			Применить
 		</button>
 		<button class="btn btn_icon-left settings-panel__btn settings-panel__btn_reset">
-			<span class="btn__icon"><?=GetContentSvgIcon('close');?></span>
+			<span class="btn__icon"><?=GetContentSvgIcon('reset');?></span>
 			Сбросить
 		</button>
 	</div>

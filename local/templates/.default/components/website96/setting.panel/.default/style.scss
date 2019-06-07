@@ -2,6 +2,7 @@
 	display: flex;
 	position: fixed;
 	z-index: 20;
+	overflow: hidden;
 	top: 0;
 	left: 0;
 	transform: translate(calc(-100% + 190px));
@@ -27,6 +28,7 @@
 	max-width: 930px;
 	margin: 0;
 	overflow: auto;
+	border-right: 1px solid #C4C4C4;
 	background-color: #f5f4f5;
     box-shadow: 0 10px 30px rgba(51,51,51,.4);
 }
@@ -111,12 +113,11 @@
 
 .settings-panel-tabs-content {
 	flex: 1 1 auto;
-	border-left: 1px solid #C4C4C4;
-	border-right: 1px solid #C4C4C4;
 }
 
 .settings-panel-tabs-content-item {
 	display: none;
+	border-left: 1px solid #C4C4C4;
 	&.tabs__content_active {
 		display: block;
 	}
@@ -142,7 +143,7 @@
 		.settings-option {
 			flex: 1 0 45%;
 			max-width: 50%;
-			padding: 0 15px 15px0;
+			padding: 0 15px 15px;
 		}
 	}
 	&:not(:last-child) {
@@ -164,7 +165,7 @@
 .settings-option__inner {
 	display: flex;
 	flex-wrap: wrap;
-	align-items: flex-start;
+	align-items: stretch;
 	&.settings-option__inner_cards3 {
 		margin: 0 -15px -15px;
 		.settings-option-card {
@@ -187,12 +188,14 @@
 	cursor: pointer;
 	flex: 1 0 100%;
 	max-width: 100%;
+	cursor: pointer;
 	&.settings-option-card_disable {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		padding: 0;
 		background: #2880B9;
+		border-radius: 4px;
 		color: #fff;
 		font-size: 0.8rem;
 	}
@@ -202,12 +205,22 @@
 	display: none;
 	&:checked + .settings-option-card__inner {
 		.settings-option-card__preview {
-			border: 1px solid #2880B9;
+			&:after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				border: 1px solid #2880B9;
+				border-radius: 4px;
+			}
 		}
 	}
 }
 
 .settings-option-card__preview {
+	position: relative;
 	display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -240,6 +253,7 @@
 		display: none;
 	}
 	input[type="radio"]:checked {
+		border: 2px solid #000;
 		.settings-option-colors-item__prviews {
 			&:after {
 				content: '';

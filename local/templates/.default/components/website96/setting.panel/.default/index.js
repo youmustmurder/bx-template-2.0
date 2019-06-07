@@ -1,16 +1,67 @@
 window.addEventListener('load', () => {
-	const togglePanel = document.querySelector('.settings-panel__btn_toggle'),
-		  settingsPanel = document.querySelector('.settings-panel');
+	var settingsPanel = (() => {
+		function clickOutSettings(e) {
+			let target = e.target;
+			if (target != settingsPanel && !settingsPanel.contains(target) && openSettings) {
+				toggleShowSettingsPanel();
+			}
+		}
 
-	togglePanel.addEventListener('click', () => {
-		settingsPanel.classList.toggle('settings-panel_show')
-	});
-	var settingsTabs = new Tabs(document.querySelector('.settings-panel__inner'));
-	settingsTabs.init();
+		function toggleShowSettingsPanel() {
+			settingsPanel.classList.toggle('settings-panel_show');
+			openSettings = settingsPanel.classList.contains('settings-panel_show');
+			(openSettings) ? lockScroll() : unlockScroll();
+		}
 
-	var cartSelect = new customSelect({
-        elem: 'selectMainfont'
-    });
+		const togglePanel = document.querySelector('.settings-panel__btn_toggle'),
+			settingsPanel = document.querySelector('.settings-panel'),
+			settingApply = document.querySelector('.settings-panel__btn_apply'),
+			settingReset = document.querySelector('.settings-panel__btn_reset'),
+			settingForm = document.querySelector('.settings-panel__inner'),
+			uri = '/local/tools/setting_panel.php';
+
+		var openSettings = settingsPanel.classList.contains('settings-panel_show');
+		(openSettings) ? lockScroll(false) : unlockScroll();
+
+		document.querySelector('body').addEventListener('click', clickOutSettings);
+
+		togglePanel.addEventListener('click', () => {
+			toggleShowSettingsPanel();
+		});
+
+		settingApply.addEventListener('click', () => {
+			var data = serialize(settingForm);
+			fetch(uri, {
+				method: 'GET',
+				params: data,
+			}).then(res => {
+				console.log(res);
+			}).catch(err => {
+				console.log(err);
+			});
+		});
+
+		settingReset.addEventListener('click', () => {
+			fetch(uri, {
+				method: 'GET',
+				params: {
+					reset: 'Y'
+				},
+			}).then(res => {
+				console.log(res);
+			}).catch(err => {
+				console.log(err);
+			});
+		});
+
+		var settingsTabs = new Tabs(document.querySelector('.settings-panel__inner'));
+		settingsTabs.init();
+
+		var cartSelect = new customSelect({
+			elem: 'selectMainfont'
+		});
+	})();
+
     // var sizeSelect = new customSelect({
     //     elem: 'selectSizefont'
     // });
