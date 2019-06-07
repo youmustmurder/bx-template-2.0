@@ -4422,10 +4422,13 @@ var bodyScrollTop = null,
     bodyLocked = false;
 
 function lockScroll() {
+  var bodyFixed = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+
   if (!bodyLocked) {
     var body = document.querySelector('body');
     bodyScrollTop = typeof window.pageYOffset !== 'undefined' ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
     body.classList.add('body-block');
+    bodyFixed ? body.style.position = 'fixed' : body.style.position = 'unset';
     body.style.top = "".concat(bodyScrollTop, "px");
     bodyLocked = true;
   }
@@ -4435,6 +4438,7 @@ function unlockScroll() {
   if (bodyLocked) {
     var body = document.querySelector('body');
     body.classList.remove('body-block');
+    body.style.position = 'unset';
     body.style.top = null;
     window.scrollTo(0, bodyScrollTop);
     bodyLocked = false;
@@ -4554,6 +4558,59 @@ function () {
 
   return Tabs;
 }();
+
+function serialize(form) {
+  if (!form || form.nodeName !== 'FORM') {
+    return;
+  }
+
+  var q = {};
+
+  for (var i = form.elements.length - 1; i >= 0; i = i - 1) {
+    if (form.elements[i].name === '') {
+      continue;
+    }
+
+    switch (form.elements[i].nodeName) {
+      case 'INPUT':
+        switch (form.elements[i].type) {
+          case 'text':
+          case 'tel':
+          case 'email':
+          case 'hidden':
+          case 'password':
+          case 'button':
+          case 'reset':
+          case 'submit':
+            q[form.elements[i].name] = encodeURIComponent(form.elements[i].value);
+            break;
+
+          case 'checkbox':
+          case 'radio':
+            if (form.elements[i].checked) {
+              q[form.elements[i].name] = encodeURIComponent(form.elements[i].value);
+            }
+
+            break;
+        }
+
+        break;
+
+      case 'file':
+        break;
+
+      case 'TEXTAREA':
+        q[form.elements[i].name] = encodeURIComponent(form.elements[i].value);
+        break;
+
+      case 'SELECT':
+        q[form.elements[i].name] = encodeURIComponent(form.elements[i].value);
+        break;
+    }
+  }
+
+  return q;
+}
 
 window.addEventListener('load', function () {
   var modalCallbackButtons = document.querySelectorAll('.js-init-modal__form');
