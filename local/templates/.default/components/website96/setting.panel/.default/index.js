@@ -18,7 +18,7 @@ window.addEventListener('load', () => {
 			settingApply = document.querySelector('.settings-panel__btn_apply'),
 			settingReset = document.querySelector('.settings-panel__btn_reset'),
 			settingForm = document.querySelector('.settings-panel__inner'),
-			uri = '/local/tools/setting_panel.php';
+			uri = window.location.href;
 
 		var openSettings = settingsPanel.classList.contains('settings-panel_show');
 		(openSettings) ? lockScroll(false) : unlockScroll();
@@ -33,8 +33,8 @@ window.addEventListener('load', () => {
 			var data = serialize(settingForm);
 			data['SET_SETTING'] = 'Y';
 			fetch(uri, {
-				method: 'GET',
-				params: data,
+				method: 'POST',
+				body: JSON.stringify(data)
 			}).then(res => {
 				console.log(res);
 			}).catch(err => {

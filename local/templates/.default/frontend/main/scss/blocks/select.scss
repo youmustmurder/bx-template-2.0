@@ -1,33 +1,37 @@
-.form-stroke__select {
-	.custom-dropdown {
-		position: relative;
-		width: 100%;
-		transition: 0.2s all;
-		&.custom-dropdown_active {
-			.custom-dropdown_button__arrow {
-				-webkit-transform: rotate(180deg);
-				-moz-transform: rotate(180deg);
-				-ms-transform: rotate(180deg);
-				-o-transform: rotate(180deg);
-				transform: rotate(180deg);
-				top: 43%;
-			}
+.custom-dropdown {
+	position: relative;
+	width: 100%;
+	transition: 0.2s all;
+	&.custom-dropdown_active {
+		.custom-dropdown_button__arrow {
+			transform: rotate(180deg);
+			top: 43%;
+		}
+		.custom-dropdown__content {
+			display: block;
+			height: auto;
+			opacity: 1;
+		}
+	}
+	&.custom-dropdown_mb40 {
+		margin-bottom: 40px;
+	}
+}
 
-			.custom-dropdown__content {
-				display: block;
-				height: auto;
-				opacity: 1;
-			}
-		}
-		&.custom-dropdown_mb40 {
-			margin-bottom: 40px;
-		}
+.custom-dropdown_button__value {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.form-default-select {
+	.custom-dropdown {
 		.simplebar-track .simplebar-scrollbar.visible:before {
 			opacity: 1;
 		}
 		.simplebar-scrollbar {
-			width: 2px;
 			right: 0;
+			width: 2px;
 			&:before {
 				border-radius: 0;
 				background: black;
@@ -38,16 +42,15 @@
 			background: #fff;
 		}
 	}
-
 	.custom-dropdown__button {
 		position: relative;
-		background-color: #fff;
-		border-radius: 22.5px;
-		border: 1px solid #eeeeee;
-		padding: 14px 32px 14px 16px;
 		margin-bottom: 45px;
+		padding: 14px 32px 14px 16px;
 		transition: 0.3s;
 		width: 100%;
+		border: 1px solid #eeeeee;
+		border-radius: 4px;
+		background-color: #fff;
 		text-align: left;
 		cursor: pointer;
 		&:hover,
@@ -55,19 +58,12 @@
 			outline: none;
 		}
 	}
-	.custom-dropdown_button__value {
-		text-overflow: ellipsis;
-		overflow: hidden;
-		white-space: nowrap;
-	}
-
 	.custom-dropdown_button__name {
 		margin-bottom: 15px;
 		font-size: 0.875rem;
 		text-transform: uppercase;
 		color: grey;
 	}
-
 	.custom-dropdown_button__arrow {
 		position: absolute;
 		top: 50%;
@@ -76,25 +72,24 @@
 		width: 14px;
 		transform: translate(0, -50%);
 		display: flex;
-		background-image: url(../../main/images/icons/select-arrow.png);
+		background-image: url(../../main/images/icons/arrow_bottom.svg);
 		background-repeat: no-repeat;
 	}
-
 	.custom-dropdown__content {
 		position: absolute;
+		z-index: 2;
 		top: 55px;
 		display: none;
 		overflow: hidden;
 		opacity: 0;
 		height: 0;
-		background-color: #fff;
-		border-radius: 22.5px;
-		border: 1px solid #eeeeee;
-		padding: 20px 0;
-		transition: 0.3s;
 		width: 100%;
+		padding: 20px 0;
+		background-color: #fff;
+		border: 1px solid #eeeeee;
+		border-radius: 4px;
+		transition: 0.3s;
 		text-align: left;
-		z-index: 2;
 	}
 	.custom-dropdown-list {
 		width: 100%;
@@ -103,7 +98,6 @@
 		list-style-type: none;
 		transition: 0.2s linear;
 	}
-
 	.custom-dropdown-list__item {
 		padding: 4px 16px;
 		cursor: pointer;
@@ -114,32 +108,16 @@
 			color: #acabaf;
 		}
 	}
+	&.custom-dropdown_round {
+		.custom-dropdown__button,
+		.custom-dropdown__content {
+			border-radius: 22.5px;
+		}
+	}
 }
 
 .form-underline__select {
 	.custom-dropdown {
-		position: relative;
-		width: 100%;
-		transition: 0.2s all;
-		&.custom-dropdown_active {
-			.custom-dropdown_button__arrow {
-				-webkit-transform: rotate(180deg);
-				-moz-transform: rotate(180deg);
-				-ms-transform: rotate(180deg);
-				-o-transform: rotate(180deg);
-				transform: rotate(180deg);
-				top: 43%;
-			}
-
-			.custom-dropdown__content {
-				display: block;
-				height: auto;
-				opacity: 1;
-			}
-		}
-		&.custom-dropdown_mb40 {
-			margin-bottom: 40px;
-		}
 		.simplebar-track .simplebar-scrollbar.visible:before {
 			opacity: 1;
 		}
@@ -156,7 +134,6 @@
 			background: #fff;
 		}
 	}
-
 	.custom-dropdown__button {
 		position: relative;
 		background-color: transparent;
@@ -173,19 +150,12 @@
 			outline: none;
 		}
 	}
-	.custom-dropdown_button__value {
-		text-overflow: ellipsis;
-		overflow: hidden;
-		white-space: nowrap;
-	}
-
 	.custom-dropdown_button__name {
 		margin-bottom: 15px;
 		font-size: 0.875rem;
 		text-transform: uppercase;
 		color: grey;
 	}
-
 	.custom-dropdown_button__arrow {
 		position: absolute;
 		top: 50%;
@@ -194,10 +164,9 @@
 		width: 14px;
 		transform: translate(0, -50%);
 		display: flex;
-		background-image: url(../../main/images/icons/select-arrow.png);
+		background-image: url(../../main/images/icons/arrow_bottom.svg);
 		background-repeat: no-repeat;
 	}
-
 	.custom-dropdown__content {
 		position: absolute;
 		top: 35px;
@@ -220,7 +189,6 @@
 		list-style-type: none;
 		transition: 0.2s linear;
 	}
-
 	.custom-dropdown-list__item {
 		padding: 4px 8px;
 		cursor: pointer;

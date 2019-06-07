@@ -84,7 +84,7 @@ $arParameters = CWebsiteTemplate::$arParametersList;
                                     <div class="settings-option">
                                         <div class="settings-option__title"><?=Loc::getMessage('SETTING_PANEL_FONT_MAIN_TITLE')?></div>
                                         <div class="settings-option__inner">
-                                            <div class="settings-option__card settings-option-card">
+                                            <div class="settings-option__card settings-option-card form-default-select">
                                                 <select name="FONT" id="FONT" style="display: none;">
                                                     <?foreach ($parameters as $id => $parameter) {?>
                                                         <option value="<?=$parameter['FONT_CODE']?>"><?=$parameter['NAME']?></option>
@@ -96,7 +96,7 @@ $arParameters = CWebsiteTemplate::$arParametersList;
                                     <div class="settings-option">
                                         <div class="settings-option__title"><?=Loc::getMessage('SETTING_PANEL_FONT_SIZE_TITLE')?></div>
                                         <div class="settings-option__inner">
-                                            <div class="settings-option__card settings-option-card">
+                                            <div class="settings-option__card settings-option-card form-default-select">
                                                 <select name="FONT[SIMPLE]" id="selectMainfont" style="display: none;">
                                                     <?foreach ($arParameters['FONT_SIZE'] as $code => $parameter) {?>
                                                         <option value="<?=$code?>"><?=$parameter['VALUE']?></option>

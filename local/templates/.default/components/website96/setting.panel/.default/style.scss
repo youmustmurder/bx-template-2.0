@@ -167,19 +167,19 @@
 	flex-wrap: wrap;
 	align-items: stretch;
 	&.settings-option__inner_cards3 {
-		margin: 0 -15px -15px;
+		margin: 0 -15px -25px;
 		.settings-option-card {
 			flex: 1 0 30%;
 			max-width: calc(100% / 3);
-			padding: 0 15px 15px;
+			padding: 0 15px 25px;
 		}
 	}
 	&.settings-option__inner_cards2 {
-		margin: 0 -15px -15px;
+		margin: 0 -15px -25px;
 		.settings-option-card {
 			flex: 1 0 45%;
 			max-width: calc(100% / 2);
-			padding: 0 15px 15px;
+			padding: 0 15px 25px;
 		}
 	}
 }
@@ -187,16 +187,20 @@
 .settings-option-card {
 	flex: 1 0 100%;
 	max-width: 100%;
+	padding: 0 0 25px 0;
 	cursor: pointer;
 	&.settings-option-card_disable {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: 0;
-		background: #2880B9;
-		border-radius: 4px;
-		color: #fff;
-		font-size: 0.8rem;
+		.settings-option-card__inner {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+			padding: 0;
+			background: #95A5A6;
+			border-radius: 4px;
+			color: #fff;
+			font-size: 0.8rem;
+		}
 	}
 }
 
