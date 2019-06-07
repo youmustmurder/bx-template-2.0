@@ -31,6 +31,7 @@ window.addEventListener('load', () => {
 
 		settingApply.addEventListener('click', () => {
 			var data = serialize(settingForm);
+			data['SET_SETTING'] = 'Y';
 			fetch(uri, {
 				method: 'GET',
 				params: data,
