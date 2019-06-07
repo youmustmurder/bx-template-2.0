@@ -33,7 +33,10 @@ window.addEventListener('load', function () {
       data['SET_SETTING'] = 'Y';
       fetch(uri, {
         method: 'POST',
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json"
+        }
       }).then(function (res) {
         console.log(res);
       })["catch"](function (err) {
@@ -43,8 +46,11 @@ window.addEventListener('load', function () {
     settingReset.addEventListener('click', function () {
       fetch(uri, {
         method: 'GET',
-        params: {
+        body: JSON.stringify({
           reset: 'Y'
+        }),
+        headers: {
+          "Content-Type": "application/json"
         }
       }).then(function (res) {
         console.log(res);
