@@ -104,7 +104,7 @@ class CWebsiteTemplate {
         }
         
         $request = Application::getInstance()->getContext()->getRequest();
-        $filePath = SITE_TEMPLATE_PATH . '/public/css/theme/' . strtolower($codeProperty) . '.css';
+        $filePath = SITE_TEMPLATE_PATH . '/public/css/theme/' . strtolower($codeProperty) . '_' . $value . '.css';
 
         if (!file_exists($_SERVER['DOCUMENT_ROOT'] . $filePath) || $request->get('clear_cache') == 'Y') {
             $content = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/local/modules/' . WEBSITE_MODULE_ID . '/tools/css/' . strtolower($codeProperty) . '.tpl');
