@@ -42,7 +42,7 @@ function GetCurDir($dirPath)
 }
 
 function GetNoPhoto() {
-    echo SITE_TEMPALTE_PATH . '/frontend/main/images/noPhoto.png';
+    echo SITE_TEMPLATE_PATH . '/frontend/main/images/noPhoto.png';
 }
 
 /**
