@@ -15,8 +15,7 @@ Loc::loadMessages(__FILE__);
 Asset::getInstance()->addJs(GetCurDir(__DIR__) . '/bundle.js');
 Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 
-$arParameters = CWebsiteTemplate::$arParametersList;
-
+dump($arCurrentSetting);
 ?>
 
 <div class="settings-panel">
@@ -56,7 +55,7 @@ $arParameters = CWebsiteTemplate::$arParametersList;
 			<div class="settings-panel-tabs-content__item settings-panel-tabs-content-item tabs__content tabs__content_active" id="common" aria-label="<?=Loc::getMessage('SETTING_PANEL_TAB_GENERAL_SETTINGS')?>">
 				<div class="settings-panel-tabs-content-item__header"><?=Loc::getMessage('SETTING_PANEL_TAB_GENERAL_SETTINGS')?></div>
 				<div class="settings-panel-tabs-content-item__body">
-                    <?foreach ($arParameters as $CODE => $parameters) {
+                    <?foreach (CWebsiteTemplate::$arParametersList as $CODE => $parameters) {
                         switch ($CODE) {
                             //в 1 столбик (для цветовы)
                             case 'COLOR':?>
@@ -69,7 +68,9 @@ $arParameters = CWebsiteTemplate::$arParametersList;
                                                     <input type="radio"
                                                            name="<?=$CODE?>"
                                                            value="<?=$id?>"
-                                                           id="<?=$CODE?>_<?=$id?>">
+                                                           id="<?=$CODE?>_<?=$id?>"
+                                                           
+                                                    >
                                                     <label class="settings-option-colors-item__prviews"
                                                            for="<?=$CODE?>_<?=$id?>"
                                                            style="background-color: #<?=$parameter['VALUE']?>">
@@ -88,7 +89,9 @@ $arParameters = CWebsiteTemplate::$arParametersList;
                                             <div class="settings-option__card settings-option-card form-default-select">
                                                 <select name="FONT" id="FONT" style="display: none;">
                                                     <?foreach ($parameters as $id => $parameter) {?>
-                                                        <option value="<?=$parameter['FONT_CODE']?>"><?=$parameter['NAME']?></option>
+                                                        <option value="<?=$parameter['FONT_CODE']?>"
+                                                                <?=$arCurrentSetting[$CODE] == $parameter['FONT_CODE'] ? 'selected' : ''?>
+                                                        ><?=$parameter['NAME']?></option>
                                                     <?}?>
                                                 </select>
                                             </div>
@@ -98,9 +101,11 @@ $arParameters = CWebsiteTemplate::$arParametersList;
                                         <div class="settings-option__title"><?=Loc::getMessage('SETTING_PANEL_FONT_SIZE_TITLE')?></div>
                                         <div class="settings-option__inner">
                                             <div class="settings-option__card settings-option-card form-default-select">
-                                                <select name="FONT[SIMPLE]" id="selectMainfont" style="display: none;">
-                                                    <?foreach ($arParameters['FONT_SIZE'] as $code => $parameter) {?>
-                                                        <option value="<?=$code?>"><?=$parameter['VALUE']?></option>
+                                                <select name="FONT_SIZE" id="selectMainfont" style="display: none;">
+                                                    <?foreach (CWebsiteTemplate::$arParametersList['FONT_SIZE'] as $code => $parameter) {?>
+                                                        <option value="<?=$code?>"
+                                                                <?=$arCurrentSetting['FONT_SIZE'] == $code ? 'selected' : ''?>
+                                                        ><?=$parameter['VALUE']?></option>
                                                     <?}?>
                                                 </select>
                                             </div>
@@ -120,10 +125,11 @@ $arParameters = CWebsiteTemplate::$arParametersList;
                                                        name="<?=$CODE?>"
                                                        value="<?=$id?>"
                                                        id="<?=$CODE?>_<?=$id?>"
-                                                       class="settings-option-card__checkbox">
+                                                       class="settings-option-card__checkbox"
+                                                       <?=$arCurrentSetting[$CODE] == $id ? 'checked' : ''?>>
                                                 <label for="<?=$CODE?>_<?=$id?>" class="settings-option-card__inner">
                                                     <div class="settings-option-card__preview">
-                                                        <img src="<?=GetCurDir(__DIR__)?>/uploads/previews_settings.png" alt="">
+                                                        <img src="<?=$parameter['PICTURE']?>" alt="">
                                                     </div>
                                                     <div class="settings-option-card__name"><?=$parameter['NAME']?></div>
                                                 </label>
@@ -162,7 +168,7 @@ $arParameters = CWebsiteTemplate::$arParametersList;
                                     </div>
                                 </div>
                                 <?break;
-                            default:?>
+                            case '1':?>
                                 <div class="settings-panel-tabs-content-item__option settings-option">
                                     <div class="settings-option__title"><?=Loc::getMessage('SETTING_PANEL_'.$CODE.'_TITLE')?></div>
                                     <div class="settings-option__inner settings-option__inner_cards2">
@@ -278,44 +284,7 @@ $arParameters = CWebsiteTemplate::$arParametersList;
 						</div>
 					</div>
 					<!-- Для шрифтов в 2 стобика -->
-					<div class="settings-panel-tabs-content-item__option settings-panel-tabs-content-item__option_2column">
-						<div class="settings-option">
-							<div class="settings-option__title">Основной шрифт</div>
-							<div class="settings-option__inner">
-								<div class="settings-option__card settings-option-card">
-									<select name="FONT[SIMPLE]" id="selectMainfont" style="display: none;">
-										<option value="roboto_condensed">Roboto Condensed</option>
-										<option value="open_sans">Open Sans</option>
-										<option value="montserrat_alternates">Montserrat Alternates</option>
-										<option value="ubuntu">Ubuntu</option>
-										<option value="pt_sans">PT Sans</option>
-										<option value="rubik">Rubik</option>
-										<option value="play">Play</option>
-										<option value="roboto">Roboto</option>
-										<option value="default" selected="">Montserrat</option>
-									</select>
-								</div>
-							</div>
-						</div>
-						<div class="settings-option">
-							<div class="settings-option__title">Основной шрифт</div>
-							<div class="settings-option__inner">
-								<div class="settings-option__card settings-option-card">
-									<select name="FONT[SIMPLE]" id="selectMainfont" style="display: none;">
-										<option value="roboto_condensed">Roboto Condensed</option>
-										<option value="open_sans">Open Sans</option>
-										<option value="montserrat_alternates">Montserrat Alternates</option>
-										<option value="ubuntu">Ubuntu</option>
-										<option value="pt_sans">PT Sans</option>
-										<option value="rubik">Rubik</option>
-										<option value="play">Play</option>
-										<option value="roboto">Roboto</option>
-										<option value="default" selected="">Montserrat</option>
-									</select>
-								</div>
-							</div>
-						</div>
-					</div>
+					
 				</div>
 			</div>
 			<div class="settings-panel-tabs-content__item settings-panel-tabs-content-item tabs__content" id="home" aria-label="Главная">
