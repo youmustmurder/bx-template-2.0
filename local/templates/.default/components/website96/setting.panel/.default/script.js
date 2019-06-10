@@ -56,8 +56,8 @@ window.addEventListener('load', function () {
         body: body
       }).then(function (res) {
         return res.json();
-      }).then(function (body) {
-        if ('success' in body && body.success) {
+      }).then(function (res) {
+        if ('success' in res && res.success) {
           location.reload();
         }
       })["catch"](function (err) {
@@ -69,17 +69,26 @@ window.addEventListener('load', function () {
       var body = new FormData();
       body.append('RESET', 'Y');
       fetch(uri, {
-        method: 'GET',
+        method: 'POST',
         body: body
       }).then(function (res) {
         return res.json();
-      }).then(function (body) {
-        if ('success' in body && body.success) {
+      }).then(function (res) {
+        if ('success' in res && res.success) {
           location.reload();
         }
       })["catch"](function (err) {
         console.log(err);
       });
+    }
+
+    function applyFontForElem(elem, fontName) {
+      elem.style.fontFamily = '"' + fontName + '", sans-serif';
+      elem.style.lineHeight = '26px';
+    }
+
+    function applySizeFontForElem(elem, size) {
+      elem.style.fontSize = size;
     }
 
     panelTransform();
@@ -94,9 +103,37 @@ window.addEventListener('load', function () {
     settingsTabs.init();
     var selects = settingsPanel.querySelectorAll('select');
     Array.prototype.forEach.call(selects, function (select) {
-      new customSelect({
-        elem: select
-      });
+      var selectFont = select.getAttribute('data-font');
+
+      if (selectFont != null) {
+        if (selectFont == 'font') {
+          new customSelect({
+            elem: select
+          }, function () {
+            var liNodes = select.parentNode.querySelectorAll('.custom-dropdown-list__item');
+            Array.prototype.forEach.call(liNodes, function (li) {
+              applyFontForElem(li, li.innerText);
+            });
+          }, function (elem, activeValue) {
+            applyFontForElem(elem, activeValue);
+          });
+        } else {
+          new customSelect({
+            elem: select
+          }, function () {
+            var liNodes = select.parentNode.querySelectorAll('.custom-dropdown-list__item');
+            Array.prototype.forEach.call(liNodes, function (li) {
+              applySizeFontForElem(li, li.innerText);
+            });
+          }, function (elem, activeValue) {
+            applySizeFontForElem(elem, activeValue);
+          });
+        }
+      } else {
+        new customSelect({
+          elem: select
+        });
+      }
     });
   }();
 });

@@ -51,8 +51,8 @@ window.addEventListener('load', () => {
 				body,
 			}).then(res => {
 				return res.json();
-			}).then(body => {
-				if ('success' in body && body.success) {
+			}).then(res => {
+				if ('success' in res && res.success) {
 					location.reload();
 				}
 			}).catch(err => {
@@ -64,17 +64,26 @@ window.addEventListener('load', () => {
 			var body = new FormData();
 			body.append('RESET', 'Y');
 			fetch(uri, {
-				method: 'GET',
+				method: 'POST',
 				body,
 			}).then(res => {
 				return res.json();
-			}).then(body => {
-				if ('success' in body && body.success) {
+			}).then(res => {
+				if ('success' in res && res.success) {
 					location.reload();
 				}
 			}).catch(err => {
 				console.log(err);
 			});
+		}
+
+		function applyFontForElem(elem, fontName) {
+			elem.style.fontFamily = '"' + fontName + '", sans-serif';
+			elem.style.lineHeight = '26px';
+		}
+
+		function applySizeFontForElem(elem, size) {
+			elem.style.fontSize = size;
 		}
 
 		panelTransform();
@@ -92,9 +101,36 @@ window.addEventListener('load', () => {
 
 		var selects = settingsPanel.querySelectorAll('select');
 		Array.prototype.forEach.call(selects, (select) => {
-			new customSelect({
-				elem: select
-			});
+			const selectFont = select.getAttribute('data-font');
+			if (selectFont != null) {
+				if (selectFont == 'font') {
+					new customSelect({
+						elem: select
+					}, function() {
+						const liNodes = select.parentNode.querySelectorAll('.custom-dropdown-list__item');
+						Array.prototype.forEach.call(liNodes, function(li) {
+							applyFontForElem(li, li.innerText);
+						});
+					}, function(elem, activeValue) {
+						applyFontForElem(elem, activeValue);
+					});
+				} else {
+					new customSelect({
+						elem: select
+					}, function() {
+						const liNodes = select.parentNode.querySelectorAll('.custom-dropdown-list__item');
+						Array.prototype.forEach.call(liNodes, function(li) {
+							applySizeFontForElem(li, li.innerText);
+						});
+					}, function(elem, activeValue) {
+						applySizeFontForElem(elem, activeValue);
+					});
+				}
+			} else {
+				new customSelect({
+					elem: select
+				});
+			}
 		});
 	})();
 });
