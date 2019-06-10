@@ -41,6 +41,10 @@ function GetCurDir($dirPath)
     return substr($path, 0, 1)  == '/' ? $path : '/' . $path;
 }
 
+function GetNoPhoto() {
+    echo SITE_TEMPALTE_PATH . '/frontend/main/images/noPhoto.png';
+}
+
 /**
  * @param      $number
  * @param      $titles
