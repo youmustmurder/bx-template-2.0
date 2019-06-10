@@ -3703,7 +3703,7 @@ function itemCounter(field) {
 }
 
 var customSelect = function customSelect(options, cbAfter, cbChoose) {
-  var elem = _typeof(options.elem === 'string') ? document.getElementById(options.elem) : options.elem;
+  var elem = typeof options.elem === 'string' ? document.querySelector(options.elem) : options.elem;
   var mainClass = 'custom-dropdown',
       mainClassActive = 'custom-dropdown_active',
       buttonClass = 'custom-dropdown__button',
@@ -3715,8 +3715,8 @@ var customSelect = function customSelect(options, cbAfter, cbChoose) {
       listClass2 = 'custom-dropdown-list',
       liClass = 'custom-dropdown-list__item',
       selectedClass = 'custom-dropdown-list__item_active',
-      openClass = 'custom-dropdown-list_open',
-      selectOptions = elem.querySelectorAll('option'),
+      openClass = 'custom-dropdown-list_open';
+  var selectOptions = elem.querySelectorAll('option'),
       optionsLength = selectOptions.length;
   var selectContainer = document.createElement('div');
   selectContainer.className = mainClass;
@@ -4380,6 +4380,7 @@ if (!self.fetch) {
 	@param before: Function
 	@param after: Function
 */
+// console.log(MicroModal);
 
 
 function modalFromAjax(_ref) {

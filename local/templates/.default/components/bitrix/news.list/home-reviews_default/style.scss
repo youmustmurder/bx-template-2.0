@@ -36,6 +36,7 @@
 	height: 80px;
 	width: 80px;
 	margin: auto;
+	cursor: pointer;
 	&:before,
 	&:after {
 		content: '';
@@ -145,6 +146,7 @@
 	cursor: pointer;
 	border: none;
 	background: none;
+	transition: 0.3s all ease-out;
 	svg {
 		fill: #ff223d;
 	}
@@ -153,6 +155,11 @@
 	}
 	&.reviews__arrow_next {
 		right: 15px;
+	}
+	&:hover {
+		svg {
+			fill: #1c1c1c;
+		}
 	}
 }
 

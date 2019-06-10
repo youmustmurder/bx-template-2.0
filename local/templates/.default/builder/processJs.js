@@ -51,8 +51,10 @@ const transformFile = async (filename, output = path.join(path.dirname(filename)
 	const { output: outputSplit } = await bundle.generate({
 		format: 'cjs',
 		plugins: [
+			resolve(),
 			json({
 				include: 'node_modules/**',
+				preferConst: true,
 				indent: '  ',
 				compact: true,
       			namedExports: true

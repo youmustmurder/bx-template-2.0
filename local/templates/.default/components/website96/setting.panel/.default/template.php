@@ -282,7 +282,7 @@ $arParameters = CWebsiteTemplate::$arParametersList;
 						<div class="settings-option">
 							<div class="settings-option__title">Основной шрифт</div>
 							<div class="settings-option__inner">
-								<div class="settings-option__card settings-option-card">
+								<div class="settings-option__card settings-option-card form-default-select">
 									<select name="FONT[SIMPLE]" id="selectMainfont" style="display: none;">
 										<option value="roboto_condensed">Roboto Condensed</option>
 										<option value="open_sans">Open Sans</option>
@@ -300,7 +300,7 @@ $arParameters = CWebsiteTemplate::$arParametersList;
 						<div class="settings-option">
 							<div class="settings-option__title">Основной шрифт</div>
 							<div class="settings-option__inner">
-								<div class="settings-option__card settings-option-card">
+								<div class="settings-option__card settings-option-card form-default-select">
 									<select name="FONT[SIMPLE]" id="selectMainfont" style="display: none;">
 										<option value="roboto_condensed">Roboto Condensed</option>
 										<option value="open_sans">Open Sans</option>
