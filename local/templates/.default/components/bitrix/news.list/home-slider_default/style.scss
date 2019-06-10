@@ -2,10 +2,16 @@
 	position: relative;
 }
 
+.slider-big__slides {
+	display: flex;
+}
+
 .slider-big-slide,
 .tns-horizontal.tns-subpixel>.tns-item.slider-big-slide {
+	flex: 1 0 auto;
 	position: relative;
 	min-height: 460px;
+	margin: 0!important;
 	overflow: hidden;
 	color: #fff;
 	&.slider-big-slide_shadow {

@@ -2,9 +2,18 @@
 	position: relative;
 }
 
+.slider-big__slides {
+	display: flex;
+}
+
 .slider-big-slide,
-.tns-horizontal.tns-subpixel>.tns-item.slider-big-slide {
+.tns-horizontal.tns-subpixel > .tns-item.slider-big-slide {
 	position: relative;
+	display: inline-flex;
+    justify-content: center;
+	align-items: center;
+	flex: 1 0 auto;
+	margin: 0!important;
 	padding: 90px 0;
 	color: #fff;
 	overflow: hidden;

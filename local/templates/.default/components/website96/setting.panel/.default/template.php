@@ -352,7 +352,7 @@ Loc::loadMessages(__FILE__);
 			<?=Loc::getMessage('SETTING_PANEL_BUTTON_APPLY')?>
 		</button>
 		<button class="btn btn_icon-left settings-panel__btn settings-panel__btn_reset">
-			<span class="btn__icon"><?=GetContentSvgIcon('close');?></span>
+			<span class="btn__icon"><?=GetContentSvgIcon('reset');?></span>
 			<?=Loc::getMessage('SETTING_PANEL_BUTTON_RESET')?>
 		</button>
 	</div>

@@ -1,4 +1,4 @@
-import { version } from '../../../package.json';
+const version = '1.0';
 
 const MicroModal = (() => {
 	'use strict';

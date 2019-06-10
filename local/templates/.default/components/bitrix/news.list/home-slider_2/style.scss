@@ -10,13 +10,17 @@
 }
 
 .slider-big-slides {
+	display: flex;
 	min-height: 460px;
 	border-bottom: 1px solid #eee;
 }
 
+.tns-horizontal.tns-subpixel>.tns-item,
 .slider-big-slide {
 	position: relative;
 	overflow: hidden;
+	flex: 1 0 auto;
+	margin: 0!important;
 }
 
 .slider-big-slide__wrap {
