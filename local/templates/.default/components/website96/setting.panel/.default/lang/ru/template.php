@@ -4,9 +4,15 @@ $MESS['SETTING_PANEL_TAB_GENERAL_SETTINGS'] = 'Общие настройки';
 $MESS['SETTING_PANEL_COLOR_TITLE'] = 'Основной цвет';
 $MESS['SETTING_PANEL_FONT_MAIN_TITLE'] = 'Основной шрифт';
 $MESS['SETTING_PANEL_FONT_SIZE_TITLE'] = 'Размер шрифта';
-$MESS['SETTING_PANEL_SLIDER_TITLE'] = 'Слайдер на главной';
 $MESS['SETTING_PANEL_HEADER_TITLE'] = 'Вид шапки';
 $MESS['SETTING_PANEL_FOOTER_TITLE'] = 'Вид футера';
+
+$MESS['SETTING_PANEL_SLIDER_TITLE'] = 'Слайдер';
+$MESS['SETTING_PANEL_SECTIONS_TITLE'] = 'Категории товаров';
+$MESS['SETTING_PANEL_PRODUCTS_TITLE'] = 'Карточки товара';
+$MESS['SETTING_PANEL_SERVICES_TITLE'] = 'Услуги';
+$MESS['SETTING_PANEL_ABOUT_TITLE'] = 'О компании';
+$MESS['SETTING_PANEL_NEWS_TITLE'] = 'Новости';
 
 
 $MESS['SETTING_PANEL_BUTTON_APPLY'] = 'Применить';

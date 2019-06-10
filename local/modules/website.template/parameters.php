@@ -28,22 +28,16 @@ CWebsiteTemplate::$arParametersList = array(
     ),
     'SLIDER' => array(
         'default' => array(
-            'NAME' => 'Вариант 1'
+            'NAME' => 'Базовый вариант'
+        ),
+        '1' => array(
+            'NAME' => 'Слайдер с преимуществами'
         ),
         '2' => array(
-            'NAME' => 'Вариант 2'
+            'NAME' => 'Товарный слайдер с белым фоном'
         ),
         '3' => array(
-            'NAME' => 'Вариант 3'
-        ),
-        '4' => array(
-            'NAME' => 'Вариант 4'
-        ),
-        '5' => array(
-            'NAME' => 'Вариант 5'
-        ),
-        '6' => array(
-            'NAME' => 'Вариант 6'
+            'NAME' => 'Слайдер с текстом по центру'
         )
     ),
     'ADVANTAGE' => array(
@@ -56,14 +50,49 @@ CWebsiteTemplate::$arParametersList = array(
     ),
     'SECTIONS' => array(
         'default' => array(
-            'NAME' => 'Плитками'
+            'NAME' => 'Нестандартная сетка'
+        ),
+        '1' => array(
+            'NAME' => 'Нестандартная сетка c ценами'
         ),
         '2' => array(
-            'NAME' => 'По 4 в ряд'
+            'NAME' => 'Базовое представление'
         ),
-        '3' => array(
-            'NAME' => 'По 3 в ряд'
+    ),
+    'PRODUCTS' => array(
+        'default' => array(
+            'NAME' => 'Стандартный вид'
         ),
+        '1' => array(
+            'NAME' => 'Карточки для фото с прозрачным фоном'
+        )
+    ),
+    'SERVICES' => array(
+        'default' => array(
+            'NAME' => 'Вид с изображениями'
+        ),
+        '1' => array(
+            'NAME' => 'Вид с икноками'
+        )
+    ),
+    'ABOUT' => array(
+        'default' => array(
+            'NAME' => 'Стандартный блок'
+        ),
+        '1' => array(
+            'NAME' => 'Блок с преимуществами'
+        ),
+        '2' => array(
+            'NAME' => 'Блок с преимуществами'
+        )
+    ),
+    'NEWS' => array(
+        'default' => array(
+            'NAME' => 'Стандартный вид'
+        ),
+        '1' => array(
+            'NAME' => 'Дополнительный'
+        )
     ),
     'HEADER' => CWebsiteTemplate::getViewTemplates('header'),
     'FOOTER' => CWebsiteTemplate::getViewTemplates('footer')
