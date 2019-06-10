@@ -54,7 +54,8 @@ if ($arResult['ITEMS']) {?>
                                                 </button>
                                             </div>
                                             <a href="<?=$arItem['DETAIL_PAGE_URL']?>" class="product__img">
-                                                <img src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>"
+												<img class="lazy-image"
+													 lazy-image="<?=$arItem['PREVIEW_PICTURE']['SRC']?>"
                                                      alt="<?=$arItem['PREVIEW_PICTURE']['ALT']?>">
                                             </a>
                                             <a href="<?=$arItem['DETAIL_PAGE_URL']?>" class="product__name"><?=$arItem['NAME']?></a>
@@ -97,7 +98,8 @@ if ($arResult['ITEMS']) {?>
                                                 </ul>
                                             <?}?>
                                             <a href="<?=$arItem['DETAIL_PAGE_URL']?>" class="product__img">
-                                                <img src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>"
+												<img class="lazy-image"
+													 lazy-image="<?=$arItem['PREVIEW_PICTURE']['SRC']?>"
                                                      alt="<?=$arItem['PREVIEW_PICTURE']['ALT']?>">
                                             </a>
 											<div class="product__info-wrap">

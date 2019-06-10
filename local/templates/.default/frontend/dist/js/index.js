@@ -4302,7 +4302,7 @@ try {
   DOMException.prototype.constructor = DOMException;
 }
 
-function fetch(input, init) {
+function fetch$1(input, init) {
   return new Promise(function (resolve, reject) {
     var request = new Request(input, init);
 
@@ -4370,10 +4370,10 @@ function fetch(input, init) {
   });
 }
 
-fetch.polyfill = true;
+fetch$1.polyfill = true;
 
 if (!self.fetch) {
-  self.fetch = fetch;
+  self.fetch = fetch$1;
   self.Headers = Headers;
   self.Request = Request;
   self.Response = Response;
@@ -4961,6 +4961,40 @@ function serialize(form) {
 
   return q;
 }
+
+var lazyLoad = function () {
+  document.addEventListener('DOMContentLoaded', function () {
+    var lazyImages = document.querySelectorAll('img[lazy-image]');
+
+    function handlerLazyLoadImages() {
+      Array.prototype.forEach.call(lazyImages, function (img) {
+        if (img.getBoundingClientRect().top <= window.innerHeight && img.getBoundingClientRect().bottom >= 0 && getComputedStyle(img).display != 'none') {
+          setImage(img);
+        }
+      });
+      lazyImages = document.querySelectorAll('img[lazy-image]:not([data-loaded="true"])');
+    }
+
+    function setImage(img) {
+      var src = img.getAttribute('lazy-image');
+      img.setAttribute('data-loaded', 'true');
+      fetch(src, {
+        method: 'GET'
+      }).then(function (res) {
+        img.setAttribute('src', src);
+        img.classList.remove('lazy-image');
+        img.removeAttribute('lazy-image');
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    }
+
+    handlerLazyLoadImages();
+    document.addEventListener('scroll', debounce(handlerLazyLoadImages, 300, false));
+    window.addEventListener('resize', debounce(handlerLazyLoadImages, 300, false));
+    window.addEventListener('orientationchange', debounce(handlerLazyLoadImages, 300, false));
+  });
+}();
 
 window.addEventListener('load', function () {
   var modalCallbackButtons = document.querySelectorAll('.js-init-modal__form');

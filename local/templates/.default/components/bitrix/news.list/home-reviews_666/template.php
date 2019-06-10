@@ -19,7 +19,8 @@ if ($arResult['ITEMS']) {?>
 							<?foreach ($arResult['ITEMS'] as $k => $arItem) {?>
 								<div class="reviews-logos__item" indexDesc="<?=$k?>">
                                     <?if ($arItem['PROPERTIES']['REVIEW_CLIENT_LOGO']['SRC']) {?>
-                                        <img src="<?=$arItem['PROPERTIES']['REVIEW_CLIENT_LOGO']['SRC']?>"
+										<img class="lazy-image"
+											lazy-image="<?=$arItem['PROPERTIES']['REVIEW_CLIENT_LOGO']['SRC']?>"
                                             alt="<?=Loc::getMessage('HOME_REVIEWS_1_REVIEW_IMAGE_ALT')?>">
                                     <?}?>
 								</div>

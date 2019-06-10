@@ -43,7 +43,7 @@ if ($arResult['ITEMS']) {?>
                                     <?}?>
                                 </div>
                                 <img class="service__img"
-                                     src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>"
+									 lazy-image="<?=$arItem['PREVIEW_PICTURE']['SRC']?>"
                                      alt="<?=$arItem['PREVIEW_PICTURE']['ALT']?>">
                             </a>
                         </li>

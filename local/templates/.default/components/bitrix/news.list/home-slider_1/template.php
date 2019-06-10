@@ -37,8 +37,8 @@ if ($arResult['ITEMS']) {?>
                         </ul>
                     <?}?>
                 </div>
-                <img class="slider-big-slide__img"
-                     src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>"
+                <img class="slider-big-slide__img lazy-image"
+					 lazy-image="<?=$arItem['PREVIEW_PICTURE']['SRC']?>"
                      alt="<?=$arItem['PREVIEW_PICTURE']['SRC']?>">
             </div>
         <?}?>
