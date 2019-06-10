@@ -18,14 +18,6 @@ CWebsiteTemplate::$arParametersList = array(
             'VALUE' => '17px'
         )
     ),
-    'REVIEWS' => array(
-        'default' => array(
-            'NAME' => 'Вариант 1'
-        ),
-        '2' => array(
-            'NAME' => 'Вариант 2'
-        )
-    ),
     'SLIDER' => array(
         'default' => array(
             'NAME' => 'Базовый вариант'
@@ -92,6 +84,17 @@ CWebsiteTemplate::$arParametersList = array(
         ),
         '1' => array(
             'NAME' => 'Дополнительный'
+        )
+    ),
+    'REVIEWS' => array(
+        'default' => array(
+            'NAME' => 'Стандартный блок отзывов'
+        ),
+        '1' => array(
+            'NAME' => 'Блок для наград и дипломов'
+        ),
+        '2' => array(
+            'NAME' => 'Блок отзывов в виде карточек'
         )
     ),
     'HEADER' => CWebsiteTemplate::getViewTemplates('header'),
