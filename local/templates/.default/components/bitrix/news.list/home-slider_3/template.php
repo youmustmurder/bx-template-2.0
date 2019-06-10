@@ -25,7 +25,8 @@ if ($arResult['ITEMS']) {?>
                         </a>
                     <?}?>
                 </div>
-                <img class="slider-big-slide__img lazy-image"
+				<img src="<?=GetNoPhoto()?>"
+					 class="slider-big-slide__img lazy-image"
 					 lazy-image="<?=$arItem['PREVIEW_PICTURE']['SRC']?>"
                      alt="<?=$arItem['PREVIEW_PICTURE']['ALT']?>">
             </div>

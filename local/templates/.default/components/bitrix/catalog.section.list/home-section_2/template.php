@@ -29,6 +29,7 @@ if ($arResult['SECTIONS']) {?>
 							<a href="<?=$arSection['SECTION_PAGE_URL']?>" class="best-categories-card__link">
 								<div class="best-categories-card__img">
 									<img class="lazy-image"
+										src="<?=GetNoPhoto()?>"
 										lazy-image="<?=$arSection['PICTURE']['SRC']?>"
 										alt="<?=$arSection['PICTURE']['ALT']?>">
 								</div>

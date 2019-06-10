@@ -35,7 +35,8 @@ if ($arResult['ITEMS']) {?>
                 <div class="col-12 col-md-6 col-lg-4 services__item service-item"
                      id="<?=$this->GetEditAreaId($arItem['ID']);?>">
                     <div class="service-item__pic">
-						<img class="lazy-image"
+						<img src="<?=GetNoPhoto()?>"
+							 class="lazy-image"
 							 lazy-image="<?=$arItem['PREVIEW_PICTURE']['SRC']?>"
                              alt="<?=$arItem['PREVIEW_PICTURE']['ALT']?>">
                     </div>

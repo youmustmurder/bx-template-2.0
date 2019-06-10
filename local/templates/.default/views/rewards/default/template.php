@@ -25,7 +25,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                 <div class="rewards__items">
                     <div class="rewards__item">
                         <div class="rewards__logo">
-                            <img class="lazy-image" lazy-image="local\templates\.default\frontend\main\images\rewards-logo.png" alt="">
+                            <img src="<?=GetNoPhoto()?>" class="lazy-image" lazy-image="local\templates\.default\frontend\main\images\rewards-logo.png" alt="">
                         </div>
                         <div class="rewards__letter" style="background-image: url(local/templates/.default/frontend/main/images/rewards-letter.png);"></div>
                         <div class="rewards__info">
@@ -35,7 +35,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                     </div>
                     <div class="rewards__item">
                         <div class="rewards__logo">
-                            <img class="lazy-image" lazy-image="local\templates\.default\frontend\main\images\rewards-logo.png" alt="">
+                            <img src="<?=GetNoPhoto()?>" class="lazy-image" lazy-image="local\templates\.default\frontend\main\images\rewards-logo.png" alt="">
                         </div>
                         <div class="rewards__letter" style="background-image: url(local/templates/.default/frontend/main/images/rewards-letter.png);"></div>
                         <div class="rewards__info">
@@ -45,7 +45,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                     </div>
                     <div class="rewards__item">
                         <div class="rewards__logo">
-                            <img class="lazy-image" lazy-image="local\templates\.default\frontend\main\images\rewards-logo.png" alt="">
+                            <img src="<?=GetNoPhoto()?>" class="lazy-image" lazy-image="local\templates\.default\frontend\main\images\rewards-logo.png" alt="">
                         </div>
                         <div class="rewards__letter" style="background-image: url(local/templates/.default/frontend/main/images/rewards-letter.png);"></div>
                         <div class="rewards__info">

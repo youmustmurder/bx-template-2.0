@@ -37,7 +37,8 @@ if ($arResult['ITEMS']) {?>
 								</div>
 								<?if ($arItem['PROPERTIES']['PRODUCT']['PICTURE']) {?>
 									<div class="slider-big-slide__img">
-										<img class="lazy-image"
+										<img src="<?=GetNoPhoto()?>"
+											 class="lazy-image"
 											 lazy-image="<?=$arItem['PROPERTIES']['PRODUCT']['PICTURE']?>"
 										 	 alt="<?=$arItem['PROPERTIES']['PRODUCT']['NAME']?>">
 									</div>
@@ -53,7 +54,8 @@ if ($arResult['ITEMS']) {?>
 										<?if ($arItem['PROPERTIES']['PRODUCT']['VALUE']) {?>
 											<?if ($arItem['PROPERTIES']['PRODUCT']['PREVIEW_PICTURE']) {?>
 												<div class="slider-big-preview__img">
-													<img class="lazy-image"
+													<img src="<?=GetNoPhoto()?>"
+														 class="lazy-image"
 														 lazy-image="<?=$arItem['PROPERTIES']['PRODUCT']['PREVIEW_PICTURE']?>"
 														 alt="<?=$arItem['PROPERTIES']['PRODUCT']['NAME']?>">
 												</div>

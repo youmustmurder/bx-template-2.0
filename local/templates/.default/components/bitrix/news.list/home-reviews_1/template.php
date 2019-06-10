@@ -28,7 +28,7 @@ if ($arResult['ITEMS']) {?>
 								<div class="rewards-item__wrap" id="<?=$this->GetEditAreaId($arItem['ID'])?>">
 									<?if ($arItem['PROPERTIES']['REVIEW_CLIENT_LOGO']['SRC']) {?>
 										<div class="rewards-item__logo">
-											<img class="lazy-image" lazy-image="<?=$arItem['PROPERTIES']['REVIEW_CLIENT_LOGO']['SRC']?>" alt="<?=Loc::getMessage('HOME_REVIEWS_1_REVIEW_IMAGE_ALT')?>">
+											<img src="<?=GetNoPhoto()?>" class="lazy-image" lazy-image="<?=$arItem['PROPERTIES']['REVIEW_CLIENT_LOGO']['SRC']?>" alt="<?=Loc::getMessage('HOME_REVIEWS_1_REVIEW_IMAGE_ALT')?>">
 										</div>
 									<?}?>
 									<div class="rewards-item__letter" style="background-image: url(<?=$arItem['PREVIEW_PICTURE']['SRC']?>);"></div>

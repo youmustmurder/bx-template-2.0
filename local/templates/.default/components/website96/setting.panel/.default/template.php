@@ -123,7 +123,7 @@ Loc::loadMessages(__FILE__);
                                                 <label for="<?= $CODE ?>_<?= $id ?>"
                                                        class="settings-option-card__inner">
                                                     <div class="settings-option-card__preview">
-                                                        <img class="lazy-image" lazy-image="<?= $parameter['PICTURE'] ?>" alt="">
+                                                        <img src="<?=GetNoPhoto()?>" class="lazy-image" lazy-image="<?= $parameter['PICTURE'] ?>" alt="">
                                                     </div>
                                                     <div class="settings-option-card__name"><?= $parameter['NAME'] ?></div>
                                                 </label>
@@ -159,7 +159,7 @@ Loc::loadMessages(__FILE__);
                                                 >
                                                 <label for="setting_<?=$CODE?>_<?=$id?>" class="settings-option-card__inner">
                                                     <div class="settings-option-card__preview">
-                                                        <img class="lazy-image" lazy-image="<?=SITE_TEMPLATE_PATH?>/components/bitrix/news.list/home-slider_<?=$id?>/preview.png" alt="">
+                                                        <img src="<?=GetNoPhoto()?>" class="lazy-image" lazy-image="<?=SITE_TEMPLATE_PATH?>/components/bitrix/news.list/home-slider_<?=$id?>/preview.png" alt="">
                                                     </div>
                                                     <div class="settings-option-card__name"><?=$parameter['NAME']?></div>
                                                 </label>
@@ -185,7 +185,7 @@ Loc::loadMessages(__FILE__);
                                                 >
                                                 <label for="setting_<?=$CODE?>_<?=$id?>" class="settings-option-card__inner">
                                                     <div class="settings-option-card__preview">
-                                                        <img class="lazy-image" lazy-image="<?=SITE_TEMPLATE_PATH?>/components/bitrix/catalog.section.list/home-section_<?=$id?>/preview.png" alt="">
+                                                        <img src="<?=GetNoPhoto()?>" class="lazy-image" lazy-image="<?=SITE_TEMPLATE_PATH?>/components/bitrix/catalog.section.list/home-section_<?=$id?>/preview.png" alt="">
                                                     </div>
                                                     <div class="settings-option-card__name"><?=$parameter['NAME']?></div>
                                                 </label>
@@ -211,7 +211,7 @@ Loc::loadMessages(__FILE__);
                                                 >
                                                 <label for="setting_<?=$CODE?>_<?=$id?>" class="settings-option-card__inner">
                                                     <div class="settings-option-card__preview">
-                                                        <img class="lazy-image" lazy-image="<?=SITE_TEMPLATE_PATH?>/components/bitrix/catalog.section/home-product_<?=$id?>/preview.png" alt="">
+                                                        <img src="<?=GetNoPhoto()?>" class="lazy-image" lazy-image="<?=SITE_TEMPLATE_PATH?>/components/bitrix/catalog.section/home-product_<?=$id?>/preview.png" alt="">
                                                     </div>
                                                     <div class="settings-option-card__name"><?=$parameter['NAME']?></div>
                                                 </label>
@@ -237,7 +237,7 @@ Loc::loadMessages(__FILE__);
                                                 >
                                                 <label for="setting_<?=$CODE?>_<?=$id?>" class="settings-option-card__inner">
                                                     <div class="settings-option-card__preview">
-                                                        <img class="lazy-image" lazy-image="<?=SITE_TEMPLATE_PATH?>/components/bitrix/news.list/home-service_<?=$id?>/preview.png" alt="">
+                                                        <img src="<?=GetNoPhoto()?>" class="lazy-image" lazy-image="<?=SITE_TEMPLATE_PATH?>/components/bitrix/news.list/home-service_<?=$id?>/preview.png" alt="">
                                                     </div>
                                                     <div class="settings-option-card__name"><?=$parameter['NAME']?></div>
                                                 </label>
@@ -263,7 +263,7 @@ Loc::loadMessages(__FILE__);
                                                 >
                                                 <label for="setting_<?=$CODE?>_<?=$id?>" class="settings-option-card__inner">
                                                     <div class="settings-option-card__preview">
-                                                        <img class="lazy-image" lazy-image="<?=SITE_TEMPLATE_PATH?>/components/bitrix/news.list/home-about_<?=$id?>/preview.png" alt="">
+                                                        <img src="<?=GetNoPhoto()?>" class="lazy-image" lazy-image="<?=SITE_TEMPLATE_PATH?>/components/bitrix/news.list/home-about_<?=$id?>/preview.png" alt="">
                                                     </div>
                                                     <div class="settings-option-card__name"><?=$parameter['NAME']?></div>
                                                 </label>
@@ -289,7 +289,7 @@ Loc::loadMessages(__FILE__);
                                                 >
                                                 <label for="setting_<?=$CODE?>_<?=$id?>" class="settings-option-card__inner">
                                                     <div class="settings-option-card__preview">
-                                                        <img class="lazy-image" lazy-image="<?=SITE_TEMPLATE_PATH?>/components/bitrix/news.list/home-news_<?=$id?>/preview.png" alt="">
+                                                        <img src="<?=GetNoPhoto()?>" class="lazy-image" lazy-image="<?=SITE_TEMPLATE_PATH?>/components/bitrix/news.list/home-news_<?=$id?>/preview.png" alt="">
                                                     </div>
                                                     <div class="settings-option-card__name"><?=$parameter['NAME']?></div>
                                                 </label>
@@ -315,7 +315,7 @@ Loc::loadMessages(__FILE__);
                                                 >
                                                 <label for="setting_<?=$CODE?>_<?=$id?>" class="settings-option-card__inner">
                                                     <div class="settings-option-card__preview">
-                                                        <img class="lazy-image" lazy-image="<?=SITE_TEMPLATE_PATH?>/components/bitrix/news.list/home-reviews_<?=$id?>/preview.png" alt="">
+                                                        <img src="<?=GetNoPhoto()?>" class="lazy-image" lazy-image="<?=SITE_TEMPLATE_PATH?>/components/bitrix/news.list/home-reviews_<?=$id?>/preview.png" alt="">
                                                     </div>
                                                     <div class="settings-option-card__name"><?=$parameter['NAME']?></div>
                                                 </label>

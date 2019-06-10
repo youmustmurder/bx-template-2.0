@@ -21,7 +21,8 @@ if ($arResult['ITEMS']) {?>
 								<div class="reviews-photo-list__item reviews-photo-list-item" data-index="<?=$key?>">
 									<div class="reviews-photo-list-item__inner">
 										<div class="reviews-photo-list-item__image">
-											<img class="lazy-image"
+											<img src="<?=GetNoPhoto()?>"
+												 class="lazy-image"
 												 lazy-image="<?=$arReview['PREVIEW_PICTURE']['SRC']?>"
                                                  alt="<?=Loc::getMessage('HOME_REVIEWS_DEFAULT_REVIEW_IMAGE_ALT')?>"/>
 										</div>

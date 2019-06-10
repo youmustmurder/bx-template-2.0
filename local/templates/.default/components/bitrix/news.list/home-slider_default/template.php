@@ -32,7 +32,8 @@ if ($arResult['ITEMS']) {?>
                                class="btn <?=$arParams['SLIDER_BTN_TYPE'] == 'MID' ? 'btn_mid' : 'btn_big'?> btn_round btn_success"><?=$arItem['PROPERTIES']['LINK_BUTTON_NAME']['VALUE'] ?: Loc::getMessage('SLIDE_MORE')?></a>
                         <?}?>
                     </div>
-                    <img class="slider-big-slide__img lazy-image"
+					<img src="<?=GetNoPhoto()?>"
+						 class="slider-big-slide__img lazy-image"
 						 lazy-image="<?=$arItem['PREVIEW_PICTURE']['SRC']?>"
                          alt="<?=$arItem['PREVIEW_PICTURE']['ALT']?>">
                 </div>

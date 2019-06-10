@@ -33,7 +33,8 @@ if ($arResult['ITEMS']) {?>
                                             <div class="reviews-list-item__proff"><?=$arItem['PROPERTIES']['REVIEW_CLIENT_ADD_OPTION']['VALUE']?></div>
                                         <?}?>
                                         <div class="reviews-list-item__img">
-											<img class="lazy-image"
+											<img src="<?=GetNoPhoto()?>"
+												 class="lazy-image"
 												 lazy-image="<?=$arItem['PREVIEW_PICTURE']['SRC']?>"
                                                  alt="<?=Loc::getMessage('HOME_REVIEWS_2_REVIEW_IMAGE_ALT')?>">
                                         </div>

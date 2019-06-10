@@ -30,7 +30,8 @@ if ($arResult['SECTIONS']) {?>
                             ?>
 							<li class="best-categories-grid__card best-categories-grid-card best-categories-grid-card_<?=$i?>" id="<?=$this->GetEditAreaId($arSection['ID']);?>">
 								<a href="<?=$arSection['SECTION_PAGE_URL']?>">
-									<img lazy-image="<?=$arSection['PICTURE']['SRC']?>"
+									<img src="<?=GetNoPhoto()?>"
+										 lazy-image="<?=$arSection['PICTURE']['SRC']?>"
 										 class="best-categories-grid-card__image lazy-image"
 										 alt="<?=$arSection['PICTURE']['ALT'] ? $arSection['PICTURE']['ALT'] : $arSection['NAME']?>"
 										 title="<?=$arSection['PICTURE']['TITLE'] ? $arSection['PICTURE']['TITLE'] : $arSection['NAME']?>">

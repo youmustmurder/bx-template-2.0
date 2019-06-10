@@ -29,7 +29,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 									<div class="reviews-post__author__fullname">АЛЕКСАНДР ДУКАЛИС</div>
 									<div class="reviews-post__author__proff">Маркетинг-директор «Газпром»</div>
 									<div class="reviews-post__author__img">
-										<img class="lazy-image" lazy-image="<?=GetCurDir(__DIR__)?>/uploads/author1.png" alt="АЛЕКСАНДР ДУКАЛИС">
+										<img src="<?=GetNoPhoto()?>" class="lazy-image" lazy-image="<?=GetCurDir(__DIR__)?>/uploads/author1.png" alt="АЛЕКСАНДР ДУКАЛИС">
 									</div>
 								</div>
 							</div>
@@ -41,7 +41,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 									<div class="reviews-post__author__fullname">ЕЛЕНА ПИРОЖКОВА</div>
 									<div class="reviews-post__author__proff">HR-менеджер «Deloitte»</div>
 									<div class="reviews-post__author__img">
-										<img class="lazy-image" lazy-image="<?=GetCurDir(__DIR__)?>/uploads/author1.png" alt="ЕЛЕНА ПИРОЖКОВА">
+										<img src="<?=GetNoPhoto()?>" class="lazy-image" lazy-image="<?=GetCurDir(__DIR__)?>/uploads/author1.png" alt="ЕЛЕНА ПИРОЖКОВА">
 									</div>
 								</div>
 							</div>
@@ -53,7 +53,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 									<div class="reviews-post__author__fullname">ЕЛЕНА ПИРОЖКОВА</div>
 									<div class="reviews-post__author__proff">Главный редактор Esquire</div>
 									<div class="reviews-post__author__img">
-										<img class="lazy-image" lazy-image="<?=GetCurDir(__DIR__)?>/uploads/author1.png" alt="ЕЛЕНА ПИРОЖКОВА">
+										<img src="<?=GetNoPhoto()?>" class="lazy-image" lazy-image="<?=GetCurDir(__DIR__)?>/uploads/author1.png" alt="ЕЛЕНА ПИРОЖКОВА">
 									</div>
 								</div>
 							</div>

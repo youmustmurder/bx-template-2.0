@@ -42,7 +42,8 @@ if ($arResult['ITEMS']) {?>
                                         <div class="service__text"><?=$arItem['PREVIEW_TEXT']?></div>
                                     <?}?>
                                 </div>
-                                <img class="service__img"
+								<img src="<?=GetNoPhoto()?>"
+									 class="service__img"
 									 lazy-image="<?=$arItem['PREVIEW_PICTURE']['SRC']?>"
                                      alt="<?=$arItem['PREVIEW_PICTURE']['ALT']?>">
                             </a>

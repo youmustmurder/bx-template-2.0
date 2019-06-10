@@ -44,7 +44,8 @@ if($arResult['ITEMS']){?>
                                         </ul>
                                     <?}?>
                                     <a href="<?=$arItem['DETAIL_PAGE_URL']?>" class="products-item__image">
-										<img class="lazy-image"
+										<img src="<?=GetNoPhoto()?>"
+											 class="lazy-image"
 											 lazy-image="<?=$arItem['PREVIEW_PICTURE']['SRC']?>"
                                              alt="<?=$arItem['PREVIEW_PICTURE']['ALT']?>"
                                              title="<?=$arItem['PREVIEW_PICTURE']['TITLE']?>">
