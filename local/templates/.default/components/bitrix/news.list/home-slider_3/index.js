@@ -3,7 +3,7 @@ window.addEventListener('load', () => {
 		prevBtnNode = document.querySelector('.slider-big__prev'),
 		nextBtnNode = document.querySelector('.slider-big__next'),
 		navContainer = document.querySelector('.slide-big-dots');
-		
+
 	var sliderBig = tns({
 		container: sliderNode,
 		items: 1,

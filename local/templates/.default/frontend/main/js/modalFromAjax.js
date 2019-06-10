@@ -14,22 +14,24 @@ function modalFromAjax ({ modalName, url='/local/tools/ajax_form.php', method='g
 	if (typeof before === 'function') {
 		before();
 	}
-	fetch(url, {
-		method,
-		params: dataAjax,
-		responseType: 'text'
-	}).then((res) => {
-		if (res.data != '') {
-			if (typeof after === 'function') {
-				after();
-			}
-			console.log(res.data.trim());
-			//document.querySelector('body').insertAdjacentHTML('beforeend', res.data.trim());
-			//MicroModal.show(modalName, modalSettings);
-		}
-	}).catch(err => {
-		console.log(err);
-	});
+	MicroModal.init();
+	MicroModal.show('modal1');
+	// fetch(url, {
+	// 	method,
+	// 	params: dataAjax,
+	// 	responseType: 'text'
+	// }).then((res) => {
+	// 	if (res.data != '') {
+	// 		if (typeof after === 'function') {
+	// 			after();
+	// 		}
+	// 		console.log(res.data.trim());
+	// 		//document.querySelector('body').insertAdjacentHTML('beforeend', res.data.trim());
+	// 		//MicroModal.show(modalName, modalSettings);
+	// 	}
+	// }).catch(err => {
+	// 	console.log(err);
+	// });
 };
 
 export default modalFromAjax;
