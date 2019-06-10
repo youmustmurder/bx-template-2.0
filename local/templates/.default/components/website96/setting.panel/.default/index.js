@@ -50,7 +50,11 @@ window.addEventListener('load', () => {
 				method: 'POST',
 				body,
 			}).then(res => {
-				console.log(res);
+				return res.json();
+			}).then(body => {
+				if ('success' in body && body.success) {
+					location.reload();
+				}
 			}).catch(err => {
 				console.log(err);
 			});
@@ -63,7 +67,11 @@ window.addEventListener('load', () => {
 				method: 'GET',
 				body,
 			}).then(res => {
-				console.log(res);
+				return res.json();
+			}).then(body => {
+				if ('success' in body && body.success) {
+					location.reload();
+				}
 			}).catch(err => {
 				console.log(err);
 			});
