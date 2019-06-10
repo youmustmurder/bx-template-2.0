@@ -8,6 +8,7 @@ Thumbs.db
 /local/templates/individual/*.json
 /local/templates/build/
 /local/templates/.default/node_modules/
+/local/templates/.default/public/css/*.css
 /local/templates/globals.js
 /local/templates/globals.json
 /local/templates/gulpfile.js
