@@ -18,8 +18,7 @@ Loader::includeModule('highloadblock');
 require_once __DIR__ . '/../../parameters.php';
 
 class CWebsiteTemplate {
-    const SITE_DIR = SITE_DIR;
-
+    
     static $arParametersList = array();
     static $arCurrentSetting = array();
     static $arCurrentFilial = array();
@@ -180,7 +179,7 @@ class CWebsiteTemplate {
                                     $arItems[$template]['NAME'] = file_get_contents($pathTemplate . '.description.php') ?: $template;
                                 }
                                 if (file_exists($pathTemplate . 'preview.png')) {
-                                    $arItems[$template]['PICTURE'] = $pathTemplate . '/preview.png';
+                                    $arItems[$template]['PICTURE'] = str_replace($_SERVER['DOCUMENT_ROOT'], '', $pathTemplate . '/preview.png');
                                 }
                             }
                         }
@@ -257,10 +256,10 @@ class CWebsiteTemplate {
         $arSetting = array(
             'SHOW_PANEL' => COption::GetOptionString(MODULE_ID, 'WEBSITE_TEMPLATE_SETTING_VIEW_PANEL', 'Y', SITE_ID),
             'TEMPLATE_TYPE' => 'CATALOG',
+            'COLOR' => 'default',
             'HEADER' => 'default',
             'FAST_ORDER' => 'Y',
             'FOOTER' => 'default',
-            'COLOR' => 'default',
             'SECTIONS' => 'default',
             'ADVANTAGE' => 'default',
             'FONT_SIZE' => '15',
