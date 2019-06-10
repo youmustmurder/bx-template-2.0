@@ -31,7 +31,6 @@ $arFilial = CWebsiteTemplate::getCurrentFilial();
 //load main css
 Asset::getInstance()->addCss($APPLICATION->GetTemplatePath("frontend/dist/css/styles.css"));
 
-//load theme css
 CWebsiteTemplate::loadCss();
 
 //load main js
