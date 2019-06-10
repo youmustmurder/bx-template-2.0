@@ -55,7 +55,11 @@ window.addEventListener('load', function () {
         method: 'POST',
         body: body
       }).then(function (res) {
-        console.log(res);
+        return res.json();
+      }).then(function (body) {
+        if ('success' in body && body.success) {
+          location.reload();
+        }
       })["catch"](function (err) {
         console.log(err);
       });
@@ -68,7 +72,11 @@ window.addEventListener('load', function () {
         method: 'GET',
         body: body
       }).then(function (res) {
-        console.log(res);
+        return res.json();
+      }).then(function (body) {
+        if ('success' in body && body.success) {
+          location.reload();
+        }
       })["catch"](function (err) {
         console.log(err);
       });
