@@ -73,7 +73,7 @@ Loc::loadMessages(__FILE__);
                                         <div class="settings-option__title"><?= Loc::getMessage('SETTING_PANEL_FONT_MAIN_TITLE') ?></div>
                                         <div class="settings-option__inner">
                                             <div class="settings-option__card settings-option-card form-default-select">
-                                                <select name="FONT" id="FONT" style="display: none;">
+                                                <select name="FONT" id="FONT" style="display: none;" data-font="font">
                                                     <?
                                                     foreach ($parameters as $id => $parameter) { ?>
                                                         <option value="<?= $parameter['FONT_CODE'] ?>"
@@ -89,7 +89,7 @@ Loc::loadMessages(__FILE__);
                                         <div class="settings-option__title"><?= Loc::getMessage('SETTING_PANEL_FONT_SIZE_TITLE') ?></div>
                                         <div class="settings-option__inner">
                                             <div class="settings-option__card settings-option-card form-default-select">
-                                                <select name="FONT_SIZE" id="selectMainfont" style="display: none;">
+                                                <select name="FONT_SIZE" id="selectMainfont" style="display: none;" data-font="size">
                                                     <?
                                                     foreach (CWebsiteTemplate::$arParametersList['FONT_SIZE'] as $code => $parameter) { ?>
                                                         <option value="<?= $code ?>"
