@@ -10,6 +10,8 @@
 	@param after: Function
 */
 
+// console.log(MicroModal);
+
 function modalFromAjax ({ modalName, url='/local/tools/ajax_form.php', method='get', dataAjax = {}, modalSettings = {}, before, after }) {
 	if (typeof before === 'function') {
 		before();

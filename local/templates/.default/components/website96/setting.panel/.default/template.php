@@ -284,7 +284,44 @@ dump($arCurrentSetting);
 						</div>
 					</div>
 					<!-- Для шрифтов в 2 стобика -->
-					
+					<div class="settings-panel-tabs-content-item__option settings-panel-tabs-content-item__option_2column">
+						<div class="settings-option">
+							<div class="settings-option__title">Основной шрифт</div>
+							<div class="settings-option__inner">
+								<div class="settings-option__card settings-option-card">
+									<select name="FONT[SIMPLE]" id="selectMainfont" style="display: none;">
+										<option value="roboto_condensed">Roboto Condensed</option>
+										<option value="open_sans">Open Sans</option>
+										<option value="montserrat_alternates">Montserrat Alternates</option>
+										<option value="ubuntu">Ubuntu</option>
+										<option value="pt_sans">PT Sans</option>
+										<option value="rubik">Rubik</option>
+										<option value="play">Play</option>
+										<option value="roboto">Roboto</option>
+										<option value="default" selected="">Montserrat</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="settings-option">
+							<div class="settings-option__title">Основной шрифт</div>
+							<div class="settings-option__inner">
+								<div class="settings-option__card settings-option-card">
+									<select name="FONT[SIMPLE]" id="selectMainfont" style="display: none;">
+										<option value="roboto_condensed">Roboto Condensed</option>
+										<option value="open_sans">Open Sans</option>
+										<option value="montserrat_alternates">Montserrat Alternates</option>
+										<option value="ubuntu">Ubuntu</option>
+										<option value="pt_sans">PT Sans</option>
+										<option value="rubik">Rubik</option>
+										<option value="play">Play</option>
+										<option value="roboto">Roboto</option>
+										<option value="default" selected="">Montserrat</option>
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="settings-panel-tabs-content__item settings-panel-tabs-content-item tabs__content" id="home" aria-label="Главная">

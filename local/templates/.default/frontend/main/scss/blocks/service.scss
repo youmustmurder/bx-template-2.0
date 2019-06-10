@@ -29,10 +29,7 @@
 	&.service_left {
 		.service__title,
 		.service__text {
-			max-width: 85%;
-		}
-		.service__img {
-			left: 80%;
+			max-width: 250px;
 		}
 	}
 	&.service_right {
