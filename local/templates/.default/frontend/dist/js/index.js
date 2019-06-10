@@ -4302,7 +4302,7 @@ try {
   DOMException.prototype.constructor = DOMException;
 }
 
-function fetch$1(input, init) {
+function fetch(input, init) {
   return new Promise(function (resolve, reject) {
     var request = new Request(input, init);
 
@@ -4370,10 +4370,10 @@ function fetch$1(input, init) {
   });
 }
 
-fetch$1.polyfill = true;
+fetch.polyfill = true;
 
 if (!self.fetch) {
-  self.fetch = fetch$1;
+  self.fetch = fetch;
   self.Headers = Headers;
   self.Request = Request;
   self.Response = Response;
@@ -4748,22 +4748,23 @@ function modalFromAjax(_ref2) {
     before();
   }
 
-  fetch(url, {
-    method: method,
-    params: dataAjax,
-    responseType: 'text'
-  }).then(function (res) {
-    if (res.data != '') {
-      if (typeof after === 'function') {
-        after();
-      }
-
-      console.log(res.data.trim()); //document.querySelector('body').insertAdjacentHTML('beforeend', res.data.trim());
-      //MicroModal.show(modalName, modalSettings);
-    }
-  })["catch"](function (err) {
-    console.log(err);
-  });
+  MicroModal.init();
+  MicroModal.show('modal1'); // fetch(url, {
+  // 	method,
+  // 	params: dataAjax,
+  // 	responseType: 'text'
+  // }).then((res) => {
+  // 	if (res.data != '') {
+  // 		if (typeof after === 'function') {
+  // 			after();
+  // 		}
+  // 		console.log(res.data.trim());
+  // 		//document.querySelector('body').insertAdjacentHTML('beforeend', res.data.trim());
+  // 		//MicroModal.show(modalName, modalSettings);
+  // 	}
+  // }).catch(err => {
+  // 	console.log(err);
+  // });
 }
 
 ;
