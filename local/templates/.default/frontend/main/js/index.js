@@ -9,6 +9,7 @@ import HeaderMenu from './headerMenu';
 import collectorAttributes from './collector-attributes';
 import Tabs from './tabs';
 import serialize from './serialize';
+import lazyLoad from './lazyLoad';
 
 window.addEventListener('load', () => {
 	const modalCallbackButtons = document.querySelectorAll('.js-init-modal__form');

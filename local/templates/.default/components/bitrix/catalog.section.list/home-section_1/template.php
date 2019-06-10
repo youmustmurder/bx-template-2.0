@@ -37,8 +37,8 @@ if ($arResult['SECTIONS']) {?>
                                                 <div class="best-categories-card__title"><?=$arSection['NAME']?></div>
                                                 <div class="best-categories-card__subtitle"><?=$arSection['SUBTITLE']?></div>
                                             </div>
-                                            <img class="best-categories-card__img"
-                                                 src="<?=$arSection['PICTURE']['SRC']?>"
+                                            <img class="best-categories-card__img lazy-image"
+                                                 lazy-image="<?=$arSection['PICTURE']['SRC']?>"
                                                  alt="<?=$arSection['PICTURE']['ALT']?>">
                                         </a>
                                     </li>
@@ -50,8 +50,8 @@ if ($arResult['SECTIONS']) {?>
                                                 <div class="best-categories-card__title"><?=$arSection['NAME']?></div>
                                                 <div class="best-categories-card__subtitle"><?=$arSection['SUBTITLE']?></div>
                                             </div>
-                                            <img class="best-categories-card__img"
-                                                 src="<?=$arSection['PICTURE']['SRC']?>"
+                                            <img class="best-categories-card__img lazy-image"
+												 lazy-image="<?=$arSection['PICTURE']['SRC']?>"
                                                  alt="<?=$arSection['PICTURE']['ALT']?>">
                                             <?if ($arSection['UF_ANONS']) {?>
                                                 <p class="best-categories-card__text"><?=$arSection['UF_ANONS']?></p>
@@ -63,8 +63,8 @@ if ($arResult['SECTIONS']) {?>
                                     <li class="best-categories-grid__card best-categories-card" id="<?=$this->GetEditAreaId($arSection['ID']); ?>">
                                         <a href="<?=$arSection['SECTION_PAGE_URL']?>" class="best-categories-grid__inner">
                                             <div class="best-categories-card__title"><?=$arSection['NAME']?></div>
-                                            <img class="best-categories-card__img"
-                                                 src="<?=$arSection['PICTURE']['SRC']?>"
+                                            <img class="best-categories-card__img lazy-image"
+												 lazy-image="<?=$arSection['PICTURE']['SRC']?>"
                                                  alt="<?=$arSection['PICTURE']['ALT']?>">
                                             <div class="best-categories-card__subtitle"><?=$arSection['SUBTITLE']?></div>
                                         </a>

@@ -13,7 +13,7 @@ Loc::loadMessages(__FILE__);
 			<div class="col">
 				<div class="about__wrap">
 					<div class="about__img">
-						<img src="<?=$arParams['BLOCK_IMG']?>">
+						<img class="lazy-image" lazy-image="<?=$arParams['BLOCK_IMG']?>">
 					</div>
 					<div class="about__content">
 						<h2 class="about__title"><?=$arParams['BLOCK_TITLE'] ?: Loc::getMessage('HOME_ABOUT_DEFAULT_BLOCK_TITLE')?></h2>

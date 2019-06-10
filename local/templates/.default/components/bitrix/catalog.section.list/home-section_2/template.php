@@ -28,7 +28,8 @@ if ($arResult['SECTIONS']) {?>
 						<li class="best-categories-cards__item best-categories-card" id="<?=$this->GetEditAreaId($arSection['ID']); ?>">
 							<a href="<?=$arSection['SECTION_PAGE_URL']?>" class="best-categories-card__link">
 								<div class="best-categories-card__img">
-									<img src="<?=$arSection['PICTURE']['SRC']?>"
+									<img class="lazy-image"
+										lazy-image="<?=$arSection['PICTURE']['SRC']?>"
 										alt="<?=$arSection['PICTURE']['ALT']?>">
 								</div>
 								<div class="best-categories-card__info">

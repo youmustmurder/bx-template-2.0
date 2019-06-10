@@ -41,7 +41,7 @@ Loc::loadMessages(__FILE__);
                             <div class="around__block around-block"
                                  id="<?=$this->GetEditAreaId($arItem['ID']);?>">
                                 <div class="around__pic">
-                                    <img src="<?=$arItem['PICTURE']?>" alt="<?=$arItem['NAME']?>">
+                                    <img class="lazy-image" lazy-image="<?=$arItem['PICTURE']?>" alt="<?=$arItem['NAME']?>">
                                 </div>
                                 <div class="around__desc">
                                     <div class="around__desc-title"><?=$arItem['NAME']?></div>
