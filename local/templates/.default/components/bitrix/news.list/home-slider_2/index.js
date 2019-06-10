@@ -12,7 +12,6 @@ window.addEventListener('load', () => {
 		prevButton: prevBtnNode,
 		nextButton: nextBtnNode,
 		nav: false,
-		autoHeight: true,
 		// autoplay: (typeof sliderNode.getAttribute('data-autoplay') != 'undefined') ? (!!sliderNode.getAttribute('data-autoplay')) : false,
 		// autoplayTimeout: (typeof sliderNode.getAttribute('data-speed') != 'undefined') ? (sliderNode.getAttribute('data-speed')) : 5000,
 		autoplayButtonOutput: false,

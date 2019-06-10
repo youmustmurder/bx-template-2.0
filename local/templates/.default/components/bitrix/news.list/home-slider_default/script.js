@@ -13,7 +13,7 @@ window.addEventListener('load', function () {
     nextButton: nextBtnNode,
     nav: true,
     navContainer: navContainer,
-    autoHeight: true,
+    nested: 'inner',
     autoplay: typeof sliderNode.getAttribute('data-autoplay') != 'undefined' ? !!sliderNode.getAttribute('data-autoplay') : false,
     autoplayTimeout: typeof sliderNode.getAttribute('data-speed') != 'undefined' ? sliderNode.getAttribute('data-speed') : 5000,
     autoplayButtonOutput: false

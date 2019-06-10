@@ -1,4 +1,4 @@
-// import MicroModal from './micromodal';
+import MicroModal from './micromodal';
 
 /*
 	@param modalName: String
@@ -9,8 +9,6 @@
 	@param before: Function
 	@param after: Function
 */
-
-// console.log(MicroModal);
 
 function modalFromAjax ({ modalName, url='/local/tools/ajax_form.php', method='get', dataAjax = {}, modalSettings = {}, before, after }) {
 	if (typeof before === 'function') {

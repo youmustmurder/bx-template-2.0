@@ -11,6 +11,5 @@ window.addEventListener('load', () => {
 		nextButton: nextBtnNode,
 		nav: true,
 		navContainer,
-		autoHeight: true
 	});
 });

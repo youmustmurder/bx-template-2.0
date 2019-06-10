@@ -5,13 +5,14 @@
 	overflow: hidden;
 	top: 0;
 	left: 0;
-	transform: translate(calc(-100% + 190px));
 	height: 100%;
 	width: calc(930px + 190px);
 	color: #2D2D2D;
-	transition: 0.3s all ease-out;
+	pointer-events: none;
 	&.settings-panel_show {
-		transform: none;
+		.settings-panel__inner {
+			transform: none;
+		}
 		.settings-panel__btn {
 			&.settings-panel__btn_apply,
 			&.settings-panel__btn_reset {
@@ -24,20 +25,25 @@
 .settings-panel__inner {
 	display: flex;
 	flex: 1 0;
+	transform: translate(-100%);
 	width: 100%;
 	max-width: 930px;
 	margin: 0;
 	overflow: auto;
 	border-right: 1px solid #C4C4C4;
 	background-color: #f5f4f5;
-    box-shadow: 0 10px 30px rgba(51,51,51,.4);
+	box-shadow: 0 10px 30px rgba(51,51,51,.4);
+	transition: 0.3s all ease-out;
+	pointer-events: all;
 }
 
 .settings-panel__buttons {
-	display: flex;
+	display: none;
 	flex-direction: column;
 	align-items: flex-start;
 	padding: 140px 0 0 0;
+	transition: 0.3s all ease-out;
+	pointer-events: all;
 }
 
 .settings-panel__btn {
@@ -58,6 +64,12 @@
 	}
 	&.settings-panel__btn_reset {
 		background: #ff1e36;
+		svg {
+			fill: transparent;
+		}
+		path {
+			stroke: #fff;
+		}
 	}
 	&:not(:last-child) {
 		margin-bottom: 20px;

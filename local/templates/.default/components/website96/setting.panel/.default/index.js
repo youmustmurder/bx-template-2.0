@@ -2,10 +2,13 @@ window.addEventListener('load', () => {
 	var settingsPanel = (() => {
 		const togglePanel = document.querySelector('.settings-panel__btn_toggle'),
 			settingsPanel = document.querySelector('.settings-panel'),
+			buttonsPanel = document.querySelector('.settings-panel__buttons'),
 			settingApply = document.querySelector('.settings-panel__btn_apply'),
 			settingReset = document.querySelector('.settings-panel__btn_reset'),
 			settingForm = document.querySelector('.settings-panel__inner'),
 			uri = window.location.href;
+
+		var openSettings = settingsPanel.classList.contains('settings-panel_show');
 
 		function clickOutSettings(e) {
 			let target = e.target;
@@ -15,9 +18,25 @@ window.addEventListener('load', () => {
 		}
 
 		function toggleShowSettingsPanel() {
-			settingsPanel.classList.toggle('settings-panel_show');
-			openSettings = settingsPanel.classList.contains('settings-panel_show');
-			(openSettings) ? lockScroll() : unlockScroll();
+			openSettings = !openSettings;
+			panelTransform();
+		}
+
+		function showButtons(x) {
+			(x.matches) ? buttonsPanel.style.display = 'flex' : buttonsPanel.style.display = 'none';
+		}
+
+		function panelTransform() {
+			(openSettings) ? settingsPanel.classList.add('settings-panel_show') : settingsPanel.classList.remove('settings-panel_show');
+			let styleButtons = buttonsPanel.style,
+				panelWidth = settingForm.getBoundingClientRect().width;
+			if (openSettings) {
+				lockScroll();
+				styleButtons.transform = 'none';
+			}  else {
+				unlockScroll();
+				styleButtons.transform = `translate(-${ panelWidth }px)`;
+			}
 		}
 
 		function handlerApplySettings() {
@@ -50,8 +69,10 @@ window.addEventListener('load', () => {
 			});
 		}
 
-		var openSettings = settingsPanel.classList.contains('settings-panel_show');
-		(openSettings) ? lockScroll(false) : unlockScroll();
+		panelTransform();
+		var mediaButton = window.matchMedia('(min-width: 1200px)');
+		showButtons(mediaButton);
+		mediaButton.addListener(showButtons)
 
 		document.querySelector('body').addEventListener('click', clickOutSettings);
 		togglePanel.addEventListener('click', toggleShowSettingsPanel);
