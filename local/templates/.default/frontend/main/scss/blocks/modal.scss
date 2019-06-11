@@ -32,24 +32,26 @@
         content: '';
         position: absolute;
         z-index: -1;
-        size: 100%;
+		width: 100%;
+		height: 100%;
         top: 0;
         left: 0;
-        background: rgba(0, 0, 0, 0.7);
+		background-color: rgb(0, 0, 0);
+		opacity: 0.65;
     }
 }
 
 .modal__close {
-    position:absolute;
-	display: block;
-	right:35px;
-	top:27px;
-	width:20px;
-	height:20px;
-	transition: 300ms;
+    position: absolute;
+	right: 35px;
+	top: 27px;
+	width: 20px;
+	height: 20px;
+	border: none;
+	background: none;
 	cursor:pointer;
-	transform:rotate(0deg);
 	z-index: 2;
+	transition: 0.3s all ease-out;
 	&:before, &:after {
 		content: '';
 		position: absolute;
@@ -68,9 +70,9 @@
 		left: calc(50% - 8px);
 		transform: rotate(45deg);
 	}
-	&:hover, &:focus {
-		transform:rotate(90deg);
-		transition: 300ms;
+	&:hover,
+	&:focus {
+		transform: rotate(90deg);
 	}
 }
 
@@ -78,10 +80,10 @@
     position: relative;
     background-color: #fff;
     width: 100%;
-    max-width: 530px;
+    max-width: 690px;
     margin: 20px;
-    padding: 65px 60px 80px;
-    border-radius: 12px;
+	padding: 50px 60px;
+    border-radius: 4px;
     overflow: hidden;
 }
 

@@ -97,14 +97,19 @@ $APPLICATION->IncludeFile(
 <div class="modal micromodal-slide" id="modal1" aria-hidden="true">
     <div class="modal__overlay" tabindex="-1" data-micromodal-close>
         <div class="modal__container" role="dialog" aria-modal="true">
-            <button class="modal__close" aria-label="Close modal" data-micromodal-close>
-                <svg width="14" height="14" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path d="M16 1L1 16" stroke-width="2" stroke-linecap="round"/><path d="M16 16L1 0.999999" stroke-width="2" stroke-linecap="round"/></g></svg>
-            </button>
+            <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
             <div class="modal__header">
-                <h2>Modal</h2>
+                <h3 class="modal__title">Оставить заявку</h3>
             </div>
             <div class="modal__body">
-                
+                <form action="">
+					<div class="form-field">
+						<input type="text" placeholder="Имя клиента" class="input input_underline">
+					</div>
+					<div class="form-field">
+						<input type="text" placeholder="Номер телефона" class="input input_underline">
+					</div>
+				</form>
             </div>
         </div>
     </div>

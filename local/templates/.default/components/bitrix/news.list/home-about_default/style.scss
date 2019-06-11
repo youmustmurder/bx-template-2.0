@@ -1,9 +1,15 @@
 .about {
+	position: relative;
 	padding: 88px 0;
 	&.about_news {
-		position: relative;
 		z-index: 2;
 		padding: 88px 0 0 0;
+		.about__wrap {
+			transform: translate(0, 300px);
+		}
+	}
+	&.about_grey {
+		background: #f8f8f8;
 	}
 }
 
@@ -16,6 +22,7 @@
 	position: relative;
 	overflow: hidden;
 	flex: 1 1 auto;
+	background: #F5F5F5;
 	img {
 		position: absolute;
 		top: 0;

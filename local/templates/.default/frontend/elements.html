@@ -83,7 +83,7 @@
 				<a href="#" class="link link_primary link_icon-left"><img src="main/images/icons/icon.png" alt="">Ссылка с иконкой</a>
 			</div>
             <h2>Поля ввода</h2>
-			<form action="#" class="form-stroke" style="width: 255px">
+			<form action="#" class="form-stroke" style="width: 255px" class="block__test">
                 <div class="form-field">
                     <input type="text" placeholder="Текст" class="input input_round">
 				</div>
@@ -122,93 +122,36 @@
 				<div class="form-field">
 					<textarea cols="30" rows="10" placeholder="Текст" class="input input_textarea input_underline">Текстовое поле</textarea>
 				</div>
+			</form>
 
-
-                <div class="form-field">
-                    <input type="text" placeholder="Текст" class="form-stroke__input" disabled>
-                </div>
-                <div class="form-field">
-                    <input type="text" placeholder="Иконка" class="form-stroke__input form-stroke__input--icon">
-                </div>
-                <div class="form-field success">
-                    <input type="text" placeholder="Успех" class="form-stroke__input">
-                </div>
-                <div class="form-field error">
-                    <input type="text" placeholder="Ошибка" class="form-stroke__input">
-                    <div class="form-error-text">Ошибка</div>
-                </div>
-                <textarea name="" id="" cols="30" rows="10" class="form-stroke__textarea"></textarea>
-                <div class="form-stroke__counter">
-                    <button type="button" class="but counterBut dec">-</button>
-                    <input type="text" class="field form-stroke__fieldCount" value="1" data-min="1" data-max="20">
-                    <button type="button" class="but counterBut inc">+</button>
-                </div>
-                <div class="form-field">
-                    <div class="form-stroke__select">
-                        <select id="form-stroke__select">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                    </div>
-                </div>
-            
-            </form>
-            
-            <form action="#" class="form-underline" style="width: 255px">
-                
-                <div class="form-field">
-                    <input type="text" placeholder="Текст" class="form-underline__input">
-                </div>
-                <div class="form-field">
-                    <input type="text" placeholder="Текст" class="form-underline__input" disabled>
-                </div>
-                <div class="form-field">
-                    <input type="text" placeholder="Иконка" class="form-underline__input form-underline__input--icon">
-                </div>
-                <div class="form-field success">
-                    <input type="text" placeholder="Успех" class="form-underline__input">
-                </div>
-                <div class="form-field error">
-                    <input type="text" placeholder="Ошибка" class="form-underline__input">
-                </div>
-                <textarea name="" id="" cols="30" rows="10" class="form-underline__textarea"></textarea>
-                <div class="form-underline__counter">
-                    <button type="button" class="but counterBut dec">-</button>
-                    <input type="text" class="field form-underline__fieldCount" value="1" data-min="1" data-max="20">
-                    <button type="button" class="but counterBut inc">+</button>
-                </div>
-                <div class="form-field">
-                    <div class="form-underline__select">
-                        <select id="form-underline__select">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                    </div>
-                </div>
-            </form>
-            
-            
             <h2>Чекбоксы</h2>
-            
-            <label class="checkbox__square">One
-                <input type="checkbox" checked="checked">
-                <span class="checkmark"></span>
-            </label>
-            
-            <label class="checkbox__circle">Two
-                <input type="checkbox">
-                <span class="checkmark"></span>
-            </label>
-            
-            <label class="checkbox__switch">
-                <input type="checkbox" />
-                <div class="checkbox__text">Three</div>
-            </label>
-            
+			<div class="block__test">
+				<label class="checkbox">
+					<input type="checkbox" name="checkbox" value="one" disabled>
+					<span class="checkbox__inner"></span>
+					<span class="checkbox__text">Неактивен</span>
+				</label>
+				<label class="checkbox">
+					<input type="checkbox" name="checkbox" value="two" checked="checked">
+					<span class="checkbox__inner"></span>
+					<span class="checkbox__text">Выбрано</span>
+				</label>
+				<label class="checkbox">
+					<input type="checkbox" name="checkbox" value="three">
+					<span class="checkbox__inner"></span>
+					<span class="checkbox__text">Не выбрано</span>
+				</label>
+
+
+				<label class="checkbox__circle">Two
+					<input type="checkbox">
+					<span class="checkmark"></span>
+				</label>
+				<label class="checkbox__switch">
+					<input type="checkbox" />
+					<div class="checkbox__text">Three</div>
+				</label>
+			</div>
             <h2>Радиокнопки</h2>
             
             <label class="radio__square">One
