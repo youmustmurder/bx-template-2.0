@@ -4996,6 +4996,166 @@ var lazyLoad = function () {
   });
 }();
 
+var Form =
+/*#__PURE__*/
+function () {
+  function Form(form, submit, _ref3, classNames, cbSuccess) {
+    var uriAction = _ref3.uriAction,
+        method = _ref3.method;
+
+    _classCallCheck(this, Form);
+
+    this.form = form;
+    this.submit = submit != null ? submit : form.querySelector('button[type="submit"]');
+    this.uriAction = uriAction;
+    this.method = method;
+    this.classNames = classNames;
+    this.cbSuccess = cbSuccess;
+  }
+
+  _createClass(Form, [{
+    key: "init",
+    value: function init() {
+      var _this5 = this;
+
+      this.form.addEventListener('submit', function (e) {
+        return _this5.handerSubmit(e);
+      });
+      this.submit.addEventListener('click', function (e) {
+        return _this5.handerSubmit(e);
+      });
+    }
+  }, {
+    key: "handerSubmit",
+    value: function handerSubmit(e) {
+      var _this6 = this;
+
+      this.clearBodyAlerts();
+      this.clearErrorsForm();
+      this.removeErrorOnFocusInput();
+      e.preventDefault();
+      var data = serialize(this.form);
+      var body = new FormData();
+
+      for (var i in data) {
+        body.append(i, data[i]);
+      }
+
+      fetch(this.uriAction, {
+        method: this.method,
+        body: body
+      }).then(function (res) {
+        return res.json();
+      }).then(function (res) {
+        if ('error' in res) {
+          _this6.showFormErrors(res.error);
+        } else {
+          _this6.form.reset();
+
+          if (typeof _this6.cbSuccess === 'function') {
+            _this6.cbSuccess();
+          }
+        }
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    }
+  }, {
+    key: "showFormErrors",
+    value: function showFormErrors(errors) {
+      for (var i in errors) {
+        var element = this.form.querySelector('input[name="' + i + '"]') || this.form.querySelector('textarea[name="' + i + '"]');
+
+        if (element != null) {
+          this.classNames.inputError != '' ? element.classList.add(this.classNames.inputError) : null;
+          element.setAttribute('aria-describedby', 'error-' + i);
+          var parent = element.closest('.form-field');
+          parent.classList.add(this.classNames.formError);
+          var errorNode = document.createElement('div');
+          errorNode.setAttribute('aria-live', 'polite');
+          errorNode.setAttribute('id', 'error-' + i);
+          errorNode.classList.add(this.classNames.error);
+          errorNode.textContent = errors[i];
+          parent.appendChild(errorNode);
+        } else {
+          this.removeErrorForm(element);
+        }
+      }
+    }
+  }, {
+    key: "removeErrorForm",
+    value: function removeErrorForm(element) {
+      if (element != null) {
+        this.classNames.inputError != '' ? element.classList.remove(this.classNames.inputError) : null;
+        var parent = element.closest('.form-field');
+        parent.querySelector('.' + this.classNames.formError).remove();
+      }
+    }
+  }, {
+    key: "clearBodyAlerts",
+    value: function clearBodyAlerts() {
+      var elements = this.form.querySelectorAll('.' + this.classNames.alert);
+
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].remove();
+      }
+    }
+  }, {
+    key: "clearErrorsForm",
+    value: function clearErrorsForm() {
+      if (this.classNames.inputError != '') {
+        var elements = this.form.querySelectorAll('.' + this.classNames.inputError);
+
+        for (var i = 0; i < elements.length; i++) {
+          this.removeErrorForm(elements[i]);
+        }
+      }
+    }
+  }, {
+    key: "removeErrorOnFocusInput",
+    value: function removeErrorOnFocusInput() {
+      var _this7 = this;
+
+      var formGroup = this.form.querySelectorAll('.form-field');
+      Array.prototype.forEach.call(formGroup, function (item) {
+        if (item.querySelector('input') != null) {
+          item.querySelector('input').addEventListener('focus', function (e) {
+            _this7.classNames.inputError != '' ? e.target.classList.remove(_this7.classNames.inputError) : null;
+            var siblingError = e.target.nextSibling.nextSibling;
+
+            if (siblingError != null && siblingError.classList.contains(_this7.classNames.fieldError)) {
+              siblingError.remove();
+            }
+          });
+        }
+
+        if (item.querySelector('textarea') != null) {
+          item.querySelector('textarea').addEventListener('focus', function (e) {
+            _this7.classNames.inputError != '' ? e.target.classList.remove(_this7.classNames.inputError) : null;
+            var siblingError = e.target.nextSibling.nextSibling;
+
+            if (siblingError != null && siblingError.classList.contains(_this7.classNames.fieldError)) {
+              siblingError.remove();
+            }
+          });
+        }
+
+        if (item.querySelector('label') != null) {
+          item.querySelector('label').addEventListener('click', function (e) {
+            var siblingError = e.target.nextSibling.nextSibling;
+
+            if (siblingError != null && siblingError.classList.contains(_this7.classNames.fieldError)) {
+              siblingError.remove();
+            }
+          });
+        }
+      });
+    }
+  }]);
+
+  return Form;
+}();
+
 window.addEventListener('load', function () {
   var modalCallbackButtons = document.querySelectorAll('.js-init-modal__form');
   Array.prototype.forEach.call(modalCallbackButtons, function (btn) {
@@ -5006,7 +5166,14 @@ window.addEventListener('load', function () {
       };
       modalFromAjax(settings);
     });
-  }); // var counterStroke = itemCounter('.form-stroke__fieldCount'),
+  }); // const classNames = {
+  // 	inputError: '',
+  // 	formError: 'form-field_error',
+  // 	error: 'form-field__error',
+  // };
+  // var callbackForm = new Form(document.querySelector('.callback-form'), null, { uriAction: '', method: 'POST' }, classNames, null);
+  // callbackForm.init();
+  // var counterStroke = itemCounter('.form-stroke__fieldCount'),
   // 	counterUnderline = itemCounter('.form-underline__fieldCount'),
   // 	// customSelectExample = new customSelect({
   // 	// 	elem: 'form-stroke__select',

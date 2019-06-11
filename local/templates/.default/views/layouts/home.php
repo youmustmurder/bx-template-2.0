@@ -102,12 +102,24 @@ $APPLICATION->IncludeFile(
                 <h3 class="modal__title">Оставить заявку</h3>
             </div>
             <div class="modal__body">
-                <form action="">
+                <form action="" class="callback-form">
 					<div class="form-field">
-						<input type="text" placeholder="Имя клиента" class="input input_underline">
+						<input type="text" name="name" placeholder="Имя клиента" class="input input_underline">
 					</div>
 					<div class="form-field">
-						<input type="text" placeholder="Номер телефона" class="input input_underline">
+						<input type="text" name="phone" placeholder="Номер телефона" class="input input_underline">
+					</div>
+					<div class="form-field">
+						<label class="checkbox">
+							<input type="checkbox" name="checkbox" value="two" checked="checked">
+							<span class="checkbox__inner"></span>
+							<span class="checkbox__text">
+								Я даю свое согласие на обработку персональных данных. Политика обработки персональных данных
+							</span>
+						</label>
+					</div>
+					<div class="d-flex justify-content-end">
+						<button type="submit" class="btn btn_round btn_mid btn_primary">Отправить</button>
 					</div>
 				</form>
             </div>

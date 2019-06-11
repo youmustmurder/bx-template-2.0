@@ -1,5 +1,4 @@
 .form-field {
-	position: relative;
 	&.form-field_error {
 		.input {
 			&.input_round,
@@ -13,13 +12,6 @@
 			}
 		}
 	}
-}
-
-.form-field__error {
-	padding: 8px 0 0 0;
-	color: #FF1E36;
-	font-size: 0.8rem;
-	line-height: 1.2rem;
 }
 
 .form-field__icon {

@@ -1,6 +1,6 @@
 <?
 $sSectionName = "Каталог продукции";
 $arDirProperties = Array(
-    'PAGE_LAYOUT' => 'column2'
+    'PAGE_LAYOUT' => 'sidebar_left'
 );
 ?>

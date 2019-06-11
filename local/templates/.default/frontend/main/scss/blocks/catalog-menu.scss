@@ -1,0 +1,44 @@
+.catalog-menu {
+	background: #f6f6f6;
+	ul {
+		&.active {
+			background: #ff223d;
+			.submenu {
+				background: #ff223d;
+				li {
+					&.active {
+						a {
+							text-decoration: underline;
+						}
+					}
+					&:hover {
+						a {
+							text-decoration: underline;
+						}
+					}
+				}
+				a {
+					color: #fff;
+				}
+			}
+		}
+	}
+	li {
+		border-bottom: 1px solid #ddd;
+		.submenu {
+			display: none;
+		}
+		&:hover {
+			a {
+				color: #ff223d;
+			}
+		}
+	}
+	a {
+		display: block;
+		padding: 20px 30px;
+		color: #333;
+		font-size: 15px;
+		transition: 0.3s all ease-out;
+	}
+}

@@ -5,9 +5,11 @@
 @import 'blocks/h.scss';
 @import 'blocks/btn.scss';
 @import 'blocks/link.scss';
+@import 'blocks/form-field.scss';
 @import 'blocks/input.scss';
 @import 'blocks/select.scss';
 @import 'blocks/checkobx.scss';
+@import 'blocks/radiobutton.scss';
 @import 'blocks/tabs.scss';
 @import 'blocks/alerts.scss';
 @import 'blocks/label.scss';
@@ -21,6 +23,8 @@
 @import 'blocks/product.scss';
 @import 'blocks/service.scss';
 @import 'blocks/text-block.scss';
+
+@import 'blocks/catalog-menu.scss';
 
 html,
 body {
