@@ -1,0 +1,35 @@
+.sub-category {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -15px 20px;
+}
+
+.sub-category-item {
+	flex: 1 0 30%;
+	max-width: calc(100% / 3);
+	padding: 0 15px 30px;
+	a {
+		display: block;
+		border: 1px solid #eaeaea;
+		color: #333;
+	}
+	&:hover {
+		.sub-category-item__name {
+			background: #ff223d;
+			color: #fff;
+		}
+	}
+}
+
+.sub-category-item__image {
+	height: 200px;
+	border-bottom: 1px solid #eaeaea;
+	img {
+		max-height: 100%;
+	}
+}
+
+.sub-category-item__name {
+	padding: 25px 30px;
+	transition: 0.3s all ease-out;
+}

@@ -1,0 +1,32 @@
+.breadcrumbs {
+	padding: 50px 0 0 0;
+}
+
+.breadcrumbs__item {
+	display: inline-block;
+	position: relative;
+	a,
+	span {
+		display: block;
+		padding: 3px 0;
+		font-size: 0.8rem;
+	}
+	a {
+		color: #a9a9ab;
+	}
+	&:not(:last-child) {
+		a {
+			padding-right: 15px;
+		}
+		&:after {
+			content: '/';
+			position: absolute;
+			top: 2px;
+			right: 4px;
+			width: 4px;
+			height: 100%;
+			text-align: center;
+			color: #a9a9ab;
+		}
+	}
+}
