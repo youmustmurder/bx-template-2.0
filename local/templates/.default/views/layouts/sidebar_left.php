@@ -1,5 +1,4 @@
-<?
-if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
+<?if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 /**
  * @author Lukmanov Mikhail <lukmanof92@gmail.com>
  */
@@ -9,17 +8,11 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 	<div class="container">
 		<div class="row">
 			<div class="col">
-			<ul class="breadcrumbs">
-				<li class="breadcrumbs__item">
-					<a href="#">Главная</a>
-				</li>
-				<li class="breadcrumbs__item">
-					<a href="#">Каталог</a>
-				</li>
-				<li class="breadcrumbs__item">
-					<span>Электроника</span>
-				</li>
-			</ul>
+                <?$APPLICTION->IncludeComponent(
+                        'bitrix:breadcrumb',
+                        '',
+                        array()
+                )?>
 			</div>
 		</div>
 	</div>
