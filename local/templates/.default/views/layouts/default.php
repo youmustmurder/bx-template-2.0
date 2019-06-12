@@ -9,17 +9,14 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 	<div class="container">
 		<div class="row">
 			<div class="col">
-			<ul class="breadcrumbs">
-				<li class="breadcrumbs__item">
-					<a href="#">Главная</a>
-				</li>
-				<li class="breadcrumbs__item">
-					<a href="#">Каталог</a>
-				</li>
-				<li class="breadcrumbs__item">
-					<span>Электроника</span>
-				</li>
-			</ul>
+                <?$APPLICATION->IncludeFile(
+                    "/include/" . SITE_ID . "/blocks/breadcrumb.php",
+                    array(),
+                    array(
+                        "SHOW_BORDER" => false,
+                        "MODE" => "php"
+                    )
+                );?>
 			</div>
 		</div>
 	</div>
@@ -27,7 +24,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<h1>Ноутбук Apple MacBook 12", Silver (MNYH2RU/A)</h1>
+					<h1><?=$APPLICATION->GetTitle()?></h1>
 				</div>
 			</div>
 		</div>
