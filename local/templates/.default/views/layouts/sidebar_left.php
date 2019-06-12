@@ -1,4 +1,5 @@
-<?if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
+<?
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 /**
  * @author Lukmanov Mikhail <lukmanof92@gmail.com>
  */
@@ -8,7 +9,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col">
-                <?$APPLICTION->IncludeComponent(
+                <?$APPLICATION->IncludeComponent(
                         'bitrix:breadcrumb',
                         '',
                         array()
@@ -20,7 +21,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<h1>Электроника</h1>
+					<h1><?=$APPLICATION->GetTitle()?></h1>
 				</div>
 			</div>
 		</div>
