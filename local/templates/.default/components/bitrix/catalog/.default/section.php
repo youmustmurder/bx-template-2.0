@@ -11,9 +11,9 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 
-global $arCurrentSetting;
+\Bitrix\Main\Loader::includeModule('website.template');
 
-dump($GLOBALS);
+$arCurrentSetting = CWebsiteTemplate::getTemplateSetting();
 
 $APPLICATION->IncludeComponent(
     "bitrix:catalog.section.list",
@@ -38,9 +38,11 @@ $APPLICATION->IncludeComponent(
     array("HIDE_ICONS" => "Y")
 );
 
+$templateSection = $arCurrentSetting['PRODUCTS'] > 0 ? 'catalog-product_' . $arCurrentSetting['PRODUCTS'] : 'catalog-product_default';
+
 $APPLICATION->IncludeComponent(
     "bitrix:catalog.section",
-    "",
+    $templateSection,
     array(
         "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
         "IBLOCK_ID" => $arParams["IBLOCK_ID"],

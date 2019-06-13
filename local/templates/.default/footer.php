@@ -21,9 +21,10 @@ if (function_exists("getmoduleevents")) {
     }
 }
 
-$pageLayout = $APPLICATION->GetPageProperty("PAGE_LAYOUT", AppGetCascadeDirProperties("PAGE_LAYOUT", "column1"));
+$pageLayout = $APPLICATION->GetPageProperty("PAGE_LAYOUT", AppGetCascadeDirProperties("PAGE_LAYOUT", "default"));
 
 //CWebsiteTemplate::$demoMode = true;
+
 $arCurrentSetting = CWebsiteTemplate::getTemplateSetting();
 $arFilial = CWebsiteTemplate::getCurrentFilial();
 //Debug::dump($arFilial);
@@ -39,7 +40,7 @@ Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/dist/js/inde
 ?>
 
 <!doctype html>
-<html lang="<?=$arLang['LANGUAGE_ID']?>">
+<html lang="<?=LANGUAGE_ID?>">
     <head>
         <link rel="shortcut icon" href="<?=SITE_DIR?>favicon.ico">
         <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -138,5 +139,5 @@ $APPLICATION->IncludeFile(
     )
 );?>
 
-<?//$APPLICATION->ShowBodyScripts();?>
+<?$APPLICATION->ShowBodyScripts();?>
 </body>
