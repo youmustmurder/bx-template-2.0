@@ -32,9 +32,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 	<div class="page">
 		<div class="container">
 			<div class="row">
-				<div class="col">
-				    <?=$arParams['CONTENT']?>
-				</div>
+				<?=$arParams['CONTENT']?>
 			</div>
 		</div>
 	</div>

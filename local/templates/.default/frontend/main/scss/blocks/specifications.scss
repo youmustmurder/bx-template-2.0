@@ -1,0 +1,18 @@
+.specifications {
+	line-height: 1.733rem
+}
+
+.specifications-item {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+    border-bottom: 1px dashed #eaeaea;
+}
+
+.specifications-item__name {
+
+}
+
+.specifications-item__value {
+	text-align: right;
+}
