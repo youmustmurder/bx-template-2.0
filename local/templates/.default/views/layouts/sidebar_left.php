@@ -119,16 +119,6 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 				</div>
 				<div class="col-lg-9 col-md-8">
                     <?=$arParams['CONTENT']?>
-					<div class="text">
-                        <?$APPLICATION->IncludeFile(
-                            "/include/" . SITE_ID . "/content/catalog/main_page.php",
-                            array(),
-                            array(
-                                "SHOW_BORDER" => false,
-                                "MODE" => "php"
-                            )
-                        );?>
-                    </div>
 				</div>
 			</div>
 		</div>

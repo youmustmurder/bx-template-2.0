@@ -12,10 +12,14 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 
+\Bitrix\Main\Loader::includeModule('website.template');
+
+$arCurrentSetting = CWebsiteTemplate::getTemplateSetting();
+$templateSections = $arCurrentSetting['SECTIONS'] > 0 ? 'catalog-section_' . $arCurrentSetting['SECTIONS'] : 'catalog-section_default';
 
 $APPLICATION->IncludeComponent(
 	"bitrix:catalog.section.list",
-	"",
+    $templateSections,
 	array(
 		"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
 		"IBLOCK_ID" => $arParams["IBLOCK_ID"],
@@ -33,6 +37,7 @@ $APPLICATION->IncludeComponent(
 	$component,
 	array("HIDE_ICONS" => "Y")
 );
+
 if ($arParams['SHOW_ADVANTAGES'] != 'N') {
     $APPLICATION->IncludeComponent(
         "bitrix:news.list",
@@ -101,6 +106,15 @@ if ($arParams['SHOW_ADVANTAGES'] != 'N') {
         $component,
         array('HIDE_ICONS' => 'Y')
     );
-}
+}?>
 
-?>
+<div class="text">
+    <?$APPLICATION->IncludeFile(
+        "/include/" . SITE_ID . "/content/catalog/main_page.php",
+        array(),
+        array(
+            "SHOW_BORDER" => true,
+            "MODE" => "html"
+        )
+    );?>
+</div>

@@ -78,3 +78,8 @@ if($arResult['ITEMS']){?>
 	</div>
 </section>
 <?}?>
+<?if ($arResult['DESCRIPTION']) {?>
+    <div class="text">
+        <?=$arResult['DESCRIPTION']?>
+    </div>
+<?}?>
