@@ -96,7 +96,6 @@ $APPLICATION->IncludeFile(
         )
     );?>
 <?} else {?>
-
     <?$APPLICATION->IncludeFile(
         "views/layouts/" . $pageLayout . ".php",
         array(

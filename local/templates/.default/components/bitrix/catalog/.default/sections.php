@@ -36,7 +36,7 @@ $APPLICATION->IncludeComponent(
 
 $APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
-	"home-advanatges_sidebar",
+	"catalog-advantages",
 	array(
 		"ADD_SECTIONS_CHAIN" => "N",
 		"AJAX_MODE" => "N",

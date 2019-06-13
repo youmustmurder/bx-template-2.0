@@ -11,9 +11,9 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 
+global $arCurrentSetting;
 
-use Bitrix\Main\Loader,
-    Bitrix\Main\ModuleManager;
+dump($arCurrentSetting);
 
 $APPLICATION->IncludeComponent(
     "bitrix:catalog.section.list",
