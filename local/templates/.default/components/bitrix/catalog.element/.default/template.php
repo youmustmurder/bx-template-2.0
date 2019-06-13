@@ -2,8 +2,13 @@
 /**
  * @author Lukmanov Mikhail <lukmanof92@gmail.com>
  */
+use Bitrix\Main\Localization\Loc;
+
+Loc::loadMessages(__FILE__);
 
 $APPLICATION->SetPageProperty('PAGE_LAYOUT', 'default');
+
+
 ?>
 <div class="col">
 	<div class="row product-detain-wrap">
@@ -11,51 +16,41 @@ $APPLICATION->SetPageProperty('PAGE_LAYOUT', 'default');
 			<div class="product-slider">
 				<div class="product-slider__previews-inner">
 					<div class="product-slider__previews product-slider-previews">
-						<div class="product-slider-previews__slide product-slider-previews-slide" data-index="0">
-							<img src="<?=GetCurDir(__DIR__)?>/uploads/product.jpg" alt="">
-						</div>
-						<div class="product-slider-previews__slide product-slider-previews-slide" data-index="1">
-							<img src="<?=GetCurDir(__DIR__)?>/uploads/product.jpg" alt="">
-						</div>
-						<div class="product-slider-previews__slide product-slider-previews-slide" data-index="2">
-							<img src="<?=GetCurDir(__DIR__)?>/uploads/product.jpg" alt="">
-						</div>
-						<div class="product-slider-previews__slide product-slider-previews-slide" data-index="3">
-							<img src="<?=GetCurDir(__DIR__)?>/uploads/product.jpg" alt="">
-						</div>
-						<div class="product-slider-previews__slide product-slider-previews-slide" data-index="4">
-							<img src="<?=GetCurDir(__DIR__)?>/uploads/product.jpg" alt="">
-						</div>
+                        <?if ($arResult['MORE_IMAGES']) {?>
+                            <?foreach ($arResult['MORE_IMAGES'] as $k => $arImage) {?>
+                                <div class="product-slider-previews__slide product-slider-previews-slide" data-index="<?=$k?>">
+                                    <img src="<?=$arImage['RESIZE_SRC']?>" alt="">
+                                </div>
+                            <?}?>
+                        <?}?>
 					</div>
 				</div>
 				<div class="product-slider__big-inner">
 					<div class="product-slider__big">
-						<div class="product-slider__big__slide product-slider__big-slide" data-index="0">
-							<img src="<?=GetCurDir(__DIR__)?>/uploads/product.jpg" alt="">
-						</div>
-						<div class="product-slider__big__slide product-slider__big-slide" data-index="1">
-							<img src="<?=GetCurDir(__DIR__)?>/uploads/product.jpg" alt="">
-						</div>
-						<div class="product-slider__big__slide product-slider__big-slide" data-index="2">
-							<img src="<?=GetCurDir(__DIR__)?>/uploads/product.jpg" alt="">
-						</div>
-						<div class="product-slider__big__slide product-slider__big-slide" data-index="3">
-							<img src="<?=GetCurDir(__DIR__)?>/uploads/product.jpg" alt="">
-						</div>
-						<div class="product-slider__big__slide product-slider__big-slide" data-index="4">
-							<img src="<?=GetCurDir(__DIR__)?>/uploads/product.jpg" alt="">
-						</div>
-					</div>
+                        <?if ($arResult['MORE_IMAGES']) {?>
+                            <?foreach ($arResult['MORE_IMAGES'] as $k => $arImage) {?>
+                                <div class="product-slider__big__slide product-slider__big-slide" data-index="<?=$k?>">
+                                    <img src="<?=$arImage['SRC']?>" alt="">
+                                </div>
+                            <?}?>
+                        <?}?>
+				    </div>
 				</div>
 			</div>
 		</div>
 		<div class="col-lg-6 offset-lg-1 col-md-5">
 			<div class="product-info">
 				<div class="product-info__col">
-					<div class="product-info__price product-info-price">
-						<span class="product-info-price__item">90 000</span>
-						<span class="product-info-price__item product-info-price__item_old">90 000</span>
-					</div>
+                    <?if ($arResult['PRICE'] || $arResult['OLD_PRICE']) {?>
+                        <div class="product-info__price product-info-price">
+                            <?if ($arResult['PRICE']) {?>
+                                <span class="product-info-price__item"><?=$arResult['PRICE']['VALUE']?><?=$arResult['PRICE']['CURRENCY'] == 'Y' ? ' ₽' : ''?></span>
+                            <?}?>
+                            <?if ($arResult['OLD_PRICE']) {?>
+                                <span class="product-info-price__item product-info-price__item_old"><?=$arResult['OLD_PRICE']['VALUE']?><?=$arResult['OLD_PRICE']['CURRENCY'] == 'Y' ? ' ₽' : ''?></span>
+                            <?}?>
+                        </div>
+                    <?}?>
 					<div class="product-info__presence product-info-presence">
 						<span class="product-info-presence__icon"><?=GetContentSvgIcon('check');?></span>
 						<span class="product-info-presence__value">В наличии</span>
@@ -65,44 +60,39 @@ $APPLICATION->SetPageProperty('PAGE_LAYOUT', 'default');
 					<a href="#" class="btn btn_mid btn_round btn_outline-primary">Быстрый заказ</a>
 				</div>
 			</div>
+            <?if ($arResult['PREVIEW_TEXT']) {?>
+                <div class="product-block">
+                    <div class="product-block__title"><?=Loc::getMessage('PRODUCT_DEFAULT_PREVIEW_TEXT_TITLE')?></div>
+                    <a href="#desc" class="link link_success link_icon-right product-block__link">
+                        <?=Loc::getMessage('PRODUCT_DEFAULT_DETAIL_TEXT_TITLE')?>
+                        <span class="link__icon"><?=GetContentSvgIcon('arrow_bottom');?></span>
+                    </a>
+                    <div class="product-block__body">
+                        <?=$arResult['PREVIEW_TEXT']?>
+                    </div>
+                </div>
+            <?}?>
 			<div class="product-block">
-				<div class="product-block__title">Краткое описание</div>
+				<div class="product-block__title"></div>
 				<a href="#desc" class="link link_success link_icon-right product-block__link">
-					Полное описание
-					<span class="link__icon"><?=GetContentSvgIcon('arrow_bottom');?></span>
-				</a>
-				<div class="product-block__body">
-					If you are a serious astronomy fanatic like a lot of us are, you can probably remember that one event in childhood that started you along this exciting hobby. It might have been that first time you looked through a telescope.
-				</div>
-			</div>
-			<div class="product-block">
-				<div class="product-block__title">Характеристики</div>
-				<a href="#desc" class="link link_success link_icon-right product-block__link">
-					Все характеристики
+                    <?=Loc::getMessage('PRODUCT_DEFAULT_OPTIONS_ALL_TITLE')?>
 					<span class="link__icon"><?=GetContentSvgIcon('arrow_bottom');?></span>
 				</a>
 				<div class="product-block__body">
 					<ul class="specifications">
-						<li class="specifications__item specifications-item">
-							<span class="specifications-item__name">Страна-производитель</span>
-							<span class="specifications-item__value">Россия</span>
-						</li>
-						<li class="specifications__item specifications-item">
-							<span class="specifications-item__name">Страна-производитель</span>
-							<span class="specifications-item__value">Россия</span>
-						</li>
-						<li class="specifications__item specifications-item">
-							<span class="specifications-item__name">Страна-производитель</span>
-							<span class="specifications-item__value">Россия</span>
-						</li>
-						<li class="specifications__item specifications-item">
-							<span class="specifications-item__name">Страна-производитель</span>
-							<span class="specifications-item__value">Россия</span>
-						</li>
-						<li class="specifications__item specifications-item">
-							<span class="specifications-item__name">Страна-производитель</span>
-							<span class="specifications-item__value">Россия</span>
-						</li>
+                        <?
+                        $i = 0;
+                        foreach ($arResult['PROPERTIES']['PRODUCT_OPTIONS']['VALUE'] as $k => $option) {?>
+                            <li class="specifications__item specifications-item">
+                                <span class="specifications-item__name"><?=$option?></span>
+                                <span class="specifications-item__value"><?=$arResult['PROPERTIES']['PRODUCT_OPTIONS']['DESCRIPTION'][$k]?></span>
+                            </li>
+                            <?if ($i == 4) {
+                                break;
+                            } else {
+                                $i++;
+                            }?>
+                        <?}?>
 					</ul>
 				</div>
 			</div>
@@ -112,18 +102,22 @@ $APPLICATION->SetPageProperty('PAGE_LAYOUT', 'default');
 		<div class="col-12">
 			<div class="product-tabs tabs tabs_mid tabs_underline">
 				<ul class="tabs__toggles">
-					<li class="tabs__toggle tabs__toggle_active">
-						<button data-toggle="collapse"
-								data-target="#desc"
-								aria-expanded="true"
-								aria-controls="desc">Описание</button>
-					</li>
-					<li class="tabs__toggle">
-						<button data-toggle="collapse"
-								data-target="#char"
-								aria-expanded="true"
-								aria-controls="char">Характеристики</button>
-					</li>
+                    <?if ($arResult['DETAIL_TEXT']) {?>
+                        <li class="tabs__toggle tabs__toggle_active">
+                            <button data-toggle="collapse"
+                                    data-target="#desc"
+                                    aria-expanded="true"
+                                    aria-controls="desc"><?=Loc::getMessage('PRODUCT_DEFAULT_PREVIEW_TEXT_TITLE')?></button>
+                        </li>
+                    <?}?>
+                    <?if ($arResult['PROPERTIES']['PRODUCT_OPTIONS']['VALUE']) {?>
+                        <li class="tabs__toggle">
+                            <button data-toggle="collapse"
+                                    data-target="#char"
+                                    aria-expanded="true"
+                                    aria-controls="char"><?=Loc::getMessage('PRODUCT_DEFAULT_OPTIONS_TITLE')?></button>
+                        </li>
+                    <?}?>
 					<li class="tabs__toggle">
 						<button data-toggle="collapse"
 								data-target="#char1"
@@ -132,33 +126,23 @@ $APPLICATION->SetPageProperty('PAGE_LAYOUT', 'default');
 					</li>
 				</ul>
 				<div class="tabs__contents">
-					<div class="tabs__content tabs__content_active text" id="desc">
-						Apple MacBook 12" - стильный и инновационный ноутбук будущего. Это легкий и ультратонкий мобильный компьютер с длительным сроком автономной работы и цельным дизайном. 
-					</div>
-					<div class="tabs__content" id="char">
-						<ul class="specifications">
-							<li class="specifications__item specifications-item">
-								<span class="specifications-item__name">Страна-производитель</span>
-								<span class="specifications-item__value">Россия</span>
-							</li>
-							<li class="specifications__item specifications-item">
-								<span class="specifications-item__name">Страна-производитель</span>
-								<span class="specifications-item__value">Россия</span>
-							</li>
-							<li class="specifications__item specifications-item">
-								<span class="specifications-item__name">Страна-производитель</span>
-								<span class="specifications-item__value">Россия</span>
-							</li>
-							<li class="specifications__item specifications-item">
-								<span class="specifications-item__name">Страна-производитель</span>
-								<span class="specifications-item__value">Россия</span>
-							</li>
-							<li class="specifications__item specifications-item">
-								<span class="specifications-item__name">Страна-производитель</span>
-								<span class="specifications-item__value">Россия</span>
-							</li>
-						</ul>
-					</div>
+                    <?if ($arResult['DETAIL_TEXT']) {?>
+                        <div class="tabs__content tabs__content_active text" id="desc">
+                           <?=$arResult['DETAIL_TEXT']?>
+                        </div>
+                    <?}?>
+                    <?if ($arResult['PROPERTIES']['PRODUCT_OPTIONS']['VALUE']) {?>
+                        <div class="tabs__content" id="char">
+                            <ul class="specifications">
+                                <?foreach ($arResult['PROPERTIES']['PRODUCT_OPTIONS']['VALUE'] as $k => $option) {?>
+                                    <li class="specifications__item specifications-item">
+                                        <span class="specifications-item__name"><?=$option?></span>
+                                        <span class="specifications-item__value"><?=$arResult['PROPERTIES']['PRODUCT_OPTIONS']['DESCRIPTION'][$k]?></span>
+                                    </li>
+                                <?}?>
+                            </ul>
+                        </div>
+                    <?}?>
 					<div class="tabs__content" id="char1">
 						Apple MacBook 12" - стильный и инновационный ноутбук будущего. Это легкий и ультратонкий мобильный компьютер с длительным сроком автономной работы и цельным дизайном. 
 					</div>

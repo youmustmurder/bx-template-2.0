@@ -124,18 +124,21 @@ if ($arResult['ITEMS']) {?>
 		</div>
 	</div>
 </section>
-<?} else {?>
-    <?$APPLICATION->IncludeFile(
-        "/include/" . SITE_ID . "/content/catalog/menu/top.php",
-        array(),
-        array(
-            "SHOW_BORDER" => false,
-            "MODE" => "php"
-        )
-    );?>
 <?}?>
 <?if ($arResult['DESCRIPTION']) {?>
     <div class="text">
         <?=$arResult['DESCRIPTION']?>
+    </div>
+<?}?>
+<?if (empty($arResult['ITEMS'])) {?>
+    <div class="text">
+        <?$APPLICATION->IncludeFile(
+            "/include/" . SITE_ID . "/content/catalog/no_products.php",
+            array(),
+            array(
+                "SHOW_BORDER" => true,
+                "MODE" => "html"
+            )
+        )?>
     </div>
 <?}?>

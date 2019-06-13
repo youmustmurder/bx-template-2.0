@@ -83,3 +83,15 @@ if($arResult['ITEMS']){?>
         <?=$arResult['DESCRIPTION']?>
     </div>
 <?}?>
+<?if (empty($arResult['ITEMS'])) {?>
+    <div class="text">
+        <?$APPLICATION->IncludeFile(
+            "/include/" . SITE_ID . "/content/catalog/no_products.php",
+            array(),
+            array(
+                "SHOW_BORDER" => true,
+                "MODE" => "html"
+            )
+        )?>
+    </div>
+<?}?>
