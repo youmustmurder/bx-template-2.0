@@ -30,7 +30,11 @@
 @import 'blocks/sub-category.scss';
 @import 'blocks/breadcumbs.scss';
 @import 'blocks/page-header.scss';
+@import 'blocks/page.scss';
 @import 'blocks/product-info.scss';
+@import 'blocks/product-slider.scss';
+@import 'blocks/specifications.scss';
+@import 'blocks/product-block.scss';
 
 html,
 body {
@@ -45,4 +49,12 @@ body {
 
 .logo-circle {
 	fill: #ff1e36;
+}
+
+.product-detain-wrap {
+	margin-bottom: 60px;
+}
+
+.product-desc {
+	padding: 30px 0 0 0;
 }

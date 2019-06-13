@@ -1,8 +1,100 @@
 .tabs {
+	width: 100%;
+	&.tabs_min {
+		.tabs__toggle {
+			button {
+				padding: 6px 21px;
+				font-size: 0.6667rem;
+			}
+		}
+	}
+	&.tabs_mid {
+		.tabs__toggle {
+			button {
+				padding: 8px 21px;
+				font-size: 0.9333rem;
+			}
+		}
+	}
+	&.tabs_big {
+		.tabs__toggle {
+			button {
+				padding: 11px 30px;
+				font-size: 1.067rem;
+			}
+		}
+	}
+	&.tabs_defalt {
+		.tabs__toggles {
+			background-color: #fff;
+			border-radius: 50px;
+			border: 1px solid #eee;
+		}
+		.tabs__toggle {
+			button {
+				border-right: 1px solid #eee;
+				border-left: 1px solid #eee;
+			}
+			&:last-child {
+				button {
+					border-right: 0;
+				}
+			}
+			&.tabs__toggle_active {
+				button {
+					border-radius: 50px 50px 50px 50px;
+					background-color: #26AE60;
+					color: #fff;
+				}
+			}
+		}
+	}
+	&.tabs_underline {
+		.tabs__toggle {
+			button {
+				border-bottom: 1px solid #eeeeee;
+			}
+			&.tabs__toggle_active {
+				button {
+					border-color: #26AE60;
+					color: #26AE60;
+				}
+			}
+		}
+	}
+}
+
+.tabs__toggles {
 	display: flex;
 	width: fit-content;
-	margin-bottom: 10px;
+	overflow: hidden;
 }
+
+.tabs__toggle {
+	cursor: pointer;
+	margin: 0 -1px;
+	button {
+		border: none;
+		background: none;
+		pointer-events: none;
+		cursor: pointer;
+	}
+	&.tabs__toggle_active {
+		margin: 0;
+	}
+}
+
+.tabs__content {
+	display: none;
+	padding: 30px 0 0 0;
+	&.tabs__content_active {
+		display: block;
+	}
+}
+
+
+
+
 
 .tabs__circle {
 	background-color: #fff;
