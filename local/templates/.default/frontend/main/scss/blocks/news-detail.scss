@@ -1,0 +1,29 @@
+.news-detail {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: max-content max-content;
+}
+
+.news-detail-date {
+	margin-bottom: 20px;
+	color: #aaa9ad;
+}
+
+.news-detail-date__number {
+	margin-bottom: 20px;
+	font-size: 2rem;
+}
+
+.news-detail-date__date {
+
+}
+
+.news-detailt__short-desc {
+	line-height: 2rem;
+}
+
+.news-detail__image {
+	grid-column: 2;
+	grid-row: 1/3;
+	justify-self: flex-end;
+}
