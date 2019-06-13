@@ -9,7 +9,7 @@ use Bitrix\Main\Localization\Loc;
 Loc::loadMessages(__FILE__);
 
 if($arResult['ITEMS']){?>
-<section class="products products_grey">
+<section class="products">
 	<div class="container">
 		<div class="row">
 			<div class="col">
@@ -19,7 +19,7 @@ if($arResult['ITEMS']){?>
                             $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
                             $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
                             ?>
-							<div class="col-lg-3 col-md-4 col-sm-6 col-12" >
+							<div class="col-lg-4 col-md-4 col-sm-6 col-12" >
                                 <div class="products__item products-item" id="<?=$this->GetEditAreaId($arItem['ID']); ?>">
                                     <?if ($arItem['PROPERTIES']['PRODUCT_LABEL']['VALUE'] || $arItem['PROPERTIES']['PRODUCT_DISCOUNT']['VALUE']) {?>
                                         <ul class="products-item__labels">
