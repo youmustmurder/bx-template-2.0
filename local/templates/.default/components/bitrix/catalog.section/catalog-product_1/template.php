@@ -8,19 +8,10 @@ use Bitrix\Main\Localization\Loc;
 Loc::loadMessages(__FILE__);
 
 if ($arResult['ITEMS']) {?>
-<section class="products products-grey">
+<section class="products">
 	<div class="container">
 		<div class="row">
 			<div class="col">
-               
-                <div class="products__header">
-                    <h2 class="products__title"><?=$arParams['SECTION_TITLE'] ?: Loc::getMessage('PRODUCTS_SECTION_TITLE_DEFAULT')?></h2>
-                    <a href="<?=SITE_DIR?>catalog/" class="link link_success link_icon-right products__link-all">
-                        <?=$arParams['SECTION_LINK'] ?: Loc::getMessage('PRODUCTS_SECTION_LINK_DEFAULT')?>
-                        <span class="link__icon"><?=GetContentSvgIcon('arrow-more');?></span>
-                    </a>
-                </div>
-            
 				<div class="products__grid-wrap">
 					<div class="grid grid_3column">
                         <?foreach ($arResult['ITEMS'] as $k => $arItem) {
@@ -133,4 +124,21 @@ if ($arResult['ITEMS']) {?>
 		</div>
 	</div>
 </section>
+<?}?>
+<?if ($arResult['DESCRIPTION']) {?>
+    <div class="text">
+        <?=$arResult['DESCRIPTION']?>
+    </div>
+<?}?>
+<?if (empty($arResult['ITEMS'])) {?>
+    <div class="text">
+        <?$APPLICATION->IncludeFile(
+            "/include/" . SITE_ID . "/content/catalog/no_products.php",
+            array(),
+            array(
+                "SHOW_BORDER" => true,
+                "MODE" => "html"
+            )
+        )?>
+    </div>
 <?}?>
