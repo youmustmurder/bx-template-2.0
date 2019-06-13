@@ -38,13 +38,14 @@ $APPLICATION->SetPageProperty('PAGE_LAYOUT', 'default');
 		</div>
 
 		<div class="col-lg-6 offset-lg-1 col-md-5">
-            <?if ($arResult['PROPERTIES']['PRODUCT_LABEL']['VALUE']) {?>
+            <?if ($arResult['PROPERTIES']['PRODUCT_LABEL']['VALUE_XML_ID'] || $arResult['PROPERTIES']['PRODUCT_DISCOUNT']['VALUE']) {?>
                 <ul class="product-labels">
                     <?foreach ($arResult['PROPERTIES']['PRODUCT_LABEL']['VALUE'] as $k => $value) {?>
-                        <li class="label label_blue"><?=$value?></li>
+                        <li class="label <?=$arResult['PROPERTIES']['PRODUCT_LABEL']['VALUE_XML_ID'][$k] == 'HITS' ? 'label_blue' : 'label_green'?>"><?=$value?></li>
                     <?}?>
-                    <li class="label label_yellow">-12%</li>
-                    <li class="label label_green">Новинка</li>
+                    <?if ($arResult['PROPERTIES']['PRODUCT_DISCOUNT']['VALUE']) {?>
+                        <li class="label label_yellow">-<?=$arResult['PROPERTIES']['PRODUCT_DISCOUNT']['VALUE']?>%</li>
+                    <?}?>
                 </ul>
             <?}?>
 			<div class="product-info">
@@ -59,15 +60,9 @@ $APPLICATION->SetPageProperty('PAGE_LAYOUT', 'default');
                             <?}?>
                         </div>
                     <?}?>
-					<div class="product-info__presence product-info-presence">
+					<div class="product-info__presence product-info-presence <?=$arResult['PRODUCT_STATUS']['CLASS']?>">
 						<span class="product-info-presence__icon"><?=GetContentSvgIcon('check');?></span>
-						<!--
-							Классы для разных состояний
-							product-info-presence_stock - в наличии
-							product-info-presence_missing - отсутсвует
-							product-info-presence_booking - под заказ
-						-->
-						<span class="product-info-presence__value">В наличии</span>
+						<span class="product-info-presence__value"><?=$arResult['PRODUCT_STATUS']['VALUE']?></span>
 					</div>
 				</div>
 				<div class="product-info__col product-info__col_buttons">
@@ -181,15 +176,13 @@ $APPLICATION->SetPageProperty('PAGE_LAYOUT', 'default');
                             </ul>
                         </div>
                     <?}?>
-					<div class="tabs__content" id="char1">
-						Apple MacBook 12" - стильный и инновационный ноутбук будущего. Это легкий и ультратонкий мобильный компьютер с длительным сроком автономной работы и цельным дизайном. 
-					</div>
 				</div>
 			</div>
-			<div class="text product-desc">
-				<p>Каждый компонент клавиатуры был спроектирован специально для нового MacBook: основной механизм, форма изгиба клавиш и даже новый уникальный шрифт. В результате клавиатура стала гораздо тоньше, чем все предыдущие. Теперь, когда вы нажимаете на клавишу, она чётко опускается и поднимается без малейших задержек - и ваш текст набирается быстрее и точнее. Новый механизм "бабочка" представляет собой цельный элемент, изготовленный из более жёстких материалов, с большей площадью опоры. Благодаря этому клавиши стали более устойчивыми, точнее реагируют на нажатия и при этом занимают меньше места по высоте. Эта инновационная технология обеспечивает более чёткую и стабильную работу вне зависимости от того, на какую часть клавиши вы нажимаете. </p>
-				<p>Для нового MacBook были созданы более тонкие клавиши с более широкой поверхностью и глубоким изгибом, чтобы палец точнее попадал в центр и нажатие получалось более естественным. На первый взгляд изменения минимальны, но работать с клавиатурой стало ощутимо проще и удобнее. А в сочетании с механизмом "бабочка" новая клавиатура позволяет печатать с гораздо большей точностью.</p>
-			</div>
+            <?if ($arResult['PROPERTIES']['PRODUCT_DESCRIPTION']['VALUE']) {?>
+                <div class="text product-desc">
+                    <?=htmlspecialchars($arResult['PROPERTIES']['PRODUCT_DESCRIPTION']['VALUE']['TEXT'])?>
+                </div>
+            <?}?>
 		</div>
 	</div>
 </div>

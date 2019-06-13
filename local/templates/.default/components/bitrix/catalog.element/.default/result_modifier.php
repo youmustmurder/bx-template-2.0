@@ -2,6 +2,9 @@
 /**
  * @author Lukmanov Mikhail <lukmanof92@gmail.com>
  */
+use Bitrix\Main\Localization\Loc;
+
+Loc::loadMessages(__FILE__);
 
 if ($arResult['PROPERTIES']['PRODUCT_MORE_IMAGES']['VALUE']) {
     if ($arResult['PREVIEW_PICTURE']) {
@@ -72,4 +75,18 @@ if ($arResult['PROPERTIES']['PRODUCT_MORE_IMAGES']['VALUE']) {
             
         }
     }
+    if ($arResult['PROPERTIES']['PRODUCT_STATUS']['VALUE_XML_ID'] == 'in__stock') {
+        $class = 'product-info-presence_stock';
+        $value = $arResult['PROPERTIES']['PRODUCT_STATUS']['VALUE'];
+    } elseif ($arResult['PROPERTIES']['PRODUCT_STATUS']['VALUE_XML_ID'] == 'under__order') {
+        $class = 'product-info-presence_booking';
+        $value = $arResult['PROPERTIES']['PRODUCT_STATUS']['VALUE'];
+    } else {
+        $class = 'product-info-presence_missing';
+        $value = Loc::getMessage('PRODUCT_DEFAULT_STATUS_MISSING');
+    }
+    $arResult['PRODUCT_STATUS'] = array(
+        'VALUE' => $value,
+        'CLASS' => $class
+    );
 }
