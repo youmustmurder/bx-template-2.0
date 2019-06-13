@@ -1,0 +1,9 @@
+.product-labels {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -7px 10px;
+	.label {
+		flex: 0 1 auto;
+		margin: 0 7px 15px;
+	}
+}

@@ -1,7 +1,18 @@
 window.addEventListener('load', () => {
 	var productPage = (() => {
-		const sliderPreviewsNode = document.querySelector('.product-slider-previews'),
-			sliderBigNode = document.querySelector('.product-slider__big');
+		var sliderPreviewsNode = document.querySelector('.product-slider-previews'),
+			sliderBigNode = document.querySelector('.product-slider__big'),
+			anchorProduct = document.querySelectorAll('.anchor-product');
+
+		const clickAnchorProduct = (e) => {
+			clickAnchorLink(e);
+			var target = e.target.getAttribute('href');
+			var tabTarget = document.querySelector('[data-target="'+ target +'"]').parentNode;
+			tabTarget.click();
+		};
+		Array.prototype.forEach.call(anchorProduct, (anchor) => {
+			anchor.addEventListener('click', clickAnchorProduct);
+		});
 
 		const toggleActiveSliderReviews = () => {
 			var info = sliderPreviews.getInfo(),
@@ -12,13 +23,25 @@ window.addEventListener('load', () => {
 			info.slideItems[indexCurrent].classList.add('product-slider-previews-slide_active');
 		};
 
-		var sliderPreviews = new tns({
+		var sliderPreviews = null,
+			media = window.matchMedia('(max-width: 768px)');
+		initSliderPreview(media);
+		media.addListener(initSliderPreview);
+
+		function initSliderPreview(x) {
+			var axis = '';
+			(x.matches) ? axis = 'horizontal' : axis = 'vertical';
+			if (sliderPreviews != null) {
+				sliderPreviews.destroy();
+				sliderPreviewsNode = document.querySelector('.product-slider-previews');
+			}
+			sliderPreviews = new tns({
 				container: sliderPreviewsNode,
 				items: 4,
 				gutter: 10,
 				nav: false,
 				controls: false,
-				axis: 'vertical',
+				axis: axis,
 				onInit: (info) => {
 					var indexPrev = info.indexCached,
 						indexCurrent = info.index;
@@ -26,23 +49,25 @@ window.addEventListener('load', () => {
 					info.slideItems[indexPrev].classList.remove('product-slider-previews-slide_active');
 					info.slideItems[indexCurrent].classList.add('product-slider-previews-slide_active');
 				},
-			}),
-			sliderBig = new tns({
+			});
+
+			Array.prototype.forEach.call(sliderPreviews.getInfo().slideItems, (slide, index) => {
+				slide.addEventListener('click', () => {
+					var indexSlide = slide.getAttribute('data-index');
+					sliderBig.goTo(indexSlide);
+					sliderPreviews.goTo(indexSlide);
+					toggleActiveSliderReviews();
+				});
+			});
+		};
+
+		var sliderBig = new tns({
 				container: sliderBigNode,
 				items: 1,
 				controls: false,
 				nav: false,
 				mode: 'gallery',
 			});
-
-		Array.prototype.forEach.call(sliderPreviews.getInfo().slideItems, (slide, index) => {
-			slide.addEventListener('click', () => {
-				var indexSlide = slide.getAttribute('data-index');
-				sliderBig.goTo(indexSlide);
-				sliderPreviews.goTo(indexSlide);
-				toggleActiveSliderReviews();
-			});
-		});
 
 		var settingsTabs = new Tabs(document.querySelector('.product-tabs'));
 		settingsTabs.init();

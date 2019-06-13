@@ -11,8 +11,16 @@ import Tabs from './tabs';
 import serialize from './serialize';
 import lazyLoad from './lazyLoad';
 import Form from './form';
+import smoothscroll from './smoothscroll';
+
+const clickAnchorLink = (e) => {
+	e.preventDefault();
+	const target = e.target.getAttribute('href');
+	document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+};
 
 window.addEventListener('load', () => {
+	smoothscroll();
 	const modalCallbackButtons = document.querySelectorAll('.js-init-modal__form');
 	Array.prototype.forEach.call(modalCallbackButtons, (btn) => {
 		btn.addEventListener('click', () => {
@@ -22,6 +30,11 @@ window.addEventListener('load', () => {
 			};
 			modalFromAjax(settings);
 		});
+	});
+
+	const anchorLinks = document.querySelectorAll('.anchor');
+	Array.prototype.forEach.call(anchorLinks, (link) => {
+		link.addEventListener('click', clickAnchorLink);
 	});
 	// const classNames = {
 	// 	inputError: '',

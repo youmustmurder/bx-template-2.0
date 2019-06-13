@@ -19,6 +19,7 @@
 }
 
 .product-info-price__item {
+	position: relative;
 	font-size: 2rem;
 	font-weight: bold;
 	&.product-info-price__item_old {
@@ -35,13 +36,28 @@
 
 .product-info-presence {
 	padding: 25px 0 0 0;
+	&.product-info-presence_stock {
+		color: #26ae60;
+		svg {
+			fill: #26ae60;
+		}
+	}
+	&.product-info-presence_missing {
+		color: #ff1e36;
+		svg {
+			fill: #ff1e36;
+		}
+	}
+	&.product-info-presence_booking {
+		color: #26ae60;
+		svg {
+			fill: #26ae60;
+		}
+	}
 }
 
 .product-info-presence__icon {
 	margin-right: 20px;
-	svg {
-		fill: #333;
-	}
 }
 
 .product-info-presence__value {
@@ -49,7 +65,7 @@
     font-weight: bold;
 }
 
-@media (max-width: 982px) {
+@media (max-width: 982px) and (min-width: 768px), (max-width: 576px) {
 	.product-info__col {
 		flex: 1 0 100%;
 		&.product-info__col_buttons {
@@ -58,5 +74,11 @@
 		&:not(:last-child) {
 			margin-bottom: 25px;
 		}
+	}
+}
+
+@media (max-width: 576px) {
+	.product-info__col {
+		justify-content: center;
 	}
 }

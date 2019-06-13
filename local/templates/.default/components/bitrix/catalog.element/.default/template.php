@@ -8,6 +8,7 @@ Loc::loadMessages(__FILE__);
 
 $APPLICATION->SetPageProperty('PAGE_LAYOUT', 'default');
 
+
 ?>
 <div class="col">
 	<div class="row product-detain-wrap">
@@ -18,7 +19,7 @@ $APPLICATION->SetPageProperty('PAGE_LAYOUT', 'default');
                         <div class="product-slider__previews product-slider-previews">
                             <?foreach ($arResult['MORE_IMAGES'] as $k => $arImage) {?>
                                 <div class="product-slider-previews__slide product-slider-previews-slide" data-index="<?=$k?>">
-                                    <img src="<?=$arImage['RESIZE_SRC']?>" alt="">
+									<div class="product-slider-previews-slide__wrap"><img src="<?=$arImage['RESIZE_SRC']?>" alt=""></div>
                                 </div>
                             <?}?>
                         </div>
@@ -36,6 +37,11 @@ $APPLICATION->SetPageProperty('PAGE_LAYOUT', 'default');
             <?}?>
 		</div>
 		<div class="col-lg-6 offset-lg-1 col-md-5">
+			<ul class="product-labels">
+				<li class="label label_blue">Новинка</li>
+				<li class="label label_yellow">-12%</li>
+				<li class="label label_green">Новинка</li>
+			</ul>
 			<div class="product-info">
 				<div class="product-info__col">
                     <?if ($arResult['PRICE'] || $arResult['OLD_PRICE']) {?>
@@ -50,6 +56,12 @@ $APPLICATION->SetPageProperty('PAGE_LAYOUT', 'default');
                     <?}?>
 					<div class="product-info__presence product-info-presence">
 						<span class="product-info-presence__icon"><?=GetContentSvgIcon('check');?></span>
+						<!--
+							Классы для разных состояний
+							product-info-presence_stock - в наличии
+							product-info-presence_missing - отсутсвует
+							product-info-presence_booking - под заказ
+						-->
 						<span class="product-info-presence__value">В наличии</span>
 					</div>
 				</div>
@@ -88,12 +100,10 @@ $APPLICATION->SetPageProperty('PAGE_LAYOUT', 'default');
             <?if ($arResult['PREVIEW_TEXT']) {?>
                 <div class="product-block">
                     <div class="product-block__title"><?=Loc::getMessage('PRODUCT_DEFAULT_PREVIEW_TEXT_TITLE')?></div>
-                    <?if ($arResult['DETAIL_TEXT']) {?>
-                        <a href="#desc" class="link link_success link_icon-right product-block__link">
-                            <?=Loc::getMessage('PRODUCT_DEFAULT_DETAIL_TEXT_TITLE')?>
-                            <span class="link__icon"><?=GetContentSvgIcon('arrow_bottom');?></span>
-                        </a>
-                    <?}?>
+                    <a href="#desc" class="link link_success link_icon-right product-block__link">
+                        <?=Loc::getMessage('PRODUCT_DEFAULT_DETAIL_TEXT_TITLE')?>
+                        <span class="link__icon"><?=GetContentSvgIcon('arrow_bottom');?></span>
+                    </a>
                     <div class="product-block__body">
                         <?=$arResult['PREVIEW_TEXT']?>
                     </div>
@@ -129,7 +139,7 @@ $APPLICATION->SetPageProperty('PAGE_LAYOUT', 'default');
 	</div>
 	<div class="row">
 		<div class="col-12">
-			<div class="product-tabs tabs tabs_mid tabs_underline">
+			<div class="product-tabs tabs tabs_big tabs_underline">
 				<ul class="tabs__toggles">
                     <?if ($arResult['DETAIL_TEXT']) {?>
                         <li class="tabs__toggle tabs__toggle_active">
