@@ -48,6 +48,7 @@
 
 .product-slider__big-inner {
 	grid-column: 2;
+	overflow: hidden;
 	height: 390px;
 	border: 3px solid #eaeaea;
 }

@@ -8,7 +8,6 @@ window.addEventListener('load', () => {
 			clickAnchorLink(e);
 			var target = e.target.getAttribute('href');
 			var tabTarget = document.querySelector('[data-target="'+ target +'"]').parentNode;
-			console.log(tabTarget);
 			tabTarget.click();
 		};
 		Array.prototype.forEach.call(anchorProduct, (anchor) => {

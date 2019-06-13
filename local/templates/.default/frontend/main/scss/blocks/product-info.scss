@@ -22,13 +22,6 @@
 	position: relative;
 	font-size: 2rem;
 	font-weight: bold;
-	&:after {
-		content: 'Р';
-		display: inline;
-		padding-left: 3px;
-		font-size: .85em;
-		font-family: 'ALSRubl-Verdana',Geometria,sans-sarif
-	}
 	&.product-info-price__item_old {
 		margin-bottom: 2px;
     	color: #aaa9ad;

@@ -19,7 +19,7 @@ $APPLICATION->SetPageProperty('PAGE_LAYOUT', 'default');
                         <?if ($arResult['MORE_IMAGES']) {?>
                             <?foreach ($arResult['MORE_IMAGES'] as $k => $arImage) {?>
                                 <div class="product-slider-previews__slide product-slider-previews-slide" data-index="<?=$k?>">
-                                    <img src="<?=$arImage['RESIZE_SRC']?>" alt="">
+									<div class="product-slider-previews-slide__wrap"><img src="<?=$arImage['RESIZE_SRC']?>" alt=""></div>
                                 </div>
                             <?}?>
                         <?}?>
@@ -58,6 +58,12 @@ $APPLICATION->SetPageProperty('PAGE_LAYOUT', 'default');
                     <?}?>
 					<div class="product-info__presence product-info-presence">
 						<span class="product-info-presence__icon"><?=GetContentSvgIcon('check');?></span>
+						<!--
+							Классы для разных состояний
+							product-info-presence_stock - в наличии
+							product-info-presence_missing - отсутсвует
+							product-info-presence_booking - под заказ
+						-->
 						<span class="product-info-presence__value">В наличии</span>
 					</div>
 				</div>
@@ -77,19 +83,6 @@ $APPLICATION->SetPageProperty('PAGE_LAYOUT', 'default');
                     </div>
                 </div>
             <?}?>
-			<div class="product-block">
-				<div class="product-block__title">Краткое описание</div>
-				<a href="#desc" class="link link_success link_icon-right product-block__link anchor-product">
-					Полное описание
-				<div class="product-block__title"></div>
-				<a href="#desc" class="link link_success link_icon-right product-block__link">
-                    <?=Loc::getMessage('PRODUCT_DEFAULT_OPTIONS_ALL_TITLE')?>
-					<span class="link__icon"><?=GetContentSvgIcon('arrow_bottom');?></span>
-				</a>
-				<div class="product-block__body">
-					If you are a serious astronomy fanatic like a lot of us are, you can probably remember that one event in childhood that started you along this exciting hobby. It might have been that first time you looked through a telescope.
-				</div>
-			</div>
 			<div class="product-block">
 				<div class="product-block__title">Характеристики</div>
 				<a href="#char" class="link link_success link_icon-right product-block__link anchor-product">

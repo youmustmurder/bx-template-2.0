@@ -10,7 +10,6 @@ window.addEventListener('load', function () {
       clickAnchorLink(e);
       var target = e.target.getAttribute('href');
       var tabTarget = document.querySelector('[data-target="' + target + '"]').parentNode;
-      console.log(tabTarget);
       tabTarget.click();
     };
 
