@@ -12,14 +12,6 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 
-use Bitrix\Main\Loader;
-use Bitrix\Main\ModuleManager;
-
-$this->setFrameMode(true);
-$this->SetViewTarget('detail__page');
-echo 'Y';
-$this->EndViewTarget();
-
 $ElementID = $APPLICATION->IncludeComponent(
     "bitrix:catalog.element",
     "",

@@ -13,7 +13,7 @@
 
 global $arCurrentSetting;
 
-dump($arCurrentSetting);
+dump($GLOBALS);
 
 $APPLICATION->IncludeComponent(
     "bitrix:catalog.section.list",
