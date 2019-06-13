@@ -8,35 +8,32 @@ Loc::loadMessages(__FILE__);
 
 $APPLICATION->SetPageProperty('PAGE_LAYOUT', 'default');
 
-
 ?>
 <div class="col">
 	<div class="row product-detain-wrap">
 		<div class="col-lg-5 col-md-7">
-			<div class="product-slider">
-				<div class="product-slider__previews-inner">
-					<div class="product-slider__previews product-slider-previews">
-                        <?if ($arResult['MORE_IMAGES']) {?>
+            <?if ($arResult['MORE_IMAGES']) {?>
+                <div class="product-slider">
+                    <div class="product-slider__previews-inner">
+                        <div class="product-slider__previews product-slider-previews">
                             <?foreach ($arResult['MORE_IMAGES'] as $k => $arImage) {?>
                                 <div class="product-slider-previews__slide product-slider-previews-slide" data-index="<?=$k?>">
                                     <img src="<?=$arImage['RESIZE_SRC']?>" alt="">
                                 </div>
                             <?}?>
-                        <?}?>
-					</div>
-				</div>
-				<div class="product-slider__big-inner">
-					<div class="product-slider__big">
-                        <?if ($arResult['MORE_IMAGES']) {?>
+                        </div>
+                    </div>
+                    <div class="product-slider__big-inner">
+                        <div class="product-slider__big">
                             <?foreach ($arResult['MORE_IMAGES'] as $k => $arImage) {?>
                                 <div class="product-slider__big__slide product-slider__big-slide" data-index="<?=$k?>">
                                     <img src="<?=$arImage['SRC']?>" alt="">
                                 </div>
                             <?}?>
-                        <?}?>
-				    </div>
-				</div>
-			</div>
+                        </div>
+                    </div>
+                </div>
+            <?}?>
 		</div>
 		<div class="col-lg-6 offset-lg-1 col-md-5">
 			<div class="product-info">
@@ -57,45 +54,77 @@ $APPLICATION->SetPageProperty('PAGE_LAYOUT', 'default');
 					</div>
 				</div>
 				<div class="product-info__col product-info__col_buttons">
-					<a href="#" class="btn btn_mid btn_round btn_outline-primary">Быстрый заказ</a>
+                    <?$APPLICATION->IncludeComponent(
+                        "website96:web.forms",
+                        ".default",
+                        array(
+                            "COMPONENT_TEMPLATE" => ".default",
+                            "IBLOCK_TYPE" => "forms",
+                            "IBLOCK_ID" => "14",
+                            "FORM_PRODUCT_ID" => $arResult['ID'],
+                            "FORM_PRODUCT_ADD" => "Y",
+                            "FORM_BTN_TYPE" => "btn_round",
+                            "FORM_FIELDS" => array(
+                                0 => "24",
+                                1 => "25",
+                            ),
+                            "FORM_REQUIRED_FIELDS" => array(
+                                0 => "25",
+                            ),
+                            "FORM_TITLE" => "Форма заказа",
+                            "FORM_BTN_OPEN" => "Быстрый заказ",
+                            "FORM_BTN_SUBMIT" => "Заказать",
+                            "FORM_POLITIC_URL" => "/politic/",
+                            "CACHE_TYPE" => "A",
+                            "CACHE_TIME" => "3600",
+                            "FORM_BTN_STYLE" => "btn_outline-primary",
+                            "FORM_BTN_SIZE" => "btn_mid",
+                            "FORM_LINK_TYPE" => "btn"
+                        ),
+                        false
+                    );?>
 				</div>
 			</div>
             <?if ($arResult['PREVIEW_TEXT']) {?>
                 <div class="product-block">
                     <div class="product-block__title"><?=Loc::getMessage('PRODUCT_DEFAULT_PREVIEW_TEXT_TITLE')?></div>
-                    <a href="#desc" class="link link_success link_icon-right product-block__link">
-                        <?=Loc::getMessage('PRODUCT_DEFAULT_DETAIL_TEXT_TITLE')?>
-                        <span class="link__icon"><?=GetContentSvgIcon('arrow_bottom');?></span>
-                    </a>
+                    <?if ($arResult['DETAIL_TEXT']) {?>
+                        <a href="#desc" class="link link_success link_icon-right product-block__link">
+                            <?=Loc::getMessage('PRODUCT_DEFAULT_DETAIL_TEXT_TITLE')?>
+                            <span class="link__icon"><?=GetContentSvgIcon('arrow_bottom');?></span>
+                        </a>
+                    <?}?>
                     <div class="product-block__body">
                         <?=$arResult['PREVIEW_TEXT']?>
                     </div>
                 </div>
             <?}?>
-			<div class="product-block">
-				<div class="product-block__title"></div>
-				<a href="#desc" class="link link_success link_icon-right product-block__link">
-                    <?=Loc::getMessage('PRODUCT_DEFAULT_OPTIONS_ALL_TITLE')?>
-					<span class="link__icon"><?=GetContentSvgIcon('arrow_bottom');?></span>
-				</a>
-				<div class="product-block__body">
-					<ul class="specifications">
-                        <?
-                        $i = 0;
-                        foreach ($arResult['PROPERTIES']['PRODUCT_OPTIONS']['VALUE'] as $k => $option) {?>
-                            <li class="specifications__item specifications-item">
-                                <span class="specifications-item__name"><?=$option?></span>
-                                <span class="specifications-item__value"><?=$arResult['PROPERTIES']['PRODUCT_OPTIONS']['DESCRIPTION'][$k]?></span>
-                            </li>
-                            <?if ($i == 4) {
-                                break;
-                            } else {
-                                $i++;
-                            }?>
-                        <?}?>
-					</ul>
-				</div>
-			</div>
+            <?if ($arResult['PROPERTIES']['PRODUCT_OPTIONS']['VALUE']) {?>
+                <div class="product-block">
+                    <div class="product-block__title"></div>
+                    <a href="#desc" class="link link_success link_icon-right product-block__link">
+                        <?=Loc::getMessage('PRODUCT_DEFAULT_OPTIONS_ALL_TITLE')?>
+                        <span class="link__icon"><?=GetContentSvgIcon('arrow_bottom');?></span>
+                    </a>
+                    <div class="product-block__body">
+                        <ul class="specifications">
+                            <?
+                            $i = 0;
+                            foreach ($arResult['PROPERTIES']['PRODUCT_OPTIONS']['VALUE'] as $k => $option) {?>
+                                <li class="specifications__item specifications-item">
+                                    <span class="specifications-item__name"><?=$option?></span>
+                                    <span class="specifications-item__value"><?=$arResult['PROPERTIES']['PRODUCT_OPTIONS']['DESCRIPTION'][$k]?></span>
+                                </li>
+                                <?if ($i == 4) {
+                                    break;
+                                } else {
+                                    $i++;
+                                }?>
+                            <?}?>
+                        </ul>
+                    </div>
+                </div>
+            <?}?>
 		</div>
 	</div>
 	<div class="row">
@@ -118,12 +147,6 @@ $APPLICATION->SetPageProperty('PAGE_LAYOUT', 'default');
                                     aria-controls="char"><?=Loc::getMessage('PRODUCT_DEFAULT_OPTIONS_TITLE')?></button>
                         </li>
                     <?}?>
-					<li class="tabs__toggle">
-						<button data-toggle="collapse"
-								data-target="#char1"
-								aria-expanded="true"
-								aria-controls="char1">Характеристики2</button>
-					</li>
 				</ul>
 				<div class="tabs__contents">
                     <?if ($arResult['DETAIL_TEXT']) {?>
