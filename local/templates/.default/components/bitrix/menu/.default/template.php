@@ -10,7 +10,7 @@ Loc::loadMessages(__FILE__);
 if (is_array($arResult) && !empty($arResult)) {?>
     <ul>
         <?foreach ($arResult['ITEMS'] as $i => $arItem) {?>
-            <li>
+            <li <?=$arItem['SELECTED'] ? 'class="active"' : ''?>>
                 <a <?=$arItem['SELECTED'] ? 'class="active"' : ''?> href="<?=$arItem['LINK']?>"><?=$arItem['TEXT']?></a>
                 <?if (is_array($arItem['ITEMS']) && !empty($arItem['ITEMS'])) {?>
                     <ul class="submenu">

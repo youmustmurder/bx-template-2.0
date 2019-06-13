@@ -100,19 +100,4 @@ $APPLICATION->IncludeComponent(
 	),
 	false
 );
-
-$includeSEOFile = 'include/seo/catalog__sections.php';
-
-if (file_exists($_SERVER['DOCUMENT_ROOT'].SITE_TEMPLATE_PATH.'/'.$includeSEOFile) && file_get_contents($_SERVER['DOCUMENT_ROOT'].SITE_TEMPLATE_PATH.'/'.$includeSEOFile) == true){
-    echo '<div class="catalog__seo">';
-    $APPLICATION->IncludeFile(
-        $includeSEOFile,
-        array(
-            "SHOW_BORDER" => true,
-            "MODE" => "html"
-        )
-    );
-    echo '</div>';
-}
-
 ?>
