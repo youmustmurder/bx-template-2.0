@@ -36,12 +36,17 @@ $APPLICATION->SetPageProperty('PAGE_LAYOUT', 'default');
                 </div>
             <?}?>
 		</div>
+
 		<div class="col-lg-6 offset-lg-1 col-md-5">
-			<ul class="product-labels">
-				<li class="label label_blue">Новинка</li>
-				<li class="label label_yellow">-12%</li>
-				<li class="label label_green">Новинка</li>
-			</ul>
+            <?if ($arResult['PROPERTIES']['PRODUCT_LABEL']['VALUE']) {?>
+                <ul class="product-labels">
+                    <?foreach ($arResult['PROPERTIES']['PRODUCT_LABEL']['VALUE'] as $k => $value) {?>
+                        <li class="label label_blue"><?=$value?></li>
+                    <?}?>
+                    <li class="label label_yellow">-12%</li>
+                    <li class="label label_green">Новинка</li>
+                </ul>
+            <?}?>
 			<div class="product-info">
 				<div class="product-info__col">
                     <?if ($arResult['PRICE'] || $arResult['OLD_PRICE']) {?>
