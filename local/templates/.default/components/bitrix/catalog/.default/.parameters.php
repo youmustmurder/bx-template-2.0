@@ -8,13 +8,12 @@ use Bitrix\Main\Localization\Loc;
 Loc::loadMessages(__FILE__);
 
 $arTemplateParameters = array(
-    "BLOCK_TITLE" => array(
+    "SHOW_ADVANTAGES" => array(
         'PARENT' => 'BASE',
-        'NAME' => Loc::getMessage('HOME_ABOUT_1_BLOCK_TITLE_NAME'),
-        'TYPE' => 'STRING',
-        'DEFAULT' => Loc::getMessage('HOME_ABOUT_1_BLOCK_TITLE_DEFAULT')
+        'NAME' => Loc::getMessage('CATALOG_SHOW_ADVANTAGES_NAME'),
+        'TYPE' => 'CHECKBOX',
+        'DEFAULT' => 'Y'
     ),
-
     'USER_CONSENT' => array('HIDDEN' => 'Y'),
     'USER_CONSENT_ID' => array('HIDDEN' => 'Y'),
     'USER_CONSENT_IS_CHECKED' => array('HIDDEN' => 'Y'),
