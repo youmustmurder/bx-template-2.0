@@ -14,36 +14,39 @@ $this->setFrameMode(true);
 ?>
 
 <div class="col">
+    <?if($arParams["DISPLAY_TOP_PAGER"]){?>
+        <?=$arResult["NAV_STRING"]?>
+    <?}?>
 	<ul class="stock-list">
-		<li class="stock-list__item stock-list-item">
-			<a href="#">
-				<div class="stock-list-item__image">
-					<img src="<?=GetCurDir(__DIR__)?>/uploads/news.jpg" alt="">
-				</div>
-				<div class="stock-list-item__name">Месяц ДИВАНОВ. Скидки до 40%</div>
-				<div class="stock-list-item__desc">
-					Огромный выбор диванов со скидкой до 40%
-				</div>
-				<div class="stock-list-item__date stock-list-item-date">
-					<span class="stock-list-item-date__icon"><?=GetContentSvgIcon('clock')?></span>
-					<span>До 26 Октября</span>
-				</div>
-			</a>
-		</li>
-		<li class="stock-list__item stock-list-item">
-			<a href="#">
-				<div class="stock-list-item__image">
-					<img src="<?=GetCurDir(__DIR__)?>/uploads/news.jpg" alt="">
-				</div>
-				<div class="stock-list-item__name">Месяц ДИВАНОВ. Скидки до 40%</div>
-				<div class="stock-list-item__desc">
-					Огромный выбор диванов со скидкой до 40%
-				</div>
-				<div class="stock-list-item__date stock-list-item-date">
-					<span class="stock-list-item-date__icon"><?=GetContentSvgIcon('clock')?></span>
-					<span>До 26 Октября</span>
-				</div>
-			</a>
-		</li>
+        <?foreach ($arResult["ITEMS"] as $arItem){
+            $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+            $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+            ?>
+            <li class="stock-list__item stock-list-item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
+                <a href="<?=$arItem['DETAIL_PAGE_URL']?>">
+                    <div class="stock-list-item__image">
+                        <img src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>"
+                             alt="<?=$arItem['PREVIEW_PICTURE']['ALT'] ? $arItem['PREVIEW_PICTURE']['ALT'] : $arItem['NAME']?>"
+                             title="<?=$arItem['PREVIEW_PICTURE']['TITLE'] ? $arItem['PREVIEW_PICTURE']['TITLE'] : $arItem['NAME']?>">
+                    </div>
+                    <div class="stock-list-item__name"><?=$arItem['NAME']?></div>
+                    <?if ($arParams["DISPLAY_PREVIEW_TEXT"]!="N" && $arItem["PREVIEW_TEXT"]) {?>
+                        <div class="stock-list-item__desc">
+                            <?=$arItem["PREVIEW_TEXT"]?>
+                        </div>
+                    <?}?>
+                    <?if ($arParams["DISPLAY_DATE"]!="N" && $arItem["DISPLAY_ACTIVE_TO"]) {
+                        $arItem['DATE_STOCK'] = explode(' ', $arItem['DISPLAY_ACTIVE_TO']);?>
+                        <div class="stock-list-item__date stock-list-item-date">
+                            <span class="stock-list-item-date__icon"><?=GetContentSvgIcon('clock')?></span>
+                            <span>До <?=$arItem['DATE_STOCK'][0]?> <?=$arItem['DATE_STOCK'][1]?></span>
+                        </div>
+                    <?}?>
+                </a>
+            </li>
+		<?}?>
 	</ul>
+    <?if($arParams["DISPLAY_BOTTOM_PAGER"]){?>
+        <?=$arResult["NAV_STRING"]?>
+    <?}?>
 </div>
