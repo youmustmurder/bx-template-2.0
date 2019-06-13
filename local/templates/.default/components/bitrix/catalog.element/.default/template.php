@@ -12,19 +12,19 @@ $APPLICATION->SetPageProperty('PAGE_LAYOUT', 'default');
 				<div class="product-slider__previews-inner">
 					<div class="product-slider__previews product-slider-previews">
 						<div class="product-slider-previews__slide product-slider-previews-slide" data-index="0">
-							<img src="<?=GetCurDir(__DIR__)?>/uploads/product.jpg" alt="">
+							<div class="product-slider-previews-slide__wrap"><img src="<?=GetCurDir(__DIR__)?>/uploads/product.jpg" alt=""></div>
 						</div>
 						<div class="product-slider-previews__slide product-slider-previews-slide" data-index="1">
-							<img src="<?=GetCurDir(__DIR__)?>/uploads/product.jpg" alt="">
+							<div class="product-slider-previews-slide__wrap"><img src="<?=GetCurDir(__DIR__)?>/uploads/product.jpg" alt=""></div>
 						</div>
 						<div class="product-slider-previews__slide product-slider-previews-slide" data-index="2">
-							<img src="<?=GetCurDir(__DIR__)?>/uploads/product.jpg" alt="">
+							<div class="product-slider-previews-slide__wrap"><img src="<?=GetCurDir(__DIR__)?>/uploads/product.jpg" alt=""></div>
 						</div>
 						<div class="product-slider-previews__slide product-slider-previews-slide" data-index="3">
-							<img src="<?=GetCurDir(__DIR__)?>/uploads/product.jpg" alt="">
+							<div class="product-slider-previews-slide__wrap"><img src="<?=GetCurDir(__DIR__)?>/uploads/product.jpg" alt=""></div>
 						</div>
 						<div class="product-slider-previews__slide product-slider-previews-slide" data-index="4">
-							<img src="<?=GetCurDir(__DIR__)?>/uploads/product.jpg" alt="">
+							<div class="product-slider-previews-slide__wrap"><img src="<?=GetCurDir(__DIR__)?>/uploads/product.jpg" alt=""></div>
 						</div>
 					</div>
 				</div>
@@ -50,13 +50,18 @@ $APPLICATION->SetPageProperty('PAGE_LAYOUT', 'default');
 			</div>
 		</div>
 		<div class="col-lg-6 offset-lg-1 col-md-5">
+			<ul class="product-labels">
+				<li class="label label_blue">Новинка</li>
+				<li class="label label_yellow">-12%</li>
+				<li class="label label_green">Новинка</li>
+			</ul>
 			<div class="product-info">
 				<div class="product-info__col">
 					<div class="product-info__price product-info-price">
 						<span class="product-info-price__item">90 000</span>
 						<span class="product-info-price__item product-info-price__item_old">90 000</span>
 					</div>
-					<div class="product-info__presence product-info-presence">
+					<div class="product-info__presence product-info-presence product-info-presence_stock">
 						<span class="product-info-presence__icon"><?=GetContentSvgIcon('check');?></span>
 						<span class="product-info-presence__value">В наличии</span>
 					</div>
@@ -67,7 +72,7 @@ $APPLICATION->SetPageProperty('PAGE_LAYOUT', 'default');
 			</div>
 			<div class="product-block">
 				<div class="product-block__title">Краткое описание</div>
-				<a href="#desc" class="link link_success link_icon-right product-block__link">
+				<a href="#desc" class="link link_success link_icon-right product-block__link anchor-product">
 					Полное описание
 					<span class="link__icon"><?=GetContentSvgIcon('arrow_bottom');?></span>
 				</a>
@@ -77,7 +82,7 @@ $APPLICATION->SetPageProperty('PAGE_LAYOUT', 'default');
 			</div>
 			<div class="product-block">
 				<div class="product-block__title">Характеристики</div>
-				<a href="#desc" class="link link_success link_icon-right product-block__link">
+				<a href="#char" class="link link_success link_icon-right product-block__link anchor-product">
 					Все характеристики
 					<span class="link__icon"><?=GetContentSvgIcon('arrow_bottom');?></span>
 				</a>
@@ -110,7 +115,7 @@ $APPLICATION->SetPageProperty('PAGE_LAYOUT', 'default');
 	</div>
 	<div class="row">
 		<div class="col-12">
-			<div class="product-tabs tabs tabs_mid tabs_underline">
+			<div class="product-tabs tabs tabs_big tabs_underline">
 				<ul class="tabs__toggles">
 					<li class="tabs__toggle tabs__toggle_active">
 						<button data-toggle="collapse"
