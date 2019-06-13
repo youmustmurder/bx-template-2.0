@@ -12,6 +12,7 @@ if ($arResult['ITEMS']) {?>
 	<div class="container">
 		<div class="row">
 			<div class="col">
+               
                 <div class="products__header">
                     <h2 class="products__title"><?=$arParams['SECTION_TITLE'] ?: Loc::getMessage('PRODUCTS_SECTION_TITLE_DEFAULT')?></h2>
                     <a href="<?=SITE_DIR?>catalog/" class="link link_success link_icon-right products__link-all">
@@ -19,6 +20,7 @@ if ($arResult['ITEMS']) {?>
                         <span class="link__icon"><?=GetContentSvgIcon('arrow-more');?></span>
                     </a>
                 </div>
+            
 				<div class="products__grid-wrap">
 					<div class="grid grid_3column">
                         <?foreach ($arResult['ITEMS'] as $k => $arItem) {

@@ -12,10 +12,14 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 
+\Bitrix\Main\Loader::includeModule('website.template');
+
+$arCurrentSetting = CWebsiteTemplate::getTemplateSetting();
+$templateSections = $arCurrentSetting['SECTIONS'] > 0 ? 'catalog-section_' . $arCurrentSetting['SECTIONS'] : 'catalog-section_default';
 
 $APPLICATION->IncludeComponent(
 	"bitrix:catalog.section.list",
-	"",
+    $templateSections,
 	array(
 		"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
 		"IBLOCK_ID" => $arParams["IBLOCK_ID"],
@@ -34,70 +38,83 @@ $APPLICATION->IncludeComponent(
 	array("HIDE_ICONS" => "Y")
 );
 
-$APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	"catalog-advantages",
-	array(
-		"ADD_SECTIONS_CHAIN" => "N",
-		"AJAX_MODE" => "N",
-		"AJAX_OPTION_ADDITIONAL" => "",
-		"AJAX_OPTION_HISTORY" => "N",
-		"AJAX_OPTION_JUMP" => "N",
-		"AJAX_OPTION_STYLE" => "N",
-		"CACHE_FILTER" => "N",
-		"CACHE_GROUPS" => "Y",
-		"CACHE_TIME" => "36000000",
-		"CACHE_TYPE" => "A",
-		"CHECK_DATES" => "Y",
-		"DETAIL_URL" => "",
-		"DISPLAY_BOTTOM_PAGER" => "N",
-		"DISPLAY_DATE" => "N",
-		"DISPLAY_NAME" => "N",
-		"DISPLAY_PICTURE" => "N",
-		"DISPLAY_PREVIEW_TEXT" => "N",
-		"DISPLAY_TOP_PAGER" => "N",
-		"FIELD_CODE" => array(
-			0 => "",
-			1 => "",
-		),
-		"FILTER_NAME" => "",
-		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-		"IBLOCK_ID" => "3",
-		"IBLOCK_TYPE" => "base",
-		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-		"INCLUDE_SUBSECTIONS" => "N",
-		"MESSAGE_404" => "",
-		"NEWS_COUNT" => "20",
-		"PAGER_BASE_LINK_ENABLE" => "N",
-		"PAGER_DESC_NUMBERING" => "N",
-		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-		"PAGER_SHOW_ALL" => "N",
-		"PAGER_SHOW_ALWAYS" => "N",
-		"PAGER_TEMPLATE" => ".default",
-		"PAGER_TITLE" => "Новости",
-		"PARENT_SECTION" => "",
-		"PARENT_SECTION_CODE" => "",
-		"PREVIEW_TRUNCATE_LEN" => "",
-		"PROPERTY_CODE" => array(
-			0 => "",
-			1 => "ICON_FILE",
-			2 => "",
-		),
-		"SET_BROWSER_TITLE" => "N",
-		"SET_LAST_MODIFIED" => "N",
-		"SET_META_DESCRIPTION" => "N",
-		"SET_META_KEYWORDS" => "N",
-		"SET_STATUS_404" => "N",
-		"SET_TITLE" => "N",
-		"SHOW_404" => "N",
-		"SORT_BY1" => "ACTIVE_FROM",
-		"SORT_BY2" => "SORT",
-		"SORT_ORDER1" => "DESC",
-		"SORT_ORDER2" => "ASC",
-		"STRICT_SECTION_CHECK" => "N",
-		"COMPONENT_TEMPLATE" => "catalog-advanatges",
-		"ACTIVE_DATE_FORMAT" => ""
-	),
-	false
-);
-?>
+if ($arParams['SHOW_ADVANTAGES'] != 'N') {
+    $APPLICATION->IncludeComponent(
+        "bitrix:news.list",
+        "catalog-advantages",
+        array(
+            "ADD_SECTIONS_CHAIN" => "N",
+            "AJAX_MODE" => "N",
+            "AJAX_OPTION_ADDITIONAL" => "",
+            "AJAX_OPTION_HISTORY" => "N",
+            "AJAX_OPTION_JUMP" => "N",
+            "AJAX_OPTION_STYLE" => "N",
+            "CACHE_FILTER" => "N",
+            "CACHE_GROUPS" => "Y",
+            "CACHE_TIME" => "36000000",
+            "CACHE_TYPE" => "A",
+            "CHECK_DATES" => "Y",
+            "DETAIL_URL" => "",
+            "DISPLAY_BOTTOM_PAGER" => "N",
+            "DISPLAY_DATE" => "N",
+            "DISPLAY_NAME" => "N",
+            "DISPLAY_PICTURE" => "N",
+            "DISPLAY_PREVIEW_TEXT" => "N",
+            "DISPLAY_TOP_PAGER" => "N",
+            "FIELD_CODE" => array(
+                0 => "",
+                1 => "",
+            ),
+            "FILTER_NAME" => "",
+            "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+            "IBLOCK_ID" => "3",
+            "IBLOCK_TYPE" => "base",
+            "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+            "INCLUDE_SUBSECTIONS" => "N",
+            "MESSAGE_404" => "",
+            "NEWS_COUNT" => "20",
+            "PAGER_BASE_LINK_ENABLE" => "N",
+            "PAGER_DESC_NUMBERING" => "N",
+            "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+            "PAGER_SHOW_ALL" => "N",
+            "PAGER_SHOW_ALWAYS" => "N",
+            "PAGER_TEMPLATE" => ".default",
+            "PAGER_TITLE" => "Новости",
+            "PARENT_SECTION" => "",
+            "PARENT_SECTION_CODE" => "",
+            "PREVIEW_TRUNCATE_LEN" => "",
+            "PROPERTY_CODE" => array(
+                0 => "",
+                1 => "ICON_FILE",
+                2 => "",
+            ),
+            "SET_BROWSER_TITLE" => "N",
+            "SET_LAST_MODIFIED" => "N",
+            "SET_META_DESCRIPTION" => "N",
+            "SET_META_KEYWORDS" => "N",
+            "SET_STATUS_404" => "N",
+            "SET_TITLE" => "N",
+            "SHOW_404" => "N",
+            "SORT_BY1" => "ACTIVE_FROM",
+            "SORT_BY2" => "SORT",
+            "SORT_ORDER1" => "DESC",
+            "SORT_ORDER2" => "ASC",
+            "STRICT_SECTION_CHECK" => "N",
+            "COMPONENT_TEMPLATE" => "catalog-advantages",
+            "ACTIVE_DATE_FORMAT" => ""
+        ),
+        $component,
+        array('HIDE_ICONS' => 'Y')
+    );
+}?>
+
+<div class="text">
+    <?$APPLICATION->IncludeFile(
+        "/include/" . SITE_ID . "/content/catalog/main_page.php",
+        array(),
+        array(
+            "SHOW_BORDER" => true,
+            "MODE" => "html"
+        )
+    );?>
+</div>
