@@ -1,0 +1,11 @@
+#filials-page__map {
+	width: 100%;
+    height: 300px;
+	margin-bottom: 60px;
+}
+
+@media (max-width: 576px) {
+	#filials-page__map {
+		margin-bottom: 30px;
+	}
+}

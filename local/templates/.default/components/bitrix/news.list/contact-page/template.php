@@ -22,7 +22,7 @@ if ($arResult['ITEMS']) {
     ?>
     <div class="col">
 		<div class="filials-page">
-			<div id="map_container"></div>
+			<div id="filials-page__map"></div>
 			<ul class="branches">
 				<? foreach ($arResult["ITEMS"] as $arItem) {
 					$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));

@@ -1,7 +1,7 @@
 'use strict';
 
 window.addEventListener('load', function () {
-  var mapNode = document.querySelector('#map_container');
+  var mapNode = document.querySelector('#filials-page__map');
 
   if (mapNode != null) {
     ymaps.ready(function () {
@@ -28,7 +28,7 @@ window.addEventListener('load', function () {
         x: midX / branches.length,
         y: midY / branches.length
       };
-      var map = new ymaps.Map('map_container', {
+      var map = new ymaps.Map('filials-page__map', {
         center: [center.x, center.y],
         zoom: 11
       }),

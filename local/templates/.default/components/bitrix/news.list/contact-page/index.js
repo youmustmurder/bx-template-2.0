@@ -1,5 +1,5 @@
 window.addEventListener('load', () => {
-	const mapNode = document.querySelector('#map_container');
+	const mapNode = document.querySelector('#filials-page__map');
 	if (mapNode != null) {
 		ymaps.ready(function () {
 			var branchesNode = document.querySelectorAll('.branches__item'),
@@ -27,7 +27,7 @@ window.addEventListener('load', () => {
 				y: midY / branches.length,
 			};
 
-			var map = new ymaps.Map('map_container', {
+			var map = new ymaps.Map('filials-page__map', {
 					center: [center.x, center.y],
 					zoom: 11,
 				}),
