@@ -4980,7 +4980,10 @@ var lazyLoad = function () {
       fetch(src, {
         method: 'GET'
       }).then(function (res) {
-        img.setAttribute('src', src);
+        return res.blob();
+      }).then(function (res) {
+        var objectUrl = URL.createObjectURL(res);
+        img.setAttribute('src', objectUrl);
         img.classList.remove('lazy-image');
         img.removeAttribute('lazy-image');
       })["catch"](function (err) {

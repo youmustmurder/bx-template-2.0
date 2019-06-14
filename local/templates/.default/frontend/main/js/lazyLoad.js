@@ -17,7 +17,10 @@ const lazyLoad = (() => {
 			fetch(src, {
 				method: 'GET'
 			}).then(res => {
-				img.setAttribute('src', src);
+				return res.blob();
+			}).then(res => {
+				var objectUrl = URL.createObjectURL(res);
+				img.setAttribute('src', objectUrl);
 				img.classList.remove('lazy-image');
 				img.removeAttribute('lazy-image');
 			}).catch(err => {
