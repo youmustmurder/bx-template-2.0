@@ -67,11 +67,11 @@ window.addEventListener('load', function () {
           balloonMaxWidth: 450,
           balloonMinHeught: 150,
           balloonMaxHeught: 200,
-          iconImageHref: '/local/templates/.default/public/frontend/main/images/images/icon-geo.pn',
+          iconImageHref: '/local/templates/.default/frontend/main/images/icon-geo.pn',
           iconImageSize: [60, 60],
           iconImageOffset: [-30, -30],
           iconLayout: 'default#imageWithContent',
-          iconactive: '/local/templates/.default/public/frontend/main/images/images/icon-geo.png'
+          iconactive: '/local/templates/.default/frontend/main/images/icon-geo.png'
         });
         myClusterer.add(Placemark[index]);
       });
