@@ -39,6 +39,7 @@
 @import 'blocks/news-list.scss';
 @import 'blocks/stock-list.scss';
 @import 'blocks/news-detail.scss';
+@import 'blocks/branches.scss';
 
 html,
 body {
@@ -61,4 +62,14 @@ body {
 
 .product-desc {
 	padding: 30px 0 0 0;
+}
+
+#map_container {
+	margin-bottom: 60px;
+}
+
+@media (max-width: 576px) {
+	#map_container {
+		margin-bottom: 30px;
+	}
 }
