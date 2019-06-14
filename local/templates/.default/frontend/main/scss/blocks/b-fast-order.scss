@@ -1,0 +1,39 @@
+.b-fast-order {
+	display: flex;
+	margin-bottom: 30px;
+}
+
+.b-fast-order__image {
+	flex: 0 0 150px;
+    width: 150px;
+    height: 150px;
+    border: 1px solid #eaeaea;
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.b-fast-order__content {
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex: 1 1 300px;
+	padding: 0 0 0 40px;
+}
+
+.b-fast-order__name {
+	margin-bottom: 5px;
+    line-height: 1.4em;
+}
+
+.b-fast-order__price {
+	font-size: 1.5rem;
+    font-weight: bold;
+	&.b-fast-order__price_old {
+		padding-left: 15px;
+		margin-bottom: 1px;
+		color: #aaa9ad;
+		font-size: .8em;
+		text-decoration: line-through;
+	}
+}

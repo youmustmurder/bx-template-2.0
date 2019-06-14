@@ -16,6 +16,7 @@ const
 	reporter = require('postcss-reporter')({
 		clearReportedMessages: true
 	}),
+	inlineSvg = require('postcss-inline-svg')(),
 	prettier = require('prettier'),
 	logger = require('./modules/logger'),
 	findFilesInDir = require('./modules/findFilesDir'),
@@ -31,7 +32,7 @@ const
 const transformFile = (file, output = path.join(path.dirname(file), 'style.css')) => {
 	fs.readFile(file, (err, css) => {
 		if (err) logger.loggerError(err);
-		postcss([stylelint, reporter, precss, postcssExtendRule, autoprefixer, cssnano])
+		postcss([stylelint, reporter, inlineSvg, precss, postcssExtendRule, autoprefixer, cssnano])
 			.process(css, { from: file, to: path.dirname(file) })
 			.then(result => {
 				fs.writeFile(output, result.css, () => true);

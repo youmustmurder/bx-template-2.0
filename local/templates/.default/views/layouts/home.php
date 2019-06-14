@@ -127,4 +127,47 @@ $APPLICATION->IncludeFile(
     </div>
 </div>
 
+<div class="modal micromodal-slide" id="modal_product" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__container" role="dialog" aria-modal="true">
+            <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+            <div class="modal__header">
+                <h3 class="modal__title">Оформление заказа</h3>
+            </div>
+            <div class="modal__body">
+				<div class="b-fast-order">
+                    <div class="b-fast-order__image" style="background-image: url(/upload/resize_cache/iblock/fd8/96_96_0/fd8bbbee143ac892b4a73c1b2c130222.jpg)" ;=""></div>
+					<div class="b-fast-order__content">
+						<div class="b-fast-order__name">Ноутбук Apple MacBook 12", Silver (MNYH2RU/A)</div>
+						<div class="b-fast-order__price-wrap">
+							<span class="b-fast-order__price">90 000</span>
+							<span class="b-fast-order__price b-fast-order__price_old">99 000</span>
+						</div>
+					</div>
+				</div>
+                <form action="" class="callback-form">
+					<div class="form-field">
+						<input type="text" name="name" placeholder="Имя клиента" class="input input_underline">
+					</div>
+					<div class="form-field">
+						<input type="text" name="phone" placeholder="Номер телефона" class="input input_underline">
+					</div>
+					<div class="form-field">
+						<label class="checkbox">
+							<input type="checkbox" name="checkbox" value="two" checked="checked">
+							<span class="checkbox__inner"></span>
+							<span class="checkbox__text">
+								Я даю свое согласие на обработку персональных данных. Политика обработки персональных данных
+							</span>
+						</label>
+					</div>
+					<div class="d-flex justify-content-end">
+						<button type="submit" class="btn btn_round btn_mid btn_primary">Оформить заказ</button>
+					</div>
+				</form>
+            </div>
+        </div>
+    </div>
+</div>
+
 </main>

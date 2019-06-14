@@ -12,6 +12,7 @@ import serialize from './serialize';
 import lazyLoad from './lazyLoad';
 import Form from './form';
 import smoothscroll from './smoothscroll';
+import objectFitImages from './ofi.es-modules';
 
 const clickAnchorLink = (e) => {
 	e.preventDefault();
@@ -21,6 +22,7 @@ const clickAnchorLink = (e) => {
 
 window.addEventListener('load', () => {
 	smoothscroll();
+	objectFitImages();
 	const modalCallbackButtons = document.querySelectorAll('.js-init-modal__form');
 	Array.prototype.forEach.call(modalCallbackButtons, (btn) => {
 		btn.addEventListener('click', () => {
@@ -36,19 +38,11 @@ window.addEventListener('load', () => {
 	Array.prototype.forEach.call(anchorLinks, (link) => {
 		link.addEventListener('click', clickAnchorLink);
 	});
-	// const classNames = {
-	// 	inputError: '',
-	// 	formError: 'form-field_error',
-	// 	error: 'form-field__error',
-	// };
-	// var callbackForm = new Form(document.querySelector('.callback-form'), null, { uriAction: '', method: 'POST' }, classNames, null);
-	// callbackForm.init();
-	// var counterStroke = itemCounter('.form-stroke__fieldCount'),
-	// 	counterUnderline = itemCounter('.form-underline__fieldCount'),
-	// 	// customSelectExample = new customSelect({
-	// 	// 	elem: 'form-stroke__select',
-	// 	// }),
-	// 	// customSelectExample2 = new customSelect({
-	// 	// 	elem: 'form-underline__select',
-	// 	// });
+	const classNames = {
+		inputError: '',
+		formError: 'form-field_error',
+		error: 'form-field__error',
+	};
+	var callbackForm = new Form(document.querySelector('.callback-form'), null, { uriAction: '', method: 'POST' }, classNames, null);
+	callbackForm.init();
 });
