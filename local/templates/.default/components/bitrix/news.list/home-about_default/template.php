@@ -7,7 +7,8 @@ use Bitrix\Main\Localization\Loc;
 
 Loc::loadMessages(__FILE__);
 ?>
-<section class="about about_news">
+
+<section class="about about_news about_grey">
     <div class="container">
 		<div class="row">
 			<div class="col">

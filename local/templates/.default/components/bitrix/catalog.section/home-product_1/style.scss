@@ -60,6 +60,7 @@
 		.products__label {
 			position: static;
 			transform: translate(-15px, 0);
+			justify-content: flex-start;
 			width: auto;
 		}
 		.product__name,
@@ -172,6 +173,7 @@
 
 .products__label {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	position: absolute;
 	top: 25px;
@@ -179,7 +181,7 @@
 	transform: translate(-50%, 0);
 	width: 100%;
 	.label {
-		margin: 0 15px;
+		margin: 0 15px 5px;
 	}
 }
 

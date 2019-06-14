@@ -4,6 +4,7 @@
 	&.about_news {
 		z-index: 2;
 		padding: 88px 0 0 0;
+		margin-top: -300px;
 		.about__wrap {
 			transform: translate(0, 300px);
 		}
