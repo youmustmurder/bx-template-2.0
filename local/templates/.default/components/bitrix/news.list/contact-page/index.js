@@ -72,7 +72,7 @@ window.addEventListener('load', () => {
 					balloonMaxWidth: 450,
 					balloonMinHeught: 150,
 					balloonMaxHeught: 200,
-					iconImageHref: '/local/templates/.default/public/frontend/main/images/images/icon-geo.pn',
+					iconImageHref: '/local/templates/.default/frontend/main/images/icon-geo.png',
 					iconImageSize: [60, 60],
 					iconImageOffset: [-30, -30],
 					iconLayout: 'default#imageWithContent',
