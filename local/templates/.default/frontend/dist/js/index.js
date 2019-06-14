@@ -4736,7 +4736,7 @@ function modalFromAjax(_ref2) {
       _ref2$url = _ref2.url,
       url = _ref2$url === void 0 ? '/local/tools/ajax_form.php' : _ref2$url,
       _ref2$method = _ref2.method,
-      method = _ref2$method === void 0 ? 'get' : _ref2$method,
+      method = _ref2$method === void 0 ? 'POST' : _ref2$method,
       _ref2$dataAjax = _ref2.dataAjax,
       dataAjax = _ref2$dataAjax === void 0 ? {} : _ref2$dataAjax,
       _ref2$modalSettings = _ref2.modalSettings,
@@ -4748,9 +4748,15 @@ function modalFromAjax(_ref2) {
     before();
   }
 
+  var body = new FormData();
+
+  for (var i in dataAjax) {
+    body.append(i, dataAjax[i]);
+  }
+
   fetch(url, {
     method: method,
-    params: dataAjax,
+    body: body,
     responseType: 'text'
   }).then(function (res) {
     if (res.data != '') {

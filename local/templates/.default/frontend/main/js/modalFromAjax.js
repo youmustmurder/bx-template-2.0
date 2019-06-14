@@ -10,13 +10,17 @@ import MicroModal from './micromodal';
 	@param after: Function
 */
 
-function modalFromAjax ({ modalName, url='/local/tools/ajax_form.php', method='get', dataAjax = {}, modalSettings = {}, before, after }) {
+function modalFromAjax ({ modalName, url='/local/tools/ajax_form.php', method='POST', dataAjax = {}, modalSettings = {}, before, after }) {
 	if (typeof before === 'function') {
 		before();
 	}
+	var body = new FormData();
+	for (var i in dataAjax) {
+		body.append(i, dataAjax[i]);
+	}
 	fetch(url, {
 		method,
-		params: dataAjax,
+		body,
 		responseType: 'text'
 	}).then((res) => {
 		if (res.data != '') {
