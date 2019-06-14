@@ -77,8 +77,15 @@ if ($arResult['ITEMS']) {?>
                                                    class="branch-info__link"><?=$arItem["PROPERTIES"]["C_EMAIL"]["VALUE"]?></a>
                                             </span>
                                         </li>
-                                        <?
-                                    } ?>
+                                    <?}?>
+                                    <?if ($arItem["PROPERTIES"]["C_OPENING_HOURS"]["VALUE"]) { ?>
+                                        <li class="branch-info-list__item branch-info">
+                                            <span class="branch-info__name"><?=Loc::getMessage('CONTACT_PAGE_OPENING_HOURS_TITLE')?>:</span>
+                                            <?foreach ($arItem["PROPERTIES"]["C_OPENING_HOURS"]["VALUE"] as $value) {?>
+                                                <span class="branch-info__value"><?=$value?></span>
+                                            <?}?>
+                                        </li>
+                                    <?}?>
                                 </ul>
                             </div>
 					</li>
