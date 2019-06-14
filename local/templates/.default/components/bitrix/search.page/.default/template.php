@@ -15,6 +15,40 @@ use Bitrix\Main\Localization\Loc;
 
 Loc::loadMessages(__FILE__);
 ?>
+
+<div class="col">
+	<form class="search-form" method="get" action="<?=$arResult["FORM_ACTION"]?>">
+		<span class="search-form__icon"><?=GetContentSvgIcon('search');?></span>
+		<input class="search-form__input"
+			name="q"
+			autocomplete="off"
+			placeholder="<?=Loc::getMessage('SEARCH_PLACEHOLDER')?>"
+			size="20">
+		<button class="search-form__button" type="submit" title="Поиск"><?=GetContentSvgIcon('arrow_small_right');?></button>
+	</form>
+	<ul class="search-results">
+		<li class="search-results__item search-results-item">
+			<a href="#" class="link link_secondary search-results-item__link"><b>APPLE</b> iPad Wi-Fi 32GB Space Gray 2018 (MR7F2RU/A</a>
+			<div class="search-results-item__prev">
+				<b>Apple</b> iPad Wi-Fi 32GB Space Gray — такой мощный, что справляется с любыми задачами как полноценный компьютер, и, настолько компактный, чтобы было удобно ...
+			</div>
+		</li>
+		<li class="search-results__item search-results-item">
+			<a href="#" class="link link_secondary search-results-item__link"><b>APPLE</b> iPad Wi-Fi 32GB Space Gray 2018 (MR7F2RU/A</a>
+			<div class="search-results-item__prev">
+				<b>Apple</b> iPad Wi-Fi 32GB Space Gray — такой мощный, что справляется с любыми задачами как полноценный компьютер, и, настолько компактный, чтобы было удобно ...
+			</div>
+		</li>
+		<li class="search-results__item search-results-item">
+			<a href="#" class="link link_secondary search-results-item__link"><b>APPLE</b> iPad Wi-Fi 32GB Space Gray 2018 (MR7F2RU/A</a>
+			<div class="search-results-item__prev">
+				<b>Apple</b> iPad Wi-Fi 32GB Space Gray — такой мощный, что справляется с любыми задачами как полноценный компьютер, и, настолько компактный, чтобы было удобно ...
+			</div>
+		</li>
+	</ul>
+</div>
+
+<?/*
 <div class="search__page">
     <div class="search__page-panel">
         <?$APPLICATION->IncludeComponent(
