@@ -20,7 +20,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_be
 $request = Application::getInstance()->getContext()->getRequest();
 $signer = new Signer;
 try {
-    $params = $signer->unsign(base64_decode(urldecode($request->getPost('sign'))), "ajax_form_" . $request->getPost('ajax_form'));
+    $params = $signer->unsign(base64_decode(urldecode($request->getPost('sign'))), "ajax-form_" . $request->getPost('ajax-form'));
     $arParams = unserialize(base64_decode($params));
 }
 catch (BadSignatureException $e) {
