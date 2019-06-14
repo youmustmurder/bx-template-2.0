@@ -11,15 +11,15 @@ window.addEventListener('load', function () {
           midY = 0,
           center = 0;
       Array.prototype.forEach.call(branchesNode, function (branch) {
-        var x = Number(branch.getAttribure('data-yandex-x')),
-            y = Number(branch.getAttribure('data-yandex-y'));
+        var x = Number(branch.getAttribute('data-yandex-x')),
+            y = Number(branch.getAttribute('data-yandex-y'));
         branches.push({
           x: x,
           y: y,
-          name: branch.getAttribure('data-name'),
-          address: branch.getAttribure('data-address'),
-          email: branch.getAttribure('data-email'),
-          phone: branch.getAttribure('data-phone')
+          name: branch.getAttribute('data-name'),
+          address: branch.getAttribute('data-address'),
+          email: branch.getAttribute('data-email'),
+          phone: branch.getAttribute('data-phone')
         });
         midX += x;
         midY += y;
