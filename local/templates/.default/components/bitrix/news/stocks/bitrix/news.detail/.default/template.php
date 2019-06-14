@@ -14,10 +14,6 @@ $this->setFrameMode(true);
 ?>
 <div class="col">
 	<div class="news-detail">
-		<div class="news-detailt__date news-detail-date">
-			<div class="news-detail-date__number">20</div>
-			<div class="news-detail-date__date">Сентября 2018</div>
-		</div>
 		<div class="news-detailt__short-desc">
 			BOYARD поддержал европейский тренд на чёрную фурнитуру созданием собственной универсальной коллекции лицевой фурнитуры, выполненной в благородном, стильном и вечно модном чёрном цвете.
 		</div>
