@@ -9,6 +9,14 @@
 .branch {
 	display: flex;
 	flex-wrap: wrap;
+	&:not(:last-child) {
+		margin-bottom: 30px;
+	}
+}
+
+.branch__name {
+	font-size: 1.75rem;
+    font-weight: bold;
 }
 
 .branch__name,
@@ -19,8 +27,6 @@
 .branch__info-wrap {
 	flex: 0 1 50%;
 	padding-left: 15px;
-	font-size: 1.75rem;
-    font-weight: bold;
 }
 
 .branch__info-list {
