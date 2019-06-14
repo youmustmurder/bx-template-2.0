@@ -1,4 +1,6 @@
 .services {
+	position: relative;
+	z-index: 3;
 	padding: 88px 0;
 	&.services_grey {
 		background: #F8F8F8;
