@@ -42,40 +42,49 @@
 .best-categories-card__img {
 	position: relative;
 	width: 100%;
-	height: 170px;
+	height: 205px;
 	overflow: hidden;
 	img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		font-family: 'object-fit: contain;';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: auto;
+		height: auto;
+		max-height: none;
+		max-width: none;
+		min-height: 100%;
+		min-width: 100%;
+		transform: translate(-50%, -50%);
 	}
 }
 
 .best-categories-card__info {
 	flex: 1 0 auto;
-	padding: 30px 20px;
+	padding: 35px 20px 35px;
 	background-color: #fff;
 }
 
 .best-categories-card__quantity {
-	margin-bottom: 10px;
-	font-size: 0.8666666666666667rem;
-	line-height: 1.6rem;
-	color: #aaa9ad;
+	font-size: 0.7333rem;
+	line-height: 1.333rem;
+	color: #7E7E7E;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-bottom: 16px;
 }
 
 .best-categories-card__title {
-	margin-bottom: 10px;
-    font-size: 1rem;
-	line-height: 1.8rem;
-	font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+	font-weight: bold;
+	margin-bottom: 12px;
 }
 
 .best-categories-card__price {
 	color: #26AE60;
-    font-size: 1.1333333333333333rem;
-    line-height: 1.8rem;
+    font-size: 1rem;
+    line-height: 1.333rem;
 	font-weight: 500;
 }
 
@@ -101,7 +110,7 @@
 		margin-bottom: 5px;
 	}
 	.best-categories-card__quantity {
-		margin-bottom: 5px;
+		margin-bottom: 8px;
 	}
 }
 
@@ -120,5 +129,8 @@
 	}
 	.best-categories-card__info {
 		padding: 15px 20px 25px;
+	}
+	.best-categories-card__img {
+		height: 250px;
 	}
 }

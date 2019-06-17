@@ -25,13 +25,14 @@ if ($arResult['ITEMS']) {?>
                                 $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
                                 $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
                                 ?>
-                                <a href="<?=$arItem['DETAIL_PAGE_URL']?>" class="news__slide news-slide" id="<?=$this->GetEditAreaId($arItem['ID'])?>">
+                                <div class="news__slide news-slide" id="<?=$this->GetEditAreaId($arItem['ID'])?>">
                                     <?/*
                                     <div class="news-slide__theme"></div>
                                     */?>
-                                    <div class="news-slide__title"><?=$arItem['NAME']?></div>
+                                    <a href="<?=$arItem['DETAIL_PAGE_URL']?>"
+                                       class="news-slide__title"><?=$arItem['NAME']?></a>
                                     <div class="news-slide__date"><?=$arItem['DISPLAY_ACTIVE_FROM']?></div>
-								</a>
+                                </div>
                             <?}?>
 					    </div>
 					</div>
