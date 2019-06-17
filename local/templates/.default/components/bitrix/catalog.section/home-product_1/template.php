@@ -20,7 +20,7 @@ if ($arResult['ITEMS']) {?>
                     </a>
                 </div>
 				<div class="products__grid-wrap">
-					<div class="grid grid_3column">
+					<div class="grid grid_4column">
                         <?foreach ($arResult['ITEMS'] as $k => $arItem) {
                             $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
                             $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
@@ -69,9 +69,18 @@ if ($arResult['ITEMS']) {?>
                                             <?if ($arItem['PARENT_SECTION']) {?>
                                                 <div class="product__subtitle"><?=$arItem['PARENT_SECTION']['NAME']?></div>
                                             <?}?>
-                                            <div class="products__price">
-                                                <?=$arItem['PRICE']['VALUE']?><?=$arItem['PRICE']['CURRENCY'] == 'Y' ? ' ₽' : ''?>
-                                            </div>
+											<?if ($arItem['PRICE'] || $arItem['OLD_PRICE']){?>
+												<div class="products__price-wrap">
+													<div class="products__price products__price_new">
+														<?=$arItem['PRICE']['VALUE']?><?=$arItem['PRICE']['CURRENCY'] == 'Y' ? ' ₽' : ''?>
+													</div>
+													<?if ($arItem['OLD_PRICE']){?>
+														<div class="products__price products__price_old">
+															<?=$arItem['OLD_PRICE']['VALUE']?><?=$arItem['OLD_PRICE']['CURRENCY'] == 'Y' ? ' ₽' : ''?>
+														</div>
+													<?}?>
+												</div>
+											<?}?>
                                             <?if ($arItem['PREVIEW_TEXT']) {?>
                                                 <p class="products__text"><?=$arItem['PREVIEW_TEXT']?></p>
                                             <?}?>
@@ -110,17 +119,26 @@ if ($arResult['ITEMS']) {?>
 													<div class="product__subtitle"><?=$arItem['PARENT_SECTION']['NAME']?></div>
 												<?}?>
 											</div>
-                                            <div class="product__btns">
-                                                <button class="product__btn" aria-label="<?=Loc::getMessage('PRODUCTS_SECTION_ADD_TO_FAVORITES')?>">
-                                                    <?=GetContentSvgIcon('heart');?>
-                                                </button>
-                                                <button class="product__btn" aria-label="<?=Loc::getMessage('PRODUCTS_SECTION_ADD_TO_CART')?>">
-                                                    <?=GetContentSvgIcon('cart');?>
-                                                </button>
-                                            </div>
-                                            <div class="products__price">
-                                                <?=$arItem['PRICE']['VALUE']?><?=$arItem['PRICE']['CURRENCY'] == 'Y' ? ' ₽' : ''?>
-                                            </div>
+											<div class="product__actions">
+												<button class="product__btn" aria-label="<?=Loc::getMessage('PRODUCTS_SECTION_ADD_TO_FAVORITES')?>">
+													<?=GetContentSvgIcon('heart');?>
+												</button>
+												<?if ($arItem['PRICE'] || $arItem['OLD_PRICE']){?>
+													<div class="products__price-wrap">
+														<div class="products__price products__price_new">
+															<?=$arItem['PRICE']['VALUE']?><?=$arItem['PRICE']['CURRENCY'] == 'Y' ? ' ₽' : ''?>
+														</div>
+														<?if ($arItem['OLD_PRICE']){?>
+															<div class="products__price products__price_old">
+																<?=$arItem['OLD_PRICE']['VALUE']?><?=$arItem['OLD_PRICE']['CURRENCY'] == 'Y' ? ' ₽' : ''?>
+															</div>
+														<?}?>
+													</div>
+												<?}?>
+												<button class="product__btn" aria-label="<?=Loc::getMessage('PRODUCTS_SECTION_ADD_TO_CART')?>">
+													<?=GetContentSvgIcon('cart');?>
+												</button>
+											</div>
                                         </div>
                                     </div>
                             <?}?>

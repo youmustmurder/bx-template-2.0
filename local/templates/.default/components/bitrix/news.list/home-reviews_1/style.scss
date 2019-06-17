@@ -45,7 +45,7 @@
 	flex-direction: column;
 	align-items: center;
 	height: 100%;
-	padding: 25px 40px 50px;
+	padding: 25px 30px 30px;
 	background-color: #F8F8F8;
 	transition: 0.3s all ease-out;
 	&:hover {
@@ -59,12 +59,8 @@
 }
 
 .rewards-item__letter {
-	width: 100%;
-	height: 385px;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
-	margin-bottom: 28px;
+	max-height: 350px;
+	margin-bottom: 25px;
 }
 
 .rewards-item__info {
@@ -72,16 +68,16 @@
 }
 
 .rewards-item__title {
-	margin-bottom: 7px;
-	font-size: 1.2rem;
-	line-height: 1.6rem;
+	margin-bottom: 10px;
+	font-size: 1rem;
+	line-height: 1.8rem;
 	font-weight: 500;
 }
 
 .rewards-item__date {
-	color: #9B9B9B;
-	font-size: 0.9333rem;
-	line-height: 0.9333rem;
+	color: #7E7E7E;
+	font-size: 0.8666666666666667rem;
+	line-height: 1.6rem;
 }
 
 @media (max-width: 1024px) {
@@ -102,9 +98,6 @@
 		grid-column: 1;
 		grid-row: 3;
 		margin: 40px 0 0 0;
-	}
-	.rewards-item__wrap {
-		padding: 40px 40px 35px;
 	}
 	.rewards-item__letter {
 		height: 250px;
