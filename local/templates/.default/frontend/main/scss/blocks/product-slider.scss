@@ -9,6 +9,7 @@
 
 .product-slider-previews__slide,
 .tns-horizontal.tns-subpixel>.tns-item.product-slider-previews__slide {
+	cursor: pointer;
 	&.product-slider-previews-slide_active {
 		.product-slider-previews-slide__wrap {
 			&:after {
@@ -25,7 +26,7 @@
 	position: relative;
 	height: 90px;
 	width: 100%;
-	cursor: pointer;
+	pointer-events: none;
 	&:after {
 		content: '';
 		position: absolute;

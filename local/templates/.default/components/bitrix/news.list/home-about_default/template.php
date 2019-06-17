@@ -18,7 +18,7 @@ Loc::loadMessages(__FILE__);
 					</div>
 					<div class="about__content">
 						<h2 class="about__title"><?=$arParams['BLOCK_TITLE'] ?: Loc::getMessage('HOME_ABOUT_DEFAULT_BLOCK_TITLE')?></h2>
-						<div class="text text_default about__text">
+						<div class="text about__text">
 							<?$APPLICATION->IncludeFile(
 									"/include/".SITE_ID."/content/home/home-about_text.php",
 									array(), array(

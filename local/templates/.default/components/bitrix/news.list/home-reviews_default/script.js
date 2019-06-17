@@ -16,6 +16,7 @@ window.addEventListener('load', function () {
 
   var sliderReviewsPhotos = tns({
     container: sliderReviewsPhotosNode,
+    loop: true,
     items: 1,
     gutter: 20,
     nav: false,

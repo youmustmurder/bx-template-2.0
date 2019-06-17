@@ -54,12 +54,11 @@
 
 .best-categories-card__info {
 	flex: 1 0 auto;
-	padding: 30px 20px;
+	padding: 30px;
 	background-color: #fff;
 }
 
 .best-categories-card__quantity {
-	margin-bottom: 10px;
 	font-size: 0.8666666666666667rem;
 	line-height: 1.6rem;
 	color: #aaa9ad;
@@ -98,9 +97,6 @@
 
 @media (max-width: 768px) {
 	.best-categories-card__title {
-		margin-bottom: 5px;
-	}
-	.best-categories-card__quantity {
 		margin-bottom: 5px;
 	}
 }

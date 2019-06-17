@@ -43,23 +43,6 @@
 	margin-bottom: 50px;
 	box-sizing: border-box;
 	cursor:pointer;
-	&:hover,
-	&:focus {
-		.products-item__name {
-			color: #ff223d;
-		}
-/* 		.products-item__link {
-			opacity: 1;
-		}
-	  	.products-item__image {
-			img {
-				opacity: 0.4;
-			}
-		}
-		.products-item__labels {
-			opacity: 0.4;
-		} */
-	}
 }
 
 .products-item__image {
@@ -111,6 +94,9 @@
 	line-height: 1.8rem;
 	font-weight: 500;
 	transition: 0.3s all ease-out;
+	&:hover {
+		color: #ff223d;
+	}
 }
 
 .products-item__category {
