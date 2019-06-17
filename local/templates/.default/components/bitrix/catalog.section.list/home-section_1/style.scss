@@ -27,7 +27,7 @@
 	align-items: center;
 	justify-content: space-between;
 	overflow: hidden;
-	padding: 30px;
+	padding: 40px 30px;
 	height: 100%;
 	background: #F8F8F8;
 	color: #000;
@@ -104,15 +104,15 @@
 .best-categories-card__title,
 .best-categories-card__subtitle {
 	max-width: 97%;
+	text-transform: uppercase;
 	text-align: center;
+	font-weight: bold;
 }
 
 .best-categories-card__title {
 	margin-bottom: 10px;
-	color: #333;
-	font-size: 1rem;
-	line-height: 1.8rem;
-	font-weight: 500;
+	font-size: 1.2rem;
+	line-height: 1.733rem;
 }
 
 .best-categories-card__subtitle {
@@ -131,8 +131,8 @@
 .best-categories-card__text {
 	max-width: 250px;
 	color: #7E7E7E;
-	font-size: 1rem;
-	line-height: 1.8rem;
+	font-size: 1.067rem;
+	line-height: 1.333rem;
 }
 
 @media (max-width: 1024px) {
@@ -230,7 +230,7 @@
 			}
 			.best-categories-card__text {
 				max-width: 100%;
-				margin: 0 0 20px 0;
+				margin: 40px 0;
 			}
 			.best-categories-card__label {
 				position: static;
