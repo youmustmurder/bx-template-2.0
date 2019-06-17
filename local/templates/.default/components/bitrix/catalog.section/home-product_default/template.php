@@ -25,24 +25,32 @@ if($arResult['ITEMS']){?>
                             $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
                             ?>
 							<div class="col-lg-3 col-md-4 col-sm-6 col-12" >
-                                <div class="products__item products-item" id="<?=$this->GetEditAreaId($arItem['ID']); ?>">
-                                    <?if ($arItem['PROPERTIES']['PRODUCT_LABEL']['VALUE'] || $arItem['PROPERTIES']['PRODUCT_DISCOUNT']['VALUE']) {?>
-                                        <ul class="products-item__labels">
-                                            <?if ($arItem['PROPERTIES']['PRODUCT_DISCOUNT']['VALUE']) {?>
-                                                <li class="label label_green">
-                                                    <?=intval($arItem['PROPERTIES']['PRODUCT_DISCOUNT']['VALUE']) > 0 ?
-                                                        '-' . $arItem['PROPERTIES']['PRODUCT_DISCOUNT']['VALUE'] . '%' :
-                                                        $arItem['PROPERTIES']['PRODUCT_DISCOUNT']['VALUE']?>
-                                                </li>
-                                            <?}?>
-                                            <?if ($arItem['PROPERTIES']['PRODUCT_LABEL']['VALUE_XML_ID']) {?>
-                                                <?foreach ($arItem['PROPERTIES']['PRODUCT_LABEL']['VALUE_XML_ID'] as $k => $XML_ID) {?>
-                                                    <li class="label <?=$XML_ID == 'NEW' ? 'label_yellow' : 'label_blue'?>">
-                                                        <?=$arItem['PROPERTIES']['PRODUCT_LABEL']['VALUE'][$k]?></li>
-                                                <?}?>
-                                            <?}?>
-                                        </ul>
-                                    <?}?>
+								<div class="products__item products-item" id="<?=$this->GetEditAreaId($arItem['ID']); ?>">
+									<div class="products-item__actions">
+										<button class="product__btn" aria-label="<?=Loc::getMessage('PRODUCTS_SECTION_ADD_TO_FAVORITES')?>">
+											<?=GetContentSvgIcon('heart');?>
+										</button>
+										<?if ($arItem['PROPERTIES']['PRODUCT_LABEL']['VALUE'] || $arItem['PROPERTIES']['PRODUCT_DISCOUNT']['VALUE']) {?>
+											<ul class="products-item__labels">
+												<?if ($arItem['PROPERTIES']['PRODUCT_DISCOUNT']['VALUE']) {?>
+													<li class="label label_green">
+														<?=intval($arItem['PROPERTIES']['PRODUCT_DISCOUNT']['VALUE']) > 0 ?
+															'-' . $arItem['PROPERTIES']['PRODUCT_DISCOUNT']['VALUE'] . '%' :
+															$arItem['PROPERTIES']['PRODUCT_DISCOUNT']['VALUE']?>
+													</li>
+												<?}?>
+												<?if ($arItem['PROPERTIES']['PRODUCT_LABEL']['VALUE_XML_ID']) {?>
+													<?foreach ($arItem['PROPERTIES']['PRODUCT_LABEL']['VALUE_XML_ID'] as $k => $XML_ID) {?>
+														<li class="label <?=$XML_ID == 'NEW' ? 'label_yellow' : 'label_blue'?>">
+															<?=$arItem['PROPERTIES']['PRODUCT_LABEL']['VALUE'][$k]?></li>
+													<?}?>
+												<?}?>
+											</ul>
+										<?}?>
+										<button class="product__btn" aria-label="<?=Loc::getMessage('PRODUCTS_SECTION_ADD_TO_CART')?>">
+											<?=GetContentSvgIcon('cart');?>
+										</button>
+									</div>
                                     <a href="<?=$arItem['DETAIL_PAGE_URL']?>" class="products-item__image">
 										<img src="<?=GetNoPhoto()?>"
 											 class="lazy-image"
