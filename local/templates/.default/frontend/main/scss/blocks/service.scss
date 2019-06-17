@@ -48,7 +48,7 @@
 .service__title,
 .service__text {
 	max-width: 230px;
-	color: #333;
+	color: #000;
 }
 
 .service__title {
@@ -59,8 +59,9 @@
 }
 
 .service__text {
-	font-size: 1rem;
-	line-height: 1.8rem;
+	opacity: 0.6;
+	font-size: 1.067rem;
+	line-height: 1.6rem;
 }
 
 .service__img {
