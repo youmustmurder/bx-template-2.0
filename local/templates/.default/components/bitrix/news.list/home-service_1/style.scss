@@ -25,10 +25,9 @@
 
 .services__text {
 	max-width: 373px;
-	font-size: 1.2rem;
-	line-height: 2rem;
+	font-size: 1rem;
+	line-height: 1.8rem;
 	opacity: 0.6;
-	font-weight: 500;
 }
 
 .service-item__pic {
@@ -44,14 +43,14 @@
 	display: block;
 	margin-bottom: 20px;
 	color: #1B1B1B;
-	font-size: 1.6rem;
-	line-height: 1.933rem;
+	font-size: 1.2rem;
+	line-height: 2.1333333333333333rem;
 	font-weight: 500;
 }
 
 .service-item__text {
-	font-size: 1.2rem;
-	line-height: 2rem;
+	font-size: 1rem;
+	line-height: 1.8rem;
 	opacity: 0.6;
 }
 
@@ -78,25 +77,12 @@
 		margin-bottom: 25px;
 	}
 	.service-item__title {
-		font-size: 1.2rem;
-		line-height: 1.467rem;
 		margin-bottom: 10px;
-	}
-	.service-item__text {
-		font-size: 1.067rem;
-		line-height: 1.733rem;
 	}
 	.services__text {
 		margin-bottom: 30px;
 	}
 	.service-item__pic {
 		margin-bottom: 30px;
-	}
-}
-
-@media (max-width: 400px) {
-	.services__text {
-		font-size: 1.2rem;
-		line-height: 2rem;
 	}
 }
