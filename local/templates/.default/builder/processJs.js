@@ -19,7 +19,8 @@ const
 		useTabs: true,
 		tabWidth: 4,
 	},
-	json = require('rollup-plugin-json');
+	json = require('rollup-plugin-json'),
+	commonjs = require('rollup-plugin-commonjs');
 
 
 const logLinter = (errors, filename) => {
@@ -44,35 +45,47 @@ const lintAndFormatCode = (filename) => {
 };
 
 const transformFile = async (filename, output = path.join(path.dirname(filename), 'script.js')) => {
-	const bundle = await rollup.rollup({
-		input: filename,
-		treeshake: false,
-	});
-	const { output: outputSplit } = await bundle.generate({
-		format: 'cjs',
-		plugins: [
-			resolve(),
-			json()
-		]
-	});
-	for (const chunkOrAsset of outputSplit) {
-		if (chunkOrAsset.isAsset) {
-			const courceCode = chunkOrAsset.code;
-			// const parseAst= babel.parse(courceCode, {});
-			// babel.transformFromAst(parseAst, courceCode, {}, (err, result) => {
-			// 	if (err) logger.loggerError(err);
-			// 	fs.writeFile(output, result.code, () => true);
-			// 	logger.loggerBuild(output);
-			// });
-		} else {
-			const courceCode = chunkOrAsset.code;
-			const parseAst= babel.parse(courceCode, {});
-			babel.transformFromAst(parseAst, courceCode, {}, (err, result) => {
-				if (err) logger.loggerError(err);
-				fs.writeFile(output, result.code, () => true);
-				logger.loggerBuild(output);
-			});
+	try {
+		const bundle = await rollup.rollup({
+			input: filename,
+			treeshake: false,
+		});
+		const { output: outputSplit } = await bundle.generate({
+			format: 'cjs',
+			plugins: [
+				resolve({
+					jsnext: true,
+					module: true,
+					main: true,
+					browser: true
+				}),
+				commonjs({
+					include: 'node_modules/**',
+				}),
+				json()
+			]
+		});
+		for (const chunkOrAsset of outputSplit) {
+			if (chunkOrAsset.isAsset) {
+				const courceCode = chunkOrAsset.code;
+				// const parseAst= babel.parse(courceCode, {});
+				// babel.transformFromAst(parseAst, courceCode, {}, (err, result) => {
+				// 	if (err) logger.loggerError(err);
+				// 	fs.writeFile(output, result.code, () => true);
+				// 	logger.loggerBuild(output);
+				// });
+			} else {
+				const courceCode = chunkOrAsset.code;
+				const parseAst= babel.parse(courceCode, {});
+				babel.transformFromAst(parseAst, courceCode, {}, (err, result) => {
+					if (err) logger.loggerError(err);
+					fs.writeFile(output, result.code, () => true);
+					logger.loggerBuild(output);
+				});
+			}
 		}
+	} catch(e) {
+		logger.loggerError(`error build: ${e}`);
 	}
 };
 

@@ -13,6 +13,8 @@ import lazyLoad from './lazyLoad';
 import Form from './form';
 import smoothscroll from './smoothscroll';
 import objectFitImages from './ofi.es-modules';
+import cssVars from './css-vars-ponyfill.esm';
+import GlightboxInit from './glightbox';
 
 const clickAnchorLink = (e) => {
 	e.preventDefault();
@@ -21,6 +23,13 @@ const clickAnchorLink = (e) => {
 };
 
 window.addEventListener('load', () => {
+	var imgLightbox = new GlightboxInit({
+		selector: 'img-lightbox',
+	});
+	imgLightbox.init();
+	cssVars({
+		onlyLegacy: false,
+	});
 	smoothscroll();
 	objectFitImages();
 	const modalCallbackButtons = document.querySelectorAll('.js-init-modal__form');
@@ -33,6 +42,11 @@ window.addEventListener('load', () => {
 			modalFromAjax(settings);
 		});
 	});
+
+	var settings = {
+		modalName: 'callback_modal',
+	};
+	modalFromAjax(settings);
 
 	const anchorLinks = document.querySelectorAll('.anchor');
 	Array.prototype.forEach.call(anchorLinks, (link) => {

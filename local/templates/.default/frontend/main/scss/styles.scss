@@ -1,3 +1,13 @@
+:root {
+	--primary: #ff1e36;
+}
+
+@media (max-width: 1024px) {
+	:root {
+		--primary: #26AE60;
+	}
+}
+
 @import './reset.scss';
 @import './bootstrap.scss';
 @import './util.scss';
@@ -43,6 +53,8 @@
 @import 'blocks/filials-page.scss';
 @import 'blocks/b-fast-order.scss';
 @import 'blocks/search-results.scss';
+@import 'glightbox.css';
+@import 'blocks/preload.scss';
 
 html,
 body {
