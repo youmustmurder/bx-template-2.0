@@ -22,7 +22,7 @@ class CWebsiteTemplate {
     static $arParametersList = array();
     static $arCurrentSetting = array();
     static $arCurrentFilial = array();
-    static $demoMode = false;
+    static $demoMode = true;
     static $settingPathFile;
     
     static function getPathSettingFile()
