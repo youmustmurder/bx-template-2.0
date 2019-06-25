@@ -107,4 +107,9 @@ if(isset($_REQUEST['ajax-form']) && !empty($_REQUEST['ajax-form'])){?>
             </div>
         </div>
     </div>
+<?} else {?>
+    <button
+            class="btn <?=$arParams['FORM_LINK_TYPE'] == 'btn' ? $arParams['FORM_BTN_TYPE'].' '.$arParams['FORM_BTN_STYLE'].' '.$arParams['FORM_BTN_SIZE'] : 'link link_secondary'?> js-init-modal__form"
+            data-sign="<?=$arResult["JSON_SIGN"]?>"
+            data-ajax-form="<?=$arParams['IBLOCK_ID']?>"><?=$arParams['FORM_BTN_TYPE'] == 'btn-icon' ? GetContentSvgIcon('phone') : $arParams['FORM_BTN_OPEN']?></button>
 <?}?>
