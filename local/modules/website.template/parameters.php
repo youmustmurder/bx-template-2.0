@@ -9,13 +9,13 @@ CWebsiteTemplate::$arParametersList = array(
     'COLOR' => CWebsiteTemplate::getElementsHLBlock(1),
     'FONT_SIZE' => array(
         'small' => array(
-            'VALUE' => '13px'
+            'VALUE' => '14px'
         ),
         'default' => array(
-            'VALUE' => '15px'
+            'VALUE' => '16px'
         ),
         'big' => array(
-            'VALUE' => '17px'
+            'VALUE' => '18px'
         )
     ),
     'SLIDER' => array(
