@@ -94,7 +94,7 @@ $APPLICATION->IncludeFile(
     )
 );?>
 
-<div class="modal micromodal-slide" id="modal1" aria-hidden="true">
+<!-- <div class="modal micromodal-slide" id="modal1" aria-hidden="true">
     <div class="modal__overlay" tabindex="-1" data-micromodal-close>
         <div class="modal__container" role="dialog" aria-modal="true">
             <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
@@ -125,7 +125,7 @@ $APPLICATION->IncludeFile(
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="modal micromodal-slide" id="modal_product" aria-hidden="true">
     <div class="modal__overlay" tabindex="-1" data-micromodal-close>
