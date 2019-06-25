@@ -19,7 +19,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_be
 
 $request = Application::getInstance()->getContext()->getRequest();
 $signer = new Signer;
-echo $request->get('sign');
+var_dump($_REQUEST);
 die();
 try {
     $params = $signer->unsign(base64_decode(urldecode($request->get('sign'))), "ajax-form_" . $request->get('ajax-form'));
