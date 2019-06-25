@@ -57,9 +57,9 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 					</div>
 					<?$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
-	"sidebar_stocks", 
+	"sidebar-stocks",
 	array(
-		"COMPONENT_TEMPLATE" => "sidebar_stocks",
+		"COMPONENT_TEMPLATE" => "sidebar-stocks",
 		"IBLOCK_TYPE" => "base",
 		"IBLOCK_ID" => "10",
 		"NEWS_COUNT" => "3",
