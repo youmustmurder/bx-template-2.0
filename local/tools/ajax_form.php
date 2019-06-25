@@ -3,6 +3,8 @@
  * @author Lukmanov Mikhail <lukmanof92@gmail.com>
  */
 
+require_once($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.php");
+
 use Bitrix\Main\Application,
     Bitrix\Main\Security\Sign\Signer,
     Bitrix\Main\Security\Sign\BadSignatureException;
@@ -14,7 +16,7 @@ define('DisableEventsCheck', true);
 define('BX_SECURITY_SHOW_MESSAGE', true);
 define('XHR_REQUEST', true);
 
-require_once($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.php");
+
 
 $request = Application::getInstance()->getContext()->getRequest();
 $signer = new Signer;
