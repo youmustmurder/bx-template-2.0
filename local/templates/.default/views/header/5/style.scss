@@ -3,7 +3,7 @@
 }
 
 .header__top {
-	padding: 30px 0;
+	padding: 25px 0;
 	border-bottom: 1px solid #ececec;
 }
 
@@ -85,13 +85,17 @@
 
 .header-contact {
 	margin: 0 15px;
+	.js-init-modal__form {
+		font-size: 0.875rem;
+		font-weight: 500;
+	}
 }
 
 .header-contact__icon {
     display: flex;
     justify-content: center;
-    align-items: center;
-	margin-right: 10px;
+	align-items: center;
+	margin: 2px 10px 0 0;
 	svg {
 		height: 20px;
 		margin-top: 2px;
@@ -104,11 +108,12 @@
     flex-direction: column;
 	justify-content: flex-start;
 	a {
-		line-height: 1.5em;
+		font-size: 1.125rem;
 		transition: 0.3s all ease-out;
 	}
 	span {
-		line-height: 1.5em;
+		font-size: 1rem;
+		line-height: 1.5rem;
 	}
 }
 
@@ -123,7 +128,6 @@
 
 .header-contact__number {
     color: #333;
-    font-weight: bold;
     font-size: 1.2rem;
 }
 
@@ -187,7 +191,7 @@
 	left: 15px;
 	transform: translate(0, -100%);
     width: calc(100% - 60px);
-    height: calc(100% + 30px*2);
+    height: calc(100% + 25px*2);
     background-color: #fff;
     z-index: 1000;
     transition: 0.3s;

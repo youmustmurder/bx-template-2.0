@@ -3,7 +3,7 @@
 }
 
 .header__top {
-	padding: 30px 0;
+	padding: 20px 0;
     border-bottom: 1px solid #ececec;
 }
 
@@ -26,7 +26,20 @@
 
 .header__block {
     display: flex;
-    align-items: center;
+	align-items: center;
+	&.header__block_phone {
+		flex: 0 1 auto;
+		display: inline-flex;
+		align-items: flex-start;
+		justify-content: flex-end;
+		a {
+			line-height: 1.5em;
+		}
+		.js-init-modal__form {
+			font-size: 0.875rem;
+			font-weight: 500;
+		}
+	}
 }
 
 .header-search {
@@ -52,6 +65,32 @@
 	svg {
 		margin-right: 5px;
 		fill: #ff1e36;
+	}
+}
+
+.header-phone__number {
+    color: #333;
+    font-size: 1.125rem;
+}
+
+.header-phone__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	margin: 2px 10px 0 0;
+	svg {
+		height: 20px;
+		margin-top: 2px;
+		fill: #333;
+	}
+}
+
+.header-phone__info {
+    display: flex;
+    flex-direction: column;
+	justify-content: flex-start;
+	span {
+		line-height: 1.5em;
 	}
 }
 
@@ -82,17 +121,17 @@
 		display: flex;
 		justify-content: space-between;
 		& > li {
-			flex: 1 0 auto;
+			flex: 0 0 auto;
+			padding: 0 15px;
 			cursor: pointer;
 			& > a {
 				position: relative;
 				z-index: 1;
 				display: block;
 				width: 100%;
-				padding: 20px 25px;
+				padding: 18px 0;
 				text-align: center;
 				font-size: 1rem;
-				font-weight: 500;
 				color: #333;
 				white-space: nowrap;
 				&:before {
@@ -115,6 +154,17 @@
 			&.more__menu {
 				position: relative;
 				ul {
+					position: relative;
+					&:before {
+						content: '';
+						position: absolute;
+						top: -2px;
+						left: 0;
+						width: 100%;
+						height: 2px;
+						background: #ff1e36;
+						transition: 0.3s all ease-out;
+					}
 					li {
 						a {
 							&:hover {
@@ -126,10 +176,11 @@
 					}
 				}
 			}
-			&:not(:last-child) {
-				li {
-					margin-right: 10px;
-				}
+			&:first-child {
+				padding-left: 0;
+			}
+			&:last-child {
+				padding-right: 2px;
 			}
 		}
 	}
@@ -160,6 +211,7 @@
 			box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
 			transition: 0.3s all ease-out;
 			li {
+				padding: 0;
 				transition: 0.3s all ease-out;
 				a {
 					display: block;
@@ -208,18 +260,17 @@
     .header-logo__name {
         display: none;
 	}
+	.header-phone__number {
+		font-size: 1rem;
+	}
 	.header-contact__value,
 	.header__phone a,
 	.header-catalog-menu>ul>li>a,
 	.header .more-menu .more-menu__submenu li a {
-		font-size: 0.9333rem;
-	}
-	.header-top__navbar ul li a,
-	.header-address__value {
-		font-size: 0.82rem;
+		font-size: 0.875rem;
 	}
 	.header .more-menu .more-menu__submenu li a,
 	.header-catalog-menu ul li a {
-		padding: 16px 20px;
+		padding: 20px 0;
 	}
 }
