@@ -36,14 +36,15 @@ function modalFromAjax ({ modalName, url='/local/tools/ajax_form.php', method='P
 		body,
 		responseType: 'text'
 	}).then((res) => {
+		return res.text();
+	}).then(res => {
 		document.querySelector('.preload').remove();
-		if (res.data != '') {
+		if (res != '') {
 			if (typeof after === 'function') {
 				after();
 			}
-			console.log(res.data.trim());
-			//bodyNode.insertAdjacentHTML('beforeend', res.data.trim());
-			//MicroModal.show(modalName, modalSettings);
+			bodyNode.insertAdjacentHTML('beforeend', res.trim());
+			MicroModal.show(modalName, modalSettings);
 		}
 	}).catch(err => {
 		console.log(err);

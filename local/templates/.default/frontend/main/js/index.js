@@ -36,8 +36,17 @@ window.addEventListener('load', () => {
 	Array.prototype.forEach.call(modalCallbackButtons, (btn) => {
 		btn.addEventListener('click', () => {
 			var settings = {
-				modalName: 'callback_modal',
-				dataAjax: collectorAttributes(btn)
+				modalName: 'modal1',
+				dataAjax: collectorAttributes(btn),
+				modalSettings: {
+					onClose: (e) => {
+						setTimeout(() => {
+							let id = e.getAttribute('id');
+							console.log(document.querySelector(`#${id}`));
+							document.querySelector(`#${id}`).remove();
+						}, 100);
+					},
+				}
 			};
 			modalFromAjax(settings);
 		});

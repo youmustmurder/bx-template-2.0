@@ -4790,15 +4790,17 @@ function modalFromAjax(_ref2) {
     body: body,
     responseType: 'text'
   }).then(function (res) {
+    return res.text();
+  }).then(function (res) {
     document.querySelector('.preload').remove();
 
-    if (res.data != '') {
+    if (res != '') {
       if (typeof after === 'function') {
         after();
       }
 
-      console.log(res.data.trim()); //bodyNode.insertAdjacentHTML('beforeend', res.data.trim());
-      //MicroModal.show(modalName, modalSettings);
+      bodyNode.insertAdjacentHTML('beforeend', res.trim());
+      MicroModal.show(modalName, modalSettings);
     }
   })["catch"](function (err) {
     console.log(err);
@@ -9611,8 +9613,17 @@ window.addEventListener('load', function () {
   Array.prototype.forEach.call(modalCallbackButtons, function (btn) {
     btn.addEventListener('click', function () {
       var settings = {
-        modalName: 'callback_modal',
-        dataAjax: collectorAttributes(btn)
+        modalName: 'modal1',
+        dataAjax: collectorAttributes(btn),
+        modalSettings: {
+          onClose: function onClose(e) {
+            setTimeout(function () {
+              var id = e.getAttribute('id');
+              console.log(document.querySelector("#".concat(id)));
+              document.querySelector("#".concat(id)).remove();
+            }, 100);
+          }
+        }
       };
       modalFromAjax(settings);
     });
