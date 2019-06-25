@@ -18,9 +18,11 @@ define('XHR_REQUEST', true);
 require_once($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.php");
 
 $request = Application::getInstance()->getContext()->getRequest();
+
+
 $signer = new Signer;
 try {
-    $params = $signer->unsign(base64_decode(urldecode($request->getPost('sign'))), "ajax-form_" . $request->getPost('ajax-form'));
+    $params = $signer->unsign(base64_decode(urldecode($request->get('sign'))), "ajax-form_" . $request->get('ajax-form'));
     $arParams = unserialize(base64_decode($params));
 }
 catch (BadSignatureException $e) {
