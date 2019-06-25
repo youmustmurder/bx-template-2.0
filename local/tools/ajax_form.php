@@ -2,7 +2,8 @@
 /**
  * @author Lukmanov Mikhail <lukmanof92@gmail.com>
  */
-
+echo '1';
+die();
 use Bitrix\Main\Application,
     Bitrix\Main\Security\Sign\Signer,
     Bitrix\Main\Security\Sign\BadSignatureException;
