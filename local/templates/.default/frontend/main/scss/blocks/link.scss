@@ -68,6 +68,20 @@
 			}
 		}
 	}
+	&.link_grey {
+		color: #6F6F6F;
+		svg {
+			fill: #6F6F6F;
+		}
+		&:hover,
+		&:focus,
+		&:active {
+			color: #FF223D;
+			svg {
+				fill: #FF223D;
+			}
+		}
+	}
 	&.link_dark {
 		color: #1B1B1B;
 		svg {

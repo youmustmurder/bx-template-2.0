@@ -70,7 +70,7 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 					</div>
 					<div class="header__block header__contact header-contact">
 						<div class="header-contact__icon">
-							<?=GetContentSvgIcon('address');?>
+							<?=GetContentSvgIcon('geo');?>
 						</div>
 						<?if ($arFilial['CITY'] || $arFilial['ADDRESS']){?>
 							<div class="header-contact__info">

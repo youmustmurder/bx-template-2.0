@@ -46,43 +46,44 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 							false
 						);?>
 					</div>
-					<div class="header__block header__contacts">
-						<div class="header__phone">
-							<?if ($arFilial['PHONE']) {?>
-								<?=GetContentSvgIcon('phone');?>
-								<a href="tel:<?=preg_replace('~[^0-9]+~', '', $arFilial['PHONE']);?>"><?=$arFilial['PHONE']?></a>
-							<?}?>
+					<div class="header__block header__block_phone header-phone">
+						<div class="header-phone__icon">
+							<?=GetContentSvgIcon('phone');?>
 						</div>
-						<div class="header__call">
+						<div class="header-phone__info">
+							<?if ($arFilial['PHONE']) {?>
+							<a class="header-phone__number"
+								href="tel:<?=preg_replace('~[^0-9]+~', '', $arFilial['PHONE']);?>"><?=$arFilial['PHONE']?></a>
+							<?}?>
                             <?$APPLICATION->IncludeComponent(
-	"website96:web.forms", 
-	".default", 
-	array(
-		"COMPONENT_TEMPLATE" => ".default",
-		"IBLOCK_TYPE" => "forms",
-		"IBLOCK_ID" => "14",
-		"FORM_PRODUCT_ADD" => "N",
-		"FORM_BTN_TYPE" => "btn_round",
-		"FORM_FIELDS" => array(
-			0 => "24",
-			1 => "25",
-		),
-		"FORM_REQUIRED_FIELDS" => array(
-			0 => "25",
-		),
-		"FORM_TITLE" => "Форма обратной связи",
-		"FORM_BTN_OPEN" => "Заказать звонок",
-		"FORM_BTN_SUBMIT" => "Отправить",
-		"FORM_POLITIC_URL" => "/politic/",
-		"CACHE_TYPE" => "A",
-		"CACHE_TIME" => "3600",
-		"FORM_PRODUCT_ID" => "",
-		"FORM_BTN_STYLE" => "btn_outline-primary",
-		"FORM_BTN_SIZE" => "btn_min",
-		"FORM_LINK_TYPE" => "btn"
-	),
-	false
-);?>
+                                "website96:web.forms",
+                                ".default",
+                                array(
+                                    "COMPONENT_TEMPLATE" => ".default",
+                                    "IBLOCK_TYPE" => "forms",
+                                    "IBLOCK_ID" => "14",
+                                    "FORM_PRODUCT_ADD" => "N",
+                                    "FORM_BTN_TYPE" => "btn_round",
+                                    "FORM_FIELDS" => array(
+                                        0 => "24",
+                                        1 => "25",
+                                    ),
+                                    "FORM_REQUIRED_FIELDS" => array(
+                                        0 => "25",
+                                    ),
+                                    "FORM_TITLE" => "Форма обратной связи",
+                                    "FORM_BTN_OPEN" => "Заказать звонок",
+                                    "FORM_BTN_SUBMIT" => "Отправить",
+                                    "FORM_POLITIC_URL" => "/politic/",
+                                    "CACHE_TYPE" => "A",
+                                    "CACHE_TIME" => "3600",
+                                    "FORM_PRODUCT_ID" => "",
+                                    "FORM_BTN_STYLE" => "btn_outline-primary",
+                                    "FORM_BTN_SIZE" => "btn_min",
+                                    "FORM_LINK_TYPE" => "link"
+                                ),
+                                false
+                            );?>
 						</div>
 					</div>
 				</div>
