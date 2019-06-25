@@ -47,7 +47,7 @@ Asset::getInstance()->addJs($APPLICATION->GetTemplatePath("frontend/dist/js/inde
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta charset="UTF-8">
         <?$APPLICATION->ShowHead(); ?>
-        <title><?=$APPLICATION->GetTitle(false)?></title>
+		<title><?=$APPLICATION->GetTitle(false)?></title>
     </head>
 <body>
 <?if ($USER->IsAdmin()) {?>

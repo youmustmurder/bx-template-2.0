@@ -31,7 +31,7 @@ if ($arResult['ITEMS']) {?>
 											<img src="<?=GetNoPhoto()?>" class="lazy-image" lazy-image="<?=$arItem['PROPERTIES']['REVIEW_CLIENT_LOGO']['SRC']?>" alt="<?=Loc::getMessage('HOME_REVIEWS_1_REVIEW_IMAGE_ALT')?>">
 										</div>
 									<?}?>
-									<img src="<?=GetNoPhoto()?>" lazy-image="<?=$arItem['PREVIEW_PICTURE']['SRC']?>" alt="<?=Loc::getMessage('HOME_REVIEWS_1_REVIEW_IMAGE_ALT')?>" class="lazy-image rewards-item__letter">
+									<a href="<?=$arItem['PREVIEW_PICTURE']['SRC']?>" class="img-lightbox"><img src="<?=GetNoPhoto()?>" lazy-image="<?=$arItem['PREVIEW_PICTURE']['SRC']?>" alt="<?=Loc::getMessage('HOME_REVIEWS_1_REVIEW_IMAGE_ALT')?>" class="lazy-image rewards-item__letter"></a>
 									<div class="rewards-item__info">
 										<div class="rewards-item__title"><?=$arItem['NAME']?></div>
 										<?if ($arItem['PROPERTIES']['REVIEW_CLIENT_DATE']['VALUE']) {?>

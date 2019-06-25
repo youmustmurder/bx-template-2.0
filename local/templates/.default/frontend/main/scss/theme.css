@@ -1,0 +1,14 @@
+.btn.btn_primary {
+	border-color: #ff1e36;
+	background: #ff1e36;
+}
+
+.btn.btn_primary:hover,
+.btn.btn_primary:focus {
+	color: #ff1e36;
+}
+
+.btn.btn_primary:hover svg,
+.btn.btn_primary:focus svg {
+	fill: #ff1e36;
+}

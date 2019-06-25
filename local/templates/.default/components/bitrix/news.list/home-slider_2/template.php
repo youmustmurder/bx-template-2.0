@@ -17,7 +17,7 @@ if ($arResult['ITEMS']) {?>
                          data-autoplay="<?=$arParams['SLIDER_AUTOPLAY'] == 'N' ? 'false' : 'true'?>"
 						 data-speed="<?=$arParams['SLIDER_TIME'] ?: 0?>">
                         <?foreach ($arResult['ITEMS'] as $k => $arItem) {?>
-                            <div class="slider-big__slide slider-big-slide">
+                            <div class="slider-big__slide slider-big-slide" data-index-slide="<?=$k?>">
 								<div class="slider-big-slide__wrap">
 									<div class="slider-big-slide__name"><?=$arItem['NAME']?></div>
 									<p class="slider-big-slide__desc"><?=$arItem['PREVIEW_TEXT']?></p>
@@ -49,7 +49,7 @@ if ($arResult['ITEMS']) {?>
 					<div class="slider-big__previews-wrap">
 						<div class="slider-big__previews">
 							<?foreach ($arResult['ITEMS'] as $k => $arItem) {?>
-								<div class="slider-big__preview slider-big-preview" indexSlide="<?=$k?>">
+								<div class="slider-big__preview slider-big-preview" data-index-slide="<?=$k?>">
 									<div class="slider-big-preview__wrap">
 										<?if ($arItem['PROPERTIES']['PRODUCT']['VALUE']) {?>
 											<?if ($arItem['PROPERTIES']['PRODUCT']['PREVIEW_PICTURE']) {?>

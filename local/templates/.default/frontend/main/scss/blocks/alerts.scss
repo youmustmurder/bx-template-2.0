@@ -1,89 +1,112 @@
 .alert {
+	position: relative;
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
-	&__left {
-		display: flex;
-		align-items: center;
-	}
-	&__icon {
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center center;
-	}
-	&__title {
-		font-size: 14px;
-		line-height: 20px;
-	}
-	&__desc {
-		font-size: 12px;
-		line-height: 18px;
-	}
-	&__close {
-		background-color: transparent;
-		border: none;
-		cursor: pointer;
-		padding: 0;
-	}
-	&__big {
-		width: 270px;
-		max-width: 270px;
-		padding: 11px 17px 11px 11px;
-		border-radius: 8px;
+	border-radius: 30px;
+	&.alert_default {
+		padding: 10px 15px;
 		.alert__icon {
 			width: 36px;
 			height: 36px;
+			margin-right: 15px;
+		}
+		.alert__close {
+			svg {
+				width: 24px;
+				height: 24px;
+			}
+		}
+	}
+	&.alert_small {
+		padding: 8px 11px;
+		.alert__icon {
+			width: 18px;
+			height: 18px;
 			margin-right: 10px;
 		}
 		.alert__close {
-			width: 24px;
-			height: 24px;
+			svg {
+				width: 18px;
+				height: 18px;
+			}
 		}
 	}
-	&__min {
-		width: 220px;
-		max-width: 220px;
-		padding: 9px 11px 9px 9px;
-		border-radius: 4px;
-		.alert__desc {
-			display: none;
-		}
-		.alert__icon {
-			width: 18px;
-			height: 18px;
-			margin-right: 8px;
-		}
-		.alert__close {
-			width: 18px;
-			height: 18px;
-		}
-	}
-	&__info {
+	&.alert_info {
 		background-color: #e5f1ff;
 		color: #2e7cd9;
 		.alert__icon {
-			background-image: url(../../main/images/icons/alert-info.png);
+			background-image: url(../../main/images/icons/alert_info.svg);
+		}
+		.alert__close {
+			svg {
+				fill: #2e7cd9;
+			}
 		}
 	}
-	&__warning {
+	&.alert_warning {
 		background-color: #fdf1e5;
 		color: #ff881b;
 		.alert__icon {
-			background-image: url(../../main/images/icons/alert-warning.png);
+			background-image: url(../../main/images/icons/alert_warning.svg);
+		}
+		.alert__close {
+			svg {
+				fill: #ff881b;
+			}
 		}
 	}
-	&__error {
+	&.alert_error {
 		background-color: #ffecec;
 		color: #f23030;
 		.alert__icon {
-			background-image: url(../../main/images/icons/alert-error.png);
+			background-image: url(../../main/images/icons/alert_error.svg);
+		}
+		.alert__close {
+			svg {
+				fill: #f23030;
+			}
 		}
 	}
-	&__success {
+	&.alert_success {
 		background-color: #e2f6e2;
 		color: #42ab44;
 		.alert__icon {
-			background-image: url(../../main/images/icons/alert-success.png);
+			background-image: url(../../main/images/icons/alert_success.svg);
+		}
+		.alert__close {
+			svg {
+				fill: #42ab44;
+			}
 		}
 	}
+}
+
+.alert__icon {
+	border-radius: 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.alert__title {
+	font-size: 0.9333333333333333rem;
+	line-height: 1.3333333333333333rem;
+	font-weight: bold;
+}
+
+.alert__desc {
+	font-size: 0.8rem;
+	line-height: 1.2rem;
+	font-weight: 500;
+}
+
+.alert__close {
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	transform: translate(0, -50%);
+	border: none;
+	background: none;
+	padding: 5px;
+	cursor: pointer;
 }

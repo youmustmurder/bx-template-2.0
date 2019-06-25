@@ -1,4 +1,5 @@
 import MicroModal from './micromodal';
+import { lockScroll, unlockScroll } from './bodyBlock';
 
 /*
 	@param modalName: String
@@ -10,7 +11,19 @@ import MicroModal from './micromodal';
 	@param after: Function
 */
 
+const htmlPreload = `
+	<div class='preload'>
+		<div class="preload__dots">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+`;
+
 function modalFromAjax ({ modalName, url='/local/tools/ajax_form.php', method='POST', dataAjax = {}, modalSettings = {}, before, after }) {
+	const bodyNode = document.querySelector('body');
+	bodyNode.insertAdjacentHTML('beforeend', htmlPreload);
 	if (typeof before === 'function') {
 		before();
 	}
@@ -23,12 +36,13 @@ function modalFromAjax ({ modalName, url='/local/tools/ajax_form.php', method='P
 		body,
 		responseType: 'text'
 	}).then((res) => {
+		document.querySelector('.preload').remove();
 		if (res.data != '') {
 			if (typeof after === 'function') {
 				after();
 			}
 			console.log(res.data.trim());
-			//document.querySelector('body').insertAdjacentHTML('beforeend', res.data.trim());
+			//bodyNode.insertAdjacentHTML('beforeend', res.data.trim());
 			//MicroModal.show(modalName, modalSettings);
 		}
 	}).catch(err => {

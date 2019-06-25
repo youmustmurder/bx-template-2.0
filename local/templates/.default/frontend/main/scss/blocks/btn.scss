@@ -59,8 +59,8 @@
 		}
 	}
 	&.btn_primary {
-		border-color: #ff1e36;
-		background: #ff1e36;
+		border-color: var(--primary);
+		background: var(--primary);
 		color: #fff;
 		svg {
 			fill: #fff;

@@ -27,9 +27,9 @@ $APPLICATION->SetPageProperty('PAGE_LAYOUT', 'default');
                     <div class="product-slider__big-inner">
                         <div class="product-slider__big">
                             <?foreach ($arResult['MORE_IMAGES'] as $k => $arImage) {?>
-                                <div class="product-slider__big__slide product-slider__big-slide" data-index="<?=$k?>">
+                                <a href="<?=$arImage['SRC']?>" class="product-slider__big__slide product-slider__big-slide img-lightbox" data-index="<?=$k?>">
                                     <img src="<?=$arImage['SRC']?>" alt="">
-                                </div>
+								</a>
                             <?}?>
                         </div>
                     </div>
