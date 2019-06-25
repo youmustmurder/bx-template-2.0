@@ -9617,10 +9617,6 @@ window.addEventListener('load', function () {
       modalFromAjax(settings);
     });
   });
-  var settings = {
-    modalName: 'callback_modal'
-  };
-  modalFromAjax(settings);
   var anchorLinks = document.querySelectorAll('.anchor');
   Array.prototype.forEach.call(anchorLinks, function (link) {
     link.addEventListener('click', clickAnchorLink);

@@ -43,11 +43,6 @@ window.addEventListener('load', () => {
 		});
 	});
 
-	var settings = {
-		modalName: 'callback_modal',
-	};
-	modalFromAjax(settings);
-
 	const anchorLinks = document.querySelectorAll('.anchor');
 	Array.prototype.forEach.call(anchorLinks, (link) => {
 		link.addEventListener('click', clickAnchorLink);
