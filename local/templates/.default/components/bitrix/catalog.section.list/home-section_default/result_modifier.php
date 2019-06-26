@@ -21,6 +21,7 @@ $arSizes = array(
         'height' => 445
     )
 );
+$resizeType = $arParams['RESIZE_TYPE'] ? $arParams['RESIZE_TYPE'] : 'BX_RESIZE_IMAGE_EXACT';
 if ($arResult['SECTIONS']) {
     $index = 1;
     foreach ($arResult['SECTIONS'] as $key => $arSection) {
@@ -33,7 +34,7 @@ if ($arResult['SECTIONS']) {
             if (is_array($arSection['PICTURE'])) {
                 $arResult['SECTIONS'][$key]['PICTURE']['SRC'] = CFile::ResizeImageGet(
                     $arSection['PICTURE'],
-                    $imgSize, BX_RESIZE_IMAGE_PROPORTIONAL_ALT,
+                    $imgSize, $resizeType,
                     true)['src'];
             } else {
                 $arResult['SECTIONS'][$key]['PICTURE'] = array(

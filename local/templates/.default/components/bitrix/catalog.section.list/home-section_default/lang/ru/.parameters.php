@@ -4,3 +4,6 @@ $MESS["CATEGORIES_NAME_SECTION_LINK_NAME"] = "Текст ссылки";
 $MESS["CATEGORIES_NAME_SECTION_LINK"] = "URL адрес для перехода";
 $MESS["CATEGORIES_NAME_SECTION_LINK_VALUE"] = "#SITE_DIR#catalog/";
 $MESS["CATEGORIES_NAME_MAX_ITEMS"] = "Количество выводимых категорий";
+$MESS["CATEGORIES_NAME_RESIZE_TYPE"] = "Режим отображения изображений";
+$MESS["CATEGORIES_RESIZE_TYPE_ALT"] = "Пропорционально";
+$MESS["CATEGORIES_RESIZE_TYPE_EXACT"] = "Растянуть";

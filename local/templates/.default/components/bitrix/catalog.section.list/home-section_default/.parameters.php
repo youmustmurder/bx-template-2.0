@@ -13,6 +13,15 @@ $arTemplateParameters = array(
     "SECTION_USER_FIELDS" => array("HIDDEN" => "Y"),
     "TOP_DEPTH" => array("HIDDEN" => "Y"),
     "SEF_MODE" => array("HIDDEN" => "Y"),
+    'RESIZE_TYPE' => array(
+        'NAME' => Loc::getMessage('CATEGORIES_NAME_RESIZE_TYPE'),
+        'TYPE' => 'LIST',
+        'VALUES' => array(
+            'BX_RESIZE_IMAGE_PROPORTIONAL_ALT' => Loc::getMessage('CATEGORIES_RESIZE_TYPE_ALT'),
+            'BX_RESIZE_IMAGE_EXACT' => Loc::getMessage('CATEGORIES_RESIZE_TYPE_EXACT')
+        ),
+        'DEFAULT' => 'CATEGORIES_RESIZE_TYPE_EXACT'
+    ),
     "SECTION_TITLE" => array(
         "NAME" => Loc::getMessage("CATEGORIES_NAME_SECTION_TITLE"),
         "TYPE" => "STRING",
