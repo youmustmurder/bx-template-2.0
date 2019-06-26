@@ -61,10 +61,10 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
 					</div>
 					<div class="header__contact">
 						<?if ($arFilial['PHONE']) {?>
-							<div class="header__phone">
+							<a href="tel:<?=preg_replace('~[^0-9]+~', '', $arFilial['PHONE']);?>" class="header__phone">
 								<?=GetContentSvgIcon('phone');?>
-								<a href="tel:<?=preg_replace('~[^0-9]+~', '', $arFilial['PHONE']);?>"><?=$arFilial['PHONE']?></a>
-							</div>
+								<span><?=$arFilial['PHONE']?></span>
+							</a>
 						<?}?>
 						<div class="header__call">
                             <?$APPLICATION->IncludeComponent(

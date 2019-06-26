@@ -34,7 +34,7 @@
 	width: 100%;
 	max-width: 1140px;
 	margin: auto;
-	padding: 110px 15px;
+	padding: 100px 15px;
 }
 
 .slider-big-slide__img {
@@ -50,25 +50,25 @@
 
 .slider-big-slide__title {
 	max-width: 500px;
-	margin-bottom: 40px;
+	margin-top: 0;
+	margin-bottom: 25px;
 	color: #fff;
-	font-size: 2.6rem;
-	line-height: 3.533333333333333rem;
+	font-size: 2.625rem;
+	line-height: 3.375rem;
 	font-weight: bold;
 }
 
 .slider-big-slide__text {
 	max-width: 380px;
 	margin-bottom: 45px;
-	opacity: 0.8;
 	color: #fff;
-	font-size: 1.1em;
+	font-size: 1.125rem;
     line-height: 2rem;
 }
 
 .slider-big-slide__btn {
 	display: inline-flex;
-	margin-bottom: 90px;
+	margin-bottom: 60px;
 }
 
 .slider-big-slide-numbers {
@@ -94,8 +94,8 @@
 }
 
 .slider-big-slide-num__text {
-	font-size: 1.1rem;
-	opacity: 0.8;
+	font-size: 1.125rem;
+	font-weight: bold;
 }
 
 .slide-big__nav {
@@ -103,7 +103,7 @@
 	justify-content: space-between;
 	position: absolute;
 	z-index: 2;
-	top: calc(100% - 100px);
+	bottom: 50px;
 	right: 0;
 	width: 100%;
 	max-width: calc(64px*2 + 15px);
@@ -124,33 +124,37 @@
 	.slide-big__nav {
 		margin-right: 15px;
 	}
+	.slider-big-slide__inner {
+		padding: 80px 15px;
+	}
 }
 
 @media (max-width: 982px) {
 	.slider-big-slide__title {
-		font-size: 2.1333333333333333rem;
-		line-height: 2.8666666666666667rem;
+		font-size: 2.25rem;
+		line-height: 3rem;
 	}
 	.slider-big-slide__text {
+		font-size: 1rem;
+	}
+	.slider-big-slide__inner {
+		padding: 60px 15px 50px;
+	}
+	.slider-big-slide-num__value {
+		font-size: 2.25rem;
+	}
+	.slider-big-slide-num__text {
 		font-size: 1rem;
 	}
 }
 
 @media (max-width: 768px) {
-	.slider-big-slide__inner {
-		padding: 90px 15px 110px;
-	}
 	.slider-big-slide__title {
 		max-width: 570px;
 	}
-	.slider-big-slide__btn {
-		margin-bottom: 60px;
-	}
-	.slider-big-slide-num__value {
-		font-size: 2.133rem;
-	}
-	.slider-big-slide-num__text {
-		font-size: 0.9333rem;
+	.slider-big-slide__text {
+		font-size: 1rem;
+		line-height: 1.625rem;
 	}
 	.slide-big__nav {
 		max-width: calc(48px*2 + 10px);
@@ -164,7 +168,11 @@
 
 @media (max-width: 576px) {
 	.slider-big-slide__inner {
-		padding: 70px 15px 100px;
+		padding: 60px 15px 100px;
+	}
+	.slider-big-slide__title {
+		font-size: 1.5rem;
+		line-height: 2.25rem;
 	}
 	.slide-big__nav {
 		justify-content: flex-end;

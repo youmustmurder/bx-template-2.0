@@ -128,7 +128,10 @@
 
 .header-contact__number {
     color: #333;
-    font-size: 1.2rem;
+	font-size: 1.2rem;
+	&:hover {
+		color: #ff223d;
+	}
 }
 
 .header__search-toggle {
@@ -187,7 +190,7 @@
     display: flex;
     align-items: center;
     position: absolute;
-    top: -30px;
+    top: -25px;
 	left: 15px;
 	transform: translate(0, -100%);
     width: calc(100% - 60px);

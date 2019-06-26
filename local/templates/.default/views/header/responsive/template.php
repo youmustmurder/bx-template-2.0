@@ -59,8 +59,8 @@ Asset::getInstance()->addCss(GetCurDir(__DIR__) . '/style.css');
                         "CACHE_TYPE" => "A",
                         "CACHE_TIME" => "3600",
                         "FORM_PRODUCT_ID" => "",
-                        "FORM_BTN_STYLE" => "btn_primary",
-                        "FORM_BTN_SIZE" => "btn_min",
+                        "FORM_BTN_STYLE" => "btn_outline-primary",
+                        "FORM_BTN_SIZE" => "btn_mid",
                         "FORM_LINK_TYPE" => "btn"
                     ),
                     false

@@ -1,7 +1,7 @@
 .header-responsive {
 	flex: 0 1 auto;
     display: none;
-    padding: 30px 0;
+    padding: 25px 0;
 }
 
 .header-responsive__burger-wrap {
@@ -75,7 +75,6 @@
 	justify-content: flex-end;
 	padding: 10px 15px;
 	color: #333;
-	font-weight: 700;
 	font-size: 1.125rem;
 }
 
@@ -180,6 +179,12 @@
 	width: 100%;
 }
 
+.header-responsive__callback {
+	.btn {
+		font-weight: bold;
+	}
+}
+
 @media (max-width: 991px){
 	.header {
 		display: none;
@@ -204,7 +209,7 @@
 		justify-content: center;
 		width: 46px;
 		height: 46px;
-		border: 2px solid #ff223d;
+		border: 1px solid #ff223d;
 		border-radius: 50%;
 		svg {
 			fill: #ff223d;

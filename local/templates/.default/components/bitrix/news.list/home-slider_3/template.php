@@ -19,9 +19,8 @@ if ($arResult['ITEMS']) {?>
                     <div class="slider-big-slide__title"><?=$arItem['NAME']?></div>
                     <div class="slider-big-slide__desc"><?=$arItem['PREVIEW_TEXT']?></div>
                     <?if ($arItem['PROPERTIES']['LINK_SECTION']['VALUE']) {?>
-                        <a href="<?=$arItem['PROPERTIES']['LINK_SECTION']['VALUE']?>" class="btn btn_mid btn_success btn_icon-right">
+                        <a href="<?=$arItem['PROPERTIES']['LINK_SECTION']['VALUE']?>" class="btn btn_mid btn_round btn_success btn_icon-right">
                             <?=$arItem['PROPERTIES']['LINK_BUTTON_NAME']['VALUE'] ?: Loc::getMessage('SLIDE_MORE')?>
-                            <span class="btn__icon"><?=GetContentSvgIcon('cart');?></span>
                         </a>
                     <?}?>
                 </div>

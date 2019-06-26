@@ -104,7 +104,10 @@
 
 .header-phone__number {
     color: #333;
-    font-size: 1.125rem;
+	font-size: 1.125rem;
+	&:hover {
+		color: #ff223d;
+	}
 }
 
 .header-phone__icon {
