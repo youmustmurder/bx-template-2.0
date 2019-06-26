@@ -14,6 +14,9 @@ if ($arResult['ITEMS']) {?>
             <?foreach ($arResult['ITEMS'] as $arItem) {?>
                 <li class="sidebar-news-list__item sidebar-news-list-item">
                     <a href="<?=$arItem['DETAIL_PAGE_URL']?>">
+                        <?if ($arItem['PREVIEW_PICTURE']['SRC']) {?>
+                            <img src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>" alt="<?=$arItem['PREVIEW_PICTURE']['ALT']?>">
+                        <?}?>
                         <div class="sidebar-news-list-item__date"><?=$arItem['DATE_ACTIVE_FORMAT']?></div>
                         <span class="sidebar-news-list-item__name"><?=$arItem['NAME']?></span>
                     </a>
